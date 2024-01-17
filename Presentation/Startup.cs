@@ -19,8 +19,9 @@ namespace Presentation
 
         public void ConfigureServices(IServiceCollection services)
         {
+            
             // Configuration de la chaîne de connexion
-            string connectionString = Configuration.GetConnectionString("DefaultConnection") ?? "Server=localhost;Port=8081;User=root;Password=;Database=Projet";
+            string connectionString = Configuration.GetConnectionString("DefaultConnection") ?? "Server=localhost;Port=8081;User=root;Password=;Database=testntier";
 
             // Ajout du contexte de base de données
             services.AddDbContext<AppDbContext>(options =>

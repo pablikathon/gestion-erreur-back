@@ -7,6 +7,9 @@ namespace Persist
 {
     public class AppDbContext : DbContext
     {
+        public AppDbContext(){
+
+        }
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
@@ -14,8 +17,8 @@ namespace Persist
         {
             if (!optionsBuilder.IsConfigured)
             {
-               string connectionString = Environment.GetEnvironmentVariable("DefaultConnection") ?? "Server=localhost;Port=8081;User=root;Password=;Database=Projet";
-               optionsBuilder.UseMySql(connectionString,ServerVersion.AutoDetect(connectionString));   
+               string connectionString = Environment.GetEnvironmentVariable("DefaultConnection") ?? "Server=localhost;Port=8081;User=root;Password=;Database=testntier";
+               optionsBuilder.UseMySql("Server=localhost;Port=3306;User=root;Password=;Database=testntier;Charset=utf8;",ServerVersion.AutoDetect("Server=localhost;Port=3306;User=root;Password=;Database=testntier;Charset=utf8;"));   
             }
         }
         public DbSet<Book> Books { get; set; }
