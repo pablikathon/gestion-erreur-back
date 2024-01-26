@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Persist.Entities;
-using Pomelo.EntityFrameworkCore.MySql.Internal;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+
 
 namespace Persist
 {
@@ -21,6 +20,6 @@ namespace Persist
                optionsBuilder.UseMySql("Server=localhost;Port=3306;User=root;Password=;Database=testntier;Charset=utf8;",ServerVersion.AutoDetect("Server=localhost;Port=3306;User=root;Password=;Database=testntier;Charset=utf8;"));   
             }
         }
-        public DbSet<Book> Books { get; set; }
+        public DbSet<BookEntity> Books { get; set; }
     }
 }
