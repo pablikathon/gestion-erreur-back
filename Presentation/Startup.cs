@@ -26,7 +26,7 @@ namespace Presentation
             
             services.AddScoped<IBookRepository,BookRepository>();
             services.AddScoped<IServiceBook,ServiceBook>();
-
+            services.AddOpenApiDocument();
             // Configuration de la chaîne de connexion
             //string connectionString = "Server=localhost;Port=8081;User=root;Password=;Database=testntier" ;
             string connectionString = "Server=localhost;Port=3306;User=root;Password=;Database=testntier;Charset=utf8";
@@ -44,6 +44,8 @@ namespace Presentation
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseOpenApi();
+            app.UseSwaggerUI();
 
             app.UseRouting();
 
