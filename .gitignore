@@ -1,5 +1,5 @@
-*/obj/
-*/bin/
-*/Debug
-.vscode
+**/obj/
+**/bin/
+**/Debug
+**/vscode
 
