@@ -36,6 +36,7 @@ namespace Presentation
             services.AddScoped<IEntrySpotterService,EntrySpotterService>();
             services.AddScoped<IEntrySpotterRepository,EntrySpotterRepository>();
             
+            services.AddScoped<IDataRecognition,DataRecognition>();
             services.AddOpenApiDocument();
             // Configuration de la chaîne de connexion
             //string connectionString = "Server=localhost;Port=8081;User=root;Password=;Database=testntier" ;
