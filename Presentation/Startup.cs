@@ -26,6 +26,16 @@ namespace Presentation
             
             services.AddScoped<IBookRepository,BookRepository>();
             services.AddScoped<IServiceBook,ServiceBook>();
+
+            services.AddScoped<IEntryRepository,EntryRepository>();
+            services.AddScoped<IEntryService,EntryService>();
+
+            services.AddScoped<ISpotterRepository,SpotterRepository>();
+            services.AddScoped<ISpotterService,SpotterService>();
+
+            services.AddScoped<IEntrySpotterService,EntrySpotterService>();
+            services.AddScoped<IEntrySpotterRepository,EntrySpotterRepository>();
+            
             services.AddOpenApiDocument();
             // Configuration de la chaîne de connexion
             //string connectionString = "Server=localhost;Port=8081;User=root;Password=;Database=testntier" ;

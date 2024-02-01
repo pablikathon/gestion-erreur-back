@@ -21,5 +21,8 @@ namespace Persist
             }
         }
         public DbSet<BookEntity> Books { get; set; }
+        public DbSet<EntryEntity> Entries {get;set;}
+        public DbSet<SpotterEntity> Spotter {get;set;}
+        public DbSet<EntrySpotterEntity> EntrySpotter {get;set;}
     }
 }
