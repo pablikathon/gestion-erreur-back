@@ -23,24 +23,20 @@ namespace Presentation
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper(typeof (MappingProfile));
-            
             services.AddScoped<IBookRepository,BookRepository>();
             services.AddScoped<IServiceBook,ServiceBook>();
 
             services.AddScoped<IEntryRepository,EntryRepository>();
-            services.AddScoped<IEntryService,EntryService>();
 
             services.AddScoped<ISpotterRepository,SpotterRepository>();
-            services.AddScoped<ISpotterService,SpotterService>();
 
-            services.AddScoped<IEntrySpotterService,EntrySpotterService>();
             services.AddScoped<IEntrySpotterRepository,EntrySpotterRepository>();
             
-            services.AddScoped<IDataRecognition,DataRecognition>();
             services.AddOpenApiDocument();
             // Configuration de la chaîne de connexion
             //string connectionString = "Server=localhost;Port=8081;User=root;Password=;Database=testntier" ;
             string connectionString = "Server=localhost;Port=3306;User=root;Password=;Database=testntier;Charset=utf8";
+
 
             // Ajout du contexte de base de données
             services.AddDbContext<AppDbContext>(options =>
@@ -59,7 +55,11 @@ namespace Presentation
             app.UseSwaggerUI();
 
             app.UseRouting();
-
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+                options.RoutePrefix = string.Empty;
+            });
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
