@@ -10,8 +10,8 @@ using Persist;
 namespace Persist.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240201093130_EntrySpotterFullItem")]
-    partial class EntrySpotterFullItem
+    [Migration("20240726103950_applicationDeployedOnServerForCustommer")]
+    partial class applicationDeployedOnServerForCustommer
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,6 +20,20 @@ namespace Persist.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
+
+            modelBuilder.Entity("Persist.Entities.ApplicationEntity", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Application");
+                });
 
             modelBuilder.Entity("Persist.Entities.BookEntity", b =>
                 {
@@ -35,7 +49,7 @@ namespace Persist.Migrations
                     b.ToTable("Books");
                 });
 
-            modelBuilder.Entity("Persist.Entities.EntryEntity", b =>
+            modelBuilder.Entity("Persist.Entities.CustomerEntity", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("varchar(255)");
@@ -46,32 +60,33 @@ namespace Persist.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Entries");
+                    b.ToTable("Customer");
                 });
 
-            modelBuilder.Entity("Persist.Entities.EntrySpotterEntity", b =>
+            modelBuilder.Entity("Persist.Entities.DeployedApplicationEntity", b =>
                 {
-                    b.Property<string>("EntryId")
+                    b.Property<string>("ServerId")
                         .HasColumnType("varchar(255)");
 
-                    b.Property<string>("SpotterId")
+                    b.Property<string>("ApplicationId")
                         .HasColumnType("varchar(255)");
 
-                    b.HasKey("EntryId", "SpotterId");
+                    b.Property<string>("CustomerId")
+                        .HasColumnType("varchar(255)");
 
-                    b.HasIndex("SpotterId");
+                    b.HasKey("ServerId", "ApplicationId", "CustomerId");
 
-                    b.ToTable("EntrySpotter");
+                    b.HasIndex("ApplicationId");
+
+                    b.HasIndex("CustomerId");
+
+                    b.ToTable("deployedApplicationEntities");
                 });
 
-            modelBuilder.Entity("Persist.Entities.SpotterEntity", b =>
+            modelBuilder.Entity("Persist.Entities.ServerEntity", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("varchar(255)");
-
-                    b.Property<string>("Tag")
-                        .IsRequired()
-                        .HasColumnType("longtext");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -79,26 +94,34 @@ namespace Persist.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Spotter");
+                    b.ToTable("Server");
                 });
 
-            modelBuilder.Entity("Persist.Entities.EntrySpotterEntity", b =>
+            modelBuilder.Entity("Persist.Entities.DeployedApplicationEntity", b =>
                 {
-                    b.HasOne("Persist.Entities.EntryEntity", "Entry")
+                    b.HasOne("Persist.Entities.ApplicationEntity", "Application")
                         .WithMany()
-                        .HasForeignKey("EntryId")
+                        .HasForeignKey("ApplicationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Persist.Entities.SpotterEntity", "Spotter")
+                    b.HasOne("Persist.Entities.CustomerEntity", "Customer")
                         .WithMany()
-                        .HasForeignKey("SpotterId")
+                        .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Persist.Entities.ServerEntity", "Entry")
+                        .WithMany()
+                        .HasForeignKey("ServerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Application");
+
+                    b.Navigation("Customer");
 
                     b.Navigation("Entry");
-
-                    b.Navigation("Spotter");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\laragon\\www\\n-tier-app\\Presentation\\Presentation.csproj": {}
+    "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Presentation\\Presentation.csproj": {}
   },
   "projects": {
-    "C:\\laragon\\www\\n-tier-app\\Persist\\Persist.csproj": {
+    "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Persist\\Persist.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\laragon\\www\\n-tier-app\\Persist\\Persist.csproj",
+        "projectUniqueName": "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Persist\\Persist.csproj",
         "projectName": "Persist",
-        "projectPath": "C:\\laragon\\www\\n-tier-app\\Persist\\Persist.csproj",
+        "projectPath": "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Persist\\Persist.csproj",
         "packagesPath": "C:\\Users\\lyess.DESKTOP-CUBG40J\\.nuget\\packages\\",
-        "outputPath": "C:\\laragon\\www\\n-tier-app\\Persist\\obj\\",
+        "outputPath": "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Persist\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lyess.DESKTOP-CUBG40J\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -75,14 +75,14 @@
         }
       }
     },
-    "C:\\laragon\\www\\n-tier-app\\Presentation\\Presentation.csproj": {
+    "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Presentation\\Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\laragon\\www\\n-tier-app\\Presentation\\Presentation.csproj",
+        "projectUniqueName": "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Presentation\\Presentation.csproj",
         "projectName": "Presentation",
-        "projectPath": "C:\\laragon\\www\\n-tier-app\\Presentation\\Presentation.csproj",
+        "projectPath": "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Presentation\\Presentation.csproj",
         "packagesPath": "C:\\Users\\lyess.DESKTOP-CUBG40J\\.nuget\\packages\\",
-        "outputPath": "C:\\laragon\\www\\n-tier-app\\Presentation\\obj\\",
+        "outputPath": "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Presentation\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lyess.DESKTOP-CUBG40J\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -99,11 +99,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\laragon\\www\\n-tier-app\\Persist\\Persist.csproj": {
-                "projectPath": "C:\\laragon\\www\\n-tier-app\\Persist\\Persist.csproj"
+              "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Persist\\Persist.csproj": {
+                "projectPath": "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Persist\\Persist.csproj"
               },
-              "C:\\laragon\\www\\n-tier-app\\Services\\Services.csproj": {
-                "projectPath": "C:\\laragon\\www\\n-tier-app\\Services\\Services.csproj"
+              "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Services\\Services.csproj": {
+                "projectPath": "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Services\\Services.csproj"
               }
             }
           }
@@ -118,6 +118,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.0, )"
@@ -127,6 +131,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.2, )"
+            },
+            "NSwag.AspNetCore": {
+              "target": "Package",
+              "version": "[14.0.2, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -156,14 +164,14 @@
         }
       }
     },
-    "C:\\laragon\\www\\n-tier-app\\Services\\Services.csproj": {
+    "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\laragon\\www\\n-tier-app\\Services\\Services.csproj",
+        "projectUniqueName": "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Services\\Services.csproj",
         "projectName": "Services",
-        "projectPath": "C:\\laragon\\www\\n-tier-app\\Services\\Services.csproj",
+        "projectPath": "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\lyess.DESKTOP-CUBG40J\\.nuget\\packages\\",
-        "outputPath": "C:\\laragon\\www\\n-tier-app\\Services\\obj\\",
+        "outputPath": "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lyess.DESKTOP-CUBG40J\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -179,7 +187,11 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Persist\\Persist.csproj": {
+                "projectPath": "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Persist\\Persist.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -191,6 +203,16 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Catalyst": {
+              "target": "Package",
+              "version": "[1.0.44557, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\laragon\\www\\n-tier-app\\Persist\\Persist.csproj": {}
+    "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Persist\\Persist.csproj": {}
   },
   "projects": {
-    "C:\\laragon\\www\\n-tier-app\\Persist\\Persist.csproj": {
+    "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Persist\\Persist.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\laragon\\www\\n-tier-app\\Persist\\Persist.csproj",
+        "projectUniqueName": "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Persist\\Persist.csproj",
         "projectName": "Persist",
-        "projectPath": "C:\\laragon\\www\\n-tier-app\\Persist\\Persist.csproj",
+        "projectPath": "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Persist\\Persist.csproj",
         "packagesPath": "C:\\Users\\lyess.DESKTOP-CUBG40J\\.nuget\\packages\\",
-        "outputPath": "C:\\laragon\\www\\n-tier-app\\Persist\\obj\\",
+        "outputPath": "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Persist\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lyess.DESKTOP-CUBG40J\\AppData\\Roaming\\NuGet\\NuGet.Config",

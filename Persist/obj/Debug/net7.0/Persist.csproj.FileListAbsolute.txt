@@ -12,3 +12,17 @@ C:\laragon\www\n-tier-app\Persist\obj\Debug\net7.0\Persist.pdb
 C:\laragon\www\n-tier-app\Persist\obj\Debug\net7.0\ref\Persist.dll
 C:\laragon\www\n-tier-app\Persist\bin\Debug\net7.0\Persist.runtimeconfig.json
 C:\laragon\www\n-tier-app\Persist\obj\Debug\net7.0\Persist.genruntimeconfig.cache
+C:\laragon\www\Gestion-Erreur-Back-C#\Persist\obj\Debug\net7.0\Persist.csproj.AssemblyReference.cache
+C:\laragon\www\Gestion-Erreur-Back-C#\Persist\obj\Debug\net7.0\Persist.GeneratedMSBuildEditorConfig.editorconfig
+C:\laragon\www\Gestion-Erreur-Back-C#\Persist\obj\Debug\net7.0\Persist.AssemblyInfoInputs.cache
+C:\laragon\www\Gestion-Erreur-Back-C#\Persist\obj\Debug\net7.0\Persist.AssemblyInfo.cs
+C:\laragon\www\Gestion-Erreur-Back-C#\Persist\obj\Debug\net7.0\Persist.csproj.CoreCompileInputs.cache
+C:\laragon\www\Gestion-Erreur-Back-C#\Persist\obj\Debug\net7.0\Persist.dll
+C:\laragon\www\Gestion-Erreur-Back-C#\Persist\obj\Debug\net7.0\refint\Persist.dll
+C:\laragon\www\Gestion-Erreur-Back-C#\Persist\obj\Debug\net7.0\Persist.pdb
+C:\laragon\www\Gestion-Erreur-Back-C#\Persist\bin\Debug\net7.0\Persist.deps.json
+C:\laragon\www\Gestion-Erreur-Back-C#\Persist\bin\Debug\net7.0\Persist.runtimeconfig.json
+C:\laragon\www\Gestion-Erreur-Back-C#\Persist\bin\Debug\net7.0\Persist.dll
+C:\laragon\www\Gestion-Erreur-Back-C#\Persist\bin\Debug\net7.0\Persist.pdb
+C:\laragon\www\Gestion-Erreur-Back-C#\Persist\obj\Debug\net7.0\Persist.genruntimeconfig.cache
+C:\laragon\www\Gestion-Erreur-Back-C#\Persist\obj\Debug\net7.0\ref\Persist.dll

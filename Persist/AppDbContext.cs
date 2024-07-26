@@ -21,8 +21,10 @@ namespace Persist
             }
         }
         public DbSet<BookEntity> Books { get; set; }
-        public DbSet<EntryEntity> Entries {get;set;}
-        public DbSet<SpotterEntity> Spotter {get;set;}
-        public DbSet<EntrySpotterEntity> EntrySpotter {get;set;}
+        public DbSet<ApplicationEntity> Application { get; set; }
+        public DbSet<ServerEntity> Server { get; set; }
+        public DbSet<CustomerEntity> Customer{ get; set; }
+        public DbSet<DeployedApplicationEntity> deployedApplicationEntities{ get; set; }
+
     }
 }

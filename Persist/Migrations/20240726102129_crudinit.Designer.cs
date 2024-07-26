@@ -10,8 +10,8 @@ using Persist;
 namespace Persist.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240201082545_remove useless key in item EntrySpotter")]
-    partial class removeuselesskeyinitemEntrySpotter
+    [Migration("20240726102129_crudinit")]
+    partial class crudinit
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -20,6 +20,20 @@ namespace Persist.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
+
+            modelBuilder.Entity("Persist.Entities.ApplicationEntity", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Application");
+                });
 
             modelBuilder.Entity("Persist.Entities.BookEntity", b =>
                 {
@@ -35,7 +49,7 @@ namespace Persist.Migrations
                     b.ToTable("Books");
                 });
 
-            modelBuilder.Entity("Persist.Entities.EntryEntity", b =>
+            modelBuilder.Entity("Persist.Entities.CustomerEntity", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("varchar(255)");
@@ -46,30 +60,13 @@ namespace Persist.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Entries");
+                    b.ToTable("customers");
                 });
 
-            modelBuilder.Entity("Persist.Entities.EntrySpotterEntity", b =>
-                {
-                    b.Property<string>("IdEntry")
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<string>("IdSpotter")
-                        .HasColumnType("varchar(255)");
-
-                    b.HasKey("IdEntry", "IdSpotter");
-
-                    b.ToTable("EntrySpotter");
-                });
-
-            modelBuilder.Entity("Persist.Entities.SpotterEntity", b =>
+            modelBuilder.Entity("Persist.Entities.ServerEntity", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("varchar(255)");
-
-                    b.Property<string>("Tag")
-                        .IsRequired()
-                        .HasColumnType("longtext");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -77,7 +74,7 @@ namespace Persist.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Spotter");
+                    b.ToTable("Server");
                 });
 #pragma warning restore 612, 618
         }

@@ -5,13 +5,13 @@
 namespace Persist.Migrations
 {
     /// <inheritdoc />
-    public partial class initCatalyst : Migration
+    public partial class crudinit : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Entries",
+                name: "Application",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "varchar(255)", nullable: false)
@@ -21,24 +21,37 @@ namespace Persist.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Entries", x => x.Id);
+                    table.PrimaryKey("PK_Application", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Spotter",
+                name: "customers",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "varchar(255)", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Title = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Tag = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Spotter", x => x.Id);
+                    table.PrimaryKey("PK_customers", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Server",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Title = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Server", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
         }
@@ -47,10 +60,13 @@ namespace Persist.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Entries");
+                name: "Application");
 
             migrationBuilder.DropTable(
-                name: "Spotter");
+                name: "customers");
+
+            migrationBuilder.DropTable(
+                name: "Server");
         }
     }
 }

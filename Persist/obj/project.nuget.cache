@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hCu/K8xo//5+15yEA3f8A8Kua/BAYvDdBK1ScKQCKFd1vlZr0jrVJM4fCluqHs6K5D3gJFU8rFDfcK8CNWSbgw==",
+  "dgSpecHash": "KeRiPbISnBnBfAt6AdxcCUGahczBcw42uZpF5mYqC1tsr9f5qRby67emTlRSIl839anSS4KUtwFo+a88KXIyMQ==",
   "success": true,
-  "projectFilePath": "C:\\laragon\\www\\n-tier-app\\Persist\\Persist.csproj",
+  "projectFilePath": "C:\\laragon\\www\\Gestion-Erreur-Back-C#\\Persist\\Persist.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lyess.DESKTOP-CUBG40J\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\lyess.DESKTOP-CUBG40J\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.2\\microsoft.entityframeworkcore.7.0.2.nupkg.sha512",
