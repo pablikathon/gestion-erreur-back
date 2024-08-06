@@ -4,10 +4,9 @@ namespace Repositories
 {
     public interface IDeployedApplicationRepository 
     {
-        Task<IEnumerable<DeployedApplicationEntity>> GetAllDeployedApplicationsAsync();
-        Task<DeployedApplicationEntity> GetByIdAsync(string id);
-        Task<DeployedApplicationEntity> AddAsync(ApplicationEntity application);
-        Task<DeployedApplicationEntity>UpdateAsync(ApplicationEntity application);
-        Task<Boolean> DeleteAsync(string id);
+        Task<IQueryable<DeployedApplicationEntity>> GetAllAsync();
+        Task<DeployedApplicationEntity> GetByIdAsync(string idServer,string idApplication,string idClient);
+        Task<DeployedApplicationEntity> AddAsync(DeployedApplicationEntity application);
+        Task<Boolean> DeleteAsync(string idServer,string idApplication,string idClient);
     }
 }

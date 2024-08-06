@@ -12,7 +12,7 @@ namespace Persist.Entities
         public string ServerId { get; set; }
 
         [ForeignKey(nameof(ServerId))]
-        public ServerEntity Entry { get; set; }
+        public ServerEntity Server { get; set; }
 
         [Required]
         public string ApplicationId { get; set; }

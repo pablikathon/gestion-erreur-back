@@ -26,6 +26,8 @@ namespace Presentation
             services.AddScoped<IBookRepository,BookRepository>();
             services.AddScoped<IServiceBook,ServiceBook>();
 
+            services.AddScoped<IApplicationRepository, ApplicationRepository>();
+            services.AddScoped<IApplicationService, ApplicationService>();
 
             services.AddOpenApiDocument();
             // Configuration de la chaîne de connexion

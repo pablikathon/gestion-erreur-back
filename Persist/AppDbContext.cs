@@ -24,7 +24,7 @@ namespace Persist
         public DbSet<ApplicationEntity> Application { get; set; }
         public DbSet<ServerEntity> Server { get; set; }
         public DbSet<CustomerEntity> Customer{ get; set; }
-        public DbSet<DeployedApplicationEntity> deployedApplicationEntities{ get; set; }
+        public DbSet<DeployedApplicationEntity> DeployedApplication{ get; set; }
 
     }
 }

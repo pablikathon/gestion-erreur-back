@@ -11,9 +11,9 @@ namespace Repositories
         {
             _context = context;
         }
-        public async Task<IEnumerable<ApplicationEntity>> GetAllAsync()
+        public  IQueryable<ApplicationEntity> GetApplications()
         {
-            return await _context.Application.ToListAsync();
+            return  _context.Application.AsQueryable();
         }
 
         public async Task<ApplicationEntity?> GetByIdAsync(string id)
