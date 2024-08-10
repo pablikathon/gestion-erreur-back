@@ -58,4 +58,21 @@ public class ApplicationController : Controller{
             return Problem(e.Message);       
         }
     }
+    [HttpDelete]
+    [Route("/{id}")]
+    public async Task<ActionResult<Boolean>> DeleteApplication(string id)
+    {
+        try
+        {
+            var data = await _applicationService.DeleteApplication(id);
+            if (data){
+                return NoContent();
+            }
+            return NotFound();
+        }
+        catch (System.Exception e)
+        {
+            return Problem(e.Message);       
+        }
+    }
 }

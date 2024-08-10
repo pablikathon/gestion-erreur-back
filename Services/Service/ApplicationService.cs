@@ -79,6 +79,11 @@ namespace Services
 
             return await _applicationRepository.UpdateAsync(_mapper.Map<ApplicationEntity>(updateApplication));
         }
+        public async Task<Boolean>  DeleteApplication(string id)
+        {
+
+            return await _applicationRepository.DeleteAsync(id);
+        }
     }
     
 }
