@@ -28,11 +28,17 @@ namespace Repositories
             return applicationEntity;
         }
 
-        public async Task<ApplicationEntity?> UpdateAsync(ApplicationEntity applicationEntity)
+        public async Task<Boolean> UpdateAsync(ApplicationEntity applicationEntity)
         {
-            _context.Entry(applicationEntity).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
-            return await _context.Application.FindAsync(applicationEntity.Id);
+            var a = _context.Application.Find(applicationEntity.Id);
+            if (a != null)
+            {   
+                a.Title = applicationEntity.Title;
+                a.UpdatedAt = applicationEntity.UpdatedAt;
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            return false;
         }
 
         public async Task<Boolean> DeleteAsync(string id)

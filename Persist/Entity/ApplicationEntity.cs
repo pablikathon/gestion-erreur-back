@@ -10,10 +10,7 @@ namespace Persist.Entities
         public string Id { get; set; }
         public string Title { get; set; }  
         public DateTime CreatedAt{ get; set; }  
-        public ApplicationEntity(string Id,string Title){
-            CreatedAt = DateTime.Now;
-            this.Id = Id;
-            this.Title=Title;
-        }
+        public DateTime? UpdatedAt{ get; set; }  
+
     }
 }

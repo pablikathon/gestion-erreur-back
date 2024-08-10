@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Persist.Entities;
 using Services;
 using Services.Models.Common;
-using Services.Models;
 using Services.Models.Req;
 namespace Presentation.Controllers;
 
@@ -19,7 +18,11 @@ public class ApplicationController : Controller{
     {
         try
         {
-            return Ok(JsonSerializer.Serialize(await _applicationService.GetApplications(queryParameters)));
+            var data = await _applicationService.GetApplications(queryParameters);
+            if (data.TotalItems > 0){
+                return Ok(JsonSerializer.Serialize(data));
+            }
+            return NoContent();
         }
         catch (System.Exception e)
         {
@@ -27,7 +30,7 @@ public class ApplicationController : Controller{
         }
     }
     [HttpPost]
-    public async Task<ActionResult<IEnumerable<ApplicationEntity>>> CreateApplication([FromBody] ApplicationRequest applicationRequest)
+    public async Task<ActionResult<IEnumerable<ApplicationEntity>>> CreateApplication([FromBody] CreateApplicationRequest applicationRequest)
     {
         try
         {            
@@ -36,6 +39,22 @@ public class ApplicationController : Controller{
         catch (System.Exception e)
         {
             System.Diagnostics.Debug.WriteLine(e.Message);
+            return Problem(e.Message);       
+        }
+    }
+    [HttpPut]
+    public async Task<ActionResult<Boolean>> UpdateApplication([FromBody] UpdateApplicationRequest applicationRequest)
+    {
+        try
+        {
+            var data = await _applicationService.UpdateApplication(applicationRequest);
+            if (data){
+                return NoContent();
+            }
+            return NotFound();
+        }
+        catch (System.Exception e)
+        {
             return Problem(e.Message);       
         }
     }

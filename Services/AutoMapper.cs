@@ -1,12 +1,20 @@
 using AutoMapper;
 using Persist.Entities;
 using Services.Model;
+using Services.Models.Req;
 
 public class MappingProfile : Profile
 {
     public MappingProfile()
     {
-        CreateMap<ApplicationEntity, Book>();
+        CreateMap<CreateApplicationRequest, ApplicationEntity>()
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => Guid.NewGuid().ToString()))
+            .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src =>  DateTime.UtcNow))
+            .ForMember(dest => dest.UpdatedAt, opt => opt.Ignore());
+
+        CreateMap<UpdateApplicationRequest, ApplicationEntity>()
+            .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src =>  DateTime.UtcNow))
+            .ForMember(dest => dest.CreatedAt, opt => opt.Ignore());
 
     }
 }

@@ -7,7 +7,8 @@ namespace Services
     public interface IApplicationService
     {
         Task<PaginationResponse<ApplicationEntity>> GetApplications(QueryParameters queryParameters);
-        Task<ApplicationEntity> CreateApplication(ApplicationRequest applicationEntity);
+        Task<ApplicationEntity> CreateApplication(CreateApplicationRequest createApplication);        
+        Task<Boolean> UpdateApplication( UpdateApplicationRequest UpdateApplicationRequest);
 
     }
 }
