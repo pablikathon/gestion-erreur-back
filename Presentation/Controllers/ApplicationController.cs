@@ -14,7 +14,7 @@ public class ApplicationController : Controller{
         this._applicationService = applicationService;
     }
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<ApplicationEntity>>> GetApplication([FromQuery] QueryParameters queryParameters)
+    public async Task<ActionResult<PaginationResponse<ApplicationEntity>>> GetApplication([FromQuery] QueryParameters queryParameters)
     {
         try
         {
@@ -30,7 +30,7 @@ public class ApplicationController : Controller{
         }
     }
     [HttpPost]
-    public async Task<ActionResult<IEnumerable<ApplicationEntity>>> CreateApplication([FromBody] CreateApplicationRequest applicationRequest)
+    public async Task<ActionResult<ApplicationEntity>> CreateApplication([FromBody] CreateApplicationRequest applicationRequest)
     {
         try
         {            
