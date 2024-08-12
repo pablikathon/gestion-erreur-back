@@ -11,9 +11,9 @@ namespace Repositories
         {
             _context = context;
         }
-        public async Task<IEnumerable<CustomerEntity>> GetAllAsync()
+        public  IQueryable<CustomerEntity> GetAllAsync()
         {
-            return await _context.Customer.ToListAsync();
+            return  _context.Customer.AsQueryable();
         }
 
         public async Task<CustomerEntity?> GetByIdAsync(string id)
@@ -28,11 +28,17 @@ namespace Repositories
             return customerEntity;
         }
 
-        public async Task<CustomerEntity?> UpdateAsync(CustomerEntity customerEntity)
+        public async Task<bool> UpdateAsync(CustomerEntity customerEntity)
         {
-            _context.Entry(customerEntity).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
-            return await _context.Customer.FindAsync(customerEntity.Id);
+            var c = _context.Customer.Find(customerEntity.Id);
+            if (c != null)
+            {   
+                c = customerEntity;
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            return false;
+
         }
 
         public async Task<Boolean> DeleteAsync(string id)

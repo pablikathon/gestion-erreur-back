@@ -9,5 +9,11 @@ namespace Persist.Entities
         [Required]
         public string Id { get; set; }
         public string Title { get; set; }  
+
+        public string FiscalIdentification { get; set; }
+        public DateTime CreatedAt{ get; set; }  
+        public DateTime? UpdatedAt{ get; set; }  
+        public DateTime LastInteraction{ get; set; }  
+
     }
 }

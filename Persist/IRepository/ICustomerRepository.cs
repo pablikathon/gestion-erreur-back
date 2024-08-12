@@ -4,10 +4,10 @@ namespace Repositories
 {
     public interface ICustomerRepository 
     {
-        Task<IEnumerable<CustomerEntity>> GetAllAsync();
+        IQueryable<CustomerEntity> GetAllAsync();
         Task<CustomerEntity> GetByIdAsync(string id);
         Task<CustomerEntity> AddAsync(CustomerEntity application);
-        Task<CustomerEntity>UpdateAsync(CustomerEntity application);
+        Task<Boolean>UpdateAsync(CustomerEntity application);
         Task<Boolean> DeleteAsync(string id);
     }
 }

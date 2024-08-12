@@ -1,6 +1,4 @@
 using AutoMapper;
-using Microsoft.EntityFrameworkCore;
-using Persist;
 using Persist.Entities;
 using Repositories;
 using Services.Models.Common;
@@ -17,21 +15,51 @@ namespace Services
             _applicationRepository = ApplicationRepository;
             _mapper = mapper;
         }
-        public async Task<PaginationResponse<ApplicationEntity>> GetApplications(QueryParameters queryParameters)
+        public PaginationResponse<ApplicationEntity> GetApplications(QueryParameters queryParameters)
         {
             var query = _applicationRepository.GetApplications();
-            if (!String.IsNullOrEmpty(queryParameters.SearchTerm) && !String.IsNullOrWhiteSpace(queryParameters.SearchTerm))
+            query = TextSearchQuery(queryParameters, query);
+            query = DateSearchQuery(queryParameters, query);
+            query = SortQuery(queryParameters, query);
+            query = Pagination(queryParameters, query);
+
+            var result = query.ToList();
+            return new PaginationResponse<ApplicationEntity>(result, result.Count, queryParameters.Pagination.PageNumber, queryParameters.Pagination.PageSize);
+        }
+
+        internal static IQueryable<ApplicationEntity> SortQuery(QueryParameters queryParameters, IQueryable<ApplicationEntity> query)
+        {
+            if (!String.IsNullOrEmpty(queryParameters.Sort.SortBy) && !String.IsNullOrWhiteSpace(queryParameters.Sort.SortBy))
             {
-                switch (queryParameters.SearchColumn)
+                switch (queryParameters.Sort.SortBy)
                 {
                     case nameof(ApplicationEntity.Title):
-                        query = query.Where(a => a.Title.ToLower().Equals(queryParameters.SearchTerm.ToLower()));
+                        query = queryParameters.Sort.Ascending ? query.OrderBy(a => a.Title) : query.OrderByDescending(a => a.Title);
                         break;
-                    default:
-                        throw new ArgumentException("Bad column name");
+                    case nameof(ApplicationEntity.CreatedAt):
+                        query = queryParameters.Sort.Ascending ? query.OrderBy(a => a.CreatedAt) : query.OrderByDescending(a => a.CreatedAt);
+                        break;
+                    case nameof(ApplicationEntity.UpdatedAt):
+                        query = queryParameters.Sort.Ascending ? query.OrderBy(a => a.UpdatedAt) : query.OrderByDescending(a => a.UpdatedAt);
+                        break;
                 }
             }
 
+            return query;
+        }
+        internal static IQueryable<ApplicationEntity> Pagination(QueryParameters queryParameters, IQueryable<ApplicationEntity> query)
+        {
+            if (queryParameters.Pagination.PageNumber.GetHashCode() != 0)
+            {
+                query = query
+                .Skip((queryParameters.Pagination.PageNumber - 1) * queryParameters.Pagination.PageSize)
+                .Take(queryParameters.Pagination.PageSize);
+            }
+
+            return query;
+        }
+        internal static IQueryable<ApplicationEntity> DateSearchQuery(QueryParameters queryParameters, IQueryable<ApplicationEntity> query)
+        {
             if (queryParameters.StartDate.HasValue && queryParameters.EndDate.HasValue)
             {
                 switch (queryParameters.DateField)
@@ -46,44 +74,41 @@ namespace Services
                         throw new ArgumentException("Bad column date name");
                 }
             }
-            if (!String.IsNullOrEmpty(queryParameters.Sort.SortBy) && !String.IsNullOrWhiteSpace(queryParameters.Sort.SortBy))
+
+            return query;
+        }
+
+        internal static IQueryable<ApplicationEntity> TextSearchQuery(QueryParameters queryParameters, IQueryable<ApplicationEntity> query)
+        {
+            if (!String.IsNullOrEmpty(queryParameters.SearchTerm) && !String.IsNullOrWhiteSpace(queryParameters.SearchTerm))
             {
-                switch (queryParameters.Sort.SortBy)
+                switch (queryParameters.SearchColumn)
                 {
                     case nameof(ApplicationEntity.Title):
-                        query = queryParameters.Sort.Ascending ? query.OrderBy(a => a.Title) : query.OrderByDescending(a => a.Title);
+                        query = query.Where(a => a.Title.ToLower().Contains(queryParameters.SearchTerm.ToLower()));
                         break;
-                    case nameof(ApplicationEntity.CreatedAt):
-                        query = queryParameters.Sort.Ascending ? query.OrderBy(a => a.CreatedAt) : query.OrderByDescending(a => a.Title);
-                        break;
+                    default:
+                        throw new ArgumentException("Bad column name");
                 }
             }
-            if (queryParameters.Pagination.PageNumber.GetHashCode() != 0)
-            {
-                query = query
-                .Skip((queryParameters.Pagination.PageNumber - 1) * queryParameters.Pagination.PageSize)
-                .Take(queryParameters.Pagination.PageSize);
-            }
 
-            var result = query.ToList();
-            return new PaginationResponse<ApplicationEntity>(result, result.Count, queryParameters.Pagination.PageNumber, queryParameters.Pagination.PageSize);
+            return query;
         }
 
         public async Task<ApplicationEntity> CreateApplication(CreateApplicationRequest createApplication)
         {
-
-            return  await _applicationRepository.AddAsync(_mapper.Map<ApplicationEntity>(createApplication));
+            return await _applicationRepository.AddAsync(_mapper.Map<ApplicationEntity>(createApplication));
         }
-        public async Task<Boolean>  UpdateApplication(UpdateApplicationRequest updateApplication)
+        public async Task<Boolean> UpdateApplication(UpdateApplicationRequest updateApplication)
         {
 
             return await _applicationRepository.UpdateAsync(_mapper.Map<ApplicationEntity>(updateApplication));
         }
-        public async Task<Boolean>  DeleteApplication(string id)
+        public async Task<Boolean> DeleteApplication(string id)
         {
 
             return await _applicationRepository.DeleteAsync(id);
         }
     }
-    
+
 }

@@ -23,8 +23,12 @@ namespace Presentation
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper(typeof (MappingProfile));
+            
             services.AddScoped<IBookRepository,BookRepository>();
             services.AddScoped<IServiceBook,ServiceBook>();
+
+            services.AddScoped<ICustomerService,CustomerService>();
+            services.AddScoped<ICustomerRepository,CustomerRepository>();
 
             services.AddScoped<IApplicationRepository, ApplicationRepository>();
             services.AddScoped<IApplicationService, ApplicationService>();

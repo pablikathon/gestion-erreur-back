@@ -8,17 +8,18 @@ namespace Presentation.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class ApplicationController : Controller{
-    private readonly IApplicationService _applicationService;
-    public ApplicationController(IApplicationService applicationService){
-        this._applicationService = applicationService;
+public class CustomerController : Controller{
+    private readonly ICustomerService _customerService;
+    public CustomerController(ICustomerService customerService){
+        _customerService = customerService;
     }
+
     [HttpGet]
-    public async Task<ActionResult<PaginationResponse<ApplicationEntity>>> GetApplication([FromQuery] QueryParameters queryParameters)
+    public async Task<ActionResult<PaginationResponse<CustomerEntity>>> GetCustomers([FromQuery] QueryParameters queryParameters)
     {
         try
         {
-            var data =  _applicationService.GetApplications(queryParameters);
+            var data =  _customerService.GetCustomers(queryParameters);
             if (data.TotalItems > 0){
                 return Ok(JsonSerializer.Serialize(data));
             }
@@ -30,24 +31,23 @@ public class ApplicationController : Controller{
         }
     }
     [HttpPost]
-    public async Task<ActionResult<ApplicationEntity>> CreateApplication([FromBody] CreateApplicationRequest applicationRequest)
+    public async Task<ActionResult<CustomerEntity>> CreateCustomer([FromBody] CreateCustomerRequest customerRequest)
     {
         try
         {            
-            return Created("/Application",JsonSerializer.Serialize(await _applicationService.CreateApplication(applicationRequest)));
+            return Created("/Customer",JsonSerializer.Serialize(await _customerService.CreateCustomer(customerRequest)));
         }
         catch (System.Exception e)
         {
-            System.Diagnostics.Debug.WriteLine(e.Message);
             return Problem(e.Message);       
         }
     }
     [HttpPut]
-    public async Task<ActionResult<Boolean>> UpdateApplication([FromBody] UpdateApplicationRequest applicationRequest)
+    public async Task<ActionResult<Boolean>> UpdateCustomer([FromBody] UpdateCustomerRequest customerRequest)
     {
         try
         {
-            var data = await _applicationService.UpdateApplication(applicationRequest);
+            var data = await _customerService.UpdateCustomer(customerRequest);
             if (data){
                 return NoContent();
             }
@@ -59,11 +59,11 @@ public class ApplicationController : Controller{
         }
     }
     [HttpDelete("id")]
-    public async Task<ActionResult<Boolean>> DeleteApplication(string id)
+    public async Task<ActionResult<Boolean>> DeleteCustomer(string id)
     {
         try
         {
-            var data = await _applicationService.DeleteApplication(id);
+            var data = await _customerService.DeleteApplication(id);
             if (data){
                 return NoContent();
             }
