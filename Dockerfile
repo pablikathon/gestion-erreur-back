@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/nightly/sdk:6.0.100-rc.1-focal AS build
+FROM mcr.microsoft.com/dotnet/nightly/sdk:8.0.100-rc.1-focal AS build
 
 ARG VERSION=0.0.0.1
 RUN echo "⚡⚡⚡⚡ DOCKER BUILD IN VERSION $VERSION ⚡⚡⚡⚡" > /dev/null
