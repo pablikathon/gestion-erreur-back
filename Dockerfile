@@ -3,14 +3,14 @@ FROM mcr.microsoft.com/dotnet/nightly/sdk:6.0.100-rc.1-focal AS build
 ARG VERSION=0.0.0.1
 RUN echo "⚡⚡⚡⚡ DOCKER BUILD IN VERSION $VERSION ⚡⚡⚡⚡" > /dev/null
 
-WORKDIR source
+WORKDIR /source
 
 # copy csproj and restore as distinct layers
 COPY *.sln .
 
-COPY ./Persist/**.csproj ./Persis/
+COPY ./Persist/**.csproj ./Persist/
 COPY ./Presentation/**.csproj ./Presentation/
-COPY ./Services/**.csproj ./Presentation/
+COPY ./Services/**.csproj ./Services/
 COPY ./Test/**.csproj ./Test/
 COPY ./.config ./.config
 
