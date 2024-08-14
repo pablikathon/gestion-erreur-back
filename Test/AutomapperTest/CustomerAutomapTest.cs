@@ -42,7 +42,7 @@ public class CustommerAutoMapTest
         Assert.True(DateTime.TryParse(CustomerEntity.CreatedAt.ToString(),out y));
     }
     [Fact]
-    public void canNotMap_customer_On_Application()
+    public void CreateCustomerRequest_should_generate_CreatedAt()
     {
         // Arrange
         var CreateCustomerRequest = new CreateCustomerRequest()
