@@ -1,4 +1,4 @@
-FROM ubuntu/dotnet-aspnet:8.0-24.04_stable	AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0-focal	AS build
 
 WORKDIR /source
 
