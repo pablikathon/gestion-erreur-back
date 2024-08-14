@@ -13,6 +13,11 @@ COPY ./Presentation/**.csproj ./Presentation/
 COPY ./Services/**.csproj ./Services/
 COPY ./Test/**.csproj ./Test/
 COPY ./.config ./.config
+#jveu voir l'arboresence
+RUN apt-get update && apt-get install -y tree
+
+# Afficher l'arborescence
+RUN tree /source
 
 
 RUN echo "⏬ RESTORE" > /dev/null
