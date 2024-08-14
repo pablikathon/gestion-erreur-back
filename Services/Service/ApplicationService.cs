@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using AutoMapper;
 using Persist.Entities;
 using Repositories;
@@ -89,6 +90,7 @@ namespace Services
                         break;
                     default:
                         throw new ArgumentException("Bad column name");
+
                 }
             }
 
@@ -97,7 +99,13 @@ namespace Services
 
         public async Task<ApplicationEntity> CreateApplication(CreateApplicationRequest createApplication)
         {
-            return await _applicationRepository.AddAsync(_mapper.Map<ApplicationEntity>(createApplication));
+            var validation = new ValidationContext(createApplication);
+            var validationResults = new List<ValidationResult>();
+            bool isValid = Validator.TryValidateObject(createApplication, validation, validationResults, true);
+            if (isValid)
+                return await _applicationRepository.AddAsync(_mapper.Map<ApplicationEntity>(createApplication));
+            throw new ArgumentException("not valid object");
+
         }
         public async Task<Boolean> UpdateApplication(UpdateApplicationRequest updateApplication)
         {
