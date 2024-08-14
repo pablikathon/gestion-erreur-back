@@ -39,7 +39,28 @@ public class ApplicationAutoMapTest
         // Act
         var ApplicationEntity = _mapper.Map<ApplicationEntity>(CreateApplicationRequest);
         // Assert
-        Assert.True(DateTime.TryParse(ApplicationEntity.CreatedAt.ToString(),out y));
+        Assert.True(DateTime.TryParse(ApplicationEntity.CreatedAt.ToString(), out y));
     }
-
+    [Fact]
+    public void canNotMap_CreateApplication_On_customer()
+    {
+        // Arrange
+        var CreateApplicationRequest = new CreateApplicationRequest()
+        {
+            Title = "Cegid"
+        };
+        // Act & assert
+        Assert.Throws<AutoMapperMappingException>(() => _mapper.Map<CustomerEntity>(CreateApplicationRequest));
+    }
+    [Fact]
+    public void canNotMap_UpdateApplicationRequest_On_customer()
+    {
+        // Arrange
+        var UpdateApplicationRequest = new UpdateApplicationRequest()
+        {
+            Title = "Cegid"
+        };
+        // Act & assert
+        Assert.Throws<AutoMapperMappingException>(() => _mapper.Map<CustomerEntity>(UpdateApplicationRequest));
+    }
 }
