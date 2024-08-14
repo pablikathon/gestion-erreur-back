@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/mcr.microsoft.com/dotnet/aspnet/sdk:8.0.108 AS build
+FROM mcr.microsoft.com/mcr.microsoft.com/dotnet/aspnet/aspnet:8.0 AS build
 
 ARG VERSION=0.0.0.1
 RUN echo "⚡⚡⚡⚡ DOCKER BUILD IN VERSION $VERSION ⚡⚡⚡⚡" > /dev/null
