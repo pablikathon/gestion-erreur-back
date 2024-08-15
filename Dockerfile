@@ -28,9 +28,9 @@ RUN dotnet test -c release --no-build  /p:CollectCoverage=true /p:CoverletOutput
 RUN dotnet reportgenerator "-reports:./artifacts/test-result.xml" "-targetdir:./artifacts/testreport" "-reporttypes:Html"
 
 # RESHARPER ANALYSE
-RUN dotnet jb inspectcode ./n-tier-app.sln -o=inspectcode.xml --no-build
-RUN dotnet jb cleanupcode ./Services -o=dupfinder.xml --no-build
+RUN dotnet jb inspectcode ./n-tier-app.sln --output=inspectcode.xml --no-build
+RUN dotnet jb cleanupcode ./Services --output=cleanupcode.xml --no-build
 
 RUN dotnet fsi xslt.fsx inspectcode.xml ic.xslt "./artifacts/inspectcode.html"
-RUN dotnet fsi xslt.fsx dupfinder.xml df.xslt "./artifacts/dupfinder.html"
+RUN dotnet fsi xslt.fsx cleanupcode.xml df.xslt "./artifacts/cleanupcode.html"
 COPY ./index.html ./artifacts/index.html
