@@ -32,5 +32,5 @@ RUN dotnet jb inspectcode ./n-tier-app.sln -f="xml" --output='./inspectcode.xml'
 
 
 RUN dotnet fsi xslt.fsx ./inspectcode.xml ic.xslt "./inspectcode.html"
-
+COPY ./inspectcode.html ./artifacts/inspectcode.html
 COPY ./index.html ./artifacts/index.html
