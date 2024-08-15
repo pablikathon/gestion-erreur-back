@@ -30,5 +30,6 @@ RUN dotnet reportgenerator "-reports:./artifacts/test-result.xml" "-targetdir:./
 # RESHARPER ANALYSE
 RUN dotnet jb inspectcode ./n-tier-app.sln --output='./inspectcode.xml' --no-build
 # Afficher l'arborescence
+RUN dotnet fsi xslt.fsx ./inspectcode.xml ic.xslt "./inspectcode.html"
 
 COPY ./index.html ./artifacts/index.html
