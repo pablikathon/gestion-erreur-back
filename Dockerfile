@@ -30,7 +30,10 @@ RUN dotnet reportgenerator "-reports:./artifacts/test-result.xml" "-targetdir:./
 # RESHARPER ANALYSE
 RUN dotnet jb inspectcode ./n-tier-app.sln --output='./inspectcode.xml' --no-build
 RUN dotnet jb cleanupcode ./Services --output='./cleanupcode.xml' --no-build
+#jveu voir l'arboresence
+RUN apt-get update && apt-get install -y tree
 
-RUN dotnet fsi xslt.fsx ./inspectcode.xml ic.xslt "./inspectcode.html"
-RUN dotnet fsi xslt.fsx ./cleanupcode.xml df.xslt "./cleanupcode.html"
+# Afficher l'arborescence
+RUN tree /source
+
 COPY ./index.html ./artifacts/index.html
