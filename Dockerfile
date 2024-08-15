@@ -29,7 +29,7 @@ RUN dotnet reportgenerator "-reports:./artifacts/test-result.xml" "-targetdir:./
 
 # RESHARPER ANALYSE
 RUN dotnet jb inspectcode ./n-tier-app.sln -o=inspectcode.xml --no-build
-RUN dotnet jb dupfinder ./src -o=dupfinder.xml --no-build
+RUN dotnet jb cleanupcode ./Services -o=dupfinder.xml --no-build
 
 RUN dotnet fsi xslt.fsx inspectcode.xml ic.xslt "./artifacts/inspectcode.html"
 RUN dotnet fsi xslt.fsx dupfinder.xml df.xslt "./artifacts/dupfinder.html"
