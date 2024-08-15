@@ -19,6 +19,6 @@ else
     then  printfn $"File not found: {transform}"
 
     let xslTransform = new XslTransform();
-    xslTransform.LoadXml(transform);
+    xslTransform.Load(transform);
     xslTransform.Transform(inputfile, outputfile);
     printfn $"Finished, output: {outputfile}"
