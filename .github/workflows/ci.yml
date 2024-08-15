@@ -23,8 +23,8 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Debug Docker Image
-        run: |
-          ls /source
+        run: 
+          ls ./
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
