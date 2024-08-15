@@ -28,11 +28,9 @@ RUN dotnet test -c release --no-build  /p:CollectCoverage=true /p:CoverletOutput
 RUN dotnet reportgenerator "-reports:./artifacts/test-result.xml" "-targetdir:./artifacts/testreport" "-reporttypes:Html"
 
 # RESHARPER ANALYSE
-RUN dotnet jb inspectcode ./n-tier-app.sln --output='./inspectcode.xml' --no-build
-RUN apt-get update && apt-get install -y tree
+RUN dotnet jb inspectcode ./n-tier-app.sln -f="xml" --output='./inspectcode.xml' --no-build
 
-# Afficher l'arborescence
-RUN tree /source
+
 RUN dotnet fsi xslt.fsx ./inspectcode.xml ic.xslt "./inspectcode.html"
 
 COPY ./index.html ./artifacts/index.html
