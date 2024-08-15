@@ -29,11 +29,6 @@ RUN dotnet reportgenerator "-reports:./artifacts/test-result.xml" "-targetdir:./
 
 # RESHARPER ANALYSE
 RUN dotnet jb inspectcode ./n-tier-app.sln --output='./inspectcode.xml' --no-build
-RUN dotnet jb cleanupcode ./Services --output='./cleanupcode.xml' --no-build
-#jveu voir l'arboresence
-RUN apt-get update && apt-get install -y tree
-
 # Afficher l'arborescence
-RUN tree /source
 
 COPY ./index.html ./artifacts/index.html
