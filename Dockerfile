@@ -10,12 +10,6 @@ COPY ./Presentation/**.csproj ./Presentation/
 COPY ./Services/**.csproj ./Services/
 COPY ./Test/**.csproj ./Test/
 COPY ./.config ./.config
-#jveu voir l'arboresence
-RUN apt-get update && apt-get install -y tree
-
-# Afficher l'arborescence
-RUN tree /source
-
 
 RUN echo "⏬ RESTORE" > /dev/null
 RUN dotnet restore
@@ -31,4 +25,12 @@ RUN dotnet build -c release --no-restore
 # UNIT TEST + REPORT
 RUN echo "🧪 LET HIM COOK" > /dev/null
 RUN dotnet test -c release --no-build  /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura  /p:CoverletOutput="../artifacts/coverage.xml" --test-adapter-path:. --logger:"junit;LogFilePath=../artifacts/test-result.xml;MethodFormat=Class;FailureBodyFormat=Verbose"
-RUN dotnet reportgenerator "-reports:./artifacts/coverage.xml" "-targetdir:./artifacts/testreport" "-reporttypes:Html"
+RUN dotnet reportgenerator "-reports:./artifacts/test-result.xml" "-targetdir:./artifacts/testreport" "-reporttypes:Html"
+
+# RESHARPER ANALYSE
+RUN dotnet jb inspectcode ./n-tier-app.sln -o=inspectcode.xml --no-build
+RUN dotnet jb dupfinder ./src -o=dupfinder.xml --no-build
+
+RUN dotnet fsi xslt.fsx inspectcode.xml ic.xslt "./artifacts/inspectcode.html"
+RUN dotnet fsi xslt.fsx dupfinder.xml df.xslt "./artifacts/dupfinder.html"
+COPY ./index.html ./artifacts/index.html
