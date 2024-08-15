@@ -31,6 +31,6 @@ RUN dotnet reportgenerator "-reports:./artifacts/test-result.xml" "-targetdir:./
 RUN dotnet jb inspectcode ./n-tier-app.sln --output='./inspectcode.xml' --no-build
 RUN dotnet jb cleanupcode ./Services --output='./cleanupcode.xml' --no-build
 
-RUN dotnet fsi xslt.fsx ./source/inspectcode.xml ic.xslt "./inspectcode.html"
-RUN dotnet fsi xslt.fsx ./source/cleanupcode.xml df.xslt "./cleanupcode.html"
+RUN dotnet fsi xslt.fsx ./inspectcode.xml ic.xslt "./inspectcode.html"
+RUN dotnet fsi xslt.fsx ./cleanupcode.xml df.xslt "./cleanupcode.html"
 COPY ./index.html ./artifacts/index.html
