@@ -11,25 +11,26 @@ namespace Services
     public class ServiceBook : IServiceBook
     {
         private readonly IBookRepository _bookRepository;
-       private readonly IMapper _mapper;
+        private readonly IMapper _mapper;
 
-        public ServiceBook(IBookRepository bookRepository,IMapper mapper)
+        public ServiceBook(IBookRepository bookRepository, IMapper mapper)
         {
             _bookRepository = bookRepository;
-            _mapper=mapper;
+            _mapper = mapper;
         }
 
         public async Task<IEnumerable<Book>> GetAllBooksAsync()
         {
-            IEnumerable<BookEntity> AllEntity=await _bookRepository.GetAllAsync();
+            IEnumerable<BookEntity> AllEntity = await _bookRepository.GetAllAsync();
             return _mapper.Map<IEnumerable<Book>>(AllEntity);
         }
 
         public async Task<Book> GetBookByIdAsync(string id)
         {
-            BookEntity Entity=await _bookRepository.GetByIdAsync(id);
+            BookEntity Entity = await _bookRepository.GetByIdAsync(id);
             return _mapper.Map<Book>(Entity);
         }
+
         /// <summary>
         /// Create a book
         /// </summary>
@@ -37,27 +38,29 @@ namespace Services
         /// <returns>book with new guid</returns>
         public async Task<Book> AddBookAsync(Book book)
         {
-            BookEntity b1=new BookEntity{
-                Id=Guid.NewGuid().ToString(),
-                Title=book.Title
+            BookEntity b1 = new BookEntity
+            {
+                Id = Guid.NewGuid().ToString(),
+                Title = book.Title
             };
-           BookEntity Entity = await _bookRepository.AddAsync(b1);
-           return _mapper.Map<Book>(Entity);
+            BookEntity Entity = await _bookRepository.AddAsync(b1);
+            return _mapper.Map<Book>(Entity);
         }
 
-        public async Task<Book> UpdateBookAsync(Book book,string id)
+        public async Task<Book> UpdateBookAsync(Book book, string id)
         {
-            BookEntity b1=new BookEntity{
-                Id=id,
-                Title=book.Title
+            BookEntity b1 = new BookEntity
+            {
+                Id = id,
+                Title = book.Title
             };
-            BookEntity Entity =await _bookRepository.UpdateAsync(b1);
+            BookEntity Entity = await _bookRepository.UpdateAsync(b1);
             return _mapper.Map<Book>(Entity);
         }
 
         public async Task<Boolean> DeleteBookAsync(string id)
         {
-           return  await _bookRepository.DeleteAsync(id);
+            return await _bookRepository.DeleteAsync(id);
         }
     }
 }
