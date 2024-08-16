@@ -15,20 +15,19 @@ namespace Presentation
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            
         }
 
         public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAutoMapper(typeof (MappingProfile));
-            
-            services.AddScoped<IBookRepository,BookRepository>();
-            services.AddScoped<IServiceBook,ServiceBook>();
+            services.AddAutoMapper(typeof(MappingProfile));
 
-            services.AddScoped<ICustomerService,CustomerService>();
-            services.AddScoped<ICustomerRepository,CustomerRepository>();
+            services.AddScoped<IBookRepository, BookRepository>();
+            services.AddScoped<IServiceBook, ServiceBook>();
+
+            services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
 
             services.AddScoped<IApplicationRepository, ApplicationRepository>();
             services.AddScoped<IApplicationService, ApplicationService>();
@@ -52,6 +51,7 @@ namespace Presentation
             {
                 app.UseDeveloperExceptionPage();
             }
+
             app.UseOpenApi();
             app.UseSwaggerUI();
 
@@ -61,10 +61,7 @@ namespace Presentation
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
                 options.RoutePrefix = string.Empty;
             });
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }
 }

@@ -18,6 +18,7 @@ public class BookController : ControllerBase
         _logger = logger;
         _serviceBook = serviceBook;
     }
+
     [HttpGet]
     [Route("{id}")]
     public async Task<IActionResult> getById(string id)
@@ -31,6 +32,7 @@ public class BookController : ControllerBase
             return Problem(e.Message);
         }
     }
+
     [HttpGet]
     public async Task<IActionResult> get()
     {
@@ -43,8 +45,10 @@ public class BookController : ControllerBase
             return Problem(e.Message);
         }
     }
+
     [HttpPost]
-    public async Task<IActionResult> post([FromBody] Book book){
+    public async Task<IActionResult> post([FromBody] Book book)
+    {
         try
         {
             return Ok(await _serviceBook.AddBookAsync(book));
@@ -54,21 +58,25 @@ public class BookController : ControllerBase
             return Problem(e.Message);
         }
     }
+
     [HttpPut]
     [Route("{id}")]
-    public async Task<IActionResult> put([FromBody] Book book,string id){
+    public async Task<IActionResult> put([FromBody] Book book, string id)
+    {
         try
         {
-            return Ok(await _serviceBook.UpdateBookAsync(book,id));
+            return Ok(await _serviceBook.UpdateBookAsync(book, id));
         }
         catch (System.Exception e)
         {
             return Problem(e.Message);
         }
     }
+
     [HttpDelete]
     [Route("{id}")]
-    public async Task<IActionResult> delete(string id){
+    public async Task<IActionResult> delete(string id)
+    {
         try
         {
             return Ok(await _serviceBook.DeleteBookAsync(id));
