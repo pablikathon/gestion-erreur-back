@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<testsuites time="0.173" tests="7" failures="0">
-  <testsuite id="0" name="/source/Test/bin/Release/net8.0/Test.dll" tests="7" failures="0" time="0.173">
-    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.canNotMap_UpdateApplicationRequest_On_customer" time="0.0767131" />
-    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.canNotMap_CreateApplication_On_customer" time="0.0020209" />
-    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.CreateApplicationRequest_should_generate_CreatedAt" time="0.0066530" />
-    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.CreateApplicationRequest_should_generate_Id" time="0.0021632" />
-    <testcase classname="Test.CustommerAutoMapTest" name="Test.CustommerAutoMapTest.CreateCustomerRequest_should_generate_CreatedAt" time="0.0767077" />
-    <testcase classname="Test.CustommerAutoMapTest" name="Test.CustommerAutoMapTest.CreateCustomerRequest_should_generate_Id" time="0.0057561" />
-    <testcase classname="Test.CustommerAutoMapTest" name="Test.CustommerAutoMapTest.CreateApplicationRequest_should_generate_CreatedAt" time="0.0028909" />
+<testsuites time="0.191" tests="7" failures="0">
+  <testsuite id="0" name="/source/Test/bin/Release/net8.0/Test.dll" tests="7" failures="0" time="0.191">
+    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.canNotMap_UpdateApplicationRequest_On_customer" time="0.0878344" />
+    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.canNotMap_CreateApplication_On_customer" time="0.0022394" />
+    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.CreateApplicationRequest_should_generate_CreatedAt" time="0.0046343" />
+    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.CreateApplicationRequest_should_generate_Id" time="0.0014874" />
+    <testcase classname="Test.CustommerAutoMapTest" name="Test.CustommerAutoMapTest.CreateCustomerRequest_should_generate_CreatedAt" time="0.0878135" />
+    <testcase classname="Test.CustommerAutoMapTest" name="Test.CustommerAutoMapTest.CreateCustomerRequest_should_generate_Id" time="0.0054299" />
+    <testcase classname="Test.CustommerAutoMapTest" name="Test.CustommerAutoMapTest.CreateApplicationRequest_should_generate_CreatedAt" time="0.0018920" />
   </testsuite>
 </testsuites>
