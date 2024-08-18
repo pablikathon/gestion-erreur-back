@@ -18,11 +18,8 @@ else
 
     if not <| File.Exists(transform)
     then  printfn $"File not found: {transform}"
-
-    printfn $"Création de l'objet XslTransform "
+    
     let xslTransform = new XslTransform();
-    printfn $"exécution de load "
     xslTransform.Load(transform);
-        printfn $"exécution de transfrom "
     xslTransform.Transform(inputfile, outputfile);
     printfn $"Finished, output: {outputfile}"

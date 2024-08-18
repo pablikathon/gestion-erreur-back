@@ -28,6 +28,8 @@ RUN dotnet test -c release --no-build  /p:CollectCoverage=true /p:CoverletOutput
 RUN dotnet reportgenerator "-reports:./artifacts/test-result.xml" "-targetdir:./artifacts/testreport" "-reporttypes:Html"
 
 # RESHARPER ANALYSE
-RUN dotnet jb inspectcode ./n-tier-app.sln -f="xml" --output='./inspectcode.xml' --no-build
-RUN dotnet fsi xslt.fsx ./inspectcode.xml ic.xslt "artifacts/inspectcode.html"
-COPY ./index.html ./artifacts/index.html
+RUN dotnet jb inspectcode ./n-tier-app.sln -f="xml" --output='./artifacts/inspectcode.xml' --no-build
+
+RUN dotnet fsi xslt.fsx ./artifacts/inspectcode.xml ic.xslt "artifacts/inspectcode.html"
+RUN dotnet fsi xslt.fsx ./artifacts/test-result.xml .xslt "artifacts/inspectcode.html"
+COPY ./xunit-coverlet-icon.png ./artifacts/xunit-coverlet-icon.png
