@@ -8,6 +8,7 @@
     </InspectionScope>
   </Information>
   <IssueTypes>
+    <IssueType Id="ArrangeModifiersOrder" Category="Syntax Style" CategoryId="CodeStyleIssues" Description="Adjust modifiers declaration order" Severity="SUGGESTION" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=ArrangeModifiersOrder" />
     <IssueType Id="ArrangeObjectCreationWhenTypeEvident" Category="Syntax Style" CategoryId="CodeStyleIssues" Description="Use preferred style of 'new' expression when created type is evident" Severity="SUGGESTION" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=ArrangeObjectCreationWhenTypeEvident" />
     <IssueType Id="AutoPropertyCanBeMadeGetOnly.Global" Category="Common Practices and Code Improvements" CategoryId="BestPractice" SubCategory="Auto-property can be made get-only" Description="Auto-property can be made get-only: Non-private accessibility" Severity="SUGGESTION" Global="True" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=AutoPropertyCanBeMadeGetOnly.Global" />
     <IssueType Id="CSharpWarnings::CS1998" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Async function without await expression" Severity="WARNING" />
@@ -42,10 +43,8 @@
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="1087-1090" Line="26" Message="Property can be made init-only" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="1168-1171" Line="27" Message="Property can be made init-only" />
       <Issue TypeId="CheckNamespace" File="Persist\Entity\ApplicationEntity.cs" Offset="93-109" Line="4" Message="Namespace does not correspond to file location, must be: 'Persist.Entity'" />
-      <Issue TypeId="CSharpWarnings::CS8618" File="Persist\Entity\ApplicationEntity.cs" Offset="223-225" Line="10" Message="Non-nullable property 'Id' is uninitialized. Consider declaring the property as nullable." />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\ApplicationEntity.cs" Offset="233-236" Line="10" Message="Property can be made init-only" />
-      <Issue TypeId="CSharpWarnings::CS8618" File="Persist\Entity\ApplicationEntity.cs" Offset="262-267" Line="11" Message="Non-nullable property 'Title' is uninitialized. Consider declaring the property as nullable." />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\ApplicationEntity.cs" Offset="324-327" Line="12" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\ApplicationEntity.cs" Offset="242-245" Line="10" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\ApplicationEntity.cs" Offset="342-345" Line="12" Message="Property can be made init-only" />
       <Issue TypeId="RedundantUsingDirective" File="Persist\Entity\BookEntity.cs" Offset="0-13" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="CheckNamespace" File="Persist\Entity\BookEntity.cs" Offset="107-123" Line="5" Message="Namespace does not correspond to file location, must be: 'Persist.Entity'" />
       <Issue TypeId="CSharpWarnings::CS8618" File="Persist\Entity\BookEntity.cs" Offset="230-232" Line="11" Message="Non-nullable property 'Id' is uninitialized. Consider declaring the property as nullable." />
@@ -53,15 +52,12 @@
       <Issue TypeId="CSharpWarnings::CS8618" File="Persist\Entity\BookEntity.cs" Offset="269-274" Line="12" Message="Non-nullable property 'Title' is uninitialized. Consider declaring the property as nullable." />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\BookEntity.cs" Offset="282-285" Line="12" Message="Property can be made init-only" />
       <Issue TypeId="CheckNamespace" File="Persist\Entity\CustomerEntity.cs" Offset="93-109" Line="4" Message="Namespace does not correspond to file location, must be: 'Persist.Entity'" />
-      <Issue TypeId="CSharpWarnings::CS8618" File="Persist\Entity\CustomerEntity.cs" Offset="220-222" Line="10" Message="Non-nullable property 'Id' is uninitialized. Consider declaring the property as nullable." />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\CustomerEntity.cs" Offset="230-233" Line="10" Message="Property can be made init-only" />
-      <Issue TypeId="CSharpWarnings::CS8618" File="Persist\Entity\CustomerEntity.cs" Offset="259-264" Line="11" Message="Non-nullable property 'Title' is uninitialized. Consider declaring the property as nullable." />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\CustomerEntity.cs" Offset="272-275" Line="11" Message="Property can be made init-only" />
-      <Issue TypeId="CSharpWarnings::CS8618" File="Persist\Entity\CustomerEntity.cs" Offset="304-324" Line="13" Message="Non-nullable property 'FiscalIdentification' is uninitialized. Consider declaring the property as nullable." />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\CustomerEntity.cs" Offset="332-335" Line="13" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\CustomerEntity.cs" Offset="379-382" Line="14" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\CustomerEntity.cs" Offset="429-432" Line="15" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\CustomerEntity.cs" Offset="484-487" Line="16" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\CustomerEntity.cs" Offset="239-242" Line="10" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\CustomerEntity.cs" Offset="290-293" Line="11" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\CustomerEntity.cs" Offset="359-362" Line="13" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\CustomerEntity.cs" Offset="406-409" Line="14" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\CustomerEntity.cs" Offset="456-459" Line="15" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\CustomerEntity.cs" Offset="511-514" Line="16" Message="Property can be made init-only" />
       <Issue TypeId="CheckNamespace" File="Persist\Entity\DeployedApplicationEntity.cs" Offset="145-161" Line="5" Message="Namespace does not correspond to file location, must be: 'Persist.Entity'" />
       <Issue TypeId="CSharpWarnings::CS8618" File="Persist\Entity\DeployedApplicationEntity.cs" Offset="331-339" Line="12" Message="Non-nullable property 'ServerId' is uninitialized. Consider declaring the property as nullable." />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\DeployedApplicationEntity.cs" Offset="347-350" Line="12" Message="Property can be made init-only" />
@@ -77,10 +73,10 @@
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\DeployedApplicationEntity.cs" Offset="771-774" Line="26" Message="Property can be made init-only" />
       <Issue TypeId="RedundantUsingDirective" File="Persist\Entity\ServerEntity.cs" Offset="0-13" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="CheckNamespace" File="Persist\Entity\ServerEntity.cs" Offset="107-123" Line="5" Message="Namespace does not correspond to file location, must be: 'Persist.Entity'" />
-      <Issue TypeId="CSharpWarnings::CS8618" File="Persist\Entity\ServerEntity.cs" Offset="232-234" Line="11" Message="Non-nullable property 'Id' is uninitialized. Consider declaring the property as nullable." />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\ServerEntity.cs" Offset="242-245" Line="11" Message="Property can be made init-only" />
-      <Issue TypeId="CSharpWarnings::CS8618" File="Persist\Entity\ServerEntity.cs" Offset="271-276" Line="12" Message="Non-nullable property 'Title' is uninitialized. Consider declaring the property as nullable." />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\ServerEntity.cs" Offset="284-287" Line="12" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\ServerEntity.cs" Offset="251-254" Line="11" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\ServerEntity.cs" Offset="302-305" Line="12" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\ServerEntity.cs" Offset="350-353" Line="13" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\ServerEntity.cs" Offset="399-402" Line="14" Message="Property can be made init-only" />
       <Issue TypeId="CheckNamespace" File="Persist\IRepository\IApplicationRepository.cs" Offset="35-47" Line="3" Message="Namespace does not correspond to file location, must be: 'Persist.IRepository'" />
       <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\IApplicationRepository.cs" Offset="190-202" Line="8" Message="Method 'GetByIdAsync' is never used" />
       <Issue TypeId="RedundantUsingDirective" File="Persist\IRepository\IBookRepository.cs" Offset="0-13" Message="Using directive is not required by the code and can be safely removed" />
@@ -95,11 +91,7 @@
       <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\IDeployedApplicationRepository.cs" Offset="324-332" Line="9" Message="Method 'AddAsync' is never used" />
       <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\IDeployedApplicationRepository.cs" Offset="395-406" Line="10" Message="Method 'DeleteAsync' is never used" />
       <Issue TypeId="CheckNamespace" File="Persist\IRepository\IServerRepository.cs" Offset="35-47" Line="3" Message="Namespace does not correspond to file location, must be: 'Persist.IRepository'" />
-      <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\IServerRepository.cs" Offset="136-147" Line="7" Message="Method 'GetAllAsync' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\IServerRepository.cs" Offset="178-190" Line="8" Message="Method 'GetByIdAsync' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\IServerRepository.cs" Offset="230-238" Line="9" Message="Method 'AddAsync' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\IServerRepository.cs" Offset="288-299" Line="10" Message="Method 'UpdateAsync' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\IServerRepository.cs" Offset="345-356" Line="11" Message="Method 'DeleteAsync' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\IServerRepository.cs" Offset="170-182" Line="8" Message="Method 'GetByIdAsync' is never used" />
       <Issue TypeId="RedundantUsingDirective" File="Persist\Repository\ApplicationRepository.cs" Offset="0-36" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="CheckNamespace" File="Persist\Repository\ApplicationRepository.cs" Offset="87-99" Line="5" Message="Namespace does not correspond to file location, must be: 'Persist.Repository'" />
       <Issue TypeId="CSharpWarnings::CS8613" File="Persist\Repository\ApplicationRepository.cs" Offset="493-517" Line="19" Message="Nullability of reference types in return type does not match implicitly implemented member 'Task&lt;ApplicationEntity&gt; Repositories.IApplicationRepository.GetByIdAsync(string)'" />
@@ -118,10 +110,11 @@
       <Issue TypeId="CSharpWarnings::CS1998" File="Persist\Repository\DeployedApplicationRepository.cs" Offset="370-375" Line="14" Message="This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread." />
       <Issue TypeId="CSharpWarnings::CS8613" File="Persist\Repository\DeployedApplicationRepository.cs" Offset="540-572" Line="19" Message="Nullability of reference types in return type does not match implicitly implemented member 'Task&lt;DeployedApplicationEntity&gt; Repositories.IDeployedApplicationRepository.GetByIdAsync(string, string, string)'" />
       <Issue TypeId="InconsistentNaming" File="Persist\Repository\DeployedApplicationRepository.cs" Offset="724-749" Line="21" Message="Name 'DeployedApplicationEntity' does not match rule 'Parameters'. Suggested name is 'deployedApplicationEntity'." />
+      <Issue TypeId="RedundantUsingDirective" File="Persist\Repository\ServerRepository.cs" Offset="0-36" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="CheckNamespace" File="Persist\Repository\ServerRepository.cs" Offset="87-99" Line="5" Message="Namespace does not correspond to file location, must be: 'Persist.Repository'" />
       <Issue TypeId="UnusedType.Global" File="Persist\Repository\ServerRepository.cs" Offset="119-135" Line="7" Message="Class 'ServerRepository' is never used" />
-      <Issue TypeId="CSharpWarnings::CS8613" File="Persist\Repository\ServerRepository.cs" Offset="481-500" Line="19" Message="Nullability of reference types in return type does not match implicitly implemented member 'Task&lt;ServerEntity&gt; Repositories.IServerRepository.GetByIdAsync(string)'" />
-      <Issue TypeId="CSharpWarnings::CS8613" File="Persist\Repository\ServerRepository.cs" Offset="847-866" Line="31" Message="Nullability of reference types in return type does not match implicitly implemented member 'Task&lt;ServerEntity&gt; Repositories.IServerRepository.UpdateAsync(ServerEntity)'" />
+      <Issue TypeId="CSharpWarnings::CS8613" File="Persist\Repository\ServerRepository.cs" Offset="462-481" Line="19" Message="Nullability of reference types in return type does not match implicitly implemented member 'Task&lt;ServerEntity&gt; Repositories.IServerRepository.GetByIdAsync(string)'" />
+      <Issue TypeId="MethodHasAsyncOverload" File="Persist\Repository\ServerRepository.cs" Offset="929-933" Line="33" Message="Method has async overload" />
     </Project>
     <Project Name="Presentation">
       <Issue TypeId="CSharpWarnings::CS1998" File="Presentation\Controllers\ApplicationController.cs" Offset="514-519" Line="22" Message="This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread." />
@@ -157,6 +150,19 @@
       <Issue TypeId="RedundantUsingDirective" File="Presentation\Startup.cs" Offset="162-197" Line="5" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Presentation\Startup.cs" Offset="506-510" Line="20" Message="Auto-property accessor 'Configuration.get' is never used" />
     </Project>
+    <Project Name="Ressources">
+      <Issue TypeId="UnusedMember.Global" File="Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs" Offset="183-199" Line="6" Message="Enum member 'FieldTooLongBy50' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs" Offset="365-382" Line="10" Message="Enum member 'FieldTooLongBy150' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs" Offset="457-474" Line="12" Message="Enum member 'FieldTooLongBy200' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs" Offset="549-566" Line="14" Message="Enum member 'FieldTooLongBy300' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs" Offset="641-658" Line="16" Message="Enum member 'FieldTooLongBy500' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs" Offset="767-780" Line="21" Message="Enum member 'NicTooLongBy5' is never used" />
+      <Issue TypeId="CheckNamespace" File="Ressources\Extension\GetDescription.cs" Offset="40-54" Line="3" Message="Namespace does not correspond to file location, must be: 'Ressources.Extension'" />
+      <Issue TypeId="UnusedType.Global" File="Ressources\Extension\GetDescription.cs" Offset="81-91" Line="5" Message="Class 'Extensions' is never used" />
+      <Issue TypeId="ArrangeModifiersOrder" File="Ressources\Extension\GetDescription.cs" Offset="106-119" Line="7" Message="Inconsistent modifiers declaration order" />
+      <Issue TypeId="UnusedMember.Global" File="Ressources\Extension\GetDescription.cs" Offset="127-141" Line="7" Message="Method 'GetDescription' is never used" />
+      <Issue TypeId="UnusedVariable" File="Ressources\Extension\GetDescription.cs" Offset="342-352" Line="13" Message="Local variable 'attributes' is never used" />
+    </Project>
     <Project Name="Services">
       <Issue TypeId="CheckNamespace" File="Services\AutoMapper.cs" Offset="83-97" Line="5" Message="Namespace does not correspond to file location, must be: 'Services'" />
       <Issue TypeId="CheckNamespace" File="Services\Extension\LeapYearExtension.cs" Offset="20-37" Line="1" Message="Namespace does not correspond to file location, must be: 'Services.Extension'" />
@@ -166,6 +172,11 @@
       <Issue TypeId="CheckNamespace" File="Services\IService\IBookservice.cs" Offset="33-41" Line="3" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
       <Issue TypeId="CheckNamespace" File="Services\IService\ICustomerService.cs" Offset="92-100" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
       <Issue TypeId="InconsistentNaming" File="Services\IService\ICustomerService.cs" Offset="386-410" Line="11" Message="Name 'UpdateApplicationRequest' does not match rule 'Parameters'. Suggested name is 'updateApplicationRequest'." />
+      <Issue TypeId="CheckNamespace" File="Services\IService\IServerService.cs" Offset="92-100" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
+      <Issue TypeId="UnusedMember.Global" File="Services\IService\IServerService.cs" Offset="186-196" Line="9" Message="Method 'GetServers' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\IService\IServerService.cs" Offset="258-270" Line="10" Message="Method 'CreateServer' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\IService\IServerService.cs" Offset="335-347" Line="11" Message="Method 'UpdateServer' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\IService\IServerService.cs" Offset="412-424" Line="12" Message="Method 'DeleteServer' is never used" />
       <Issue TypeId="UnusedMember.Global" File="Services\Model\BookModel.cs" Offset="78-80" Line="5" Message="Property 'Id' is never used" />
       <Issue TypeId="CSharpWarnings::CS8618" File="Services\Model\BookModel.cs" Offset="117-122" Line="6" Message="Non-nullable property 'Title' is uninitialized. Consider declaring the property as nullable." />
       <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\BookModel.cs" Offset="130-134" Line="6" Message="Auto-property accessor 'Title.set' is never used" />
@@ -193,24 +204,24 @@
       <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\search\SortParameter.cs" Offset="109-113" Line="5" Message="Auto-property accessor 'SortBy.set' is never used" />
       <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\SortParameter.cs" Offset="153-157" Line="6" Message="Auto-property can be made get-only" />
       <Issue TypeId="CheckNamespace" File="Services\Model\Req\ApplicationRequest.cs" Offset="56-75" Line="3" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req'" />
-      <Issue TypeId="CSharpWarnings::CS8618" File="Services\Model\Req\ApplicationRequest.cs" Offset="408-413" Line="10" Message="Non-nullable property 'Title' is uninitialized. Consider declaring the property as nullable." />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ApplicationRequest.cs" Offset="416-420" Line="10" Message="Auto-property accessor 'Title.get' is never used" />
-      <Issue TypeId="CSharpWarnings::CS8618" File="Services\Model\Req\ApplicationRequest.cs" Offset="769-774" Line="18" Message="Non-nullable property 'Title' is uninitialized. Consider declaring the property as nullable." />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ApplicationRequest.cs" Offset="777-781" Line="18" Message="Auto-property accessor 'Title.get' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ApplicationRequest.cs" Offset="812-814" Line="20" Message="Property 'Id' is never used" />
-      <Issue TypeId="CheckNamespace" File="Services\Model\Req\CustomerRequest.cs" Offset="56-75" Line="3" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req'" />
-      <Issue TypeId="CSharpWarnings::CS8618" File="Services\Model\Req\CustomerRequest.cs" Offset="271-276" Line="8" Message="Non-nullable property 'Title' is uninitialized. Consider declaring the property as nullable." />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="279-283" Line="8" Message="Auto-property accessor 'Title.get' is never used" />
-      <Issue TypeId="CSharpWarnings::CS8618" File="Services\Model\Req\CustomerRequest.cs" Offset="313-333" Line="9" Message="Non-nullable property 'FiscalIdentification' is uninitialized. Consider declaring the property as nullable." />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="313-333" Line="9" Message="Property 'FiscalIdentification' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="372-387" Line="10" Message="Property 'LastInteraction' is never used" />
-      <Issue TypeId="CSharpWarnings::CS8618" File="Services\Model\Req\CustomerRequest.cs" Offset="595-597" Line="16" Message="Non-nullable property 'Id' is uninitialized. Consider declaring the property as nullable." />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="595-597" Line="16" Message="Property 'Id' is never used" />
-      <Issue TypeId="CSharpWarnings::CS8618" File="Services\Model\Req\CustomerRequest.cs" Offset="634-639" Line="17" Message="Non-nullable property 'Title' is uninitialized. Consider declaring the property as nullable." />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="634-639" Line="17" Message="Property 'Title' is never used" />
-      <Issue TypeId="CSharpWarnings::CS8618" File="Services\Model\Req\CustomerRequest.cs" Offset="676-696" Line="18" Message="Non-nullable property 'FiscalIdentification' is uninitialized. Consider declaring the property as nullable." />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="676-696" Line="18" Message="Property 'FiscalIdentification' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="735-750" Line="19" Message="Property 'LastInteraction' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ApplicationRequest.cs" Offset="425-429" Line="10" Message="Auto-property accessor 'Title.get' is never used" />
+      <Issue TypeId="CSharpWarnings::CS8618" File="Services\Model\Req\ApplicationRequest.cs" Offset="778-783" Line="18" Message="Non-nullable property 'Title' is uninitialized. Consider declaring the property as nullable." />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ApplicationRequest.cs" Offset="786-790" Line="18" Message="Auto-property accessor 'Title.get' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ApplicationRequest.cs" Offset="821-823" Line="20" Message="Property 'Id' is never used" />
+      <Issue TypeId="CheckNamespace" File="Services\Model\Req\CustomerRequest.cs" Offset="103-122" Line="4" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req'" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="298-302" Line="10" Message="Auto-property accessor 'Title.get' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="454-458" Line="13" Message="Auto-property accessor 'FiscalIdentification.get' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="490-505" Line="14" Message="Property 'LastInteraction' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="693-695" Line="21" Message="Property 'Id' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="830-835" Line="24" Message="Property 'Title' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="966-986" Line="27" Message="Property 'FiscalIdentification' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="1025-1040" Line="28" Message="Property 'LastInteraction' is never used" />
+      <Issue TypeId="CheckNamespace" File="Services\Model\Req\ServerRequest.cs" Offset="56-75" Line="3" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req'" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\Req\ServerRequest.cs" Offset="95-114" Line="5" Message="Class 'CreateServerRequest' is never instantiated" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="297-302" Line="9" Message="Property 'Title' is never used" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\Req\ServerRequest.cs" Offset="340-359" Line="11" Message="Class 'UpdateServerRequest' is never instantiated" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="534-536" Line="15" Message="Property 'Id' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="727-732" Line="18" Message="Property 'Title' is never used" />
       <Issue TypeId="CheckNamespace" File="Services\Service\ApplicationService.cs" Offset="175-183" Line="8" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="InconsistentNaming" File="Services\Service\ApplicationService.cs" Offset="422-443" Line="15" Message="Name 'ApplicationRepository' does not match rule 'Parameters'. Suggested name is 'applicationRepository'." />
       <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\ApplicationService.cs" Offset="1220-1228" Line="34" Message="Method 'SortQuery' can be made private" />
@@ -225,6 +236,14 @@
       <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\CustomerService.cs" Offset="3454-3463" Line="83" Message="Method 'Pagination' can be made private" />
       <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\CustomerService.cs" Offset="3949-3958" Line="96" Message="Method 'SortQuery' can be made private" />
       <Issue TypeId="InconsistentNaming" File="Services\Service\CustomerService.cs" Offset="6104-6118" Line="139" Message="Name 'CustomerEntity' does not match rule 'Local variables'. Suggested name is 'customerEntity'." />
+      <Issue TypeId="CheckNamespace" File="Services\Service\ServerService.cs" Offset="175-183" Line="8" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
+      <Issue TypeId="UnusedType.Global" File="Services\Service\ServerService.cs" Offset="203-217" Line="10" Message="Class 'ServerServices' is never used" />
+      <Issue TypeId="InconsistentNaming" File="Services\Service\ServerService.cs" Offset="394-410" Line="15" Message="Name 'ServerRepository' does not match rule 'Parameters'. Suggested name is 'serverRepository'." />
+      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\ServerService.cs" Offset="1152-1160" Line="34" Message="Method 'SortQuery' can be made private" />
+      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\ServerService.cs" Offset="2442-2450" Line="63" Message="Method 'Pagination' can be made private" />
+      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\ServerService.cs" Offset="2932-2940" Line="76" Message="Method 'DateSearchQuery' can be made private" />
+      <Issue TypeId="MergeIntoPattern" File="Services\Service\ServerService.cs" Offset="3127-3129" Line="79" Message="Merge into pattern" />
+      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\ServerService.cs" Offset="3941-3949" Line="99" Message="Method 'TextSearchQuery' can be made private" />
       <Issue TypeId="RedundantUsingDirective" File="Services\Service\ServiceBook.cs" Offset="0-13" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="RedundantUsingDirective" File="Services\Service\ServiceBook.cs" Offset="14-47" Line="2" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="RedundantUsingDirective" File="Services\Service\ServiceBook.cs" Offset="48-77" Line="3" Message="Using directive is not required by the code and can be safely removed" />
@@ -247,13 +266,13 @@
       <Issue TypeId="InconsistentNaming" File="Test\AutomapperTest\ApplicationAutoMapTest.cs" Offset="1711-1735" Line="59" Message="Name 'UpdateApplicationRequest' does not match rule 'Local variables'. Suggested name is 'updateApplicationRequest'." />
       <Issue TypeId="CheckNamespace" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="10-14" Line="1" Message="Namespace does not correspond to file location, must be: 'Gestion_Erreur_Back_C_.AutomapperTest'" />
       <Issue TypeId="InconsistentNaming" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="455-476" Line="20" Message="Name 'CreateCustomerRequest' does not match rule 'Local variables'. Suggested name is 'createCustomerRequest'." />
-      <Issue TypeId="NotAccessedOutParameterVariable" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="566-573" Line="24" Message="Local variable 'x' is only used to discard 'out' parameter value" />
-      <Issue TypeId="InconsistentNaming" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="601-615" Line="26" Message="Name 'CustomerEntity' does not match rule 'Local variables'. Suggested name is 'customerEntity'." />
-      <Issue TypeId="InconsistentNaming" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="873-894" Line="34" Message="Name 'CreateCustomerRequest' does not match rule 'Local variables'. Suggested name is 'createCustomerRequest'." />
-      <Issue TypeId="NotAccessedOutParameterVariable" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="984-995" Line="38" Message="Local variable 'y' is only used to discard 'out' parameter value" />
-      <Issue TypeId="InconsistentNaming" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="1023-1037" Line="40" Message="Name 'CustomerEntity' does not match rule 'Local variables'. Suggested name is 'customerEntity'." />
-      <Issue TypeId="SpecifyACultureInStringConversionExplicitly" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="1173-1181" Line="42" Message="Specify string culture explicitly" />
-      <Issue TypeId="InconsistentNaming" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="1313-1334" Line="48" Message="Name 'CreateCustomerRequest' does not match rule 'Local variables'. Suggested name is 'createCustomerRequest'." />
+      <Issue TypeId="NotAccessedOutParameterVariable" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="620-627" Line="26" Message="Local variable 'x' is only used to discard 'out' parameter value" />
+      <Issue TypeId="InconsistentNaming" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="655-669" Line="28" Message="Name 'CustomerEntity' does not match rule 'Local variables'. Suggested name is 'customerEntity'." />
+      <Issue TypeId="InconsistentNaming" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="927-948" Line="36" Message="Name 'CreateCustomerRequest' does not match rule 'Local variables'. Suggested name is 'createCustomerRequest'." />
+      <Issue TypeId="NotAccessedOutParameterVariable" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="1092-1103" Line="42" Message="Local variable 'y' is only used to discard 'out' parameter value" />
+      <Issue TypeId="InconsistentNaming" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="1131-1145" Line="44" Message="Name 'CustomerEntity' does not match rule 'Local variables'. Suggested name is 'customerEntity'." />
+      <Issue TypeId="SpecifyACultureInStringConversionExplicitly" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="1281-1289" Line="46" Message="Specify string culture explicitly" />
+      <Issue TypeId="InconsistentNaming" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="1422-1443" Line="52" Message="Name 'CreateCustomerRequest' does not match rule 'Local variables'. Suggested name is 'createCustomerRequest'." />
       <Issue TypeId="CheckNamespace" File="Test\functionTest\LeapYearsTest.cs" Offset="10-14" Line="1" Message="Namespace does not correspond to file location, must be: 'Gestion_Erreur_Back_C_.functionTest'" />
     </Project>
   </Issues>
