@@ -6,6 +6,7 @@ WORKDIR /source
 COPY *.sln .
 
 COPY ./Persist/**.csproj ./Persist/
+COPY ./Ressources/**.csproj ./Ressources/
 COPY ./Presentation/**.csproj ./Presentation/
 COPY ./Services/**.csproj ./Services/
 COPY ./Test/**.csproj ./Test/
