@@ -11,9 +11,9 @@ namespace Repositories
         {
             _context = context;
         }
-        public async Task<IEnumerable<ServerEntity>> GetAllAsync()
+        public IQueryable<ServerEntity> GetServers()
         {
-            return await _context.Server.ToListAsync();
+            return  _context.Server.AsQueryable();
         }
 
         public async Task<ServerEntity?> GetByIdAsync(string id)
@@ -28,11 +28,18 @@ namespace Repositories
             return serverEntity;
         }
 
-        public async Task<ServerEntity?> UpdateAsync(ServerEntity serverEntity)
+        public async Task<bool> UpdateAsync(ServerEntity serverEntity)
         {
-            _context.Entry(serverEntity).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
-            return await _context.Server.FindAsync(serverEntity.Id);
+            var s = _context.Application.Find(serverEntity.Id);
+            if (s != null)
+            {   
+                s.Title = serverEntity.Title;
+                s.UpdatedAt = serverEntity.UpdatedAt;
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            return false;
+        
         }
 
         public async Task<Boolean> DeleteAsync(string id)

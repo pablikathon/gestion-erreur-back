@@ -1,21 +1,30 @@
 using System.ComponentModel.DataAnnotations;
+using Ressources.Annotation.RestrictionLentgh;
 
 namespace Services.Models.Req
 {
-    //lors de la création d'une application le champ Title ne doit pas être null / createdAt sinitialise tout seul
     public class CreateCustomerRequest
     {
-        [Required] public string Title { get; set; }
-        public string FiscalIdentification { get; set; }
+        [Required]
+        [StringLength((int)FieldRestrictionLentgh.FieldTooLongBy100)]
+        public required string Title { get; set; }
+        [Required]
+        [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy16)]
+        public required string FiscalIdentification { get; set; }
         public DateTime LastInteraction { get; set; }
     }
 
-    //lors de la modification d'une application le champ Title ne doit pas être null / updatedAt sinitialise tout seul
     public class UpdateCustomerRequest
     {
-        public string Id { get; set; }
-        public string Title { get; set; }
-        public string FiscalIdentification { get; set; }
+        [Required]
+        [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy16)]
+        public required string Id { get; set; }
+        [Required]
+        [StringLength((int)FieldRestrictionLentgh.FieldTooLongBy100)]
+        public required string Title { get; set; }
+        [Required]
+        [StringLength((int)IdRestrictionLentgh.SiretTooLongBy15)]
+        public required string FiscalIdentification { get; set; }
         public DateTime LastInteraction { get; set; }
     }
 }

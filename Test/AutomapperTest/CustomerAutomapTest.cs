@@ -19,7 +19,9 @@ public class CustommerAutoMapTest
         // Arrange
         var CreateCustomerRequest = new CreateCustomerRequest()
         {
-            Title = "Discord"
+            Title = "Discord",
+            FiscalIdentification = "42829692500160"
+
         };
         Guid x;
         // Act
@@ -33,13 +35,15 @@ public class CustommerAutoMapTest
         // Arrange
         var CreateCustomerRequest = new CreateCustomerRequest()
         {
-            Title = "Discord"
+            Title = "Discord",
+            FiscalIdentification = "42829692500160"
+
         };
         DateTime y;
         // Act
         var CustomerEntity = _mapper.Map<CustomerEntity>(CreateCustomerRequest);
         // Assert
-        Assert.True(DateTime.TryParse(CustomerEntity.CreatedAt.ToString(),out y));
+        Assert.True(DateTime.TryParse(CustomerEntity.CreatedAt.ToString(), out y));
     }
     [Fact]
     public void CreateCustomerRequest_should_generate_CreatedAt()
@@ -47,7 +51,8 @@ public class CustommerAutoMapTest
         // Arrange
         var CreateCustomerRequest = new CreateCustomerRequest()
         {
-            Title = "Cegid"
+            Title = "Cegid",
+            FiscalIdentification = "42829692500160"
         };
         // Act & assert
         Assert.Throws<AutoMapperMappingException>(() => _mapper.Map<ApplicationEntity>(CreateCustomerRequest));

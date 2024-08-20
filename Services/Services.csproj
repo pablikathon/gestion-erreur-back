@@ -7,10 +7,10 @@
     </PropertyGroup>
     <ItemGroup>
         <ProjectReference Include="..\Persist\Persist.csproj" />
+        <ProjectReference Include="..\Ressources\Ressources.csproj" />
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="AutoMapper" Version="12.0.1" />
-        <PackageReference Include="Catalyst" Version="1.0.44557" />
     </ItemGroup>
 
 </Project>

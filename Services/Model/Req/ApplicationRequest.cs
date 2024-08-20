@@ -7,7 +7,7 @@ namespace Services.Models.Req
     {
         [Required(ErrorMessage = "Title is required.")]
         [StringLength(100, ErrorMessage = "Title can't be longer than 100 characters.")]
-        public string Title { get; set; }
+        public required string Title { get; set; }
     }
 
     //lors de la modification d'une application le champ Title ne doit pas être null / updatedAt sinitialise tout seul
