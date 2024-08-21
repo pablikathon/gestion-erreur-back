@@ -151,12 +151,13 @@
       <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Presentation\Startup.cs" Offset="506-510" Line="20" Message="Auto-property accessor 'Configuration.get' is never used" />
     </Project>
     <Project Name="Ressources">
-      <Issue TypeId="UnusedMember.Global" File="Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs" Offset="183-199" Line="6" Message="Enum member 'FieldTooLongBy50' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs" Offset="365-382" Line="10" Message="Enum member 'FieldTooLongBy150' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs" Offset="457-474" Line="12" Message="Enum member 'FieldTooLongBy200' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs" Offset="549-566" Line="14" Message="Enum member 'FieldTooLongBy300' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs" Offset="641-658" Line="16" Message="Enum member 'FieldTooLongBy500' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs" Offset="767-780" Line="21" Message="Enum member 'NicTooLongBy5' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Ressources\Annotation\RestrictionLentgh\RestrictionLentghConst.cs" Offset="1152-1180" Line="25" Message="Constant 'FiscalIdentificationRequired' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs" Offset="187-203" Line="6" Message="Enum member 'FieldTooLongBy50' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs" Offset="377-394" Line="10" Message="Enum member 'FieldTooLongBy150' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs" Offset="473-490" Line="12" Message="Enum member 'FieldTooLongBy200' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs" Offset="569-586" Line="14" Message="Enum member 'FieldTooLongBy300' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs" Offset="665-682" Line="16" Message="Enum member 'FieldTooLongBy500' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs" Offset="798-811" Line="21" Message="Enum member 'NicTooLongBy5' is never used" />
       <Issue TypeId="CheckNamespace" File="Ressources\Extension\GetDescription.cs" Offset="40-54" Line="3" Message="Namespace does not correspond to file location, must be: 'Ressources.Extension'" />
       <Issue TypeId="UnusedType.Global" File="Ressources\Extension\GetDescription.cs" Offset="81-91" Line="5" Message="Class 'Extensions' is never used" />
       <Issue TypeId="ArrangeModifiersOrder" File="Ressources\Extension\GetDescription.cs" Offset="106-119" Line="7" Message="Inconsistent modifiers declaration order" />
@@ -203,25 +204,24 @@
       <Issue TypeId="CSharpWarnings::CS8618" File="Services\Model\common\search\SortParameter.cs" Offset="95-101" Line="5" Message="Non-nullable property 'SortBy' is uninitialized. Consider declaring the property as nullable." />
       <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\search\SortParameter.cs" Offset="109-113" Line="5" Message="Auto-property accessor 'SortBy.set' is never used" />
       <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\SortParameter.cs" Offset="153-157" Line="6" Message="Auto-property can be made get-only" />
-      <Issue TypeId="CheckNamespace" File="Services\Model\Req\ApplicationRequest.cs" Offset="56-75" Line="3" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req'" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ApplicationRequest.cs" Offset="425-429" Line="10" Message="Auto-property accessor 'Title.get' is never used" />
-      <Issue TypeId="CSharpWarnings::CS8618" File="Services\Model\Req\ApplicationRequest.cs" Offset="778-783" Line="18" Message="Non-nullable property 'Title' is uninitialized. Consider declaring the property as nullable." />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ApplicationRequest.cs" Offset="786-790" Line="18" Message="Auto-property accessor 'Title.get' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ApplicationRequest.cs" Offset="821-823" Line="20" Message="Property 'Id' is never used" />
+      <Issue TypeId="CheckNamespace" File="Services\Model\Req\ApplicationRequest.cs" Offset="103-122" Line="4" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req'" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ApplicationRequest.cs" Offset="539-543" Line="11" Message="Auto-property accessor 'Title.get' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ApplicationRequest.cs" Offset="975-979" Line="19" Message="Auto-property accessor 'Title.get' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ApplicationRequest.cs" Offset="1159-1163" Line="22" Message="Auto-property accessor 'Id.get' is never used" />
       <Issue TypeId="CheckNamespace" File="Services\Model\Req\CustomerRequest.cs" Offset="103-122" Line="4" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req'" />
       <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="298-302" Line="10" Message="Auto-property accessor 'Title.get' is never used" />
       <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="454-458" Line="13" Message="Auto-property accessor 'FiscalIdentification.get' is never used" />
       <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="490-505" Line="14" Message="Property 'LastInteraction' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="693-695" Line="21" Message="Property 'Id' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="830-835" Line="24" Message="Property 'Title' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="966-986" Line="27" Message="Property 'FiscalIdentification' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="1025-1040" Line="28" Message="Property 'LastInteraction' is never used" />
-      <Issue TypeId="CheckNamespace" File="Services\Model\Req\ServerRequest.cs" Offset="56-75" Line="3" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req'" />
-      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\Req\ServerRequest.cs" Offset="95-114" Line="5" Message="Class 'CreateServerRequest' is never instantiated" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="297-302" Line="9" Message="Property 'Title' is never used" />
-      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\Req\ServerRequest.cs" Offset="340-359" Line="11" Message="Class 'UpdateServerRequest' is never instantiated" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="534-536" Line="15" Message="Property 'Id' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="727-732" Line="18" Message="Property 'Title' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="766-768" Line="21" Message="Property 'Id' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="967-972" Line="24" Message="Property 'Title' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="1171-1191" Line="27" Message="Property 'FiscalIdentification' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="1230-1245" Line="28" Message="Property 'LastInteraction' is never used" />
+      <Issue TypeId="CheckNamespace" File="Services\Model\Req\ServerRequest.cs" Offset="103-122" Line="4" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req'" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\Req\ServerRequest.cs" Offset="142-161" Line="6" Message="Class 'CreateServerRequest' is never instantiated" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="401-406" Line="10" Message="Property 'Title' is never used" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\Req\ServerRequest.cs" Offset="444-463" Line="12" Message="Class 'UpdateServerRequest' is never instantiated" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="711-713" Line="16" Message="Property 'Id' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="961-966" Line="19" Message="Property 'Title' is never used" />
       <Issue TypeId="CheckNamespace" File="Services\Service\ApplicationService.cs" Offset="175-183" Line="8" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="InconsistentNaming" File="Services\Service\ApplicationService.cs" Offset="422-443" Line="15" Message="Name 'ApplicationRepository' does not match rule 'Parameters'. Suggested name is 'applicationRepository'." />
       <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\ApplicationService.cs" Offset="1220-1228" Line="34" Message="Method 'SortQuery' can be made private" />
