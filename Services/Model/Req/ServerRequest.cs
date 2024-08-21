@@ -12,7 +12,7 @@ namespace Services.Models.Req
     public class UpdateServerRequest
     {
         [Required(ErrorMessage = ValidationMessages.IdRequired )]
-        [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy16, ErrorMessage = IdentifierRestrictionLentghMessage.IdentifierTooLongBy16)]
+        [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy36, ErrorMessage = IdentifierRestrictionLentghMessage.IdentifierTooLongBy36)]
         public required string Id { get; set; }
         [Required(ErrorMessage = ValidationMessages.TitleRequired)]
         [StringLength((int)FieldRestrictionLentgh.FieldTooLongBy100, ErrorMessage = FieldRestrictionLentghMessage.FieldTooLongBy100)]
