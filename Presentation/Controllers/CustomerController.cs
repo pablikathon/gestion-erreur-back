@@ -19,7 +19,7 @@ public class CustomerController : Controller
     }
 
     [HttpGet]
-    public async Task<ActionResult<PaginationResponse<CustomerEntity>>> GetCustomers(
+    public ActionResult<PaginationResponse<CustomerEntity>> GetCustomers(
         [FromQuery] QueryParameters queryParameters)
     {
         try

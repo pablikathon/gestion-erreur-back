@@ -19,7 +19,7 @@ public class ApplicationController : Controller
     }
 
     [HttpGet]
-    public async Task<ActionResult<PaginationResponse<ApplicationEntity>>> GetApplication(
+    public  ActionResult<PaginationResponse<ApplicationEntity>> GetApplication(
         [FromQuery] QueryParameters queryParameters)
     {
         try
