@@ -17,13 +17,13 @@ namespace Services.Models.Req
     public class UpdateCustomerRequest
     {
         [Required]
-        [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy16)]
+        [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy16, ErrorMessage = IdentifierRestrictionLentghMessage.IdentifierTooLongBy16)]
         public required string Id { get; set; }
         [Required]
-        [StringLength((int)FieldRestrictionLentgh.FieldTooLongBy100)]
+        [StringLength((int)FieldRestrictionLentgh.FieldTooLongBy100, ErrorMessage = FieldRestrictionLentghMessage.FieldTooLongBy100)]
         public required string Title { get; set; }
         [Required]
-        [StringLength((int)IdRestrictionLentgh.SiretTooLongBy15)]
+        [StringLength((int)IdRestrictionLentgh.SiretTooLongBy14, ErrorMessage = IdentifierRestrictionLentghMessage.SiretTooLongBy14)]
         public required string FiscalIdentification { get; set; }
         public DateTime LastInteraction { get; set; }
     }

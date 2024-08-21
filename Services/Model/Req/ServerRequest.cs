@@ -1,20 +1,21 @@
 using System.ComponentModel.DataAnnotations;
+using Ressources.Annotation.RestrictionLentgh;
 
 namespace Services.Models.Req
 {
     public class CreateServerRequest
     {
-        [Required(ErrorMessage = "Title is required.")]
-        [StringLength(100, ErrorMessage = "Title can't be longer than 200 characters.")]
+        [Required(ErrorMessage = ValidationMessages.TitleRequired)]
+        [StringLength((int)FieldRestrictionLentgh.FieldTooLongBy100, ErrorMessage = FieldRestrictionLentghMessage.FieldTooLongBy100)]
         public required string Title { get; set; }
     }
     public class UpdateServerRequest
     {
-        [Required(ErrorMessage = "Id is required.")]
-        [StringLength(16, ErrorMessage = "Guid can't be longer than 16 character")]
+        [Required(ErrorMessage = ValidationMessages.IdRequired )]
+        [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy16, ErrorMessage = IdentifierRestrictionLentghMessage.IdentifierTooLongBy16)]
         public required string Id { get; set; }
-        [Required(ErrorMessage = "Title is required.")]
-        [StringLength(100, ErrorMessage = "Title can't be longer than 200 characters.")]
+        [Required(ErrorMessage = ValidationMessages.TitleRequired)]
+        [StringLength((int)FieldRestrictionLentgh.FieldTooLongBy100, ErrorMessage = FieldRestrictionLentghMessage.FieldTooLongBy100)]
         public required string Title { get; set; }
     }
 }

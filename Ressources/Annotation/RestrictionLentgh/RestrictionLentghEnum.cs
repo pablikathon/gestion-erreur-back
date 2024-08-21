@@ -2,25 +2,25 @@ using System.ComponentModel;
 namespace Ressources.Annotation.RestrictionLentgh;
 public enum FieldRestrictionLentgh
 {
-    [Description("Title can't be longer than 50 characters")]
+    [Description(FieldRestrictionLentghMessage.FieldTooLongBy50)]
     FieldTooLongBy50 = 50,
-    [Description("Title can't be longer than 100 characters")]
+    [Description(FieldRestrictionLentghMessage.FieldTooLongBy100)]
     FieldTooLongBy100 = 100,
-    [Description("Title can't be longer than 150 characters")]
+    [Description(FieldRestrictionLentghMessage.FieldTooLongBy150)]
     FieldTooLongBy150 = 150,
-    [Description("Title can't be longer than 200 characters")]
+    [Description(FieldRestrictionLentghMessage.FieldTooLongBy200)]
     FieldTooLongBy200 = 200,
-    [Description("Title can't be longer than 300 characters")]
+    [Description(FieldRestrictionLentghMessage.FieldTooLongBy300)]
     FieldTooLongBy300 = 300,
-    [Description("Title can't be longer than 500 characters")]
+    [Description(FieldRestrictionLentghMessage.FieldTooLongBy500)]
     FieldTooLongBy500 = 500,
 }
 public enum IdRestrictionLentgh
 {
-    [Description("Title can't be longer than 5 characters")]
+    [Description(IdentifierRestrictionLentghMessage.NicTooLongBy5)]
     NicTooLongBy5 = 5,
-    [Description("Title can't be longer than 15 characters")]
-    SiretTooLongBy15 = 15,
-    [Description("Identifier can't be longuer than 16 characters")]
+    [Description(IdentifierRestrictionLentghMessage.SiretTooLongBy14)]
+    SiretTooLongBy14 = 14,
+    [Description(IdentifierRestrictionLentghMessage.IdentifierTooLongBy16)]
     IdentifierTooLongBy16 = 16
 }

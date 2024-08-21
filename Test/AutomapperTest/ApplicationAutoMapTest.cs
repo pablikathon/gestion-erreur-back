@@ -58,7 +58,8 @@ public class ApplicationAutoMapTest
         // Arrange
         var UpdateApplicationRequest = new UpdateApplicationRequest()
         {
-            Title = "Cegid"
+            Title = "Cegid",
+            Id = Guid.NewGuid().ToString()
         };
         // Act & assert
         Assert.Throws<AutoMapperMappingException>(() => _mapper.Map<CustomerEntity>(UpdateApplicationRequest));
