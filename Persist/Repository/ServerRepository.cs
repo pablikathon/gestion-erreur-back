@@ -30,7 +30,7 @@ namespace Repositories
 
         public async Task<bool> UpdateAsync(ServerEntity serverEntity)
         {
-            var s = _context.Application.Find(serverEntity.Id);
+            var s = _context.Server.Find(serverEntity.Id);
             if (s != null)
             {   
                 s.Title = serverEntity.Title;

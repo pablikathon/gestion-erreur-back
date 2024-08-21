@@ -26,6 +26,9 @@ namespace Presentation
             services.AddScoped<IBookRepository, BookRepository>();
             services.AddScoped<IServiceBook, ServiceBook>();
 
+            services.AddScoped<IServerRepository,ServerRepository>();
+            services.AddScoped<IServerService,ServerServices>();
+            
             services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<ICustomerRepository, CustomerRepository>();
 
