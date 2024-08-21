@@ -74,9 +74,7 @@
       <Issue TypeId="RedundantUsingDirective" File="Persist\Entity\ServerEntity.cs" Offset="0-13" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="CheckNamespace" File="Persist\Entity\ServerEntity.cs" Offset="107-123" Line="5" Message="Namespace does not correspond to file location, must be: 'Persist.Entity'" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\ServerEntity.cs" Offset="251-254" Line="11" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\ServerEntity.cs" Offset="302-305" Line="12" Message="Property can be made init-only" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\ServerEntity.cs" Offset="350-353" Line="13" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\ServerEntity.cs" Offset="399-402" Line="14" Message="Property can be made init-only" />
       <Issue TypeId="CheckNamespace" File="Persist\IRepository\IApplicationRepository.cs" Offset="35-47" Line="3" Message="Namespace does not correspond to file location, must be: 'Persist.IRepository'" />
       <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\IApplicationRepository.cs" Offset="190-202" Line="8" Message="Method 'GetByIdAsync' is never used" />
       <Issue TypeId="RedundantUsingDirective" File="Persist\IRepository\IBookRepository.cs" Offset="0-13" Message="Using directive is not required by the code and can be safely removed" />
@@ -112,16 +110,14 @@
       <Issue TypeId="InconsistentNaming" File="Persist\Repository\DeployedApplicationRepository.cs" Offset="724-749" Line="21" Message="Name 'DeployedApplicationEntity' does not match rule 'Parameters'. Suggested name is 'deployedApplicationEntity'." />
       <Issue TypeId="RedundantUsingDirective" File="Persist\Repository\ServerRepository.cs" Offset="0-36" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="CheckNamespace" File="Persist\Repository\ServerRepository.cs" Offset="87-99" Line="5" Message="Namespace does not correspond to file location, must be: 'Persist.Repository'" />
-      <Issue TypeId="UnusedType.Global" File="Persist\Repository\ServerRepository.cs" Offset="119-135" Line="7" Message="Class 'ServerRepository' is never used" />
       <Issue TypeId="CSharpWarnings::CS8613" File="Persist\Repository\ServerRepository.cs" Offset="462-481" Line="19" Message="Nullability of reference types in return type does not match implicitly implemented member 'Task&lt;ServerEntity&gt; Repositories.IServerRepository.GetByIdAsync(string)'" />
-      <Issue TypeId="MethodHasAsyncOverload" File="Persist\Repository\ServerRepository.cs" Offset="929-933" Line="33" Message="Method has async overload" />
+      <Issue TypeId="MethodHasAsyncOverload" File="Persist\Repository\ServerRepository.cs" Offset="924-928" Line="33" Message="Method has async overload" />
     </Project>
     <Project Name="Presentation">
-      <Issue TypeId="CSharpWarnings::CS1998" File="Presentation\Controllers\ApplicationController.cs" Offset="514-519" Line="22" Message="This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread." />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="934-941" Line="35" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="1377-1384" Line="50" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="1914-1921" Line="70" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="2340-2347" Line="89" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="923-930" Line="35" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="1366-1373" Line="50" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="1903-1910" Line="70" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="2329-2336" Line="89" Message="Qualifier is redundant" />
       <Issue TypeId="RedundantUsingDirective" File="Presentation\Controllers\BookController.cs" Offset="32-55" Line="2" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="RedundantUsingDirective" File="Presentation\Controllers\BookController.cs" Offset="56-75" Line="3" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="NotAccessedField.Local" File="Presentation\Controllers\BookController.cs" Offset="288-295" Line="13" Message="Field '_logger' is assigned but its value is never used" />
@@ -135,11 +131,14 @@
       <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\BookController.cs" Offset="1566-1573" Line="70" Message="Qualifier is redundant" />
       <Issue TypeId="InconsistentNaming" File="Presentation\Controllers\BookController.cs" Offset="1726-1732" Line="78" Message="Name 'delete' does not match rule 'Methods'. Suggested name is 'Delete'." />
       <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\BookController.cs" Offset="1860-1867" Line="84" Message="Qualifier is redundant" />
-      <Issue TypeId="CSharpWarnings::CS1998" File="Presentation\Controllers\CustomerController.cs" Offset="485-490" Line="22" Message="This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread." />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="894-901" Line="35" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="1304-1311" Line="49" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="1764-1771" Line="68" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="2184-2191" Line="87" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="882-889" Line="35" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="1292-1299" Line="49" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="1752-1759" Line="68" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="2172-2179" Line="87" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ServerController.cs" Offset="858-865" Line="35" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ServerController.cs" Offset="1268-1275" Line="48" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ServerController.cs" Offset="1730-1737" Line="67" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ServerController.cs" Offset="2143-2150" Line="86" Message="Qualifier is redundant" />
       <Issue TypeId="ClassNeverInstantiated.Global" File="Presentation\Program.cs" Offset="34-41" Line="3" Message="Class 'Program' is never instantiated" />
       <Issue TypeId="CheckNamespace" File="Presentation\Program.cs" Offset="34-41" Line="3" Message="Namespace does not correspond to file location, must be: 'Presentation'" />
       <Issue TypeId="MemberCanBePrivate.Global" File="Presentation\Program.cs" Offset="151-157" Line="10" Message="Method 'CreateHostBuilder' can be made private" />
@@ -174,10 +173,6 @@
       <Issue TypeId="CheckNamespace" File="Services\IService\ICustomerService.cs" Offset="92-100" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
       <Issue TypeId="InconsistentNaming" File="Services\IService\ICustomerService.cs" Offset="386-410" Line="11" Message="Name 'UpdateApplicationRequest' does not match rule 'Parameters'. Suggested name is 'updateApplicationRequest'." />
       <Issue TypeId="CheckNamespace" File="Services\IService\IServerService.cs" Offset="92-100" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
-      <Issue TypeId="UnusedMember.Global" File="Services\IService\IServerService.cs" Offset="186-196" Line="9" Message="Method 'GetServers' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\IService\IServerService.cs" Offset="258-270" Line="10" Message="Method 'CreateServer' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\IService\IServerService.cs" Offset="335-347" Line="11" Message="Method 'UpdateServer' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\IService\IServerService.cs" Offset="412-424" Line="12" Message="Method 'DeleteServer' is never used" />
       <Issue TypeId="UnusedMember.Global" File="Services\Model\BookModel.cs" Offset="78-80" Line="5" Message="Property 'Id' is never used" />
       <Issue TypeId="CSharpWarnings::CS8618" File="Services\Model\BookModel.cs" Offset="117-122" Line="6" Message="Non-nullable property 'Title' is uninitialized. Consider declaring the property as nullable." />
       <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\BookModel.cs" Offset="130-134" Line="6" Message="Auto-property accessor 'Title.set' is never used" />
@@ -217,9 +212,7 @@
       <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="1171-1191" Line="27" Message="Property 'FiscalIdentification' is never used" />
       <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="1230-1245" Line="28" Message="Property 'LastInteraction' is never used" />
       <Issue TypeId="CheckNamespace" File="Services\Model\Req\ServerRequest.cs" Offset="103-122" Line="4" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req'" />
-      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\Req\ServerRequest.cs" Offset="142-161" Line="6" Message="Class 'CreateServerRequest' is never instantiated" />
       <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="401-406" Line="10" Message="Property 'Title' is never used" />
-      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\Req\ServerRequest.cs" Offset="444-463" Line="12" Message="Class 'UpdateServerRequest' is never instantiated" />
       <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="711-713" Line="16" Message="Property 'Id' is never used" />
       <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="961-966" Line="19" Message="Property 'Title' is never used" />
       <Issue TypeId="CheckNamespace" File="Services\Service\ApplicationService.cs" Offset="175-183" Line="8" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
@@ -237,7 +230,6 @@
       <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\CustomerService.cs" Offset="3949-3958" Line="96" Message="Method 'SortQuery' can be made private" />
       <Issue TypeId="InconsistentNaming" File="Services\Service\CustomerService.cs" Offset="6104-6118" Line="139" Message="Name 'CustomerEntity' does not match rule 'Local variables'. Suggested name is 'customerEntity'." />
       <Issue TypeId="CheckNamespace" File="Services\Service\ServerService.cs" Offset="175-183" Line="8" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
-      <Issue TypeId="UnusedType.Global" File="Services\Service\ServerService.cs" Offset="203-217" Line="10" Message="Class 'ServerServices' is never used" />
       <Issue TypeId="InconsistentNaming" File="Services\Service\ServerService.cs" Offset="394-410" Line="15" Message="Name 'ServerRepository' does not match rule 'Parameters'. Suggested name is 'serverRepository'." />
       <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\ServerService.cs" Offset="1152-1160" Line="34" Message="Method 'SortQuery' can be made private" />
       <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\ServerService.cs" Offset="2442-2450" Line="63" Message="Method 'Pagination' can be made private" />
