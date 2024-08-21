@@ -7,7 +7,7 @@ namespace Services.Models.Req
     public class CreateApplicationRequest
     {
         [Required(ErrorMessage = ValidationMessages.TitleRequired)]
-        [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy16, ErrorMessage = IdentifierRestrictionLentghMessage.IdentifierTooLongBy16)]
+        [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy36, ErrorMessage = IdentifierRestrictionLentghMessage.IdentifierTooLongBy36)]
         public required string Title { get; set; }
     }
 
@@ -15,10 +15,10 @@ namespace Services.Models.Req
     public class UpdateApplicationRequest
     {
         [Required(ErrorMessage = ValidationMessages.TitleRequired)]
-        [StringLength((int)FieldRestrictionLentgh.FieldTooLongBy100, ErrorMessage = IdentifierRestrictionLentghMessage.IdentifierTooLongBy16)]
+        [StringLength((int)FieldRestrictionLentgh.FieldTooLongBy100, ErrorMessage = IdentifierRestrictionLentghMessage.IdentifierTooLongBy36)]
         public required string Title { get; set; }
         [Required(ErrorMessage = ValidationMessages.IdRequired)]
-        [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy16)]
+        [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy36)]
         public required string Id { get; set; }
     }
 }

@@ -9,7 +9,7 @@ namespace Services.Models.Req
         [StringLength((int)FieldRestrictionLentgh.FieldTooLongBy100)]
         public required string Title { get; set; }
         [Required]
-        [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy16)]
+        [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy36)]
         public required string FiscalIdentification { get; set; }
         public DateTime LastInteraction { get; set; }
     }
@@ -17,7 +17,7 @@ namespace Services.Models.Req
     public class UpdateCustomerRequest
     {
         [Required]
-        [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy16, ErrorMessage = IdentifierRestrictionLentghMessage.IdentifierTooLongBy16)]
+        [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy36, ErrorMessage = IdentifierRestrictionLentghMessage.IdentifierTooLongBy36)]
         public required string Id { get; set; }
         [Required]
         [StringLength((int)FieldRestrictionLentgh.FieldTooLongBy100, ErrorMessage = FieldRestrictionLentghMessage.FieldTooLongBy100)]

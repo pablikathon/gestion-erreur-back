@@ -21,6 +21,6 @@ public enum IdRestrictionLentgh
     NicTooLongBy5 = 5,
     [Description(IdentifierRestrictionLentghMessage.SiretTooLongBy14)]
     SiretTooLongBy14 = 14,
-    [Description(IdentifierRestrictionLentghMessage.IdentifierTooLongBy16)]
-    IdentifierTooLongBy16 = 16
+    [Description(IdentifierRestrictionLentghMessage.IdentifierTooLongBy36)]
+    IdentifierTooLongBy36 = 36
 }
