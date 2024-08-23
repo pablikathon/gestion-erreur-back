@@ -34,6 +34,8 @@ namespace Repositories
             if (a != null)
             {   
                 a.Title = applicationEntity.Title;
+                a.Internal = applicationEntity.Internal;
+                a.Description = applicationEntity.Description; 
                 a.UpdatedAt = applicationEntity.UpdatedAt;
                 await _context.SaveChangesAsync();
                 return true;

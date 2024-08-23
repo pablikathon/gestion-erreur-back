@@ -13,7 +13,7 @@ namespace Repositories
         }
         public IQueryable<ServerEntity> GetServers()
         {
-            return  _context.Server.AsQueryable();
+            return _context.Server.AsQueryable();
         }
 
         public async Task<ServerEntity?> GetByIdAsync(string id)
@@ -32,14 +32,18 @@ namespace Repositories
         {
             var s = _context.Server.Find(serverEntity.Id);
             if (s != null)
-            {   
+            {
                 s.Title = serverEntity.Title;
                 s.UpdatedAt = serverEntity.UpdatedAt;
+                s.StopHost = serverEntity.StopHost;
+                s.HostedSince = serverEntity.HostedSince;
+                s.Cost = serverEntity.Cost;
+                s.IsActive = serverEntity.IsActive;
                 await _context.SaveChangesAsync();
                 return true;
             }
             return false;
-        
+
         }
 
         public async Task<Boolean> DeleteAsync(string id)
