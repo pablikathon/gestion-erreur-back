@@ -69,13 +69,18 @@
                     </tr>
                   </thead>
                   <tr>
-                    <td>Services\Model\common\search\QueryParameter.cs</td>
-                    <td>11</td>
+                    <td>Services\Model\common\search\GenericQueryParameter.cs</td>
+                    <td>6</td>
                     <td>Redundant type specification</td>
                   </tr>
                   <tr>
                     <td>Services\Model\common\search\QueryParameter.cs</td>
-                    <td>12</td>
+                    <td>9</td>
+                    <td>Redundant type specification</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\search\QueryParameter.cs</td>
+                    <td>10</td>
                     <td>Redundant type specification</td>
                   </tr>
                 </table>
@@ -102,6 +107,11 @@
                     </tr>
                   </thead>
                   <tr>
+                    <td>Services\Model\common\search\GenericQueryParameter.cs</td>
+                    <td>6</td>
+                    <td>Auto-property can be made get-only</td>
+                  </tr>
+                  <tr>
                     <td>Services\Model\common\search\PaginationParameter.cs</td>
                     <td>5</td>
                     <td>Auto-property can be made get-only</td>
@@ -118,12 +128,12 @@
                   </tr>
                   <tr>
                     <td>Services\Model\common\search\QueryParameter.cs</td>
-                    <td>11</td>
+                    <td>9</td>
                     <td>Auto-property can be made get-only</td>
                   </tr>
                   <tr>
                     <td>Services\Model\common\search\QueryParameter.cs</td>
-                    <td>12</td>
+                    <td>10</td>
                     <td>Auto-property can be made get-only</td>
                   </tr>
                   <tr>
@@ -139,12 +149,12 @@
           <br>
           <div class="accordion-item">
             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#CSharpWarnings::CS1998" aria-expanded="false" aria-controls="flush-collapseOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#BadChildStatementIndent" aria-expanded="false" aria-controls="flush-collapseOne">
                 <span class="badge bg-warning
                                             text-dark">WARNING</span>
-                                            : Async function without await expression</button>
+                                            : Incorrect indent: Around child statement</button>
             </h2>
-            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="CSharpWarnings::CS1998">
+            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="BadChildStatementIndent">
               <div class="accordion-body">
                 <table class="table table-hover" style="width:100%">
                   <thead class="table-dark">
@@ -155,9 +165,9 @@
                     </tr>
                   </thead>
                   <tr>
-                    <td>Persist\Repository\DeployedApplicationRepository.cs</td>
-                    <td>14</td>
-                    <td>This async method lacks 'await' operators and will run synchronously. Consider using the 'await' operator to await non-blocking API calls, or 'await Task.Run(...)' to do CPU-bound work on a background thread.</td>
+                    <td>Services\Service\ApplicationDeployedOnServerService.cs</td>
+                    <td>59</td>
+                    <td>Line is not indented relative to the previous line around child statement, expected indent 4 spaces</td>
                   </tr>
                 </table>
               </div>
@@ -211,6 +221,11 @@
                     </tr>
                   </thead>
                   <tr>
+                    <td>Persist\Repository\ApplicationDeployedOnServerRepository.cs</td>
+                    <td>34</td>
+                    <td>Possible null reference return</td>
+                  </tr>
+                  <tr>
                     <td>Persist\Repository\BookRepository.cs</td>
                     <td>23</td>
                     <td>Possible null reference return</td>
@@ -254,11 +269,6 @@
                     <td>Nullability of reference types in return type does not match implicitly implemented member 'Task&lt;CustomerEntity&gt; Repositories.ICustomerRepository.GetByIdAsync(string)'</td>
                   </tr>
                   <tr>
-                    <td>Persist\Repository\DeployedApplicationRepository.cs</td>
-                    <td>19</td>
-                    <td>Nullability of reference types in return type does not match implicitly implemented member 'Task&lt;DeployedApplicationEntity&gt; Repositories.IDeployedApplicationRepository.GetByIdAsync(string, string, string)'</td>
-                  </tr>
-                  <tr>
                     <td>Persist\Repository\ServerRepository.cs</td>
                     <td>19</td>
                     <td>Nullability of reference types in return type does not match implicitly implemented member 'Task&lt;ServerEntity&gt; Repositories.IServerRepository.GetByIdAsync(string)'</td>
@@ -297,36 +307,6 @@
                     <td>Non-nullable property 'Title' is uninitialized. Consider declaring the property as nullable.</td>
                   </tr>
                   <tr>
-                    <td>Persist\Entity\DeployedApplicationEntity.cs</td>
-                    <td>12</td>
-                    <td>Non-nullable property 'ServerId' is uninitialized. Consider declaring the property as nullable.</td>
-                  </tr>
-                  <tr>
-                    <td>Persist\Entity\DeployedApplicationEntity.cs</td>
-                    <td>15</td>
-                    <td>Non-nullable property 'Server' is uninitialized. Consider declaring the property as nullable.</td>
-                  </tr>
-                  <tr>
-                    <td>Persist\Entity\DeployedApplicationEntity.cs</td>
-                    <td>18</td>
-                    <td>Non-nullable property 'ApplicationId' is uninitialized. Consider declaring the property as nullable.</td>
-                  </tr>
-                  <tr>
-                    <td>Persist\Entity\DeployedApplicationEntity.cs</td>
-                    <td>21</td>
-                    <td>Non-nullable property 'Application' is uninitialized. Consider declaring the property as nullable.</td>
-                  </tr>
-                  <tr>
-                    <td>Persist\Entity\DeployedApplicationEntity.cs</td>
-                    <td>23</td>
-                    <td>Non-nullable property 'CustomerId' is uninitialized. Consider declaring the property as nullable.</td>
-                  </tr>
-                  <tr>
-                    <td>Persist\Entity\DeployedApplicationEntity.cs</td>
-                    <td>26</td>
-                    <td>Non-nullable property 'Customer' is uninitialized. Consider declaring the property as nullable.</td>
-                  </tr>
-                  <tr>
                     <td>Services\Model\BookModel.cs</td>
                     <td>6</td>
                     <td>Non-nullable property 'Title' is uninitialized. Consider declaring the property as nullable.</td>
@@ -335,6 +315,34 @@
                     <td>Services\Model\common\search\SortParameter.cs</td>
                     <td>5</td>
                     <td>Non-nullable property 'SortBy' is uninitialized. Consider declaring the property as nullable.</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#CSharpWarnings::CS8620" aria-expanded="false" aria-controls="flush-collapseOne">
+                <span class="badge bg-warning
+                                            text-dark">WARNING</span>
+                                            : Argument cannot be used for corresponding parameter due to differences in the nullability of reference types.</button>
+            </h2>
+            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="CSharpWarnings::CS8620">
+              <div class="accordion-body">
+                <table class="table table-hover" style="width:100%">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>File</th>
+                      <th>Line Number</th>
+                      <th>Message</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>Persist\Extension\LoadReferenceExtension.cs</td>
+                    <td>10</td>
+                    <td>Argument of type 'System.Linq.Expressions.Expression&lt;System.Func&lt;T,object&gt;&gt;' cannot be used for parameter 'propertyExpression' of type 'System.Linq.Expressions.Expression&lt;System.Func&lt;T,object?&gt;&gt;' in 'Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry&lt;TEntity&gt;.Reference&lt;TProperty&gt;' because of differences in the nullability of reference types</td>
                   </tr>
                 </table>
               </div>
@@ -360,8 +368,13 @@
                     </tr>
                   </thead>
                   <tr>
+                    <td>Persist\Entity\ApplicationDeployedOnServer.cs</td>
+                    <td>5</td>
+                    <td>Namespace does not correspond to file location, must be: 'Persist.Entity'</td>
+                  </tr>
+                  <tr>
                     <td>Persist\Entity\ApplicationEntity.cs</td>
-                    <td>4</td>
+                    <td>5</td>
                     <td>Namespace does not correspond to file location, must be: 'Persist.Entity'</td>
                   </tr>
                   <tr>
@@ -371,11 +384,11 @@
                   </tr>
                   <tr>
                     <td>Persist\Entity\CustomerEntity.cs</td>
-                    <td>4</td>
+                    <td>5</td>
                     <td>Namespace does not correspond to file location, must be: 'Persist.Entity'</td>
                   </tr>
                   <tr>
-                    <td>Persist\Entity\DeployedApplicationEntity.cs</td>
+                    <td>Persist\Entity\CustomerHaveLicenceToApplicationEntity.cs</td>
                     <td>5</td>
                     <td>Namespace does not correspond to file location, must be: 'Persist.Entity'</td>
                   </tr>
@@ -383,6 +396,16 @@
                     <td>Persist\Entity\ServerEntity.cs</td>
                     <td>5</td>
                     <td>Namespace does not correspond to file location, must be: 'Persist.Entity'</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Extension\LoadReferenceExtension.cs</td>
+                    <td>4</td>
+                    <td>Namespace does not correspond to file location, must be: 'Persist.Extension'</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\IRepository\IApplicationDeployedOnServerRepository.cs</td>
+                    <td>3</td>
+                    <td>Namespace does not correspond to file location, must be: 'Persist.IRepository'</td>
                   </tr>
                   <tr>
                     <td>Persist\IRepository\IApplicationRepository.cs</td>
@@ -395,12 +418,12 @@
                     <td>Namespace does not correspond to file location, must be: 'Persist.IRepository'</td>
                   </tr>
                   <tr>
-                    <td>Persist\IRepository\ICustomerRepository.cs</td>
+                    <td>Persist\IRepository\ICustomerHaveLicenceToRepository.cs</td>
                     <td>3</td>
                     <td>Namespace does not correspond to file location, must be: 'Persist.IRepository'</td>
                   </tr>
                   <tr>
-                    <td>Persist\IRepository\IDeployedApplicationRepository.cs</td>
+                    <td>Persist\IRepository\ICustomerRepository.cs</td>
                     <td>3</td>
                     <td>Namespace does not correspond to file location, must be: 'Persist.IRepository'</td>
                   </tr>
@@ -408,6 +431,11 @@
                     <td>Persist\IRepository\IServerRepository.cs</td>
                     <td>3</td>
                     <td>Namespace does not correspond to file location, must be: 'Persist.IRepository'</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Repository\ApplicationDeployedOnServerRepository.cs</td>
+                    <td>5</td>
+                    <td>Namespace does not correspond to file location, must be: 'Persist.Repository'</td>
                   </tr>
                   <tr>
                     <td>Persist\Repository\ApplicationRepository.cs</td>
@@ -421,11 +449,6 @@
                   </tr>
                   <tr>
                     <td>Persist\Repository\CustomerRepository.cs</td>
-                    <td>5</td>
-                    <td>Namespace does not correspond to file location, must be: 'Persist.Repository'</td>
-                  </tr>
-                  <tr>
-                    <td>Persist\Repository\DeployedApplicationRepository.cs</td>
                     <td>5</td>
                     <td>Namespace does not correspond to file location, must be: 'Persist.Repository'</td>
                   </tr>
@@ -455,6 +478,11 @@
                     <td>Namespace does not correspond to file location, must be: 'Services.Extension'</td>
                   </tr>
                   <tr>
+                    <td>Services\IService\IApplicationDeployedOnServerService.cs</td>
+                    <td>5</td>
+                    <td>Namespace does not correspond to file location, must be: 'Services.IService'</td>
+                  </tr>
+                  <tr>
                     <td>Services\IService\IApplicationService.cs</td>
                     <td>5</td>
                     <td>Namespace does not correspond to file location, must be: 'Services.IService'</td>
@@ -475,6 +503,16 @@
                     <td>Namespace does not correspond to file location, must be: 'Services.IService'</td>
                   </tr>
                   <tr>
+                    <td>Services\Model\common\search\DateParameter.cs</td>
+                    <td>1</td>
+                    <td>Namespace does not correspond to file location, must be: 'Services.Model.common.search'</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\search\GenericQueryParameter.cs</td>
+                    <td>1</td>
+                    <td>Namespace does not correspond to file location, must be: 'Services.Model.common.search'</td>
+                  </tr>
+                  <tr>
                     <td>Services\Model\common\search\PaginationParameter.cs</td>
                     <td>1</td>
                     <td>Namespace does not correspond to file location, must be: 'Services.Model.common.search'</td>
@@ -490,24 +528,39 @@
                     <td>Namespace does not correspond to file location, must be: 'Services.Model.common.search'</td>
                   </tr>
                   <tr>
+                    <td>Services\Model\common\search\SearchParameter.cs</td>
+                    <td>1</td>
+                    <td>Namespace does not correspond to file location, must be: 'Services.Model.common.search'</td>
+                  </tr>
+                  <tr>
                     <td>Services\Model\common\search\SortParameter.cs</td>
                     <td>1</td>
                     <td>Namespace does not correspond to file location, must be: 'Services.Model.common.search'</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\ApplicationRequest.cs</td>
-                    <td>4</td>
+                    <td>5</td>
                     <td>Namespace does not correspond to file location, must be: 'Services.Model.Req'</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\CustomerRequest.cs</td>
-                    <td>4</td>
+                    <td>5</td>
+                    <td>Namespace does not correspond to file location, must be: 'Services.Model.Req'</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\DeployedApplicationRequest.cs</td>
+                    <td>5</td>
                     <td>Namespace does not correspond to file location, must be: 'Services.Model.Req'</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\ServerRequest.cs</td>
-                    <td>4</td>
+                    <td>5</td>
                     <td>Namespace does not correspond to file location, must be: 'Services.Model.Req'</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Service\ApplicationDeployedOnServerService.cs</td>
+                    <td>8</td>
+                    <td>Namespace does not correspond to file location, must be: 'Services.Service'</td>
                   </tr>
                   <tr>
                     <td>Services\Service\ApplicationService.cs</td>
@@ -572,6 +625,59 @@
                     <td>3</td>
                     <td>Class 'Program' is never instantiated</td>
                   </tr>
+                  <tr>
+                    <td>Services\Model\common\search\DateParameter.cs</td>
+                    <td>3</td>
+                    <td>Class 'DateParameters' is never instantiated</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\search\SearchParameter.cs</td>
+                    <td>3</td>
+                    <td>Class 'SearchParameters' is never instantiated</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#CollectionNeverUpdated.Global" aria-expanded="false" aria-controls="flush-collapseOne">
+                <span class="badge bg-warning
+                                            text-dark">WARNING</span>
+                                            : Collection is never updated: Non-private accessibility</button>
+            </h2>
+            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="CollectionNeverUpdated.Global">
+              <div class="accordion-body">
+                <table class="table table-hover" style="width:100%">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>File</th>
+                      <th>Line Number</th>
+                      <th>Message</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>Persist\Entity\ApplicationEntity.cs</td>
+                    <td>20</td>
+                    <td>Content of collection 'ApplicationDeployedOnServers' is never updated</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\ApplicationEntity.cs</td>
+                    <td>23</td>
+                    <td>Content of collection 'CustomerHaveLicenceToApplication' is never updated</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\CustomerEntity.cs</td>
+                    <td>24</td>
+                    <td>Content of collection 'CustomerHaveLicenceToApplication' is never updated</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\ServerEntity.cs</td>
+                    <td>23</td>
+                    <td>Content of collection 'ApplicationDeployedOnServers' is never updated</td>
+                  </tr>
                 </table>
               </div>
             </div>
@@ -596,9 +702,34 @@
                     </tr>
                   </thead>
                   <tr>
-                    <td>Persist\Repository\DeployedApplicationRepository.cs</td>
-                    <td>21</td>
+                    <td>Persist\Entity\CustomerHaveLicenceToApplicationEntity.cs</td>
+                    <td>26</td>
+                    <td>Name 'cost' does not match rule 'Properties'. Suggested name is 'Cost'.</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\IRepository\ICustomerHaveLicenceToRepository.cs</td>
+                    <td>9</td>
+                    <td>Name 'CustomerHaveLicenceToApplication' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToApplication'.</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\IRepository\ICustomerHaveLicenceToRepository.cs</td>
+                    <td>10</td>
+                    <td>Name 'CustomerHaveLicenceToApplication' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToApplication'.</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\IRepository\ICustomerHaveLicenceToRepository.cs</td>
+                    <td>12</td>
+                    <td>Name 'id_client' does not match rule 'Parameters'. Suggested name is 'idClient'.</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Repository\ApplicationDeployedOnServerRepository.cs</td>
+                    <td>25</td>
                     <td>Name 'DeployedApplicationEntity' does not match rule 'Parameters'. Suggested name is 'deployedApplicationEntity'.</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Repository\ApplicationDeployedOnServerRepository.cs</td>
+                    <td>51</td>
+                    <td>Name 'ApplicationDeployedOnServer' does not match rule 'Parameters'. Suggested name is 'applicationDeployedOnServer'.</td>
                   </tr>
                   <tr>
                     <td>Presentation\Controllers\BookController.cs</td>
@@ -626,6 +757,21 @@
                     <td>Name 'delete' does not match rule 'Methods'. Suggested name is 'Delete'.</td>
                   </tr>
                   <tr>
+                    <td>Presentation\Controllers\DeployedApplicationController.cs</td>
+                    <td>16</td>
+                    <td>Name 'ApplicationDeployedOnServerService' does not match rule 'Parameters'. Suggested name is 'applicationDeployedOnServerService'.</td>
+                  </tr>
+                  <tr>
+                    <td>Services\IService\IApplicationDeployedOnServerService.cs</td>
+                    <td>12</td>
+                    <td>Name 'id_application' does not match rule 'Parameters'. Suggested name is 'idApplication'.</td>
+                  </tr>
+                  <tr>
+                    <td>Services\IService\IApplicationDeployedOnServerService.cs</td>
+                    <td>12</td>
+                    <td>Name 'id_server' does not match rule 'Parameters'. Suggested name is 'idServer'.</td>
+                  </tr>
+                  <tr>
                     <td>Services\IService\IApplicationService.cs</td>
                     <td>11</td>
                     <td>Name 'UpdateApplicationRequest' does not match rule 'Parameters'. Suggested name is 'updateApplicationRequest'.</td>
@@ -642,7 +788,7 @@
                   </tr>
                   <tr>
                     <td>Services\Service\CustomerService.cs</td>
-                    <td>139</td>
+                    <td>141</td>
                     <td>Name 'CustomerEntity' does not match rule 'Local variables'. Suggested name is 'customerEntity'.</td>
                   </tr>
                   <tr>
@@ -677,27 +823,27 @@
                   </tr>
                   <tr>
                     <td>Test\AutomapperTest\ApplicationAutoMapTest.cs</td>
-                    <td>26</td>
+                    <td>27</td>
                     <td>Name 'ApplicationEntity' does not match rule 'Local variables'. Suggested name is 'applicationEntity'.</td>
                   </tr>
                   <tr>
                     <td>Test\AutomapperTest\ApplicationAutoMapTest.cs</td>
-                    <td>34</td>
+                    <td>35</td>
                     <td>Name 'CreateApplicationRequest' does not match rule 'Local variables'. Suggested name is 'createApplicationRequest'.</td>
                   </tr>
                   <tr>
                     <td>Test\AutomapperTest\ApplicationAutoMapTest.cs</td>
-                    <td>40</td>
+                    <td>43</td>
                     <td>Name 'ApplicationEntity' does not match rule 'Local variables'. Suggested name is 'applicationEntity'.</td>
                   </tr>
                   <tr>
                     <td>Test\AutomapperTest\ApplicationAutoMapTest.cs</td>
-                    <td>48</td>
+                    <td>51</td>
                     <td>Name 'CreateApplicationRequest' does not match rule 'Local variables'. Suggested name is 'createApplicationRequest'.</td>
                   </tr>
                   <tr>
                     <td>Test\AutomapperTest\ApplicationAutoMapTest.cs</td>
-                    <td>59</td>
+                    <td>64</td>
                     <td>Name 'UpdateApplicationRequest' does not match rule 'Local variables'. Suggested name is 'updateApplicationRequest'.</td>
                   </tr>
                   <tr>
@@ -717,12 +863,12 @@
                   </tr>
                   <tr>
                     <td>Test\AutomapperTest\CustomerAutomapTest.cs</td>
-                    <td>44</td>
+                    <td>45</td>
                     <td>Name 'CustomerEntity' does not match rule 'Local variables'. Suggested name is 'customerEntity'.</td>
                   </tr>
                   <tr>
                     <td>Test\AutomapperTest\CustomerAutomapTest.cs</td>
-                    <td>52</td>
+                    <td>53</td>
                     <td>Name 'CreateCustomerRequest' does not match rule 'Local variables'. Suggested name is 'createCustomerRequest'.</td>
                   </tr>
                 </table>
@@ -754,6 +900,16 @@
                     <td>Method 'CreateHostBuilder' can be made private</td>
                   </tr>
                   <tr>
+                    <td>Services\Service\ApplicationDeployedOnServerService.cs</td>
+                    <td>42</td>
+                    <td>Method 'Pagination' can be made private</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Service\ApplicationDeployedOnServerService.cs</td>
+                    <td>55</td>
+                    <td>Method 'DateSearchQuery' can be made private</td>
+                  </tr>
+                  <tr>
                     <td>Services\Service\ApplicationService.cs</td>
                     <td>34</td>
                     <td>Method 'SortQuery' can be made private</td>
@@ -770,7 +926,7 @@
                   </tr>
                   <tr>
                     <td>Services\Service\ApplicationService.cs</td>
-                    <td>99</td>
+                    <td>101</td>
                     <td>Method 'TextSearchQuery' can be made private</td>
                   </tr>
                   <tr>
@@ -780,17 +936,17 @@
                   </tr>
                   <tr>
                     <td>Services\Service\CustomerService.cs</td>
-                    <td>55</td>
+                    <td>56</td>
                     <td>Method 'DateSearchQuery' can be made private</td>
                   </tr>
                   <tr>
                     <td>Services\Service\CustomerService.cs</td>
-                    <td>83</td>
+                    <td>85</td>
                     <td>Method 'Pagination' can be made private</td>
                   </tr>
                   <tr>
                     <td>Services\Service\CustomerService.cs</td>
-                    <td>96</td>
+                    <td>98</td>
                     <td>Method 'SortQuery' can be made private</td>
                   </tr>
                   <tr>
@@ -810,46 +966,8 @@
                   </tr>
                   <tr>
                     <td>Services\Service\ServerService.cs</td>
-                    <td>99</td>
+                    <td>100</td>
                     <td>Method 'TextSearchQuery' can be made private</td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </div>
-          <br>
-          <br>
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#MergeIntoPattern" aria-expanded="false" aria-controls="flush-collapseOne">
-                <span class="badge bg-info
-                                            text-dark">SUGGESTION</span>
-                                            : Merge null/pattern checks into complex pattern</button>
-            </h2>
-            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="MergeIntoPattern">
-              <div class="accordion-body">
-                <table class="table table-hover" style="width:100%">
-                  <thead class="table-dark">
-                    <tr>
-                      <th>File</th>
-                      <th>Line Number</th>
-                      <th>Message</th>
-                    </tr>
-                  </thead>
-                  <tr>
-                    <td>Services\Service\ApplicationService.cs</td>
-                    <td>79</td>
-                    <td>Merge into pattern</td>
-                  </tr>
-                  <tr>
-                    <td>Services\Service\CustomerService.cs</td>
-                    <td>58</td>
-                    <td>Merge into pattern</td>
-                  </tr>
-                  <tr>
-                    <td>Services\Service\ServerService.cs</td>
-                    <td>79</td>
-                    <td>Merge into pattern</td>
                   </tr>
                 </table>
               </div>
@@ -942,12 +1060,12 @@
                   </thead>
                   <tr>
                     <td>Test\AutomapperTest\ApplicationAutoMapTest.cs</td>
-                    <td>24</td>
+                    <td>25</td>
                     <td>Local variable 'x' is only used to discard 'out' parameter value</td>
                   </tr>
                   <tr>
                     <td>Test\AutomapperTest\ApplicationAutoMapTest.cs</td>
-                    <td>38</td>
+                    <td>41</td>
                     <td>Local variable 'y' is only used to discard 'out' parameter value</td>
                   </tr>
                   <tr>
@@ -957,7 +1075,7 @@
                   </tr>
                   <tr>
                     <td>Test\AutomapperTest\CustomerAutomapTest.cs</td>
-                    <td>42</td>
+                    <td>43</td>
                     <td>Local variable 'y' is only used to discard 'out' parameter value</td>
                   </tr>
                 </table>
@@ -1009,13 +1127,63 @@
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
-                    <td>Persist\Entity\ApplicationEntity.cs</td>
-                    <td>10</td>
+                    <td>Persist\AppDbContext.cs</td>
+                    <td>28</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\ApplicationDeployedOnServer.cs</td>
+                    <td>12</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\ApplicationDeployedOnServer.cs</td>
+                    <td>15</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\ApplicationDeployedOnServer.cs</td>
+                    <td>18</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\ApplicationDeployedOnServer.cs</td>
+                    <td>21</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\ApplicationDeployedOnServer.cs</td>
+                    <td>22</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\ApplicationDeployedOnServer.cs</td>
+                    <td>25</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\ApplicationDeployedOnServer.cs</td>
+                    <td>29</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
                     <td>Persist\Entity\ApplicationEntity.cs</td>
-                    <td>12</td>
+                    <td>11</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\ApplicationEntity.cs</td>
+                    <td>15</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\ApplicationEntity.cs</td>
+                    <td>20</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\ApplicationEntity.cs</td>
+                    <td>23</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
@@ -1030,17 +1198,12 @@
                   </tr>
                   <tr>
                     <td>Persist\Entity\CustomerEntity.cs</td>
-                    <td>10</td>
-                    <td>Property can be made init-only</td>
-                  </tr>
-                  <tr>
-                    <td>Persist\Entity\CustomerEntity.cs</td>
                     <td>11</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
                     <td>Persist\Entity\CustomerEntity.cs</td>
-                    <td>13</td>
+                    <td>12</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
@@ -1055,37 +1218,77 @@
                   </tr>
                   <tr>
                     <td>Persist\Entity\CustomerEntity.cs</td>
-                    <td>16</td>
+                    <td>17</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
-                    <td>Persist\Entity\DeployedApplicationEntity.cs</td>
-                    <td>12</td>
-                    <td>Property can be made init-only</td>
-                  </tr>
-                  <tr>
-                    <td>Persist\Entity\DeployedApplicationEntity.cs</td>
-                    <td>15</td>
-                    <td>Property can be made init-only</td>
-                  </tr>
-                  <tr>
-                    <td>Persist\Entity\DeployedApplicationEntity.cs</td>
+                    <td>Persist\Entity\CustomerEntity.cs</td>
                     <td>18</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
-                    <td>Persist\Entity\DeployedApplicationEntity.cs</td>
+                    <td>Persist\Entity\CustomerEntity.cs</td>
+                    <td>19</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\CustomerEntity.cs</td>
                     <td>21</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
-                    <td>Persist\Entity\DeployedApplicationEntity.cs</td>
+                    <td>Persist\Entity\CustomerEntity.cs</td>
+                    <td>24</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\CustomerHaveLicenceToApplicationEntity.cs</td>
+                    <td>12</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\CustomerHaveLicenceToApplicationEntity.cs</td>
+                    <td>15</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\CustomerHaveLicenceToApplicationEntity.cs</td>
+                    <td>18</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\CustomerHaveLicenceToApplicationEntity.cs</td>
+                    <td>21</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\CustomerHaveLicenceToApplicationEntity.cs</td>
                     <td>23</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
-                    <td>Persist\Entity\DeployedApplicationEntity.cs</td>
+                    <td>Persist\Entity\CustomerHaveLicenceToApplicationEntity.cs</td>
+                    <td>24</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\CustomerHaveLicenceToApplicationEntity.cs</td>
                     <td>26</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\CustomerHaveLicenceToApplicationEntity.cs</td>
+                    <td>28</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\CustomerHaveLicenceToApplicationEntity.cs</td>
+                    <td>29</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\CustomerHaveLicenceToApplicationEntity.cs</td>
+                    <td>30</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
@@ -1095,7 +1298,17 @@
                   </tr>
                   <tr>
                     <td>Persist\Entity\ServerEntity.cs</td>
-                    <td>13</td>
+                    <td>18</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\ServerEntity.cs</td>
+                    <td>20</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\ServerEntity.cs</td>
+                    <td>23</td>
                     <td>Property can be made init-only</td>
                   </tr>
                 </table>
@@ -1125,6 +1338,54 @@
                     <td>Persist\Repository\CustomerRepository.cs</td>
                     <td>36</td>
                     <td>Value assigned is not used in any execution path</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#RedundantDefaultMemberInitializer" aria-expanded="false" aria-controls="flush-collapseOne">
+                <span class="badge bg-warning
+                                            text-dark">WARNING</span>
+                                            : Redundant member initializer</button>
+            </h2>
+            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="RedundantDefaultMemberInitializer">
+              <div class="accordion-body">
+                <table class="table table-hover" style="width:100%">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>File</th>
+                      <th>Line Number</th>
+                      <th>Message</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>Persist\Entity\ApplicationDeployedOnServer.cs</td>
+                    <td>28</td>
+                    <td>Initializing property by default value is redundant</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\ApplicationEntity.cs</td>
+                    <td>17</td>
+                    <td>Initializing property by default value is redundant</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\CustomerEntity.cs</td>
+                    <td>15</td>
+                    <td>Initializing property by default value is redundant</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\CustomerHaveLicenceToApplicationEntity.cs</td>
+                    <td>28</td>
+                    <td>Initializing property by default value is redundant</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\ServerEntity.cs</td>
+                    <td>15</td>
+                    <td>Initializing property by default value is redundant</td>
                   </tr>
                 </table>
               </div>
@@ -1215,6 +1476,26 @@
                     <td>Qualifier is redundant</td>
                   </tr>
                   <tr>
+                    <td>Presentation\Controllers\DeployedApplicationController.cs</td>
+                    <td>35</td>
+                    <td>Qualifier is redundant</td>
+                  </tr>
+                  <tr>
+                    <td>Presentation\Controllers\DeployedApplicationController.cs</td>
+                    <td>49</td>
+                    <td>Qualifier is redundant</td>
+                  </tr>
+                  <tr>
+                    <td>Presentation\Controllers\DeployedApplicationController.cs</td>
+                    <td>69</td>
+                    <td>Qualifier is redundant</td>
+                  </tr>
+                  <tr>
+                    <td>Presentation\Controllers\DeployedApplicationController.cs</td>
+                    <td>88</td>
+                    <td>Qualifier is redundant</td>
+                  </tr>
+                  <tr>
                     <td>Presentation\Controllers\ServerController.cs</td>
                     <td>35</td>
                     <td>Qualifier is redundant</td>
@@ -1259,11 +1540,6 @@
                   </thead>
                   <tr>
                     <td>Persist\Entity\BookEntity.cs</td>
-                    <td></td>
-                    <td>Using directive is not required by the code and can be safely removed</td>
-                  </tr>
-                  <tr>
-                    <td>Persist\Entity\ServerEntity.cs</td>
                     <td></td>
                     <td>Using directive is not required by the code and can be safely removed</td>
                   </tr>
@@ -1333,6 +1609,11 @@
                     <td>Using directive is not required by the code and can be safely removed</td>
                   </tr>
                   <tr>
+                    <td>Services\Service\ApplicationDeployedOnServerService.cs</td>
+                    <td></td>
+                    <td>Using directive is not required by the code and can be safely removed</td>
+                  </tr>
+                  <tr>
                     <td>Services\Service\ServiceBook.cs</td>
                     <td></td>
                     <td>Using directive is not required by the code and can be safely removed</td>
@@ -1372,12 +1653,12 @@
                   </thead>
                   <tr>
                     <td>Test\AutomapperTest\ApplicationAutoMapTest.cs</td>
-                    <td>42</td>
+                    <td>45</td>
                     <td>Specify string culture explicitly</td>
                   </tr>
                   <tr>
                     <td>Test\AutomapperTest\CustomerAutomapTest.cs</td>
-                    <td>46</td>
+                    <td>47</td>
                     <td>Specify string culture explicitly</td>
                   </tr>
                 </table>
@@ -1414,6 +1695,26 @@
                     <td>Auto-property accessor 'Title.set' is never used</td>
                   </tr>
                   <tr>
+                    <td>Services\Model\common\search\DateParameter.cs</td>
+                    <td>5</td>
+                    <td>Auto-property accessor 'StartDate.set' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\search\DateParameter.cs</td>
+                    <td>6</td>
+                    <td>Auto-property accessor 'EndDate.set' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\search\DateParameter.cs</td>
+                    <td>7</td>
+                    <td>Auto-property accessor 'DateField.set' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\search\GenericQueryParameter.cs</td>
+                    <td>5</td>
+                    <td>Auto-property accessor 'DateParam.set' is never used</td>
+                  </tr>
+                  <tr>
                     <td>Services\Model\common\search\PaginationResponse.cs</td>
                     <td>6</td>
                     <td>Auto-property accessor 'TotalPages.get' is never used</td>
@@ -1435,28 +1736,23 @@
                   </tr>
                   <tr>
                     <td>Services\Model\common\search\QueryParameter.cs</td>
-                    <td>5</td>
-                    <td>Auto-property accessor 'SearchTerm.set' is never used</td>
-                  </tr>
-                  <tr>
-                    <td>Services\Model\common\search\QueryParameter.cs</td>
                     <td>6</td>
-                    <td>Auto-property accessor 'SearchColumn.set' is never used</td>
+                    <td>Auto-property accessor 'DateParam.set' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\common\search\QueryParameter.cs</td>
                     <td>7</td>
-                    <td>Auto-property accessor 'StartDate.set' is never used</td>
+                    <td>Auto-property accessor 'SearchParam.set' is never used</td>
                   </tr>
                   <tr>
-                    <td>Services\Model\common\search\QueryParameter.cs</td>
-                    <td>8</td>
-                    <td>Auto-property accessor 'EndDate.set' is never used</td>
+                    <td>Services\Model\common\search\SearchParameter.cs</td>
+                    <td>5</td>
+                    <td>Auto-property accessor 'SearchTerm.set' is never used</td>
                   </tr>
                   <tr>
-                    <td>Services\Model\common\search\QueryParameter.cs</td>
-                    <td>10</td>
-                    <td>Auto-property accessor 'DateField.set' is never used</td>
+                    <td>Services\Model\common\search\SearchParameter.cs</td>
+                    <td>6</td>
+                    <td>Auto-property accessor 'SearchColumn.set' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\common\search\SortParameter.cs</td>
@@ -1465,28 +1761,48 @@
                   </tr>
                   <tr>
                     <td>Services\Model\Req\ApplicationRequest.cs</td>
-                    <td>11</td>
+                    <td>12</td>
                     <td>Auto-property accessor 'Title.get' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\ApplicationRequest.cs</td>
-                    <td>19</td>
+                    <td>16</td>
+                    <td>Auto-property accessor 'Description.get' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\ApplicationRequest.cs</td>
+                    <td>25</td>
                     <td>Auto-property accessor 'Title.get' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\ApplicationRequest.cs</td>
-                    <td>22</td>
+                    <td>28</td>
                     <td>Auto-property accessor 'Id.get' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\CustomerRequest.cs</td>
-                    <td>10</td>
+                    <td>11</td>
                     <td>Auto-property accessor 'Title.get' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\CustomerRequest.cs</td>
-                    <td>13</td>
+                    <td>14</td>
                     <td>Auto-property accessor 'FiscalIdentification.get' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\CustomerRequest.cs</td>
+                    <td>16</td>
+                    <td>Auto-property accessor 'LastInteraction.get' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\DeployedApplicationRequest.cs</td>
+                    <td>43</td>
+                    <td>Auto-property accessor 'ApplicationId.set' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\DeployedApplicationRequest.cs</td>
+                    <td>46</td>
+                    <td>Auto-property accessor 'ServerId.set' is never used</td>
                   </tr>
                 </table>
               </div>
@@ -1512,9 +1828,39 @@
                     </tr>
                   </thead>
                   <tr>
+                    <td>Persist\IRepository\IApplicationDeployedOnServerRepository.cs</td>
+                    <td>8</td>
+                    <td>Method 'GetByIdAsync' is never used</td>
+                  </tr>
+                  <tr>
                     <td>Persist\IRepository\IApplicationRepository.cs</td>
                     <td>8</td>
                     <td>Method 'GetByIdAsync' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\IRepository\ICustomerHaveLicenceToRepository.cs</td>
+                    <td>7</td>
+                    <td>Method 'GetAllAsync' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\IRepository\ICustomerHaveLicenceToRepository.cs</td>
+                    <td>8</td>
+                    <td>Method 'GetByIdAsync' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\IRepository\ICustomerHaveLicenceToRepository.cs</td>
+                    <td>9</td>
+                    <td>Method 'AddAsync' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\IRepository\ICustomerHaveLicenceToRepository.cs</td>
+                    <td>10</td>
+                    <td>Method 'UpdateAsync' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\IRepository\ICustomerHaveLicenceToRepository.cs</td>
+                    <td>12</td>
+                    <td>Method 'DeleteAsync' is never used</td>
                   </tr>
                   <tr>
                     <td>Persist\IRepository\ICustomerRepository.cs</td>
@@ -1522,34 +1868,9 @@
                     <td>Method 'GetByIdAsync' is never used</td>
                   </tr>
                   <tr>
-                    <td>Persist\IRepository\IDeployedApplicationRepository.cs</td>
-                    <td>7</td>
-                    <td>Method 'GetAllAsync' is never used</td>
-                  </tr>
-                  <tr>
-                    <td>Persist\IRepository\IDeployedApplicationRepository.cs</td>
-                    <td>8</td>
-                    <td>Method 'GetByIdAsync' is never used</td>
-                  </tr>
-                  <tr>
-                    <td>Persist\IRepository\IDeployedApplicationRepository.cs</td>
-                    <td>9</td>
-                    <td>Method 'AddAsync' is never used</td>
-                  </tr>
-                  <tr>
-                    <td>Persist\IRepository\IDeployedApplicationRepository.cs</td>
-                    <td>10</td>
-                    <td>Method 'DeleteAsync' is never used</td>
-                  </tr>
-                  <tr>
                     <td>Persist\IRepository\IServerRepository.cs</td>
                     <td>8</td>
                     <td>Method 'GetByIdAsync' is never used</td>
-                  </tr>
-                  <tr>
-                    <td>Ressources\Annotation\RestrictionLentgh\RestrictionLentghConst.cs</td>
-                    <td>25</td>
-                    <td>Constant 'FiscalIdentificationRequired' is never used</td>
                   </tr>
                   <tr>
                     <td>Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs</td>
@@ -1573,13 +1894,28 @@
                   </tr>
                   <tr>
                     <td>Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs</td>
-                    <td>16</td>
-                    <td>Enum member 'FieldTooLongBy500' is never used</td>
-                  </tr>
-                  <tr>
-                    <td>Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs</td>
                     <td>21</td>
                     <td>Enum member 'NicTooLongBy5' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Ressources\Annotation\ValidationMessage\ValidationMessageGeneric.cs</td>
+                    <td>9</td>
+                    <td>Constant 'CostRequired' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Ressources\Annotation\ValidationMessage\ValidationMessageGeneric.cs</td>
+                    <td>10</td>
+                    <td>Constant 'IsActiveRequired' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Ressources\Annotation\ValidationMessage\ValidationMessageGeneric.cs</td>
+                    <td>11</td>
+                    <td>Constant 'FiscalIdentificationRequired' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Ressources\Annotation\ValidationMessage\ValidationMessageServer.cs</td>
+                    <td>8</td>
+                    <td>Constant 'FiscalIdentificationRequired' is never used</td>
                   </tr>
                   <tr>
                     <td>Ressources\Extension\GetDescription.cs</td>
@@ -1597,44 +1933,144 @@
                     <td>Property 'Id' is never used</td>
                   </tr>
                   <tr>
-                    <td>Services\Model\Req\CustomerRequest.cs</td>
-                    <td>14</td>
-                    <td>Property 'LastInteraction' is never used</td>
+                    <td>Services\Model\Req\ApplicationRequest.cs</td>
+                    <td>13</td>
+                    <td>Property 'Internal' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\ApplicationRequest.cs</td>
+                    <td>29</td>
+                    <td>Property 'Internal' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\ApplicationRequest.cs</td>
+                    <td>30</td>
+                    <td>Property 'Description' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\CustomerRequest.cs</td>
-                    <td>21</td>
+                    <td>23</td>
                     <td>Property 'Id' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\CustomerRequest.cs</td>
-                    <td>24</td>
+                    <td>26</td>
                     <td>Property 'Title' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\CustomerRequest.cs</td>
-                    <td>27</td>
+                    <td>29</td>
                     <td>Property 'FiscalIdentification' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\CustomerRequest.cs</td>
-                    <td>28</td>
+                    <td>31</td>
                     <td>Property 'LastInteraction' is never used</td>
                   </tr>
                   <tr>
+                    <td>Services\Model\Req\DeployedApplicationRequest.cs</td>
+                    <td>11</td>
+                    <td>Property 'ApplicationId' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\DeployedApplicationRequest.cs</td>
+                    <td>14</td>
+                    <td>Property 'ServerId' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\DeployedApplicationRequest.cs</td>
+                    <td>16</td>
+                    <td>Property 'CustomerId' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\DeployedApplicationRequest.cs</td>
+                    <td>19</td>
+                    <td>Property 'ApplicationPath' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\DeployedApplicationRequest.cs</td>
+                    <td>20</td>
+                    <td>Property 'IsActive' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\DeployedApplicationRequest.cs</td>
+                    <td>27</td>
+                    <td>Property 'ApplicationId' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\DeployedApplicationRequest.cs</td>
+                    <td>30</td>
+                    <td>Property 'ServerId' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\DeployedApplicationRequest.cs</td>
+                    <td>32</td>
+                    <td>Property 'CustomerId' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\DeployedApplicationRequest.cs</td>
+                    <td>35</td>
+                    <td>Property 'ApplicationPath' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\DeployedApplicationRequest.cs</td>
+                    <td>36</td>
+                    <td>Property 'IsActive' is never used</td>
+                  </tr>
+                  <tr>
                     <td>Services\Model\Req\ServerRequest.cs</td>
-                    <td>10</td>
+                    <td>11</td>
                     <td>Property 'Title' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\ServerRequest.cs</td>
-                    <td>16</td>
+                    <td>14</td>
+                    <td>Property 'Cost' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\ServerRequest.cs</td>
+                    <td>15</td>
+                    <td>Property 'IsActive' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\ServerRequest.cs</td>
+                    <td>17</td>
+                    <td>Property 'HostedSince' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\ServerRequest.cs</td>
+                    <td>18</td>
+                    <td>Property 'StopHost' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\ServerRequest.cs</td>
+                    <td>24</td>
                     <td>Property 'Id' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\ServerRequest.cs</td>
-                    <td>19</td>
+                    <td>27</td>
                     <td>Property 'Title' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\ServerRequest.cs</td>
+                    <td>30</td>
+                    <td>Property 'Cost' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\ServerRequest.cs</td>
+                    <td>31</td>
+                    <td>Property 'IsActive' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\ServerRequest.cs</td>
+                    <td>33</td>
+                    <td>Property 'HostedSince' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\ServerRequest.cs</td>
+                    <td>35</td>
+                    <td>Property 'StopHost' is never used</td>
                   </tr>
                 </table>
               </div>
@@ -1660,9 +2096,9 @@
                     </tr>
                   </thead>
                   <tr>
-                    <td>Persist\Repository\DeployedApplicationRepository.cs</td>
-                    <td>7</td>
-                    <td>Class 'DeployedApplicationRepository' is never used</td>
+                    <td>Persist\IRepository\ICustomerHaveLicenceToRepository.cs</td>
+                    <td>5</td>
+                    <td>Interface 'ICustomerHaveLicenceToApplicationRepository' is never used</td>
                   </tr>
                   <tr>
                     <td>Ressources\Extension\GetDescription.cs</td>
