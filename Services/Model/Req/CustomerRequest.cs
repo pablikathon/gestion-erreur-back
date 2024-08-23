@@ -1,17 +1,19 @@
 using System.ComponentModel.DataAnnotations;
 using Ressources.Annotation.RestrictionLentgh;
+using Ressources.Annotation.ValidationMessage;
 
 namespace Services.Models.Req
 {
     public class CreateCustomerRequest
     {
-        [Required]
+        [Required(ErrorMessage = ValidationMessagesGeneric.TitleRequired)]
         [StringLength((int)FieldRestrictionLentgh.FieldTooLongBy100)]
         public required string Title { get; set; }
-        [Required]
-        [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy36)]
+        [Required(ErrorMessage = ValidationMessagesCustommer.FiscalIdentificationRequired)]
+        [StringLength((int)IdRestrictionLentgh.SiretTooLongBy14, ErrorMessage = IdentifierRestrictionLentghMessage.SiretTooLongBy14)]
         public required string FiscalIdentification { get; set; }
-        public DateTime LastInteraction { get; set; }
+        [Required(ErrorMessage = ValidationMessagesCustommer.LastInteractionRequired)]
+        public required DateTime LastInteraction { get; set; }
     }
 
     public class UpdateCustomerRequest
@@ -25,6 +27,7 @@ namespace Services.Models.Req
         [Required]
         [StringLength((int)IdRestrictionLentgh.SiretTooLongBy14, ErrorMessage = IdentifierRestrictionLentghMessage.SiretTooLongBy14)]
         public required string FiscalIdentification { get; set; }
-        public DateTime LastInteraction { get; set; }
+        [Required(ErrorMessage = ValidationMessagesCustommer.LastInteractionRequired)]
+        public required DateTime LastInteraction { get; set; }
     }
 }

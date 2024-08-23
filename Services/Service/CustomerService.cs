@@ -32,22 +32,23 @@ namespace Services
         protected static IQueryable<CustomerEntity> TextSearchQuery(QueryParameters queryParameters,
             IQueryable<CustomerEntity> query)
         {
-            if (!String.IsNullOrEmpty(queryParameters.SearchTerm) &&
-                !String.IsNullOrWhiteSpace(queryParameters.SearchTerm))
-            {
-                switch (queryParameters.SearchColumn)
+            if (queryParameters.SearchParam != null)
+                if (!String.IsNullOrEmpty(queryParameters.SearchParam.SearchTerm) &&
+                    !String.IsNullOrWhiteSpace(queryParameters.SearchParam.SearchTerm))
                 {
-                    case nameof(CustomerEntity.Title):
-                        query = query.Where(a => a.Title.ToLower().Contains(queryParameters.SearchTerm.ToLower()));
-                        break;
-                    case nameof(CustomerEntity.FiscalIdentification):
-                        query = query.Where(a =>
-                            a.FiscalIdentification.ToLower().Contains(queryParameters.SearchTerm.ToLower()));
-                        break;
-                    default:
-                        throw new ArgumentException("Bad column name");
+                    switch (queryParameters.SearchParam.SearchColumn)
+                    {
+                        case nameof(CustomerEntity.Title):
+                            query = query.Where(a => a.Title.ToLower().Contains(queryParameters.SearchParam.SearchTerm.ToLower()));
+                            break;
+                        case nameof(CustomerEntity.FiscalIdentification):
+                            query = query.Where(a =>
+                                a.FiscalIdentification.ToLower().Contains(queryParameters.SearchParam.SearchTerm.ToLower()));
+                            break;
+                        default:
+                            throw new ArgumentException("Bad column name");
+                    }
                 }
-            }
 
             return query;
         }
@@ -55,27 +56,28 @@ namespace Services
         protected static IQueryable<CustomerEntity> DateSearchQuery(QueryParameters queryParameters,
             IQueryable<CustomerEntity> query)
         {
-            if (queryParameters.StartDate.HasValue && queryParameters.EndDate.HasValue)
-            {
-                switch (queryParameters.DateField)
+            if (queryParameters.DateParam != null)
+                if (queryParameters.DateParam.StartDate.HasValue && queryParameters.DateParam.EndDate.HasValue)
                 {
-                    case nameof(CustomerEntity.CreatedAt):
-                        query = query.Where(a =>
-                            a.CreatedAt >= queryParameters.StartDate && a.CreatedAt <= queryParameters.EndDate);
-                        break;
-                    case nameof(CustomerEntity.UpdatedAt):
-                        query = query.Where(a =>
-                            a.UpdatedAt >= queryParameters.StartDate && a.UpdatedAt <= queryParameters.EndDate);
-                        break;
-                    case nameof(CustomerEntity.LastInteraction):
-                        query = query.Where(a =>
-                            a.LastInteraction >= queryParameters.StartDate &&
-                            a.LastInteraction <= queryParameters.EndDate);
-                        break;
-                    default:
-                        throw new ArgumentException("Bad column date name");
+                    switch (queryParameters.DateParam.DateField)
+                    {
+                        case nameof(CustomerEntity.CreatedAt):
+                            query = query.Where(a =>
+                                a.CreatedAt >= queryParameters.DateParam.StartDate && a.CreatedAt <= queryParameters.DateParam.EndDate);
+                            break;
+                        case nameof(CustomerEntity.UpdatedAt):
+                            query = query.Where(a =>
+                                a.UpdatedAt >= queryParameters.DateParam.StartDate && a.UpdatedAt <= queryParameters.DateParam.EndDate);
+                            break;
+                        case nameof(CustomerEntity.LastInteraction):
+                            query = query.Where(a =>
+                                a.LastInteraction >= queryParameters.DateParam.StartDate &&
+                                a.LastInteraction <= queryParameters.DateParam.EndDate);
+                            break;
+                        default:
+                            throw new ArgumentException("Bad column date name");
+                    }
                 }
-            }
 
             return query;
         }

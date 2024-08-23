@@ -20,8 +20,8 @@ public class CustommerAutoMapTest
         var CreateCustomerRequest = new CreateCustomerRequest()
         {
             Title = "Discord",
-            FiscalIdentification = "42829692500160"
-
+            FiscalIdentification = "42829692500160",
+            LastInteraction = new DateTime()
         };
         Guid x;
         // Act
@@ -36,7 +36,8 @@ public class CustommerAutoMapTest
         var CreateCustomerRequest = new CreateCustomerRequest()
         {
             Title = "Discord",
-            FiscalIdentification = "42829692500160"
+            FiscalIdentification = "42829692500160",
+            LastInteraction = new DateTime()
 
         };
         DateTime y;
@@ -52,7 +53,8 @@ public class CustommerAutoMapTest
         var CreateCustomerRequest = new CreateCustomerRequest()
         {
             Title = "Cegid",
-            FiscalIdentification = "42829692500160"
+            FiscalIdentification = "42829692500160",
+            LastInteraction = new DateTime()
         };
         // Act & assert
         Assert.Throws<AutoMapperMappingException>(() => _mapper.Map<ApplicationEntity>(CreateCustomerRequest));

@@ -18,10 +18,3 @@ public static class IdentifierRestrictionLentghMessage
     public const string SiretTooLongBy14 = "Siret can't be longer than 14 characters";
     public const string IdentifierTooLongBy36 = "Identifier can't be longuer than 16 characters";
 }
-public static class ValidationMessages
-{
-    public const string TitleRequired = "Title is required.";
-    public const string IdRequired = "Title is required.";
-    public const string FiscalIdentificationRequired = "FiscalIdentification is required.";
-
-}

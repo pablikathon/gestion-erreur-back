@@ -19,7 +19,8 @@ public class ApplicationAutoMapTest
         // Arrange
         var CreateApplicationRequest = new CreateApplicationRequest()
         {
-            Title = "Discord"
+            Title = "Discord",
+            Description = "Les cocinnelles sont des coléoptères"
         };
         Guid x;
         // Act
@@ -33,7 +34,9 @@ public class ApplicationAutoMapTest
         // Arrange
         var CreateApplicationRequest = new CreateApplicationRequest()
         {
-            Title = "Discord"
+            Title = "Discord",
+            Description = "Les cocinnelles sont des coléoptères"
+
         };
         DateTime y;
         // Act
@@ -47,7 +50,9 @@ public class ApplicationAutoMapTest
         // Arrange
         var CreateApplicationRequest = new CreateApplicationRequest()
         {
-            Title = "Cegid"
+            Title = "Cegid",
+            Description = "Les cocinnelles sont des coléoptères"
+
         };
         // Act & assert
         Assert.Throws<AutoMapperMappingException>(() => _mapper.Map<CustomerEntity>(CreateApplicationRequest));
