@@ -19,7 +19,7 @@ public class DeployedApplicationController : Controller
     }
 
     [HttpGet]
-    public  ActionResult<PaginationResponse<ApplicationDeployedOnServerEntity>> GetApplicationsDeployed(
+    public ActionResult<PaginationResponse<ApplicationDeployedOnServerEntity>> GetApplicationsDeployed(
         [FromQuery] GenericQueryParameter queryParameters)
     {
         try
@@ -37,9 +37,9 @@ public class DeployedApplicationController : Controller
             return Problem(e.Message);
         }
     }
-        [HttpPost]
+    [HttpPost]
     public async Task<ActionResult<ApplicationEntity>> DeployedApplicationOnServer(
-        [FromBody] CreateApplicationDeployedRequest createApplicationDeployedRequest)
+    [FromBody] CreateApplicationDeployedRequest createApplicationDeployedRequest)
     {
         try
         {
@@ -77,7 +77,7 @@ public class DeployedApplicationController : Controller
     {
         try
         {
-            var data = await _applicationDeployedOnServerService.DeleteDeployedApplication (deleteApplicationDeployedRequest.ApplicationId,deleteApplicationDeployedRequest.ServerId);
+            var data = await _applicationDeployedOnServerService.DeleteDeployedApplication(deleteApplicationDeployedRequest.ApplicationId, deleteApplicationDeployedRequest.ServerId);
             if (data)
             {
                 return NoContent();

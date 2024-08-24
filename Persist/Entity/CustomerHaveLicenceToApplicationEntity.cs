@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 
 namespace Persist.Entities
@@ -12,12 +13,16 @@ namespace Persist.Entities
         public required string ApplicationId { get; set; }
 
         [ForeignKey(nameof(ApplicationId))]
+        [JsonIgnore]
+
         public required ApplicationEntity Application { get; set; }
         [Required]
 
         public required string CustomerId { get; set; }
 
         [ForeignKey(nameof(CustomerId))]
+        [JsonIgnore]
+
         public required CustomerEntity Customer { get; set; }
 
         public DateTime? BeginingSupport { get; set; }

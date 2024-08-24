@@ -35,11 +35,13 @@ public class MappingProfile : Profile
             .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => DateTime.UtcNow))
             .ForMember(dest => dest.UpdatedAt, opt => opt.Ignore());
 
-
-
-
-
         CreateMap<UpdateApplicationDeployedRequest, ApplicationDeployedOnServerEntity>()
+            .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => DateTime.UtcNow));
+        CreateMap<CreateCustomerHasLicenceToRequest, CustomerHaveLicenceToApplicationEntity>()
+            .ForMember(dest => dest.CreatedAt, opt => opt.MapFrom(src => DateTime.UtcNow))
+            .ForMember(dest => dest.UpdatedAt, opt => opt.Ignore());
+
+        CreateMap<UpdateCustomerHasLicenceRequest, CustomerHaveLicenceToApplicationEntity>()
             .ForMember(dest => dest.UpdatedAt, opt => opt.MapFrom(src => DateTime.UtcNow));
     }
 }

@@ -1,10 +1,11 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 
 namespace Persist.Entities
 {
-    [PrimaryKey(nameof(ServerId),nameof(ApplicationId))]
+    [PrimaryKey(nameof(ServerId), nameof(ApplicationId))]
 
     public class ApplicationDeployedOnServerEntity
     {
@@ -12,14 +13,16 @@ namespace Persist.Entities
         public required string ServerId { get; set; }
 
         [ForeignKey(nameof(ServerId))]
+
         public required ServerEntity Server { get; set; }
 
         [Required]
         public required string ApplicationId { get; set; }
 
         [ForeignKey(nameof(ApplicationId))]
+
         public required ApplicationEntity Application { get; set; }
-        public  string? CustomerId { get; set; }
+        public string? CustomerId { get; set; }
 
         [ForeignKey(nameof(CustomerId))]
         public CustomerEntity? Customer { get; set; }

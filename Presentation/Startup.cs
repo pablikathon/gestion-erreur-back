@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Persist;
 using Services;
 using Repositories;
+using System.Text.Json.Serialization;
 
 namespace Presentation
 {
@@ -29,6 +30,9 @@ namespace Presentation
             services.AddScoped<IServerRepository, ServerRepository>();
             services.AddScoped<IServerService, ServerServices>();
 
+            services.AddScoped<ICustomerHaveLicenceToApplicationRepository,CustomerHaveLicenceToApplicationRepository>();
+            services.AddScoped<ICustomerHaveLicenceToService,CustomerHaveLicenceToApplicationService>();
+
             services.AddScoped<IApplicationDeployedOnServerRepository, ApplicationDeployedOnServerRepository>();
             services.AddScoped<IApplicationDeployedOnServerService, ApplicationDeployedOnServerService>();
 
@@ -48,7 +52,12 @@ namespace Presentation
             services.AddDbContext<AppDbContext>(options =>
                 options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
             );
-            services.AddControllers();
+            services.AddControllers().AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+                    options.JsonSerializerOptions.MaxDepth = 0;
+                }
+            ); 
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
