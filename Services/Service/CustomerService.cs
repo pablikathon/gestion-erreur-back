@@ -23,7 +23,7 @@ namespace Services
             query = TextSearchQuery(queryParameters, query);
             query = DateSearchQuery(queryParameters, query);
             query = SortQuery(queryParameters, query);
-            query = Pagination(queryParameters, query);
+            query = query.Pagination(queryParameters.Pagination);
             var result = query.ToList();
             return new PaginationResponse<CustomerEntity>(result, result.Count, queryParameters.Pagination.PageNumber,
                 queryParameters.Pagination.PageSize);
@@ -82,18 +82,6 @@ namespace Services
             return query;
         }
 
-        protected static IQueryable<CustomerEntity> Pagination(QueryParameters queryParameters,
-            IQueryable<CustomerEntity> query)
-        {
-            if (queryParameters.Pagination.PageNumber.GetHashCode() != 0)
-            {
-                query = query
-                    .Skip((queryParameters.Pagination.PageNumber - 1) * queryParameters.Pagination.PageSize)
-                    .Take(queryParameters.Pagination.PageSize);
-            }
-
-            return query;
-        }
 
         protected static IQueryable<CustomerEntity> SortQuery(QueryParameters queryParameters,
             IQueryable<CustomerEntity> query)

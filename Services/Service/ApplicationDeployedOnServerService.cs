@@ -33,24 +33,12 @@ namespace Services
         {
             var query = _applicationDeployedRepository.GetAllAsync();
             query = DateSearchQuery(queryParameters, query);
-            query = Pagination(queryParameters, query);
+            query = query.Pagination(queryParameters.Pagination);
 
             var result = query.ToList();
             return new PaginationResponse<ApplicationDeployedOnServerEntity>(result, result.Count,
                 queryParameters.Pagination.PageNumber, queryParameters.Pagination.PageSize);        }
 
-        internal static IQueryable<ApplicationDeployedOnServerEntity> Pagination(GenericQueryParameter queryParameters,
-            IQueryable<ApplicationDeployedOnServerEntity> query)
-        {
-            if (queryParameters.Pagination.PageNumber.GetHashCode() != 0)
-            {
-                query = query
-                    .Skip((queryParameters.Pagination.PageNumber - 1) * queryParameters.Pagination.PageSize)
-                    .Take(queryParameters.Pagination.PageSize);
-            }
-
-            return query;
-        }
 
         internal static IQueryable<ApplicationDeployedOnServerEntity> DateSearchQuery(GenericQueryParameter queryParameters,
             IQueryable<ApplicationDeployedOnServerEntity> query)
