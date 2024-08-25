@@ -316,11 +316,6 @@
                     <td>6</td>
                     <td>Non-nullable property 'Title' is uninitialized. Consider declaring the property as nullable.</td>
                   </tr>
-                  <tr>
-                    <td>Services\Model\common\search\SortParameter.cs</td>
-                    <td>5</td>
-                    <td>Non-nullable property 'SortBy' is uninitialized. Consider declaring the property as nullable.</td>
-                  </tr>
                 </table>
               </div>
             </div>
@@ -478,9 +473,34 @@
                     <td>Namespace does not correspond to file location, must be: 'Ressources.Extension'</td>
                   </tr>
                   <tr>
-                    <td>Services\AutoMapper.cs</td>
+                    <td>Services\Automapper\AutoMapper.cs</td>
                     <td>5</td>
-                    <td>Namespace does not correspond to file location, must be: 'Services'</td>
+                    <td>Namespace does not correspond to file location, must be: 'Services.Automapper'</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs</td>
+                    <td>5</td>
+                    <td>Namespace does not correspond to file location, must be: 'Services.Automapper.JoiningEntity'</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs</td>
+                    <td>5</td>
+                    <td>Namespace does not correspond to file location, must be: 'Services.Automapper.JoiningEntity'</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperApplication.cs</td>
+                    <td>5</td>
+                    <td>Namespace does not correspond to file location, must be: 'Services.Automapper.RegularEntity'</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperCustomer.cs</td>
+                    <td>5</td>
+                    <td>Namespace does not correspond to file location, must be: 'Services.Automapper.RegularEntity'</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperServer.cs</td>
+                    <td>5</td>
+                    <td>Namespace does not correspond to file location, must be: 'Services.Automapper.RegularEntity'</td>
                   </tr>
                   <tr>
                     <td>Services\Extension\LeapYearExtension.cs</td>
@@ -970,6 +990,41 @@
                     <td>Method 'CreateHostBuilder' can be made private</td>
                   </tr>
                   <tr>
+                    <td>Services\Automapper\AutoMapper.cs</td>
+                    <td>14</td>
+                    <td>Method 'MappingProfilRegularEntity' can be made private</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\AutoMapper.cs</td>
+                    <td>19</td>
+                    <td>Method 'MappingProfilJoiningEnity' can be made private</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs</td>
+                    <td>7</td>
+                    <td>Method 'MappingProfileApplicationDeployement' can be made private</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs</td>
+                    <td>7</td>
+                    <td>Method 'MappingProfileCustomerHaveLicence' can be made private</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperApplication.cs</td>
+                    <td>7</td>
+                    <td>Method 'MappingProfileApplication' can be made private</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperCustomer.cs</td>
+                    <td>7</td>
+                    <td>Method 'MappingProfileCustomer' can be made private</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperServer.cs</td>
+                    <td>7</td>
+                    <td>Method 'MappingProfileServer' can be made private</td>
+                  </tr>
+                  <tr>
                     <td>Services\Service\ApplicationDeployedOnServerService.cs</td>
                     <td>43</td>
                     <td>Method 'DateSearchQuery' can be made private</td>
@@ -1425,6 +1480,179 @@
           <br>
           <div class="accordion-item">
             <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#RedundantExtendsListEntry" aria-expanded="false" aria-controls="flush-collapseOne">
+                <span class="badge bg-warning
+                                            text-dark">WARNING</span>
+                                            : Redundant class or interface specification in base types list</button>
+            </h2>
+            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="RedundantExtendsListEntry">
+              <div class="accordion-body">
+                <table class="table table-hover" style="width:100%">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>File</th>
+                      <th>Line Number</th>
+                      <th>Message</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>Services\Automapper\AutoMapper.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\AutoMapper.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\AutoMapper.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\AutoMapper.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\AutoMapper.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperApplication.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperApplication.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperApplication.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperApplication.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperApplication.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperCustomer.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperCustomer.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperCustomer.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperCustomer.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperCustomer.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperServer.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperServer.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperServer.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperServer.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperServer.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#RedundantNameQualifier" aria-expanded="false" aria-controls="flush-collapseOne">
                 <span class="badge bg-warning
                                             text-dark">WARNING</span>
@@ -1661,6 +1889,16 @@
                   <tr>
                     <td>Presentation\Startup.cs</td>
                     <td>5</td>
+                    <td>Using directive is not required by the code and can be safely removed</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\AutoMapper.cs</td>
+                    <td>2</td>
+                    <td>Using directive is not required by the code and can be safely removed</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\AutoMapper.cs</td>
+                    <td>3</td>
                     <td>Using directive is not required by the code and can be safely removed</td>
                   </tr>
                   <tr>
