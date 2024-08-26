@@ -70,6 +70,16 @@
                   </thead>
                   <tr>
                     <td>Services\Model\common\search\GenericQueryParameter.cs</td>
+                    <td>5</td>
+                    <td>Redundant type specification</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\search\GenericQueryParameter.cs</td>
+                    <td>6</td>
+                    <td>Redundant type specification</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\search\QueryParameter.cs</td>
                     <td>6</td>
                     <td>Redundant type specification</td>
                   </tr>
@@ -107,6 +117,26 @@
                     </tr>
                   </thead>
                   <tr>
+                    <td>Services\Model\common\search\DateParameter.cs</td>
+                    <td>5</td>
+                    <td>Auto-property can be made get-only</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\search\DateParameter.cs</td>
+                    <td>6</td>
+                    <td>Auto-property can be made get-only</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\search\DateParameter.cs</td>
+                    <td>7</td>
+                    <td>Auto-property can be made get-only</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\search\GenericQueryParameter.cs</td>
+                    <td>5</td>
+                    <td>Auto-property can be made get-only</td>
+                  </tr>
+                  <tr>
                     <td>Services\Model\common\search\GenericQueryParameter.cs</td>
                     <td>6</td>
                     <td>Auto-property can be made get-only</td>
@@ -124,6 +154,11 @@
                   <tr>
                     <td>Services\Model\common\search\PaginationResponse.cs</td>
                     <td>5</td>
+                    <td>Auto-property can be made get-only</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\search\QueryParameter.cs</td>
+                    <td>6</td>
                     <td>Auto-property can be made get-only</td>
                   </tr>
                   <tr>
@@ -149,12 +184,12 @@
           <br>
           <div class="accordion-item">
             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#BadChildStatementIndent" aria-expanded="false" aria-controls="flush-collapseOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#CSharpWarnings::CS0108,CS0114" aria-expanded="false" aria-controls="flush-collapseOne">
                 <span class="badge bg-warning
                                             text-dark">WARNING</span>
-                                            : Incorrect indent: Around child statement</button>
+                                            : Keyword 'new' is required</button>
             </h2>
-            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="BadChildStatementIndent">
+            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="CSharpWarnings::CS0108,CS0114">
               <div class="accordion-body">
                 <table class="table table-hover" style="width:100%">
                   <thead class="table-dark">
@@ -165,14 +200,14 @@
                     </tr>
                   </thead>
                   <tr>
-                    <td>Services\Service\ApplicationDeployedOnServerService.cs</td>
-                    <td>47</td>
-                    <td>Line is not indented relative to the previous line around child statement, expected indent 4 spaces</td>
+                    <td>Persist\Entity\CustomerHaveLicenceToApplicationEntity.cs</td>
+                    <td>34</td>
+                    <td>The keyword 'new' is required on 'CreatedAt' because it hides property 'DateTime DateEntity.CreatedAt'</td>
                   </tr>
                   <tr>
-                    <td>Services\Service\CustomerHaveLicenceToApplicationService.cs</td>
-                    <td>46</td>
-                    <td>Line is not indented relative to the previous line around child statement, expected indent 4 spaces</td>
+                    <td>Persist\Entity\CustomerHaveLicenceToApplicationEntity.cs</td>
+                    <td>35</td>
+                    <td>The keyword 'new' is required on 'UpdatedAt' because it hides property 'DateTime? DateEntity.UpdatedAt'</td>
                   </tr>
                 </table>
               </div>
@@ -369,7 +404,7 @@
                   </thead>
                   <tr>
                     <td>Persist\Entity\ApplicationDeployedOnServer.cs</td>
-                    <td>6</td>
+                    <td>5</td>
                     <td>Namespace does not correspond to file location, must be: 'Persist.Entity'</td>
                   </tr>
                   <tr>
@@ -381,6 +416,11 @@
                     <td>Persist\Entity\BookEntity.cs</td>
                     <td>5</td>
                     <td>Namespace does not correspond to file location, must be: 'Persist.Entity'</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\CommonField\DateEntity.cs</td>
+                    <td>1</td>
+                    <td>Namespace does not correspond to file location, must be: 'Persist.Entity.CommonField'</td>
                   </tr>
                   <tr>
                     <td>Persist\Entity\CustomerEntity.cs</td>
@@ -676,11 +716,6 @@
                     <td>Class 'Program' is never instantiated</td>
                   </tr>
                   <tr>
-                    <td>Services\Model\common\search\DateParameter.cs</td>
-                    <td>3</td>
-                    <td>Class 'DateParameters' is never instantiated</td>
-                  </tr>
-                  <tr>
                     <td>Services\Model\common\search\SearchParameter.cs</td>
                     <td>3</td>
                     <td>Class 'SearchParameters' is never instantiated</td>
@@ -710,22 +745,22 @@
                   </thead>
                   <tr>
                     <td>Persist\Entity\ApplicationEntity.cs</td>
-                    <td>20</td>
+                    <td>18</td>
                     <td>Content of collection 'ApplicationDeployedOnServers' is never updated</td>
                   </tr>
                   <tr>
                     <td>Persist\Entity\ApplicationEntity.cs</td>
-                    <td>23</td>
+                    <td>21</td>
                     <td>Content of collection 'CustomerHaveLicenceToApplication' is never updated</td>
                   </tr>
                   <tr>
                     <td>Persist\Entity\CustomerEntity.cs</td>
-                    <td>24</td>
+                    <td>21</td>
                     <td>Content of collection 'CustomerHaveLicenceToApplication' is never updated</td>
                   </tr>
                   <tr>
                     <td>Persist\Entity\ServerEntity.cs</td>
-                    <td>23</td>
+                    <td>21</td>
                     <td>Content of collection 'ApplicationDeployedOnServers' is never updated</td>
                   </tr>
                 </table>
@@ -827,6 +862,11 @@
                     <td>Name 'ApplicationDeployedOnServerService' does not match rule 'Parameters'. Suggested name is 'applicationDeployedOnServerService'.</td>
                   </tr>
                   <tr>
+                    <td>Services\Extension\PaginationExtension.cs</td>
+                    <td>15</td>
+                    <td>Name 'DateParam' does not match rule 'Parameters'. Suggested name is 'dateParam'.</td>
+                  </tr>
+                  <tr>
                     <td>Services\IService\IApplicationDeployedOnServerService.cs</td>
                     <td>12</td>
                     <td>Name 'id_application' does not match rule 'Parameters'. Suggested name is 'idApplication'.</td>
@@ -878,7 +918,7 @@
                   </tr>
                   <tr>
                     <td>Services\Service\CustomerService.cs</td>
-                    <td>129</td>
+                    <td>101</td>
                     <td>Name 'CustomerEntity' does not match rule 'Local variables'. Suggested name is 'customerEntity'.</td>
                   </tr>
                   <tr>
@@ -1025,29 +1065,14 @@
                     <td>Method 'MappingProfileServer' can be made private</td>
                   </tr>
                   <tr>
-                    <td>Services\Service\ApplicationDeployedOnServerService.cs</td>
-                    <td>43</td>
-                    <td>Method 'DateSearchQuery' can be made private</td>
-                  </tr>
-                  <tr>
                     <td>Services\Service\ApplicationService.cs</td>
-                    <td>34</td>
+                    <td>35</td>
                     <td>Method 'SortQuery' can be made private</td>
                   </tr>
                   <tr>
                     <td>Services\Service\ApplicationService.cs</td>
-                    <td>63</td>
-                    <td>Method 'DateSearchQuery' can be made private</td>
-                  </tr>
-                  <tr>
-                    <td>Services\Service\ApplicationService.cs</td>
-                    <td>88</td>
+                    <td>65</td>
                     <td>Method 'TextSearchQuery' can be made private</td>
-                  </tr>
-                  <tr>
-                    <td>Services\Service\CustomerHaveLicenceToApplicationService.cs</td>
-                    <td>42</td>
-                    <td>Method 'DateSearchQuery' can be made private</td>
                   </tr>
                   <tr>
                     <td>Services\Service\CustomerService.cs</td>
@@ -1056,12 +1081,7 @@
                   </tr>
                   <tr>
                     <td>Services\Service\CustomerService.cs</td>
-                    <td>56</td>
-                    <td>Method 'DateSearchQuery' can be made private</td>
-                  </tr>
-                  <tr>
-                    <td>Services\Service\CustomerService.cs</td>
-                    <td>86</td>
+                    <td>58</td>
                     <td>Method 'SortQuery' can be made private</td>
                   </tr>
                   <tr>
@@ -1072,11 +1092,6 @@
                   <tr>
                     <td>Services\Service\ServerService.cs</td>
                     <td>63</td>
-                    <td>Method 'DateSearchQuery' can be made private</td>
-                  </tr>
-                  <tr>
-                    <td>Services\Service\ServerService.cs</td>
-                    <td>87</td>
                     <td>Method 'TextSearchQuery' can be made private</td>
                   </tr>
                 </table>
@@ -1243,17 +1258,22 @@
                   </tr>
                   <tr>
                     <td>Persist\Entity\ApplicationDeployedOnServer.cs</td>
-                    <td>13</td>
+                    <td>12</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
                     <td>Persist\Entity\ApplicationDeployedOnServer.cs</td>
-                    <td>17</td>
+                    <td>16</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
                     <td>Persist\Entity\ApplicationDeployedOnServer.cs</td>
-                    <td>20</td>
+                    <td>19</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\ApplicationDeployedOnServer.cs</td>
+                    <td>23</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
@@ -1263,17 +1283,7 @@
                   </tr>
                   <tr>
                     <td>Persist\Entity\ApplicationDeployedOnServer.cs</td>
-                    <td>25</td>
-                    <td>Property can be made init-only</td>
-                  </tr>
-                  <tr>
-                    <td>Persist\Entity\ApplicationDeployedOnServer.cs</td>
-                    <td>28</td>
-                    <td>Property can be made init-only</td>
-                  </tr>
-                  <tr>
-                    <td>Persist\Entity\ApplicationDeployedOnServer.cs</td>
-                    <td>32</td>
+                    <td>27</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
@@ -1283,17 +1293,12 @@
                   </tr>
                   <tr>
                     <td>Persist\Entity\ApplicationEntity.cs</td>
-                    <td>15</td>
+                    <td>18</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
                     <td>Persist\Entity\ApplicationEntity.cs</td>
-                    <td>20</td>
-                    <td>Property can be made init-only</td>
-                  </tr>
-                  <tr>
-                    <td>Persist\Entity\ApplicationEntity.cs</td>
-                    <td>23</td>
+                    <td>21</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
@@ -1328,7 +1333,7 @@
                   </tr>
                   <tr>
                     <td>Persist\Entity\CustomerEntity.cs</td>
-                    <td>17</td>
+                    <td>16</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
@@ -1338,17 +1343,7 @@
                   </tr>
                   <tr>
                     <td>Persist\Entity\CustomerEntity.cs</td>
-                    <td>19</td>
-                    <td>Property can be made init-only</td>
-                  </tr>
-                  <tr>
-                    <td>Persist\Entity\CustomerEntity.cs</td>
                     <td>21</td>
-                    <td>Property can be made init-only</td>
-                  </tr>
-                  <tr>
-                    <td>Persist\Entity\CustomerEntity.cs</td>
-                    <td>24</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
@@ -1388,12 +1383,7 @@
                   </tr>
                   <tr>
                     <td>Persist\Entity\ServerEntity.cs</td>
-                    <td>20</td>
-                    <td>Property can be made init-only</td>
-                  </tr>
-                  <tr>
-                    <td>Persist\Entity\ServerEntity.cs</td>
-                    <td>23</td>
+                    <td>21</td>
                     <td>Property can be made init-only</td>
                   </tr>
                 </table>
@@ -1449,12 +1439,12 @@
                   </thead>
                   <tr>
                     <td>Persist\Entity\ApplicationDeployedOnServer.cs</td>
-                    <td>31</td>
+                    <td>30</td>
                     <td>Initializing property by default value is redundant</td>
                   </tr>
                   <tr>
                     <td>Persist\Entity\ApplicationEntity.cs</td>
-                    <td>17</td>
+                    <td>15</td>
                     <td>Initializing property by default value is redundant</td>
                   </tr>
                   <tr>
@@ -1817,11 +1807,6 @@
                     </tr>
                   </thead>
                   <tr>
-                    <td>Persist\Entity\ApplicationDeployedOnServer.cs</td>
-                    <td>3</td>
-                    <td>Using directive is not required by the code and can be safely removed</td>
-                  </tr>
-                  <tr>
                     <td>Persist\Entity\BookEntity.cs</td>
                     <td></td>
                     <td>Using directive is not required by the code and can be safely removed</td>
@@ -1988,26 +1973,6 @@
                     <td>Auto-property accessor 'Title.set' is never used</td>
                   </tr>
                   <tr>
-                    <td>Services\Model\common\search\DateParameter.cs</td>
-                    <td>5</td>
-                    <td>Auto-property accessor 'StartDate.set' is never used</td>
-                  </tr>
-                  <tr>
-                    <td>Services\Model\common\search\DateParameter.cs</td>
-                    <td>6</td>
-                    <td>Auto-property accessor 'EndDate.set' is never used</td>
-                  </tr>
-                  <tr>
-                    <td>Services\Model\common\search\DateParameter.cs</td>
-                    <td>7</td>
-                    <td>Auto-property accessor 'DateField.set' is never used</td>
-                  </tr>
-                  <tr>
-                    <td>Services\Model\common\search\GenericQueryParameter.cs</td>
-                    <td>5</td>
-                    <td>Auto-property accessor 'DateParam.set' is never used</td>
-                  </tr>
-                  <tr>
                     <td>Services\Model\common\search\PaginationResponse.cs</td>
                     <td>6</td>
                     <td>Auto-property accessor 'TotalPages.get' is never used</td>
@@ -2026,11 +1991,6 @@
                     <td>Services\Model\common\search\PaginationResponse.cs</td>
                     <td>9</td>
                     <td>Auto-property accessor 'Items.get' is never used</td>
-                  </tr>
-                  <tr>
-                    <td>Services\Model\common\search\QueryParameter.cs</td>
-                    <td>6</td>
-                    <td>Auto-property accessor 'DateParam.set' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\common\search\QueryParameter.cs</td>
