@@ -3,11 +3,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 
-namespace Persist.Entities
+namespace Persist.Entities 
 {
     [PrimaryKey(nameof(CustomerId), nameof(ApplicationId))]
 
-    public class CustomerHaveLicenceToApplicationEntity
+    public class CustomerHaveLicenceToApplicationEntity : DateEntity
     {
         [Required]
         public required string ApplicationId { get; set; }

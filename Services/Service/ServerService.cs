@@ -22,7 +22,7 @@ namespace Services
         {
             var query = _serverRepository.GetServers();
             query = TextSearchQuery(queryParameters, query);
-            query = DateSearchQuery(queryParameters, query);
+            query = query.DateSearchQuery(queryParameters.DateParam);
             query = SortQuery(queryParameters, query);
             query = query.Pagination(queryParameters.Pagination);
 
@@ -56,30 +56,6 @@ namespace Services
                         break;
                 }
             }
-
-            return query;
-        }
-
-        internal static IQueryable<ServerEntity> DateSearchQuery(QueryParameters queryParameters,
-            IQueryable<ServerEntity> query)
-        {
-            if (queryParameters.DateParam != null)
-                if (queryParameters.DateParam.StartDate.HasValue && queryParameters.DateParam.EndDate.HasValue)
-                {
-                    switch (queryParameters.DateParam.DateField)
-                    {
-                        case nameof(ApplicationEntity.CreatedAt):
-                            query = query.Where(a =>
-                                a.CreatedAt >= queryParameters.DateParam.StartDate && a.CreatedAt <= queryParameters.DateParam.EndDate);
-                            break;
-                        case nameof(ApplicationEntity.UpdatedAt):
-                            query = query.Where(a =>
-                                a.UpdatedAt >= queryParameters.DateParam.StartDate && a.UpdatedAt <= queryParameters.DateParam.EndDate);
-                            break;
-                        default:
-                            throw new ArgumentException("Bad column date name");
-                    }
-                }
 
             return query;
         }

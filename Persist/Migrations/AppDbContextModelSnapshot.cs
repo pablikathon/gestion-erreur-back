@@ -49,7 +49,7 @@ namespace Persist.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("ApplicationDeployedOnServer");
+                    b.ToTable("ApplicationDeployedOnServer", (string)null);
                 });
 
             modelBuilder.Entity("Persist.Entities.ApplicationEntity", b =>
@@ -75,7 +75,7 @@ namespace Persist.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Application");
+                    b.ToTable("Application", (string)null);
                 });
 
             modelBuilder.Entity("Persist.Entities.BookEntity", b =>
@@ -89,7 +89,7 @@ namespace Persist.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Books");
+                    b.ToTable("Books", (string)null);
                 });
 
             modelBuilder.Entity("Persist.Entities.CustomerEntity", b =>
@@ -122,7 +122,7 @@ namespace Persist.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customer");
+                    b.ToTable("Customer", (string)null);
                 });
 
             modelBuilder.Entity("Persist.Entities.CustomerHaveLicenceToApplicationEntity", b =>
@@ -155,7 +155,7 @@ namespace Persist.Migrations
 
                     b.HasIndex("ApplicationId");
 
-                    b.ToTable("CustomerHaveLicenceToApplications");
+                    b.ToTable("CustomerHaveLicenceToApplications", (string)null);
                 });
 
             modelBuilder.Entity("Persist.Entities.ServerEntity", b =>
@@ -190,7 +190,7 @@ namespace Persist.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Server");
+                    b.ToTable("Server", (string)null);
                 });
 
             modelBuilder.Entity("Persist.Entities.ApplicationDeployedOnServerEntity", b =>

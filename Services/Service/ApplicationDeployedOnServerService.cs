@@ -32,37 +32,15 @@ namespace Services
         public PaginationResponse<ApplicationDeployedOnServerEntity> GetApplicationsDeployed(GenericQueryParameter queryParameters)
         {
             var query = _applicationDeployedRepository.GetAllAsync();
-            query = DateSearchQuery(queryParameters, query);
             query = query.Pagination(queryParameters.Pagination);
+            query = query.DateSearchQuery(queryParameters.DateParam);
 
             var result = query.ToList();
             return new PaginationResponse<ApplicationDeployedOnServerEntity>(result, result.Count,
-                queryParameters.Pagination.PageNumber, queryParameters.Pagination.PageSize);        }
-
-
-        internal static IQueryable<ApplicationDeployedOnServerEntity> DateSearchQuery(GenericQueryParameter queryParameters,
-            IQueryable<ApplicationDeployedOnServerEntity> query)
-        {
-            if(queryParameters.DateParam != null)
-            if (queryParameters.DateParam.StartDate.HasValue && queryParameters.DateParam.EndDate.HasValue)
-            {
-                switch (queryParameters.DateParam.DateField)
-                {
-                    case nameof(ApplicationDeployedOnServerEntity.CreatedAt):
-                        query = query.Where(a =>
-                            a.CreatedAt >= queryParameters.DateParam.StartDate && a.CreatedAt <= queryParameters.DateParam.EndDate);
-                        break;
-                    case nameof(ApplicationDeployedOnServerEntity.UpdatedAt):
-                        query = query.Where(a =>
-                            a.UpdatedAt >= queryParameters.DateParam.StartDate && a.UpdatedAt <= queryParameters.DateParam.EndDate);
-                        break;
-                    default:
-                        throw new ArgumentException("Bad column date name");
-                }
-            }
-
-            return query;
+                queryParameters.Pagination.PageNumber, queryParameters.Pagination.PageSize);
         }
+
+
 
         public Task<bool> UpdateDeployedApplicationDeployed(UpdateApplicationDeployedRequest updateApplicationDeployed)
         {

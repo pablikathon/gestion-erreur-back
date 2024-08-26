@@ -22,9 +22,10 @@ namespace Services
         {
             var query = _applicationRepository.GetApplications();
             query = TextSearchQuery(queryParameters, query);
-            query = DateSearchQuery(queryParameters, query);
             query = SortQuery(queryParameters, query);
             query = query.Pagination(queryParameters.Pagination);
+
+            query = query.DateSearchQuery(queryParameters.DateParam);
 
             var result = query.ToList();
             return new PaginationResponse<ApplicationEntity>(result, result.Count,
@@ -60,30 +61,6 @@ namespace Services
             return query;
         }
 
-        internal static IQueryable<ApplicationEntity> DateSearchQuery(QueryParameters queryParameters,
-            IQueryable<ApplicationEntity> query)
-        {
-            if (queryParameters.DateParam != null)
-            {
-                if (queryParameters.DateParam.StartDate.HasValue && queryParameters.DateParam.EndDate.HasValue)
-                {
-                    switch (queryParameters.DateParam.DateField)
-                    {
-                        case nameof(ApplicationEntity.CreatedAt):
-                            query = query.Where(a =>
-                                a.CreatedAt >= queryParameters.DateParam.StartDate && a.CreatedAt <= queryParameters.DateParam.EndDate);
-                            break;
-                        case nameof(ApplicationEntity.UpdatedAt):
-                            query = query.Where(a =>
-                                a.UpdatedAt >= queryParameters.DateParam.StartDate && a.UpdatedAt <= queryParameters.DateParam.EndDate);
-                            break;
-                        default:
-                            throw new ArgumentException("Bad column date name");
-                    }
-                }
-            }
-            return query;
-        }
 
         internal static IQueryable<ApplicationEntity> TextSearchQuery(QueryParameters queryParameters,
             IQueryable<ApplicationEntity> query)

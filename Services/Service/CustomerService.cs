@@ -21,7 +21,7 @@ namespace Services
         {
             var query = _customerRepository.GetAllAsync();
             query = TextSearchQuery(queryParameters, query);
-            query = DateSearchQuery(queryParameters, query);
+            query = query.DateSearchQuery(queryParameters.DateParam);
             query = SortQuery(queryParameters, query);
             query = query.Pagination(queryParameters.Pagination);
             var result = query.ToList();
@@ -53,34 +53,6 @@ namespace Services
             return query;
         }
 
-        protected static IQueryable<CustomerEntity> DateSearchQuery(QueryParameters queryParameters,
-            IQueryable<CustomerEntity> query)
-        {
-            if (queryParameters.DateParam != null)
-                if (queryParameters.DateParam.StartDate.HasValue && queryParameters.DateParam.EndDate.HasValue)
-                {
-                    switch (queryParameters.DateParam.DateField)
-                    {
-                        case nameof(CustomerEntity.CreatedAt):
-                            query = query.Where(a =>
-                                a.CreatedAt >= queryParameters.DateParam.StartDate && a.CreatedAt <= queryParameters.DateParam.EndDate);
-                            break;
-                        case nameof(CustomerEntity.UpdatedAt):
-                            query = query.Where(a =>
-                                a.UpdatedAt >= queryParameters.DateParam.StartDate && a.UpdatedAt <= queryParameters.DateParam.EndDate);
-                            break;
-                        case nameof(CustomerEntity.LastInteraction):
-                            query = query.Where(a =>
-                                a.LastInteraction >= queryParameters.DateParam.StartDate &&
-                                a.LastInteraction <= queryParameters.DateParam.EndDate);
-                            break;
-                        default:
-                            throw new ArgumentException("Bad column date name");
-                    }
-                }
-
-            return query;
-        }
 
 
         protected static IQueryable<CustomerEntity> SortQuery(QueryParameters queryParameters,

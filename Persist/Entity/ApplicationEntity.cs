@@ -5,15 +5,13 @@ using Microsoft.EntityFrameworkCore;
 namespace Persist.Entities
 {
     [PrimaryKey(nameof(Id))]
-    public class ApplicationEntity
+    public class ApplicationEntity : DateEntity
     {
         [Required]
         public required string Id { get; set; }
         [Required]
 
         public required string Title { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public DateTime? UpdatedAt { get; set; }
         public bool Internal { get; set; } = false;
         public string? Description { get; set; }
         [JsonIgnore]

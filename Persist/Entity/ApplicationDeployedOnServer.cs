@@ -1,13 +1,12 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 
 namespace Persist.Entities
 {
     [PrimaryKey(nameof(ServerId), nameof(ApplicationId))]
 
-    public class ApplicationDeployedOnServerEntity
+    public class ApplicationDeployedOnServerEntity : DateEntity
     {
         [Required]
         public required string ServerId { get; set; }
@@ -29,8 +28,6 @@ namespace Persist.Entities
 
         public required string ApplicationPath { get; set; }
         public bool IsActive { get; set; } = false;
-        public DateTime CreatedAt { get; set; }
-        public DateTime? UpdatedAt { get; set; }
     }
 
 }

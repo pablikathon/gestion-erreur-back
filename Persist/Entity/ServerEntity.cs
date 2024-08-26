@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Persist.Entities
 {
     [PrimaryKey(nameof(Id))]
-    public class ServerEntity
+    public class ServerEntity : DateEntity
     {
         [Required]
         public required string Id { get; set; }
@@ -17,8 +17,6 @@ namespace Persist.Entities
         public DateTime? StopHost { get; set; }
         public DateTime? HasToMakeSupportSince { get; set; }
 
-        public DateTime CreatedAt { get; set; }
-        public DateTime? UpdatedAt { get; set; }
         [JsonIgnore]
         public ICollection<ApplicationDeployedOnServerEntity> ApplicationDeployedOnServers { get; set; } = new List<ApplicationDeployedOnServerEntity>();
 
