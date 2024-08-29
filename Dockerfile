@@ -31,6 +31,6 @@ RUN dotnet reportgenerator "-reports:./artifacts/test-result.xml" "-targetdir:./
 # RESHARPER ANALYSE
 RUN dotnet jb inspectcode ./n-tier-app.sln -f="xml" --output='./artifacts/inspectcode.xml' --no-build
 
-RUN dotnet fsi xslt.fsx ./artifacts/inspectcode.xml ic.xslt "artifacts/inspectcode.html"
-RUN dotnet fsi xslt.fsx ./artifacts/test-result.xml unitTest.xslt "artifacts/test-result.html"
+RUN dotnet fsi ./Ressources/Report/Script/xslt.fsx ./artifacts/inspectcode.xml ./Ressources/Report/Template/ic.xslt ./artifacts/inspectcode.html
+RUN dotnet fsi ./Ressources/Report/Script/xslt.fsx ./artifacts/test-result.xml ./Ressources/Report/Template/unitTest.xslt "artifacts/test-result.html"
 COPY ./xunit-coverlet-icon.png ./artifacts/xunit-coverlet-icon.png
