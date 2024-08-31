@@ -1,8 +1,3 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Persist;
 using Services;
@@ -24,23 +19,7 @@ namespace Presentation
         {
             services.AddAutoMapper(typeof(MappingProfile));
 
-            services.AddScoped<IBookRepository, BookRepository>();
-            services.AddScoped<IServiceBook, ServiceBook>();
-
-            services.AddScoped<IServerRepository, ServerRepository>();
-            services.AddScoped<IServerService, ServerServices>();
-
-            services.AddScoped<ICustomerHaveLicenceToApplicationRepository,CustomerHaveLicenceToApplicationRepository>();
-            services.AddScoped<ICustomerHaveLicenceToService,CustomerHaveLicenceToApplicationService>();
-
-            services.AddScoped<IApplicationDeployedOnServerRepository, ApplicationDeployedOnServerRepository>();
-            services.AddScoped<IApplicationDeployedOnServerService, ApplicationDeployedOnServerService>();
-
-            services.AddScoped<ICustomerService, CustomerService>();
-            services.AddScoped<ICustomerRepository, CustomerRepository>();
-
-            services.AddScoped<IApplicationRepository, ApplicationRepository>();
-            services.AddScoped<IApplicationService, ApplicationService>();
+            services.AddCustomServices();
 
             services.AddOpenApiDocument();
             // Configuration de la chaîne de connexion

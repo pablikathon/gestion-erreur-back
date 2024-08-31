@@ -15,9 +15,11 @@ public partial class MappingProfile : Profile
         this.MappingProfileServer();
         this.MappingProfileCustomer();
         this.MappingProfileApplication();
+        this.MappingProfileError();
     }
     public void MappingProfilJoiningEnity(){
         this.MappingProfileApplicationDeployement();
         this.MappingProfileCustomerHaveLicence();
+
     }
 }

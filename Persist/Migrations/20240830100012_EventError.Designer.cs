@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persist;
 
@@ -10,9 +11,11 @@ using Persist;
 namespace Persist.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240830100012_EventError")]
+    partial class EventError
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -158,7 +161,7 @@ namespace Persist.Migrations
                     b.ToTable("CustomerHaveLicenceToApplications");
                 });
 
-            modelBuilder.Entity("Persist.Entities.ErrorEntity", b =>
+            modelBuilder.Entity("Persist.Entities.Error", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("varchar(255)");
@@ -173,7 +176,7 @@ namespace Persist.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime?>("InterventionDate")
+                    b.Property<DateTime>("EventDate")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("ServerId")
@@ -204,7 +207,7 @@ namespace Persist.Migrations
                     b.ToTable("Error");
                 });
 
-            modelBuilder.Entity("Persist.Entities.ErrorStatusEntity", b =>
+            modelBuilder.Entity("Persist.Entities.ErrorStatus", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("varchar(255)");
@@ -270,7 +273,7 @@ namespace Persist.Migrations
                     b.ToTable("Server");
                 });
 
-            modelBuilder.Entity("Persist.Entities.SeverityLevelEntity", b =>
+            modelBuilder.Entity("Persist.Entities.SeverityLevel", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("varchar(255)");
@@ -282,28 +285,6 @@ namespace Persist.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SeverityLevel");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "7993fd1f-bc10-494d-83cb-002c58873ff6",
-                            Title = "Faible"
-                        },
-                        new
-                        {
-                            Id = "281df6fe-3402-4a4b-b579-db92786dd61e",
-                            Title = "Modéré"
-                        },
-                        new
-                        {
-                            Id = "bd546955-66ca-4202-8e79-e60c414ce82c",
-                            Title = "Élevé"
-                        },
-                        new
-                        {
-                            Id = "12ae4ac9-59d7-4630-b361-514d3297258",
-                            Title = "Critique"
-                        });
                 });
 
             modelBuilder.Entity("Persist.Entities.ApplicationDeployedOnServerEntity", b =>
@@ -350,7 +331,7 @@ namespace Persist.Migrations
                     b.Navigation("Customer");
                 });
 
-            modelBuilder.Entity("Persist.Entities.ErrorEntity", b =>
+            modelBuilder.Entity("Persist.Entities.Error", b =>
                 {
                     b.HasOne("Persist.Entities.ApplicationEntity", "Application")
                         .WithMany()
@@ -364,13 +345,13 @@ namespace Persist.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Persist.Entities.SeverityLevelEntity", "Severity")
+                    b.HasOne("Persist.Entities.SeverityLevel", "Severity")
                         .WithMany("Errors")
                         .HasForeignKey("SeverityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Persist.Entities.ErrorStatusEntity", "Status")
+                    b.HasOne("Persist.Entities.ErrorStatus", "Status")
                         .WithMany("Errors")
                         .HasForeignKey("StatusId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -397,7 +378,7 @@ namespace Persist.Migrations
                     b.Navigation("CustomerHaveLicenceToApplication");
                 });
 
-            modelBuilder.Entity("Persist.Entities.ErrorStatusEntity", b =>
+            modelBuilder.Entity("Persist.Entities.ErrorStatus", b =>
                 {
                     b.Navigation("Errors");
                 });
@@ -407,7 +388,7 @@ namespace Persist.Migrations
                     b.Navigation("ApplicationDeployedOnServers");
                 });
 
-            modelBuilder.Entity("Persist.Entities.SeverityLevelEntity", b =>
+            modelBuilder.Entity("Persist.Entities.SeverityLevel", b =>
                 {
                     b.Navigation("Errors");
                 });
