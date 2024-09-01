@@ -11,7 +11,7 @@
     <IssueType Id="ArrangeModifiersOrder" Category="Syntax Style" CategoryId="CodeStyleIssues" Description="Adjust modifiers declaration order" Severity="SUGGESTION" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=ArrangeModifiersOrder" />
     <IssueType Id="ArrangeObjectCreationWhenTypeEvident" Category="Syntax Style" CategoryId="CodeStyleIssues" Description="Use preferred style of 'new' expression when created type is evident" Severity="SUGGESTION" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=ArrangeObjectCreationWhenTypeEvident" />
     <IssueType Id="AutoPropertyCanBeMadeGetOnly.Global" Category="Common Practices and Code Improvements" CategoryId="BestPractice" SubCategory="Auto-property can be made get-only" Description="Auto-property can be made get-only: Non-private accessibility" Severity="SUGGESTION" Global="True" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=AutoPropertyCanBeMadeGetOnly.Global" />
-    <IssueType Id="CSharpWarnings::CS0108,CS0114" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Keyword 'new' is required" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=CSharpWarnings_CS0108_CS0114" />
+    <IssueType Id="CSharpWarnings::CS8597" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Thrown value may be null." Severity="WARNING" WikiUrl="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#possible-null-assigned-to-a-nonnullable-reference" />
     <IssueType Id="CSharpWarnings::CS8600" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Converting null literal or possible null value to non-nullable type." Severity="WARNING" WikiUrl="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#possible-null-assigned-to-a-nonnullable-reference" />
     <IssueType Id="CSharpWarnings::CS8603" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Possible null reference return." Severity="WARNING" WikiUrl="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#possible-null-assigned-to-a-nonnullable-reference" />
     <IssueType Id="CSharpWarnings::CS8613" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Nullability of reference types in return type doesn't match implicitly implemented member." Severity="WARNING" WikiUrl="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#mismatch-in-nullability-declaration" />
@@ -32,6 +32,7 @@
     <IssueType Id="RedundantExtendsListEntry" Category="Redundancies in Symbol Declarations" CategoryId="DeclarationRedundancy" Description="Redundant class or interface specification in base types list" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=RedundantExtendsListEntry" />
     <IssueType Id="RedundantNameQualifier" Category="Redundancies in Code" CategoryId="CodeRedundancy" Description="Redundant name qualifier" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=RedundantNameQualifier" />
     <IssueType Id="RedundantUsingDirective" Category="Redundancies in Code" CategoryId="CodeRedundancy" Description="Redundant using directive" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=RedundantUsingDirective" />
+    <IssueType Id="ReplaceWithSingleCallToCount" Category="Common Practices and Code Improvements" CategoryId="BestPractice" SubCategory="Replace with single call to Count(..)" Description="Replace with single call to Count(..): Replace with single call to Count(..)" Severity="SUGGESTION" />
     <IssueType Id="SpecifyACultureInStringConversionExplicitly" Category="Common Practices and Code Improvements" CategoryId="BestPractice" Description="Specify string culture explicitly" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=SpecifyACultureInStringConversionExplicitly" />
     <IssueType Id="UnusedAutoPropertyAccessor.Global" Category="Potential Code Quality Issues" CategoryId="CodeSmell" SubCategory="Auto-property accessor is never used" Description="Auto-property accessor is never used: Non-private accessibility" Severity="WARNING" Global="True" />
     <IssueType Id="UnusedMember.Global" Category="Redundancies in Symbol Declarations" CategoryId="DeclarationRedundancy" SubCategory="Type member is never used" Description="Type member is never used: Non-private accessibility" Severity="SUGGESTION" Global="True" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=UnusedMember.Global" />
@@ -76,12 +77,14 @@
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ErrorEntity.cs" Offset="484-487" Line="11" Message="Property can be made init-only" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ErrorEntity.cs" Offset="628-631" Line="13" Message="Property can be made init-only" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ErrorEntity.cs" Offset="684-687" Line="14" Message="Property can be made init-only" />
-      <Issue TypeId="CheckNamespace" File="Persist\Entity\Basetable\ServerEntity.cs" Offset="131-147" Line="5" Message="Namespace does not correspond to file location, must be: 'Persist.Entity.Basetable'" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ServerEntity.cs" Offset="288-291" Line="11" Message="Property can be made init-only" />
-      <Issue TypeId="RedundantDefaultMemberInitializer" File="Persist\Entity\Basetable\ServerEntity.cs" Offset="510-517" Line="15" Message="Initializing property by default value is redundant" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ServerEntity.cs" Offset="672-675" Line="18" Message="Property can be made init-only" />
-      <Issue TypeId="CollectionNeverUpdated.Global" File="Persist\Entity\Basetable\ServerEntity.cs" Offset="763-791" Line="21" Message="Content of collection 'ApplicationDeployedOnServers' is never updated" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ServerEntity.cs" Offset="799-802" Line="21" Message="Property can be made init-only" />
+      <Issue TypeId="CheckNamespace" File="Persist\Entity\Basetable\ServerEntity.cs" Offset="183-199" Line="6" Message="Namespace does not correspond to file location, must be: 'Persist.Entity.Basetable'" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ServerEntity.cs" Offset="340-343" Line="12" Message="Property can be made init-only" />
+      <Issue TypeId="RedundantDefaultMemberInitializer" File="Persist\Entity\Basetable\ServerEntity.cs" Offset="562-569" Line="16" Message="Initializing property by default value is redundant" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ServerEntity.cs" Offset="724-727" Line="19" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ServerEntity.cs" Offset="784-787" Line="20" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ServerEntity.cs" Offset="892-895" Line="23" Message="Property can be made init-only" />
+      <Issue TypeId="CollectionNeverUpdated.Global" File="Persist\Entity\Basetable\ServerEntity.cs" Offset="982-1010" Line="25" Message="Content of collection 'ApplicationDeployedOnServers' is never updated" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ServerEntity.cs" Offset="1018-1021" Line="25" Message="Property can be made init-only" />
       <Issue TypeId="RedundantUsingDirective" File="Persist\Entity\BookEntity.cs" Offset="0-13" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="CheckNamespace" File="Persist\Entity\BookEntity.cs" Offset="107-123" Line="5" Message="Namespace does not correspond to file location, must be: 'Persist.Entity'" />
       <Issue TypeId="CSharpWarnings::CS8618" File="Persist\Entity\BookEntity.cs" Offset="230-232" Line="11" Message="Non-nullable property 'Id' is uninitialized. Consider declaring the property as nullable." />
@@ -92,8 +95,8 @@
       <Issue TypeId="CheckNamespace" File="Persist\Entity\CommonField\EventEntity.cs" Offset="144-155" Line="5" Message="Namespace does not correspond to file location, must be: 'Persist.Entity.CommonField'" />
       <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Persist\Entity\CommonField\EventEntity.cs" Offset="208-212" Line="7" Message="Auto-property accessor 'Id.set' is never used" />
       <Issue TypeId="UnusedMember.Global" File="Persist\Entity\CommonField\EventEntity.cs" Offset="234-245" Line="8" Message="Property 'Description' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Persist\Entity\CommonField\EventEntity.cs" Offset="394-400" Line="12" Message="Property 'Server' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Persist\Entity\CommonField\EventEntity.cs" Offset="563-574" Line="16" Message="Property 'Application' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Persist\Entity\CommonField\EventEntity.cs" Offset="408-412" Line="12" Message="Auto-property accessor 'Server.set' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Persist\Entity\CommonField\EventEntity.cs" Offset="582-586" Line="16" Message="Auto-property accessor 'Application.set' is never used" />
       <Issue TypeId="CheckNamespace" File="Persist\Entity\JoiningTable\ApplicationDeployedOnServer.cs" Offset="145-161" Line="5" Message="Namespace does not correspond to file location, must be: 'Persist.Entity.JoiningTable'" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\JoiningTable\ApplicationDeployedOnServer.cs" Offset="359-362" Line="12" Message="Property can be made init-only" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\JoiningTable\ApplicationDeployedOnServer.cs" Offset="458-461" Line="16" Message="Property can be made init-only" />
@@ -102,16 +105,13 @@
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\JoiningTable\ApplicationDeployedOnServer.cs" Offset="699-702" Line="24" Message="Property can be made init-only" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\JoiningTable\ApplicationDeployedOnServer.cs" Offset="795-798" Line="27" Message="Property can be made init-only" />
       <Issue TypeId="RedundantDefaultMemberInitializer" File="Persist\Entity\JoiningTable\ApplicationDeployedOnServer.cs" Offset="907-914" Line="30" Message="Initializing property by default value is redundant" />
+      <Issue TypeId="RedundantUsingDirective" File="Persist\Entity\JoiningTable\CustomerHaveLicenceToApplicationEntity.cs" Offset="97-134" Line="3" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="CheckNamespace" File="Persist\Entity\JoiningTable\CustomerHaveLicenceToApplicationEntity.cs" Offset="183-199" Line="6" Message="Namespace does not correspond to file location, must be: 'Persist.Entity.JoiningTable'" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\JoiningTable\CustomerHaveLicenceToApplicationEntity.cs" Offset="410-413" Line="13" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\JoiningTable\CustomerHaveLicenceToApplicationEntity.cs" Offset="545-548" Line="18" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\JoiningTable\CustomerHaveLicenceToApplicationEntity.cs" Offset="621-624" Line="21" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\JoiningTable\CustomerHaveLicenceToApplicationEntity.cs" Offset="747-750" Line="26" Message="Property can be made init-only" />
-      <Issue TypeId="InconsistentNaming" File="Persist\Entity\JoiningTable\CustomerHaveLicenceToApplicationEntity.cs" Offset="961-965" Line="31" Message="Name 'cost' does not match rule 'Properties'. Suggested name is 'Cost'." />
-      <Issue TypeId="RedundantDefaultMemberInitializer" File="Persist\Entity\JoiningTable\CustomerHaveLicenceToApplicationEntity.cs" Offset="1024-1031" Line="33" Message="Initializing property by default value is redundant" />
-      <Issue TypeId="CSharpWarnings::CS0108,CS0114" File="Persist\Entity\JoiningTable\CustomerHaveLicenceToApplicationEntity.cs" Offset="1057-1066" Line="34" Message="The keyword 'new' is required on 'CreatedAt' because it hides property 'DateTime DateEntity.CreatedAt'" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\JoiningTable\CustomerHaveLicenceToApplicationEntity.cs" Offset="1074-1077" Line="34" Message="Property can be made init-only" />
-      <Issue TypeId="CSharpWarnings::CS0108,CS0114" File="Persist\Entity\JoiningTable\CustomerHaveLicenceToApplicationEntity.cs" Offset="1106-1115" Line="35" Message="The keyword 'new' is required on 'UpdatedAt' because it hides property 'DateTime? DateEntity.UpdatedAt'" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\JoiningTable\CustomerHaveLicenceToApplicationEntity.cs" Offset="523-526" Line="16" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\JoiningTable\CustomerHaveLicenceToApplicationEntity.cs" Offset="599-602" Line="19" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\JoiningTable\CustomerHaveLicenceToApplicationEntity.cs" Offset="703-706" Line="22" Message="Property can be made init-only" />
+      <Issue TypeId="RedundantDefaultMemberInitializer" File="Persist\Entity\JoiningTable\CustomerHaveLicenceToApplicationEntity.cs" Offset="980-987" Line="29" Message="Initializing property by default value is redundant" />
       <Issue TypeId="CheckNamespace" File="Persist\Entity\LookupTable\ErrorStatus.cs" Offset="10-26" Line="1" Message="Namespace does not correspond to file location, must be: 'Persist.Entity.LookupTable'" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\LookupTable\ErrorStatus.cs" Offset="111-114" Line="5" Message="Property can be made init-only" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\LookupTable\ErrorStatus.cs" Offset="162-165" Line="6" Message="Property can be made init-only" />
@@ -137,8 +137,10 @@
       <Issue TypeId="InconsistentNaming" File="Persist\IRepository\ICustomerHaveLicenceToRepository.cs" Offset="403-435" Line="9" Message="Name 'CustomerHaveLicenceToApplication' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToApplication'." />
       <Issue TypeId="InconsistentNaming" File="Persist\IRepository\ICustomerHaveLicenceToRepository.cs" Offset="511-543" Line="10" Message="Name 'CustomerHaveLicenceToApplication' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToApplication'." />
       <Issue TypeId="InconsistentNaming" File="Persist\IRepository\ICustomerHaveLicenceToRepository.cs" Offset="588-597" Line="12" Message="Name 'id_client' does not match rule 'Parameters'. Suggested name is 'idClient'." />
-      <Issue TypeId="CheckNamespace" File="Persist\IRepository\ICustomerRepository.cs" Offset="35-47" Line="3" Message="Namespace does not correspond to file location, must be: 'Persist.IRepository'" />
-      <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\ICustomerRepository.cs" Offset="177-189" Line="8" Message="Method 'GetByIdAsync' is never used" />
+      <Issue TypeId="RedundantUsingDirective" File="Persist\IRepository\ICustomerRepository.cs" Offset="0-30" Message="Using directive is not required by the code and can be safely removed" />
+      <Issue TypeId="CheckNamespace" File="Persist\IRepository\ICustomerRepository.cs" Offset="66-78" Line="4" Message="Namespace does not correspond to file location, must be: 'Persist.IRepository'" />
+      <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\ICustomerRepository.cs" Offset="208-220" Line="9" Message="Method 'GetByIdAsync' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\ICustomerRepository.cs" Offset="447-469" Line="13" Message="Method 'GetErrorsForACustommer' is never used" />
       <Issue TypeId="CheckNamespace" File="Persist\IRepository\IErrorRepository.cs" Offset="35-47" Line="3" Message="Namespace does not correspond to file location, must be: 'Persist.IRepository'" />
       <Issue TypeId="CheckNamespace" File="Persist\IRepository\IServerRepository.cs" Offset="35-47" Line="3" Message="Namespace does not correspond to file location, must be: 'Persist.IRepository'" />
       <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\IServerRepository.cs" Offset="170-182" Line="8" Message="Method 'GetByIdAsync' is never used" />
@@ -156,11 +158,16 @@
       <Issue TypeId="CSharpWarnings::CS8600" File="Persist\Repository\BookRepository.cs" Offset="1142-1176" Line="42" Message="Converting null literal or possible null value into non-nullable type" />
       <Issue TypeId="CheckNamespace" File="Persist\Repository\CustomerHaveLicenceToApplicationRepository.cs" Offset="87-99" Line="5" Message="Namespace does not correspond to file location, must be: 'Persist.Repository'" />
       <Issue TypeId="InconsistentNaming" File="Persist\Repository\CustomerHaveLicenceToApplicationRepository.cs" Offset="509-541" Line="15" Message="Name 'CustomerHaveLicenceToApplication' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToApplication'." />
-      <Issue TypeId="InconsistentNaming" File="Persist\Repository\CustomerHaveLicenceToApplicationRepository.cs" Offset="2096-2128" Line="48" Message="Name 'CustomerHaveLicenceToApplication' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToApplication'." />
-      <Issue TypeId="CheckNamespace" File="Persist\Repository\CustomerRepository.cs" Offset="50-62" Line="4" Message="Namespace does not correspond to file location, must be: 'Persist.Repository'" />
-      <Issue TypeId="CSharpWarnings::CS8613" File="Persist\Repository\CustomerRepository.cs" Offset="437-458" Line="18" Message="Nullability of reference types in return type does not match implicitly implemented member 'Task&lt;CustomerEntity&gt; Repositories.ICustomerRepository.GetByIdAsync(string)'" />
-      <Issue TypeId="MethodHasAsyncOverload" File="Persist\Repository\CustomerRepository.cs" Offset="921-925" Line="32" Message="Method has async overload" />
-      <Issue TypeId="RedundantAssignment" File="Persist\Repository\CustomerRepository.cs" Offset="1006-1009" Line="35" Message="Value assigned is not used in any execution path" />
+      <Issue TypeId="RedundantNameQualifier" File="Persist\Repository\CustomerHaveLicenceToApplicationRepository.cs" Offset="945-952" Line="24" Message="Qualifier is redundant" />
+      <Issue TypeId="CSharpWarnings::CS8597" File="Persist\Repository\CustomerHaveLicenceToApplicationRepository.cs" Offset="1002-1018" Line="27" Message="Thrown value can be null" />
+      <Issue TypeId="InconsistentNaming" File="Persist\Repository\CustomerHaveLicenceToApplicationRepository.cs" Offset="2265-2297" Line="57" Message="Name 'CustomerHaveLicenceToApplication' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToApplication'." />
+      <Issue TypeId="RedundantUsingDirective" File="Persist\Repository\CustomerRepository.cs" Offset="0-30" Message="Using directive is not required by the code and can be safely removed" />
+      <Issue TypeId="RedundantUsingDirective" File="Persist\Repository\CustomerRepository.cs" Offset="31-67" Line="2" Message="Using directive is not required by the code and can be safely removed" />
+      <Issue TypeId="CheckNamespace" File="Persist\Repository\CustomerRepository.cs" Offset="118-130" Line="6" Message="Namespace does not correspond to file location, must be: 'Persist.Repository'" />
+      <Issue TypeId="CSharpWarnings::CS8613" File="Persist\Repository\CustomerRepository.cs" Offset="503-524" Line="20" Message="Nullability of reference types in return type does not match implicitly implemented member 'Task&lt;CustomerEntity&gt; Repositories.ICustomerRepository.GetByIdAsync(string)'" />
+      <Issue TypeId="MethodHasAsyncOverload" File="Persist\Repository\CustomerRepository.cs" Offset="987-991" Line="34" Message="Method has async overload" />
+      <Issue TypeId="RedundantAssignment" File="Persist\Repository\CustomerRepository.cs" Offset="1069-1072" Line="37" Message="Value assigned is not used in any execution path" />
+      <Issue TypeId="UnusedMember.Global" File="Persist\Repository\CustomerRepository.cs" Offset="1655-1689" Line="57" Message="Method 'GetErrorsForACustommerWhoOwnServer' is never used" />
       <Issue TypeId="CheckNamespace" File="Persist\Repository\ErrorRepository.cs" Offset="50-62" Line="4" Message="Namespace does not correspond to file location, must be: 'Persist.Repository'" />
       <Issue TypeId="RedundantNameQualifier" File="Persist\Repository\ErrorRepository.cs" Offset="666-673" Line="25" Message="Qualifier is redundant" />
       <Issue TypeId="RedundantUsingDirective" File="Persist\Repository\ServerRepository.cs" Offset="0-36" Message="Using directive is not required by the code and can be safely removed" />
@@ -187,14 +194,15 @@
       <Issue TypeId="InconsistentNaming" File="Presentation\Controllers\BookController.cs" Offset="1726-1732" Line="78" Message="Name 'delete' does not match rule 'Methods'. Suggested name is 'Delete'." />
       <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\BookController.cs" Offset="1860-1867" Line="84" Message="Qualifier is redundant" />
       <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="882-889" Line="35" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="1292-1299" Line="49" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="1752-1759" Line="68" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="2172-2179" Line="87" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="1263-1270" Line="49" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="1672-1679" Line="62" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="2132-2139" Line="81" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="2552-2559" Line="100" Message="Qualifier is redundant" />
       <Issue TypeId="InconsistentNaming" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="432-460" Line="16" Message="Name 'CustomerHaveLicenceToService' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToService'." />
       <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="1007-1014" Line="35" Message="Qualifier is redundant" />
       <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="1470-1477" Line="49" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="2028-2035" Line="69" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="2609-2616" Line="88" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="1969-1976" Line="68" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="2550-2557" Line="87" Message="Qualifier is redundant" />
       <Issue TypeId="InconsistentNaming" File="Presentation\Controllers\DeployedApplicationController.cs" Offset="465-499" Line="16" Message="Name 'ApplicationDeployedOnServerService' does not match rule 'Parameters'. Suggested name is 'applicationDeployedOnServerService'." />
       <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\DeployedApplicationController.cs" Offset="1089-1096" Line="35" Message="Qualifier is redundant" />
       <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\DeployedApplicationController.cs" Offset="1602-1609" Line="49" Message="Qualifier is redundant" />
@@ -322,7 +330,7 @@
       <Issue TypeId="InconsistentNaming" File="Services\IService\ICustomerHaveLicenceToService.cs" Offset="541-555" Line="12" Message="Name 'id_application' does not match rule 'Parameters'. Suggested name is 'idApplication'." />
       <Issue TypeId="InconsistentNaming" File="Services\IService\ICustomerHaveLicenceToService.cs" Offset="563-572" Line="12" Message="Name 'id_server' does not match rule 'Parameters'. Suggested name is 'idServer'." />
       <Issue TypeId="CheckNamespace" File="Services\IService\ICustomerService.cs" Offset="92-100" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
-      <Issue TypeId="InconsistentNaming" File="Services\IService\ICustomerService.cs" Offset="386-410" Line="11" Message="Name 'UpdateApplicationRequest' does not match rule 'Parameters'. Suggested name is 'updateApplicationRequest'." />
+      <Issue TypeId="InconsistentNaming" File="Services\IService\ICustomerService.cs" Offset="472-496" Line="13" Message="Name 'UpdateApplicationRequest' does not match rule 'Parameters'. Suggested name is 'updateApplicationRequest'." />
       <Issue TypeId="CheckNamespace" File="Services\IService\IErrorService.cs" Offset="38-50" Line="3" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
       <Issue TypeId="CheckNamespace" File="Services\IService\IServerService.cs" Offset="92-100" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
       <Issue TypeId="UnusedMember.Global" File="Services\Model\BookModel.cs" Offset="78-80" Line="5" Message="Property 'Id' is never used" />
@@ -394,6 +402,11 @@
       <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="1302-1307" Line="26" Message="Property 'Title' is never used" />
       <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="1506-1526" Line="29" Message="Property 'FiscalIdentification' is never used" />
       <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="1661-1676" Line="31" Message="Property 'LastInteraction' is never used" />
+      <Issue TypeId="UnusedType.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="1714-1736" Line="33" Message="Class 'UpdateCustomerRequest2' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="1937-1939" Line="37" Message="Property 'Id' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="2138-2143" Line="40" Message="Property 'Title' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="2342-2362" Line="43" Message="Property 'FiscalIdentification' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="2497-2512" Line="45" Message="Property 'LastInteraction' is never used" />
       <Issue TypeId="CheckNamespace" File="Services\Model\Req\DeployedApplicationRequest.cs" Offset="150-169" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req'" />
       <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\DeployedApplicationRequest.cs" Offset="475-488" Line="11" Message="Property 'ApplicationId' is never used" />
       <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\DeployedApplicationRequest.cs" Offset="750-758" Line="14" Message="Property 'ServerId' is never used" />
@@ -423,6 +436,15 @@
       <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ErrorRequest.cs" Offset="3440-3444" Line="50" Message="Auto-property accessor 'SeverityId.set' is never used" />
       <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ErrorRequest.cs" Offset="3709-3713" Line="53" Message="Auto-property accessor 'StatusId.set' is never used" />
       <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ErrorRequest.cs" Offset="3757-3761" Line="54" Message="Auto-property accessor 'CreatedAt.set' is never used" />
+      <Issue TypeId="CheckNamespace" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="11-30" Line="2" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req.Response'" />
+      <Issue TypeId="InconsistentNaming" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="118-129" Line="6" Message="Name 'custommerId' does not match rule 'Properties'. Suggested name is 'CustommerId'." />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="132-136" Line="6" Message="Auto-property accessor 'custommerId.get' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="192-196" Line="7" Message="Auto-property accessor 'CustommerTitle.get' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="267-271" Line="8" Message="Auto-property accessor 'CustomerFiscalIdentification.get' is never used" />
+      <Issue TypeId="InconsistentNaming" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="307-320" Line="9" Message="Name 'nberrorSolved' does not match rule 'Properties'. Suggested name is 'NberrorSolved'." />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="323-327" Line="9" Message="Auto-property accessor 'nberrorSolved.get' is never used" />
+      <Issue TypeId="InconsistentNaming" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="364-381" Line="10" Message="Name 'nbErrorUnresolved' does not match rule 'Properties'. Suggested name is 'NbErrorUnresolved'." />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="384-388" Line="10" Message="Auto-property accessor 'nbErrorUnresolved.get' is never used" />
       <Issue TypeId="CheckNamespace" File="Services\Model\Req\ServerRequest.cs" Offset="150-169" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req'" />
       <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="455-460" Line="11" Message="Property 'Title' is never used" />
       <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="685-689" Line="14" Message="Property 'Cost' is never used" />
@@ -443,10 +465,12 @@
       <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\ApplicationService.cs" Offset="2556-2564" Line="65" Message="Method 'TextSearchQuery' can be made private" />
       <Issue TypeId="CheckNamespace" File="Services\Service\CustomerHaveLicenceToApplicationService.cs" Offset="130-138" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="InconsistentNaming" File="Services\Service\CustomerHaveLicenceToApplicationService.cs" Offset="492-534" Line="14" Message="Name 'CustomerHaveLicenceToApplicationRepository' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToApplicationRepository'." />
-      <Issue TypeId="CheckNamespace" File="Services\Service\CustomerService.cs" Offset="130-138" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
-      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\CustomerService.cs" Offset="1150-1159" Line="32" Message="Method 'TextSearchQuery' can be made private" />
-      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\CustomerService.cs" Offset="2346-2355" Line="58" Message="Method 'SortQuery' can be made private" />
-      <Issue TypeId="InconsistentNaming" File="Services\Service\CustomerService.cs" Offset="4501-4515" Line="101" Message="Name 'CustomerEntity' does not match rule 'Local variables'. Suggested name is 'customerEntity'." />
+      <Issue TypeId="CheckNamespace" File="Services\Service\CustomerService.cs" Offset="182-190" Line="9" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
+      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\CustomerService.cs" Offset="1305-1314" Line="37" Message="Method 'TextSearchQuery' can be made private" />
+      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\CustomerService.cs" Offset="2501-2510" Line="63" Message="Method 'SortQuery' can be made private" />
+      <Issue TypeId="InconsistentNaming" File="Services\Service\CustomerService.cs" Offset="4656-4670" Line="106" Message="Name 'CustomerEntity' does not match rule 'Local variables'. Suggested name is 'customerEntity'." />
+      <Issue TypeId="ReplaceWithSingleCallToCount" File="Services\Service\CustomerService.cs" Offset="5590-5862" Line="126" Message="Replace with single call to Count(..)" />
+      <Issue TypeId="ReplaceWithSingleCallToCount" File="Services\Service\CustomerService.cs" Offset="5900-6172" Line="132" Message="Replace with single call to Count(..)" />
       <Issue TypeId="CheckNamespace" File="Services\Service\ErrorService.cs" Offset="137-145" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="CheckNamespace" File="Services\Service\ServerService.cs" Offset="175-183" Line="8" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="InconsistentNaming" File="Services\Service\ServerService.cs" Offset="394-410" Line="15" Message="Name 'ServerRepository' does not match rule 'Parameters'. Suggested name is 'serverRepository'." />
