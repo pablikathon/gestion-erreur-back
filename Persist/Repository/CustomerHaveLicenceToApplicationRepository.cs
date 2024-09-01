@@ -14,10 +14,19 @@ namespace Repositories
 
         public async Task<CustomerHaveLicenceToApplicationEntity> AddAsync(CustomerHaveLicenceToApplicationEntity CustomerHaveLicenceToApplication)
         {
-            _context.CustomerHaveLicenceToApplications.Add(CustomerHaveLicenceToApplication);
-            await _context.SaveChangesAsync();
-            await _context.LoadReferencesAsync(CustomerHaveLicenceToApplication, e => e.Application, e => e.Customer);
-            return CustomerHaveLicenceToApplication;
+            try
+            {
+                _context.CustomerHaveLicenceToApplications.Add(CustomerHaveLicenceToApplication);
+                await _context.SaveChangesAsync();
+                await _context.LoadReferencesAsync(CustomerHaveLicenceToApplication, e => e.Application, e => e.Customer);
+                return CustomerHaveLicenceToApplication;
+            }
+            catch (System.Exception e)
+            {
+
+                throw e.InnerException;
+            }
+
         }
 
         public async Task<bool> DeleteAsync(string idClient, string idApplication)
@@ -50,7 +59,7 @@ namespace Repositories
             var clt = await _context.CustomerHaveLicenceToApplications.FindAsync(CustomerHaveLicenceToApplication.ApplicationId, CustomerHaveLicenceToApplication.CustomerId);
             if (clt != null)
             {
-                clt.cost = CustomerHaveLicenceToApplication.cost;
+                clt.Cost = CustomerHaveLicenceToApplication.Cost;
                 clt.UpdatedAt = CustomerHaveLicenceToApplication.UpdatedAt;
                 clt.IsActive = CustomerHaveLicenceToApplication.IsActive;
                 clt.BeginingSupport = CustomerHaveLicenceToApplication.BeginingSupport;

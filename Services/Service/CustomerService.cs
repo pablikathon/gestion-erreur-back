@@ -1,6 +1,8 @@
 using AutoMapper;
+using Persist;
 using Persist.Entities;
 using Repositories;
+using Ressources.DefaultValue.Event;
 using Services.Models.Common;
 using Services.Models.Req;
 
@@ -11,10 +13,13 @@ namespace Services
         private readonly ICustomerRepository _customerRepository;
         private readonly IMapper _mapper;
 
-        public CustomerService(ICustomerRepository customerRepository, IMapper mapper)
+        private readonly AppDbContext _context;
+
+        public CustomerService(ICustomerRepository customerRepository, IMapper mapper, AppDbContext context)
         {
             _customerRepository = customerRepository;
             _mapper = mapper;
+            _context = context;
         }
 
         public PaginationResponse<CustomerEntity> GetCustomers(QueryParameters queryParameters)
@@ -110,6 +115,27 @@ namespace Services
         public async Task<Boolean> DeleteApplication(string id)
         {
             return await _customerRepository.DeleteAsync(id);
+        }
+        public IQueryable<ErrorForCustommerStatsResponse> GetErrorsForClientStats()
+        {
+            return _context.Customer.Select(custommer => new ErrorForCustommerStatsResponse
+            {
+                custommerId = custommer.Id,
+                CustommerTitle = custommer.Title,
+                CustomerFiscalIdentification = custommer.FiscalIdentification,
+                nberrorSolved = _context.Error.
+                Where(e => e.Application.CustomerHaveLicenceToApplication
+                .Any(chlta => chlta.CustomerId.Equals(custommer.Id)
+                &&
+                e.StatusId == ErrorStatusConstantId.UnresolvedStatus))
+                .Count(),
+                nbErrorUnresolved = _context.Error.
+                Where(e => e.Application.CustomerHaveLicenceToApplication
+                .Any(chlta => chlta.CustomerId.Equals(custommer.Id)
+                &&
+                e.StatusId != ErrorStatusConstantId.UnresolvedStatus))
+                .Count(),
+            });
         }
     }
 }

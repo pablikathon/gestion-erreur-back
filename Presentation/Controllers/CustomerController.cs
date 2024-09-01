@@ -37,7 +37,20 @@ public class CustomerController : Controller
             return Problem(e.Message);
         }
     }
+    [HttpGet("stats")]
+    public  ActionResult<List<ErrorForCustommerStatsResponse>> GetCustomersErrorStats()
+    {
+        try
+        {
+            var data = _customerService.GetErrorsForClientStats();
 
+            return Ok(JsonSerializer.Serialize(data.ToList()));
+        }
+        catch (System.Exception e)
+        {
+            return Problem(e.Message);
+        }
+    }
     [HttpPost]
     public async Task<ActionResult<CustomerEntity>> CreateCustomer([FromBody] CreateCustomerRequest customerRequest)
     {

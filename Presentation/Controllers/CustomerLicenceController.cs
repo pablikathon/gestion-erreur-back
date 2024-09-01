@@ -48,7 +48,6 @@ public class CustomerLicenceController : Controller
         }
         catch (System.Exception e)
         {
-            System.Diagnostics.Debug.WriteLine(e.Message);
             return Problem(e.Message);
         }
     }

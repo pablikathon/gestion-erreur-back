@@ -1,3 +1,5 @@
+using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore;
 using Persist;
 using Persist.Entities;
 
@@ -10,9 +12,9 @@ namespace Repositories
         {
             _context = context;
         }
-        public  IQueryable<CustomerEntity> GetAllAsync()
+        public IQueryable<CustomerEntity> GetAllAsync()
         {
-            return  _context.Customer.AsQueryable();
+            return _context.Customer.AsQueryable();
         }
 
         public async Task<CustomerEntity?> GetByIdAsync(string id)
@@ -31,7 +33,7 @@ namespace Repositories
         {
             var c = _context.Customer.Find(customerEntity.Id);
             if (c != null)
-            {   
+            {
                 c = customerEntity;
                 await _context.SaveChangesAsync();
                 return true;
@@ -50,6 +52,19 @@ namespace Repositories
                 return true;
             }
             return false;
+        }
+
+        public IQueryable<ErrorEntity> GetErrorsForACustommerWhoOwnServer(string idCustommer)
+        {
+            return _context.Error.Where(error => error.Server.CustomerWhoOwnServerId == idCustommer);
+        }
+        public IQueryable<ErrorEntity> GetErrorsForACustommer(string idCustommer)
+        {
+            return _context.Error.Where(e => e.Application.CustomerHaveLicenceToApplication.Any(chlta => chlta.CustomerId == idCustommer));
+            /*if (predicate != null)
+            {
+                query = (Microsoft.EntityFrameworkCore.Query.IIncludableQueryable<ErrorEntity, bool>)query.Where(predicate);
+            }*/
         }
     }
 }

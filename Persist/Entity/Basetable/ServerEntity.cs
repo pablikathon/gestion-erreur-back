@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,7 +17,10 @@ namespace Persist.Entities
         public DateTime? HostedSince { get; set; }
         public DateTime? StopHost { get; set; }
         public DateTime? HasToMakeSupportSince { get; set; }
+        public string? CustomerWhoOwnServerId { get; set; }
 
+        [ForeignKey(nameof(CustomerWhoOwnServerId))]
+        public CustomerEntity? Customer { get; set; }
         [JsonIgnore]
         public ICollection<ApplicationDeployedOnServerEntity> ApplicationDeployedOnServers { get; set; } = new List<ApplicationDeployedOnServerEntity>();
 
