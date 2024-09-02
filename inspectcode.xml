@@ -13,7 +13,10 @@
     <IssueType Id="AutoPropertyCanBeMadeGetOnly.Global" Category="Common Practices and Code Improvements" CategoryId="BestPractice" SubCategory="Auto-property can be made get-only" Description="Auto-property can be made get-only: Non-private accessibility" Severity="SUGGESTION" Global="True" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=AutoPropertyCanBeMadeGetOnly.Global" />
     <IssueType Id="CSharpWarnings::CS8597" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Thrown value may be null." Severity="WARNING" WikiUrl="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#possible-null-assigned-to-a-nonnullable-reference" />
     <IssueType Id="CSharpWarnings::CS8600" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Converting null literal or possible null value to non-nullable type." Severity="WARNING" WikiUrl="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#possible-null-assigned-to-a-nonnullable-reference" />
+    <IssueType Id="CSharpWarnings::CS8601" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Possible null reference assignment." Severity="WARNING" WikiUrl="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#possible-null-assigned-to-a-nonnullable-reference" />
+    <IssueType Id="CSharpWarnings::CS8602" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Dereference of a possibly null reference." Severity="WARNING" WikiUrl="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#possible-dereference-of-null" />
     <IssueType Id="CSharpWarnings::CS8603" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Possible null reference return." Severity="WARNING" WikiUrl="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#possible-null-assigned-to-a-nonnullable-reference" />
+    <IssueType Id="CSharpWarnings::CS8604" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Possible null reference argument for a parameter." Severity="WARNING" WikiUrl="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#possible-null-assigned-to-a-nonnullable-reference" />
     <IssueType Id="CSharpWarnings::CS8613" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Nullability of reference types in return type doesn't match implicitly implemented member." Severity="WARNING" WikiUrl="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#mismatch-in-nullability-declaration" />
     <IssueType Id="CSharpWarnings::CS8618" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Non-nullable member is uninitialized." Severity="WARNING" WikiUrl="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#nonnullable-reference-not-initialized" />
     <IssueType Id="CSharpWarnings::CS8620" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Argument cannot be used for corresponding parameter due to differences in the nullability of reference types." Severity="WARNING" WikiUrl="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#mismatch-in-nullability-declaration" />
@@ -194,10 +197,10 @@
       <Issue TypeId="InconsistentNaming" File="Presentation\Controllers\BookController.cs" Offset="1726-1732" Line="78" Message="Name 'delete' does not match rule 'Methods'. Suggested name is 'Delete'." />
       <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\BookController.cs" Offset="1860-1867" Line="84" Message="Qualifier is redundant" />
       <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="882-889" Line="35" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="1263-1270" Line="49" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="1672-1679" Line="62" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="2132-2139" Line="81" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="2552-2559" Line="100" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="1340-1347" Line="51" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="1749-1756" Line="64" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="2209-2216" Line="83" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="2629-2636" Line="102" Message="Qualifier is redundant" />
       <Issue TypeId="InconsistentNaming" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="432-460" Line="16" Message="Name 'CustomerHaveLicenceToService' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToService'." />
       <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="1007-1014" Line="35" Message="Qualifier is redundant" />
       <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="1470-1477" Line="49" Message="Qualifier is redundant" />
@@ -255,6 +258,10 @@
       <Issue TypeId="ArrangeModifiersOrder" File="Ressources\Extension\GetDescription.cs" Offset="106-119" Line="7" Message="Inconsistent modifiers declaration order" />
       <Issue TypeId="UnusedMember.Global" File="Ressources\Extension\GetDescription.cs" Offset="127-141" Line="7" Message="Method 'GetDescription' is never used" />
       <Issue TypeId="UnusedVariable" File="Ressources\Extension\GetDescription.cs" Offset="342-352" Line="13" Message="Local variable 'attributes' is never used" />
+      <Issue TypeId="UnusedType.Global" File="Ressources\Function\FunctionExpression.cs" Offset="46-64" Line="3" Message="Class 'FunctionExpression' is never used" />
+      <Issue TypeId="CheckNamespace" File="Ressources\Function\FunctionExpression.cs" Offset="46-64" Line="3" Message="Namespace does not correspond to file location, must be: 'Ressources.Function'" />
+      <Issue TypeId="UnusedMember.Global" File="Ressources\Function\FunctionExpression.cs" Offset="96-109" Line="4" Message="Field 'ContainMethod' is never used" />
+      <Issue TypeId="CSharpWarnings::CS8601" File="Ressources\Function\FunctionExpression.cs" Offset="112-173" Line="4" Message="Possible null reference assignment" />
     </Project>
     <Project Name="Services">
       <Issue TypeId="RedundantUsingDirective" File="Services\Automapper\AutoMapper.cs" Offset="18-41" Line="2" Message="Using directive is not required by the code and can be safely removed" />
@@ -318,8 +325,14 @@
       <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="122-128" Line="7" Message="Method 'MappingProfileServer' can be made private" />
       <Issue TypeId="CheckNamespace" File="Services\Extension\LeapYearExtension.cs" Offset="20-37" Line="1" Message="Namespace does not correspond to file location, must be: 'Services.Extension'" />
       <Issue TypeId="UnusedMember.Global" File="Services\Extension\LeapYearExtension.cs" Offset="292-302" Line="5" Message="Method 'IsLeapYear' is never used" />
-      <Issue TypeId="CheckNamespace" File="Services\Extension\PaginationExtension.cs" Offset="51-70" Line="3" Message="Namespace does not correspond to file location, must be: 'Services.Extension'" />
-      <Issue TypeId="InconsistentNaming" File="Services\Extension\PaginationExtension.cs" Offset="587-596" Line="15" Message="Name 'DateParam' does not match rule 'Parameters'. Suggested name is 'dateParam'." />
+      <Issue TypeId="CheckNamespace" File="Services\Extension\PaginationExtension.cs" Offset="106-125" Line="4" Message="Namespace does not correspond to file location, must be: 'Services.Extension'" />
+      <Issue TypeId="InconsistentNaming" File="Services\Extension\PaginationExtension.cs" Offset="642-651" Line="16" Message="Name 'DateParam' does not match rule 'Parameters'. Suggested name is 'dateParam'." />
+      <Issue TypeId="CSharpWarnings::CS8600" File="Services\Extension\PaginationExtension.cs" Offset="2884-2969" Line="66" Message="Converting null literal or possible null value into non-nullable type" />
+      <Issue TypeId="CSharpWarnings::CS8603" File="Services\Extension\PaginationExtension.cs" Offset="2884-2969" Line="66" Message="Possible null reference return" />
+      <Issue TypeId="CSharpWarnings::CS8604" File="Services\Extension\PaginationExtension.cs" Offset="4301-4314" Line="93" Message="Possible null reference argument for parameter 'method' in 'System.Linq.Expressions.Expression.Call'" />
+      <Issue TypeId="CSharpWarnings::CS8602" File="Services\Extension\PaginationExtension.cs" Offset="4470-4497" Line="96" Message="Dereference of a possibly null reference" />
+      <Issue TypeId="CSharpWarnings::CS8604" File="Services\Extension\PaginationExtension.cs" Offset="4582-4596" Line="97" Message="Possible null reference argument for parameter 'method' in 'System.Linq.Expressions.Expression.Call'" />
+      <Issue TypeId="CheckNamespace" File="Services\Extension\StringExetnsion.cs" Offset="20-35" Line="1" Message="Namespace does not correspond to file location, must be: 'Services.Extension'" />
       <Issue TypeId="CheckNamespace" File="Services\IService\IApplicationDeployedOnServerService.cs" Offset="92-100" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
       <Issue TypeId="InconsistentNaming" File="Services\IService\IApplicationDeployedOnServerService.cs" Offset="593-607" Line="12" Message="Name 'id_application' does not match rule 'Parameters'. Suggested name is 'idApplication'." />
       <Issue TypeId="InconsistentNaming" File="Services\IService\IApplicationDeployedOnServerService.cs" Offset="615-624" Line="12" Message="Name 'id_server' does not match rule 'Parameters'. Suggested name is 'idServer'." />
@@ -330,7 +343,7 @@
       <Issue TypeId="InconsistentNaming" File="Services\IService\ICustomerHaveLicenceToService.cs" Offset="541-555" Line="12" Message="Name 'id_application' does not match rule 'Parameters'. Suggested name is 'idApplication'." />
       <Issue TypeId="InconsistentNaming" File="Services\IService\ICustomerHaveLicenceToService.cs" Offset="563-572" Line="12" Message="Name 'id_server' does not match rule 'Parameters'. Suggested name is 'idServer'." />
       <Issue TypeId="CheckNamespace" File="Services\IService\ICustomerService.cs" Offset="92-100" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
-      <Issue TypeId="InconsistentNaming" File="Services\IService\ICustomerService.cs" Offset="472-496" Line="13" Message="Name 'UpdateApplicationRequest' does not match rule 'Parameters'. Suggested name is 'updateApplicationRequest'." />
+      <Issue TypeId="InconsistentNaming" File="Services\IService\ICustomerService.cs" Offset="511-535" Line="13" Message="Name 'UpdateApplicationRequest' does not match rule 'Parameters'. Suggested name is 'updateApplicationRequest'." />
       <Issue TypeId="CheckNamespace" File="Services\IService\IErrorService.cs" Offset="38-50" Line="3" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
       <Issue TypeId="CheckNamespace" File="Services\IService\IServerService.cs" Offset="92-100" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
       <Issue TypeId="UnusedMember.Global" File="Services\Model\BookModel.cs" Offset="78-80" Line="5" Message="Property 'Id' is never used" />
@@ -461,21 +474,15 @@
       <Issue TypeId="CheckNamespace" File="Services\Service\ApplicationDeployedOnServerService.cs" Offset="175-183" Line="8" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="CheckNamespace" File="Services\Service\ApplicationService.cs" Offset="175-183" Line="8" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="InconsistentNaming" File="Services\Service\ApplicationService.cs" Offset="422-443" Line="15" Message="Name 'ApplicationRepository' does not match rule 'Parameters'. Suggested name is 'applicationRepository'." />
-      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\ApplicationService.cs" Offset="1240-1248" Line="35" Message="Method 'SortQuery' can be made private" />
-      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\ApplicationService.cs" Offset="2556-2564" Line="65" Message="Method 'TextSearchQuery' can be made private" />
       <Issue TypeId="CheckNamespace" File="Services\Service\CustomerHaveLicenceToApplicationService.cs" Offset="130-138" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="InconsistentNaming" File="Services\Service\CustomerHaveLicenceToApplicationService.cs" Offset="492-534" Line="14" Message="Name 'CustomerHaveLicenceToApplicationRepository' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToApplicationRepository'." />
       <Issue TypeId="CheckNamespace" File="Services\Service\CustomerService.cs" Offset="182-190" Line="9" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
-      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\CustomerService.cs" Offset="1305-1314" Line="37" Message="Method 'TextSearchQuery' can be made private" />
-      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\CustomerService.cs" Offset="2501-2510" Line="63" Message="Method 'SortQuery' can be made private" />
-      <Issue TypeId="InconsistentNaming" File="Services\Service\CustomerService.cs" Offset="4656-4670" Line="106" Message="Name 'CustomerEntity' does not match rule 'Local variables'. Suggested name is 'customerEntity'." />
-      <Issue TypeId="ReplaceWithSingleCallToCount" File="Services\Service\CustomerService.cs" Offset="5590-5862" Line="126" Message="Replace with single call to Count(..)" />
-      <Issue TypeId="ReplaceWithSingleCallToCount" File="Services\Service\CustomerService.cs" Offset="5900-6172" Line="132" Message="Replace with single call to Count(..)" />
+      <Issue TypeId="InconsistentNaming" File="Services\Service\CustomerService.cs" Offset="1491-1505" Line="42" Message="Name 'CustomerEntity' does not match rule 'Local variables'. Suggested name is 'customerEntity'." />
+      <Issue TypeId="ReplaceWithSingleCallToCount" File="Services\Service\CustomerService.cs" Offset="2469-2741" Line="62" Message="Replace with single call to Count(..)" />
+      <Issue TypeId="ReplaceWithSingleCallToCount" File="Services\Service\CustomerService.cs" Offset="2779-3051" Line="68" Message="Replace with single call to Count(..)" />
       <Issue TypeId="CheckNamespace" File="Services\Service\ErrorService.cs" Offset="137-145" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="CheckNamespace" File="Services\Service\ServerService.cs" Offset="175-183" Line="8" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="InconsistentNaming" File="Services\Service\ServerService.cs" Offset="394-410" Line="15" Message="Name 'ServerRepository' does not match rule 'Parameters'. Suggested name is 'serverRepository'." />
-      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\ServerService.cs" Offset="1171-1179" Line="34" Message="Method 'SortQuery' can be made private" />
-      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\ServerService.cs" Offset="2461-2469" Line="63" Message="Method 'TextSearchQuery' can be made private" />
       <Issue TypeId="RedundantUsingDirective" File="Services\Service\ServiceBook.cs" Offset="0-13" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="RedundantUsingDirective" File="Services\Service\ServiceBook.cs" Offset="14-47" Line="2" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="RedundantUsingDirective" File="Services\Service\ServiceBook.cs" Offset="48-77" Line="3" Message="Using directive is not required by the code and can be safely removed" />
