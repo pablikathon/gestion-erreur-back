@@ -38,13 +38,15 @@ public class CustomerController : Controller
         }
     }
     [HttpGet("stats")]
-    public  ActionResult<List<ErrorForCustommerStatsResponse>> GetCustomersErrorStats()
+    public  ActionResult<PaginationResponse<ErrorForCustommerStatsResponse>> GetCustomersErrorStats(
+        [FromQuery] QueryParameters queryParameters
+    )
     {
         try
         {
-            var data = _customerService.GetErrorsForClientStats();
+            var data = _customerService.GetErrorsForClientStats(queryParameters);
 
-            return Ok(JsonSerializer.Serialize(data.ToList()));
+            return Ok(JsonSerializer.Serialize(data));
         }
         catch (System.Exception e)
         {

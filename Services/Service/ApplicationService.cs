@@ -21,65 +21,15 @@ namespace Services
         public PaginationResponse<ApplicationEntity> GetApplications(QueryParameters queryParameters)
         {
             var query = _applicationRepository.GetApplications();
-            query = TextSearchQuery(queryParameters, query);
-            query = SortQuery(queryParameters, query);
-            query = query.Pagination(queryParameters.Pagination);
-
+            if (queryParameters.SearchParam != null)
+                query = query.TextSearch(queryParameters.SearchParam);
             query = query.DateSearchQuery(queryParameters.DateParam);
+            query = query.SortBy(queryParameters.Sort);
+            query = query.Pagination(queryParameters.Pagination);
 
             var result = query.ToList();
             return new PaginationResponse<ApplicationEntity>(result, result.Count,
                 queryParameters.Pagination.PageNumber, queryParameters.Pagination.PageSize);
-        }
-
-        internal static IQueryable<ApplicationEntity> SortQuery(QueryParameters queryParameters,
-            IQueryable<ApplicationEntity> query)
-        {
-            if (!String.IsNullOrEmpty(queryParameters.Sort.SortBy) &&
-                !String.IsNullOrWhiteSpace(queryParameters.Sort.SortBy))
-            {
-                switch (queryParameters.Sort.SortBy)
-                {
-                    case nameof(ApplicationEntity.Title):
-                        query = queryParameters.Sort.Ascending
-                            ? query.OrderBy(a => a.Title)
-                            : query.OrderByDescending(a => a.Title);
-                        break;
-                    case nameof(ApplicationEntity.CreatedAt):
-                        query = queryParameters.Sort.Ascending
-                            ? query.OrderBy(a => a.CreatedAt)
-                            : query.OrderByDescending(a => a.CreatedAt);
-                        break;
-                    case nameof(ApplicationEntity.UpdatedAt):
-                        query = queryParameters.Sort.Ascending
-                            ? query.OrderBy(a => a.UpdatedAt)
-                            : query.OrderByDescending(a => a.UpdatedAt);
-                        break;
-                }
-            }
-
-            return query;
-        }
-
-
-        internal static IQueryable<ApplicationEntity> TextSearchQuery(QueryParameters queryParameters,
-            IQueryable<ApplicationEntity> query)
-        {
-            if (queryParameters.SearchParam != null)
-                if (!String.IsNullOrEmpty(queryParameters.SearchParam.SearchTerm) &&
-                    !String.IsNullOrWhiteSpace(queryParameters.SearchParam.SearchTerm))
-                {
-                    switch (queryParameters.SearchParam.SearchColumn)
-                    {
-                        case nameof(ApplicationEntity.Title):
-                            query = query.Where(a => a.Title.ToLower().Contains(queryParameters.SearchParam.SearchTerm.ToLower()));
-                            break;
-                        default:
-                            throw new ArgumentException("Bad column name");
-                    }
-                }
-
-            return query;
         }
 
         public async Task<ApplicationEntity> CreateApplication(CreateApplicationRequest createApplication)
