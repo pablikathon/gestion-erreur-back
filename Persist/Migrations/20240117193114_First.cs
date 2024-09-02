@@ -16,23 +16,20 @@ namespace Persist.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Books",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Title = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Author = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    PublishedDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    ISBN = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Books", x => x.Id);
-                })
+                    name: "Books",
+                    columns: table => new
+                    {
+                        Id = table.Column<int>(type: "int", nullable: false)
+                            .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                        Title = table.Column<string>(type: "longtext", nullable: false)
+                            .Annotation("MySql:CharSet", "utf8mb4"),
+                        Author = table.Column<string>(type: "longtext", nullable: false)
+                            .Annotation("MySql:CharSet", "utf8mb4"),
+                        PublishedDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                        ISBN = table.Column<string>(type: "longtext", nullable: false)
+                            .Annotation("MySql:CharSet", "utf8mb4")
+                    },
+                    constraints: table => { table.PrimaryKey("PK_Books", x => x.Id); })
                 .Annotation("MySql:CharSet", "utf8mb4");
         }
 

@@ -2,12 +2,12 @@ using Persist.Entities;
 
 namespace Repositories
 {
-    public interface IApplicationRepository 
+    public interface IApplicationRepository
     {
         IQueryable<ApplicationEntity> GetApplications();
-        Task<ApplicationEntity> GetByIdAsync(string id);
+        Task<ApplicationEntity?> GetByIdAsync(string id);
         Task<ApplicationEntity> AddAsync(ApplicationEntity application);
-        Task<Boolean>UpdateAsync(ApplicationEntity application);
+        Task<Boolean> UpdateAsync(ApplicationEntity application);
         Task<Boolean> DeleteAsync(string id);
     }
 }

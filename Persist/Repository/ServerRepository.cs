@@ -7,10 +7,12 @@ namespace Repositories
     public class ServerRepository : IServerRepository
     {
         private readonly AppDbContext _context;
+
         public ServerRepository(AppDbContext context)
         {
             _context = context;
         }
+
         public IQueryable<ServerEntity> GetServers()
         {
             return _context.Server.AsQueryable();
@@ -42,8 +44,8 @@ namespace Repositories
                 await _context.SaveChangesAsync();
                 return true;
             }
-            return false;
 
+            return false;
         }
 
         public async Task<Boolean> DeleteAsync(string id)
@@ -55,6 +57,7 @@ namespace Repositories
                 await _context.SaveChangesAsync();
                 return true;
             }
+
             return false;
         }
     }

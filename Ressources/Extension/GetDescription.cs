@@ -4,7 +4,7 @@ namespace Enums.Services
 {
     public static class Extensions
     {
-        static public string GetDescription(this Enum enumValue)
+        public static string GetDescription(this Enum enumValue)
         {
             var field = enumValue.GetType().GetField(enumValue.ToString());
             if (field == null)

@@ -8,10 +8,12 @@ namespace Repositories
     public class CustomerRepository : ICustomerRepository
     {
         private readonly AppDbContext _context;
+
         public CustomerRepository(AppDbContext context)
         {
             _context = context;
         }
+
         public IQueryable<CustomerEntity> GetAllAsync()
         {
             return _context.Customer.AsQueryable();
@@ -38,8 +40,8 @@ namespace Repositories
                 await _context.SaveChangesAsync();
                 return true;
             }
-            return false;
 
+            return false;
         }
 
         public async Task<Boolean> DeleteAsync(string id)
@@ -51,6 +53,7 @@ namespace Repositories
                 await _context.SaveChangesAsync();
                 return true;
             }
+
             return false;
         }
 
@@ -58,9 +61,11 @@ namespace Repositories
         {
             return _context.Error.Where(error => error.Server.CustomerWhoOwnServerId == idCustommer);
         }
+
         public IQueryable<ErrorEntity> GetErrorsForACustommer(string idCustommer)
         {
-            return _context.Error.Where(e => e.Application.CustomerHaveLicenceToApplication.Any(chlta => chlta.CustomerId == idCustommer));
+            return _context.Error.Where(e =>
+                e.Application.CustomerHaveLicenceToApplication.Any(chlta => chlta.CustomerId == idCustommer));
             /*if (predicate != null)
             {
                 query = (Microsoft.EntityFrameworkCore.Query.IIncludableQueryable<ErrorEntity, bool>)query.Where(predicate);

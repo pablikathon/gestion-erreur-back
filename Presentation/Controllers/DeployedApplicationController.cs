@@ -37,14 +37,17 @@ public class DeployedApplicationController : Controller
             return Problem(e.Message);
         }
     }
+
     [HttpPost]
     public async Task<ActionResult<ApplicationEntity>> DeployedApplicationOnServer(
-    [FromBody] CreateApplicationDeployedRequest createApplicationDeployedRequest)
+        [FromBody] CreateApplicationDeployedRequest createApplicationDeployedRequest)
     {
         try
         {
             return Created("/deployedServer",
-                JsonSerializer.Serialize(await _applicationDeployedOnServerService.DeployedApplicationOnServer(createApplicationDeployedRequest)));
+                JsonSerializer.Serialize(
+                    await _applicationDeployedOnServerService.DeployedApplicationOnServer(
+                        createApplicationDeployedRequest)));
         }
         catch (System.Exception e)
         {
@@ -54,11 +57,14 @@ public class DeployedApplicationController : Controller
     }
 
     [HttpPut]
-    public async Task<ActionResult<Boolean>> UpdateApplication([FromBody] UpdateApplicationDeployedRequest updateApplicationDeployedRequest)
+    public async Task<ActionResult<Boolean>> UpdateApplication(
+        [FromBody] UpdateApplicationDeployedRequest updateApplicationDeployedRequest)
     {
         try
         {
-            var data = await _applicationDeployedOnServerService.UpdateDeployedApplicationDeployed(updateApplicationDeployedRequest);
+            var data =
+                await _applicationDeployedOnServerService.UpdateDeployedApplicationDeployed(
+                    updateApplicationDeployedRequest);
             if (data)
             {
                 return NoContent();
@@ -73,11 +79,13 @@ public class DeployedApplicationController : Controller
     }
 
     [HttpDelete("id")]
-    public async Task<ActionResult<Boolean>> DeleteDeployedApplication([FromBody] DeleteApplicationDeployedRequest deleteApplicationDeployedRequest)
+    public async Task<ActionResult<Boolean>> DeleteDeployedApplication(
+        [FromBody] DeleteApplicationDeployedRequest deleteApplicationDeployedRequest)
     {
         try
         {
-            var data = await _applicationDeployedOnServerService.DeleteDeployedApplication(deleteApplicationDeployedRequest.ApplicationId, deleteApplicationDeployedRequest.ServerId);
+            var data = await _applicationDeployedOnServerService.DeleteDeployedApplication(
+                deleteApplicationDeployedRequest.ApplicationId, deleteApplicationDeployedRequest.ServerId);
             if (data)
             {
                 return NoContent();
@@ -91,4 +99,3 @@ public class DeployedApplicationController : Controller
         }
     }
 }
-

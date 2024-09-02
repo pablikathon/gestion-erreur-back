@@ -1,4 +1,5 @@
 namespace Test;
+
 using AutoMapper;
 using Persist.Entities;
 using Services.Models.Req;
@@ -13,6 +14,7 @@ public class ApplicationAutoMapTest
         var config = new MapperConfiguration(cfg => cfg.AddProfile<MappingProfile>());
         _mapper = config.CreateMapper();
     }
+
     [Fact]
     public void CreateApplicationRequest_should_generate_Id()
     {
@@ -28,6 +30,7 @@ public class ApplicationAutoMapTest
         // Assert
         Assert.True(Guid.TryParse(ApplicationEntity.Id, out x));
     }
+
     [Fact]
     public void CreateApplicationRequest_should_generate_CreatedAt()
     {
@@ -36,7 +39,6 @@ public class ApplicationAutoMapTest
         {
             Title = "Discord",
             Description = "Les cocinnelles sont des coléoptères"
-
         };
         DateTime y;
         // Act
@@ -44,6 +46,7 @@ public class ApplicationAutoMapTest
         // Assert
         Assert.True(DateTime.TryParse(ApplicationEntity.CreatedAt.ToString(), out y));
     }
+
     [Fact]
     public void canNotMap_CreateApplication_On_customer()
     {
@@ -52,11 +55,11 @@ public class ApplicationAutoMapTest
         {
             Title = "Cegid",
             Description = "Les cocinnelles sont des coléoptères"
-
         };
         // Act & assert
         Assert.Throws<AutoMapperMappingException>(() => _mapper.Map<CustomerEntity>(CreateApplicationRequest));
     }
+
     [Fact]
     public void canNotMap_UpdateApplicationRequest_On_customer()
     {

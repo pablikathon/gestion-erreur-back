@@ -11,7 +11,8 @@ namespace Services
         private readonly ICustomerHaveLicenceToApplicationRepository _customerHaveLicenceToApplicationRepository;
         private readonly IMapper _mapper;
 
-        public CustomerHaveLicenceToApplicationService(ICustomerHaveLicenceToApplicationRepository CustomerHaveLicenceToApplicationRepository, IMapper mapper)
+        public CustomerHaveLicenceToApplicationService(
+            ICustomerHaveLicenceToApplicationRepository CustomerHaveLicenceToApplicationRepository, IMapper mapper)
         {
             _customerHaveLicenceToApplicationRepository = CustomerHaveLicenceToApplicationRepository;
             _mapper = mapper;
@@ -20,12 +21,13 @@ namespace Services
         public Task<bool> DeleteAsync(string idClient, string idApplication)
         {
             return _customerHaveLicenceToApplicationRepository.DeleteAsync(idClient, idApplication);
-
         }
 
-        public Task<CustomerHaveLicenceToApplicationEntity> AddAsync(CreateCustomerHasLicenceToRequest createCustomerHasLicenceToRequest)
+        public Task<CustomerHaveLicenceToApplicationEntity> AddAsync(
+            CreateCustomerHasLicenceToRequest createCustomerHasLicenceToRequest)
         {
-            return _customerHaveLicenceToApplicationRepository.AddAsync(_mapper.Map<CustomerHaveLicenceToApplicationEntity>(createCustomerHasLicenceToRequest));
+            return _customerHaveLicenceToApplicationRepository.AddAsync(
+                _mapper.Map<CustomerHaveLicenceToApplicationEntity>(createCustomerHasLicenceToRequest));
         }
 
         public PaginationResponse<CustomerHaveLicenceToApplicationEntity> GetAll(GenericQueryParameter queryParameters)
@@ -36,13 +38,14 @@ namespace Services
 
             var result = query.ToList();
             return new PaginationResponse<CustomerHaveLicenceToApplicationEntity>(result, result.Count,
-                queryParameters.Pagination.PageNumber, queryParameters.Pagination.PageSize);        }
-
+                queryParameters.Pagination.PageNumber, queryParameters.Pagination.PageSize);
+        }
 
 
         public Task<bool> UpdateAsync(UpdateCustomerHasLicenceRequest updateCustomerHasLicenceRequest)
         {
-            return _customerHaveLicenceToApplicationRepository.UpdateAsync(_mapper.Map<CustomerHaveLicenceToApplicationEntity>(updateCustomerHasLicenceRequest));
+            return _customerHaveLicenceToApplicationRepository.UpdateAsync(
+                _mapper.Map<CustomerHaveLicenceToApplicationEntity>(updateCustomerHasLicenceRequest));
         }
     }
 }

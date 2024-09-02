@@ -36,7 +36,7 @@ namespace Presentation
                     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
                     options.JsonSerializerOptions.MaxDepth = 0;
                 }
-            ); 
+            );
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

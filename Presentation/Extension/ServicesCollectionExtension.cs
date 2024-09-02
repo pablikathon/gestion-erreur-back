@@ -1,13 +1,11 @@
 using Persist;
 using Services;
 using Repositories;
+
 public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddCustomServices(this IServiceCollection services)
     {
-        services.AddScoped<IBookRepository, BookRepository>();
-        services.AddScoped<IServiceBook, ServiceBook>();
-
         services.AddScoped<IServerRepository, ServerRepository>();
         services.AddScoped<IServerService, ServerServices>();
 
@@ -22,10 +20,10 @@ public static class ServiceCollectionExtensions
 
         services.AddScoped<IApplicationRepository, ApplicationRepository>();
         services.AddScoped<IApplicationService, ApplicationService>();
-        
-        services.AddScoped<IErrorRepository,ErrorRepository>();
-        services.AddScoped<IErrorService,ErrorService>();
-        
+
+        services.AddScoped<IErrorRepository, ErrorRepository>();
+        services.AddScoped<IErrorService, ErrorService>();
+
         return services;
     }
 }

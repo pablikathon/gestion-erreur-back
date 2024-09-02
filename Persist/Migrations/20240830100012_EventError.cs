@@ -14,83 +14,77 @@ namespace Persist.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "ErrorStatus",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "varchar(255)", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Title = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ErrorStatus", x => x.Id);
-                })
+                    name: "ErrorStatus",
+                    columns: table => new
+                    {
+                        Id = table.Column<string>(type: "varchar(255)", nullable: false)
+                            .Annotation("MySql:CharSet", "utf8mb4"),
+                        Title = table.Column<string>(type: "longtext", nullable: false)
+                            .Annotation("MySql:CharSet", "utf8mb4")
+                    },
+                    constraints: table => { table.PrimaryKey("PK_ErrorStatus", x => x.Id); })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "SeverityLevel",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "varchar(255)", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Title = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_SeverityLevel", x => x.Id);
-                })
+                    name: "SeverityLevel",
+                    columns: table => new
+                    {
+                        Id = table.Column<string>(type: "varchar(255)", nullable: false)
+                            .Annotation("MySql:CharSet", "utf8mb4"),
+                        Title = table.Column<string>(type: "longtext", nullable: false)
+                            .Annotation("MySql:CharSet", "utf8mb4")
+                    },
+                    constraints: table => { table.PrimaryKey("PK_SeverityLevel", x => x.Id); })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Error",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "varchar(255)", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    SeverityId = table.Column<string>(type: "varchar(255)", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    StatusId = table.Column<string>(type: "varchar(255)", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: true),
-                    Description = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    EventDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    ServerId = table.Column<string>(type: "varchar(255)", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    ApplicationId = table.Column<string>(type: "varchar(255)", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Error", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Error_Application_ApplicationId",
-                        column: x => x.ApplicationId,
-                        principalTable: "Application",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Error_ErrorStatus_StatusId",
-                        column: x => x.StatusId,
-                        principalTable: "ErrorStatus",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Error_Server_ServerId",
-                        column: x => x.ServerId,
-                        principalTable: "Server",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Error_SeverityLevel_SeverityId",
-                        column: x => x.SeverityId,
-                        principalTable: "SeverityLevel",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                })
+                    name: "Error",
+                    columns: table => new
+                    {
+                        Id = table.Column<string>(type: "varchar(255)", nullable: false)
+                            .Annotation("MySql:CharSet", "utf8mb4"),
+                        SeverityId = table.Column<string>(type: "varchar(255)", nullable: false)
+                            .Annotation("MySql:CharSet", "utf8mb4"),
+                        StatusId = table.Column<string>(type: "varchar(255)", nullable: false)
+                            .Annotation("MySql:CharSet", "utf8mb4"),
+                        CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                        UpdatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: true),
+                        Description = table.Column<string>(type: "longtext", nullable: true)
+                            .Annotation("MySql:CharSet", "utf8mb4"),
+                        EventDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                        ServerId = table.Column<string>(type: "varchar(255)", nullable: false)
+                            .Annotation("MySql:CharSet", "utf8mb4"),
+                        ApplicationId = table.Column<string>(type: "varchar(255)", nullable: false)
+                            .Annotation("MySql:CharSet", "utf8mb4")
+                    },
+                    constraints: table =>
+                    {
+                        table.PrimaryKey("PK_Error", x => x.Id);
+                        table.ForeignKey(
+                            name: "FK_Error_Application_ApplicationId",
+                            column: x => x.ApplicationId,
+                            principalTable: "Application",
+                            principalColumn: "Id",
+                            onDelete: ReferentialAction.Cascade);
+                        table.ForeignKey(
+                            name: "FK_Error_ErrorStatus_StatusId",
+                            column: x => x.StatusId,
+                            principalTable: "ErrorStatus",
+                            principalColumn: "Id",
+                            onDelete: ReferentialAction.Cascade);
+                        table.ForeignKey(
+                            name: "FK_Error_Server_ServerId",
+                            column: x => x.ServerId,
+                            principalTable: "Server",
+                            principalColumn: "Id",
+                            onDelete: ReferentialAction.Cascade);
+                        table.ForeignKey(
+                            name: "FK_Error_SeverityLevel_SeverityId",
+                            column: x => x.SeverityId,
+                            principalTable: "SeverityLevel",
+                            principalColumn: "Id",
+                            onDelete: ReferentialAction.Cascade);
+                    })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.InsertData(

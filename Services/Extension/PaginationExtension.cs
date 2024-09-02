@@ -1,9 +1,11 @@
 using Services.Models.Common;
 using System.Linq.Expressions;
 using System.Reflection;
+
 public static class PaginationExtension
 {
-    public static IQueryable<T> Pagination<T>(this IQueryable<T> query, PaginationParameters paginationParameters) where T : class
+    public static IQueryable<T> Pagination<T>(this IQueryable<T> query, PaginationParameters paginationParameters)
+        where T : class
     {
         if (paginationParameters.PageNumber.GetHashCode() != 0)
         {
@@ -11,23 +13,27 @@ public static class PaginationExtension
                 .Skip((paginationParameters.PageNumber - 1) * paginationParameters.PageSize)
                 .Take(paginationParameters.PageSize);
         }
+
         return query;
     }
-    public static IQueryable<T> DateSearchQuery<T>(this IQueryable<T> query, DateParameters DateParam) where T : DateEntity
+
+    public static IQueryable<T> DateSearchQuery<T>(this IQueryable<T> query, DateParameters DateParam)
+        where T : DateEntity
     {
         switch (DateParam.DateField)
         {
             case nameof(DateEntity.CreatedAt):
                 query = query.Where(a =>
-                a.CreatedAt >= DateParam.StartDate && a.CreatedAt <= DateParam.EndDate);
+                    a.CreatedAt >= DateParam.StartDate && a.CreatedAt <= DateParam.EndDate);
                 break;
             case nameof(DateEntity.UpdatedAt):
                 query = query.Where(a =>
-                a.UpdatedAt >= DateParam.StartDate && a.UpdatedAt <= DateParam.EndDate);
+                    a.UpdatedAt >= DateParam.StartDate && a.UpdatedAt <= DateParam.EndDate);
                 break;
             default:
                 throw new ArgumentException("Bad column date name");
         }
+
         return query;
     }
 
@@ -48,7 +54,8 @@ public static class PaginationExtension
 
         if (property == null)
         {
-            throw new ArgumentException($"La propriété '{sort.SortBy}' n'existe pas ou n'est pas triable sur le type '{entityType.Name}'.");
+            throw new ArgumentException(
+                $"La propriété '{sort.SortBy}' n'existe pas ou n'est pas triable sur le type '{entityType.Name}'.");
         }
 
         // Créer un paramètre pour l'expression lambda (exemple: x => x.Property)
@@ -70,8 +77,9 @@ public static class PaginationExtension
     public static IQueryable<T> TextSearch<T>(this IQueryable<T> query,
         SearchParameters searchParameters
     ) where T : DateEntity //DateEntity est la classe parente de toute les entitées de la base de données
-    {   
-        if (!searchParameters.SearchColumn.IsNullOrWithSpaceOrEmpty() && !searchParameters.SearchTerm.IsNullOrWithSpaceOrEmpty())
+    {
+        if (!searchParameters.SearchColumn.IsNullOrWithSpaceOrEmpty() &&
+            !searchParameters.SearchTerm.IsNullOrWithSpaceOrEmpty())
         {
             var entityType = typeof(T);
             var properties = entityType.GetProperties(BindingFlags.Public | BindingFlags.Instance);
@@ -83,28 +91,28 @@ public static class PaginationExtension
 
             if (property == null)
             {
-                throw new ArgumentException($"La propriété '{searchParameters.SearchColumn}' n'existe pas ou n'est pas triable sur le type '{entityType.Name}'.");
+                throw new ArgumentException(
+                    $"La propriété '{searchParameters.SearchColumn}' n'existe pas ou n'est pas triable sur le type '{entityType.Name}'.");
             }
 
             var parameter = Expression.Parameter(entityType, "x");
             var propertyAccess = Expression.MakeMemberAccess(parameter, property);
 
             var toLowerMethod = typeof(string).GetMethod("ToLower", Type.EmptyTypes);
-            var toLowerExpression = Expression.Call(propertyAccess, toLowerMethod);
-
             var containsMethod = typeof(string).GetMethod("Contains", new[] { typeof(string) });
-            var searchExpression = Expression.Constant(searchParameters.SearchTerm.ToLower());
-            var containsExpression = Expression.Call(toLowerExpression, containsMethod, searchExpression);
 
-            // Crée l'expression lambda : x => x.Property.ToLower().Contains("searchTerm")
-            var lambda = Expression.Lambda<Func<T, bool>>(containsExpression, parameter);
-            return query.Where(lambda);
+            if (toLowerMethod != null && containsMethod != null)
+            {
+                var toLowerExpression = Expression.Call(propertyAccess, toLowerMethod);
+                var searchExpression = Expression.Constant(searchParameters.SearchTerm.ToLower());
+                var containsExpression = Expression.Call(toLowerExpression, containsMethod, searchExpression);
+
+                // Crée l'expression lambda : x => x.Property.ToLower().Contains("searchTerm")
+                var lambda = Expression.Lambda<Func<T, bool>>(containsExpression, parameter);
+                return query.Where(lambda);
+            }
         }
 
         return query;
     }
-
-
-
-
 }

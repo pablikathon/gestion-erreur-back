@@ -6,14 +6,17 @@ namespace Repositories
     public class ErrorRepository : IErrorRepository
     {
         private readonly AppDbContext _context;
+
         public ErrorRepository(AppDbContext context)
         {
             _context = context;
         }
+
         public IQueryable<ErrorEntity> GetAllAsync()
         {
             return _context.Error.AsQueryable();
         }
+
         public async Task<bool> AddAsync(ErrorEntity errorEntity)
         {
             try
@@ -37,6 +40,7 @@ namespace Repositories
                 await _context.SaveChangesAsync();
                 return true;
             }
+
             return false;
         }
     }

@@ -11,10 +11,10 @@ namespace Persist.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.AddColumn<string>(
-                name: "Description",
-                table: "Application",
-                type: "longtext",
-                nullable: true)
+                    name: "Description",
+                    table: "Application",
+                    type: "longtext",
+                    nullable: true)
                 .Annotation("MySql:CharSet", "utf8mb4");
         }
 

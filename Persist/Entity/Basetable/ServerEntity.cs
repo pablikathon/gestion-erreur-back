@@ -8,9 +8,10 @@ namespace Persist.Entities
     [PrimaryKey(nameof(Id))]
     public class ServerEntity : DateEntity
     {
-        [Required]
-        public required string Id { get; set; }
+        [Required] public required string Id { get; set; }
+
         public required string Title { get; set; }
+
         //On va assumer pour l'instant que c'est un coûts en euros et par mois
         public double? Cost { get; set; }
         public bool IsActive { get; set; } = false;
@@ -21,8 +22,9 @@ namespace Persist.Entities
 
         [ForeignKey(nameof(CustomerWhoOwnServerId))]
         public CustomerEntity? Customer { get; set; }
-        [JsonIgnore]
-        public ICollection<ApplicationDeployedOnServerEntity> ApplicationDeployedOnServers { get; set; } = new List<ApplicationDeployedOnServerEntity>();
 
+        [JsonIgnore]
+        public ICollection<ApplicationDeployedOnServerEntity> ApplicationDeployedOnServers { get; set; } =
+            new List<ApplicationDeployedOnServerEntity>();
     }
 }

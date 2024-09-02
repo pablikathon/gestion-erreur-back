@@ -36,7 +36,6 @@ namespace Services
         }
 
 
-
         public async Task<CustomerEntity> CreateCustomer(CreateCustomerRequest createCustomerRequest)
         {
             var CustomerEntity = _mapper.Map<CustomerEntity>(createCustomerRequest);
@@ -52,32 +51,33 @@ namespace Services
         {
             return await _customerRepository.DeleteAsync(id);
         }
-        public PaginationResponse<ErrorForCustommerStatsResponse> GetErrorsForClientStats(QueryParameters queryParameters)
+
+        public PaginationResponse<ErrorForCustommerStatsResponse> GetErrorsForClientStats(
+            QueryParameters queryParameters)
         {
             var query = _context.Customer.Select(custommer => new ErrorForCustommerStatsResponse
             {
                 custommerId = custommer.Id,
                 CustommerTitle = custommer.Title,
                 CustomerFiscalIdentification = custommer.FiscalIdentification,
-                nberrorSolved = _context.Error.
-                Where(e => e.Application.CustomerHaveLicenceToApplication
-                .Any(chlta => chlta.CustomerId.Equals(custommer.Id)
-                &&
-                e.StatusId == ErrorStatusConstantId.UnresolvedStatus))
-                .Count(),
-                nbErrorUnresolved = _context.Error.
-                Where(e => e.Application.CustomerHaveLicenceToApplication
-                .Any(chlta => chlta.CustomerId.Equals(custommer.Id)
-                &&
-                e.StatusId != ErrorStatusConstantId.UnresolvedStatus))
-                .Count(),
+                nberrorSolved = _context.Error.Where(e => e.Application.CustomerHaveLicenceToApplication
+                        .Any(chlta => chlta.CustomerId.Equals(custommer.Id)
+                                      &&
+                                      e.StatusId == ErrorStatusConstantId.UnresolvedStatus))
+                    .Count(),
+                nbErrorUnresolved = _context.Error.Where(e => e.Application.CustomerHaveLicenceToApplication
+                        .Any(chlta => chlta.CustomerId.Equals(custommer.Id)
+                                      &&
+                                      e.StatusId != ErrorStatusConstantId.UnresolvedStatus))
+                    .Count(),
             });
 
             query = query.SortBy(queryParameters.Sort);
             query = query.Pagination(queryParameters.Pagination);
             var result = query.ToList();
 
-            return new PaginationResponse<ErrorForCustommerStatsResponse>(result, result.Count, queryParameters.Pagination.PageNumber,
+            return new PaginationResponse<ErrorForCustommerStatsResponse>(result, result.Count,
+                queryParameters.Pagination.PageNumber,
                 queryParameters.Pagination.PageSize);
         }
     }

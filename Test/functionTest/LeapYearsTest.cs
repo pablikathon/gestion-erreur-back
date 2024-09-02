@@ -1,4 +1,5 @@
 namespace Test;
+
 using Xunit;
 
 public class LeapYearTests
@@ -7,7 +8,6 @@ public class LeapYearTests
     [InlineData(1900)]
     [InlineData(2021)]
     [InlineData(2023)]
-
     public void Should_not_be_a_leap_year(int year)
     {
         Assert.False(year.IsLeapYear());

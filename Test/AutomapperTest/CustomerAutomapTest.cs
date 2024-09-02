@@ -1,4 +1,5 @@
 namespace Test;
+
 using AutoMapper;
 using Persist.Entities;
 using Services.Models.Req;
@@ -13,6 +14,7 @@ public class CustommerAutoMapTest
         var config = new MapperConfiguration(cfg => cfg.AddProfile<MappingProfile>());
         _mapper = config.CreateMapper();
     }
+
     [Fact]
     public void CreateCustomerRequest_should_generate_Id()
     {
@@ -29,6 +31,7 @@ public class CustommerAutoMapTest
         // Assert
         Assert.True(Guid.TryParse(CustomerEntity.Id, out x));
     }
+
     [Fact]
     public void CreateApplicationRequest_should_generate_CreatedAt()
     {
@@ -38,7 +41,6 @@ public class CustommerAutoMapTest
             Title = "Discord",
             FiscalIdentification = "42829692500160",
             LastInteraction = new DateTime()
-
         };
         DateTime y;
         // Act
@@ -46,6 +48,7 @@ public class CustommerAutoMapTest
         // Assert
         Assert.True(DateTime.TryParse(CustomerEntity.CreatedAt.ToString(), out y));
     }
+
     [Fact]
     public void CreateCustomerRequest_should_generate_CreatedAt()
     {
@@ -59,5 +62,4 @@ public class CustommerAutoMapTest
         // Act & assert
         Assert.Throws<AutoMapperMappingException>(() => _mapper.Map<ApplicationEntity>(CreateCustomerRequest));
     }
-
 }

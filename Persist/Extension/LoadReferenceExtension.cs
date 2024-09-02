@@ -3,7 +3,8 @@ using Microsoft.EntityFrameworkCore;
 
 public static class DbContextExtensions
 {
-    public static async Task LoadReferencesAsync<T>(this DbContext context, T entity, params Expression<Func<T, object>>[] includes) where T : class
+    public static async Task LoadReferencesAsync<T>(this DbContext context, T entity,
+        params Expression<Func<T, object>>[] includes) where T : class
     {
         foreach (var include in includes)
         {

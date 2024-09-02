@@ -24,7 +24,7 @@ public class CustomerLicenceController : Controller
     {
         try
         {
-            var data = _customerHaveLicenceTo.GetAll (queryParameters);
+            var data = _customerHaveLicenceTo.GetAll(queryParameters);
             if (data.TotalItems > 0)
             {
                 return Ok(JsonSerializer.Serialize(data));
@@ -37,9 +37,10 @@ public class CustomerLicenceController : Controller
             return Problem(e.Message);
         }
     }
+
     [HttpPost]
     public async Task<ActionResult<ApplicationEntity>> Create(
-    [FromBody] CreateCustomerHasLicenceToRequest createCustomerHasLicenceToRequest)
+        [FromBody] CreateCustomerHasLicenceToRequest createCustomerHasLicenceToRequest)
     {
         try
         {
@@ -53,7 +54,8 @@ public class CustomerLicenceController : Controller
     }
 
     [HttpPut]
-    public async Task<ActionResult<Boolean>> Update([FromBody] UpdateCustomerHasLicenceRequest updateApplicationDeployedRequest)
+    public async Task<ActionResult<Boolean>> Update(
+        [FromBody] UpdateCustomerHasLicenceRequest updateApplicationDeployedRequest)
     {
         try
         {
@@ -72,11 +74,13 @@ public class CustomerLicenceController : Controller
     }
 
     [HttpDelete("id")]
-    public async Task<ActionResult<Boolean>> DeleteDeployedApplication([FromBody] DeleteCustomerHasLicenceRequest deleteCustomerHasLicenceRequest)
+    public async Task<ActionResult<Boolean>> DeleteDeployedApplication(
+        [FromBody] DeleteCustomerHasLicenceRequest deleteCustomerHasLicenceRequest)
     {
         try
         {
-            var data = await _customerHaveLicenceTo.DeleteAsync(deleteCustomerHasLicenceRequest.ApplicationId, deleteCustomerHasLicenceRequest.ServerId);
+            var data = await _customerHaveLicenceTo.DeleteAsync(deleteCustomerHasLicenceRequest.ApplicationId,
+                deleteCustomerHasLicenceRequest.ServerId);
             if (data)
             {
                 return NoContent();
@@ -90,4 +94,3 @@ public class CustomerLicenceController : Controller
         }
     }
 }
-

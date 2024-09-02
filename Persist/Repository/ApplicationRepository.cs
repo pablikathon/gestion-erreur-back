@@ -7,13 +7,15 @@ namespace Repositories
     public class ApplicationRepository : IApplicationRepository
     {
         private readonly AppDbContext _context;
+
         public ApplicationRepository(AppDbContext context)
         {
             _context = context;
         }
-        public  IQueryable<ApplicationEntity> GetApplications()
+
+        public IQueryable<ApplicationEntity> GetApplications()
         {
-            return  _context.Application.AsQueryable();
+            return _context.Application.AsQueryable();
         }
 
         public async Task<ApplicationEntity?> GetByIdAsync(string id)
@@ -32,14 +34,15 @@ namespace Repositories
         {
             var a = _context.Application.Find(applicationEntity.Id);
             if (a != null)
-            {   
+            {
                 a.Title = applicationEntity.Title;
                 a.Internal = applicationEntity.Internal;
-                a.Description = applicationEntity.Description; 
+                a.Description = applicationEntity.Description;
                 a.UpdatedAt = applicationEntity.UpdatedAt;
                 await _context.SaveChangesAsync();
                 return true;
             }
+
             return false;
         }
 
@@ -52,6 +55,7 @@ namespace Repositories
                 await _context.SaveChangesAsync();
                 return true;
             }
+
             return false;
         }
     }

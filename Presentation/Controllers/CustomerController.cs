@@ -37,8 +37,9 @@ public class CustomerController : Controller
             return Problem(e.Message);
         }
     }
+
     [HttpGet("stats")]
-    public  ActionResult<PaginationResponse<ErrorForCustommerStatsResponse>> GetCustomersErrorStats(
+    public ActionResult<PaginationResponse<ErrorForCustommerStatsResponse>> GetCustomersErrorStats(
         [FromQuery] QueryParameters queryParameters
     )
     {
@@ -53,6 +54,7 @@ public class CustomerController : Controller
             return Problem(e.Message);
         }
     }
+
     [HttpPost]
     public async Task<ActionResult<CustomerEntity>> CreateCustomer([FromBody] CreateCustomerRequest customerRequest)
     {

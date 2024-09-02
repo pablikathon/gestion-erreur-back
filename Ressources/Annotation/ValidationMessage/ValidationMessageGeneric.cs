@@ -9,5 +9,4 @@ public static class ValidationMessagesGeneric
     public const string CostRequired = "Cost is required.";
     public const string IsActiveRequired = "IsActive is required";
     public const string FiscalIdentificationRequired = "FiscalIdentification is required.";
-
 }

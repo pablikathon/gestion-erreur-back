@@ -16,10 +16,10 @@ namespace Persist.Migrations
                 newName: "Cost");
 
             migrationBuilder.AddColumn<string>(
-                name: "CustomerWhoOwnServerId",
-                table: "Server",
-                type: "varchar(255)",
-                nullable: true)
+                    name: "CustomerWhoOwnServerId",
+                    table: "Server",
+                    type: "varchar(255)",
+                    nullable: true)
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(

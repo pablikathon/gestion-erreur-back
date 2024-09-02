@@ -12,7 +12,8 @@ namespace Services
         private readonly IApplicationDeployedOnServerRepository _applicationDeployedRepository;
         private readonly IMapper _mapper;
 
-        public ApplicationDeployedOnServerService(IApplicationDeployedOnServerRepository applicationDeployedRepository, IMapper mapper)
+        public ApplicationDeployedOnServerService(IApplicationDeployedOnServerRepository applicationDeployedRepository,
+            IMapper mapper)
         {
             _applicationDeployedRepository = applicationDeployedRepository;
             _mapper = mapper;
@@ -21,15 +22,17 @@ namespace Services
         public Task<bool> DeleteDeployedApplication(string idServer, string idApplication)
         {
             return _applicationDeployedRepository.DeleteAsync(idServer, idApplication);
-
         }
 
-        public Task<ApplicationDeployedOnServerEntity> DeployedApplicationOnServer(CreateApplicationDeployedRequest createApplicationDeployedRequest)
+        public Task<ApplicationDeployedOnServerEntity> DeployedApplicationOnServer(
+            CreateApplicationDeployedRequest createApplicationDeployedRequest)
         {
-            return _applicationDeployedRepository.AddAsync(_mapper.Map<ApplicationDeployedOnServerEntity>(createApplicationDeployedRequest));
+            return _applicationDeployedRepository.AddAsync(
+                _mapper.Map<ApplicationDeployedOnServerEntity>(createApplicationDeployedRequest));
         }
 
-        public PaginationResponse<ApplicationDeployedOnServerEntity> GetApplicationsDeployed(GenericQueryParameter queryParameters)
+        public PaginationResponse<ApplicationDeployedOnServerEntity> GetApplicationsDeployed(
+            GenericQueryParameter queryParameters)
         {
             var query = _applicationDeployedRepository.GetAllAsync();
             query = query.Pagination(queryParameters.Pagination);
@@ -41,10 +44,10 @@ namespace Services
         }
 
 
-
         public Task<bool> UpdateDeployedApplicationDeployed(UpdateApplicationDeployedRequest updateApplicationDeployed)
         {
-            return _applicationDeployedRepository.UpdateAsync(_mapper.Map<ApplicationDeployedOnServerEntity>(updateApplicationDeployed));
+            return _applicationDeployedRepository.UpdateAsync(
+                _mapper.Map<ApplicationDeployedOnServerEntity>(updateApplicationDeployed));
         }
     }
 }

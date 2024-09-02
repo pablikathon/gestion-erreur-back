@@ -18,6 +18,7 @@ public class ErrorController : Controller
     {
         this._errorService = errorService;
     }
+
     [HttpPost]
     public async Task<ActionResult> CreateError(CreateErrorRequest createErrorRequest)
     {
@@ -28,6 +29,7 @@ public class ErrorController : Controller
             {
                 return Ok();
             }
+
             return Problem("Erreur non inséré");
         }
         catch (System.Exception e)
@@ -35,6 +37,7 @@ public class ErrorController : Controller
             return Problem(e.Message);
         }
     }
+
     [HttpDelete("id")]
     public async Task<ActionResult> DeleteError(string id)
     {
@@ -44,6 +47,7 @@ public class ErrorController : Controller
             {
                 return Ok();
             }
+
             return Problem();
         }
         catch (System.Exception e)
@@ -51,13 +55,13 @@ public class ErrorController : Controller
             return Problem(e.Message);
         }
     }
+
     [HttpPut]
-    public  ActionResult UpdateError(UpdateErroRequest updateErroRequest)
+    public ActionResult UpdateError(UpdateErroRequest updateErroRequest)
     {
         try
         {
-
-            return Ok( _errorService.UpdateErrors(updateErroRequest));            
+            return Ok(_errorService.UpdateErrors(updateErroRequest));
         }
         catch (System.Exception e)
         {

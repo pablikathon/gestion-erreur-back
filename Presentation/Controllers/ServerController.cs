@@ -37,6 +37,7 @@ public class ServerController : Controller
             return Problem(e.Message);
         }
     }
+
     [HttpPost]
     public async Task<ActionResult<ServerEntity>> CreateServer([FromBody] CreateServerRequest createServerRequest)
     {
@@ -88,5 +89,4 @@ public class ServerController : Controller
             return Problem(e.Message);
         }
     }
-
 }

@@ -26,6 +26,7 @@ namespace Services
         {
             return await _errorRepository.DeleteAsync(idErreur);
         }
+
         /// <summary>
         ///  update all error who match with errorrequest
         /// </summary>
@@ -34,18 +35,18 @@ namespace Services
         public int UpdateErrors(UpdateErroRequest errorRequest)
         {
             var query = _errorRepository.GetAllAsync();
-            return  query.Where(
-            err => 
-             err.ApplicationId.Equals(errorRequest.ApplicationId) &&
-             err.CreatedAt.Date.Equals(errorRequest.CreatedAt.Date) &&
-             err.ServerId.Equals(errorRequest.SeverityId) &&
-             err.SeverityId.Equals(errorRequest.OldSeverityId) &&
-             err.StatusId.Equals(errorRequest.OldStatusId)
+            return query.Where(
+                err =>
+                    err.ApplicationId.Equals(errorRequest.ApplicationId) &&
+                    err.CreatedAt.Date.Equals(errorRequest.CreatedAt.Date) &&
+                    err.ServerId.Equals(errorRequest.SeverityId) &&
+                    err.SeverityId.Equals(errorRequest.OldSeverityId) &&
+                    err.StatusId.Equals(errorRequest.OldStatusId)
             ).ExecuteUpdate(
-                setter => 
-                setter.SetProperty(err => err.SeverityId, errorRequest.SeverityId)
-                      .SetProperty(err => err.StatusId, errorRequest.StatusId)
-                      .SetProperty(err => err.UpdatedAt, DateTime.UtcNow)
+                setter =>
+                    setter.SetProperty(err => err.SeverityId, errorRequest.SeverityId)
+                        .SetProperty(err => err.StatusId, errorRequest.StatusId)
+                        .SetProperty(err => err.UpdatedAt, DateTime.UtcNow)
             );
         }
     }

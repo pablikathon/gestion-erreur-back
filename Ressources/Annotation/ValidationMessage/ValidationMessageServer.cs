@@ -1,4 +1,5 @@
 namespace Ressources.Annotation.ValidationMessage;
+
 public static class ValidationMessagesServer
 {
     public const string CostRequired = "Cost is required.";

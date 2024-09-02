@@ -24,38 +24,39 @@ namespace Persist.Migrations
                 column: "Id");
 
             migrationBuilder.CreateTable(
-                name: "deployedApplicationEntities",
-                columns: table => new
-                {
-                    ServerId = table.Column<string>(type: "varchar(255)", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    ApplicationId = table.Column<string>(type: "varchar(255)", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    CustomerId = table.Column<string>(type: "varchar(255)", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_deployedApplicationEntities", x => new { x.ServerId, x.ApplicationId, x.CustomerId });
-                    table.ForeignKey(
-                        name: "FK_deployedApplicationEntities_Application_ApplicationId",
-                        column: x => x.ApplicationId,
-                        principalTable: "Application",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_deployedApplicationEntities_Customer_CustomerId",
-                        column: x => x.CustomerId,
-                        principalTable: "Customer",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_deployedApplicationEntities_Server_ServerId",
-                        column: x => x.ServerId,
-                        principalTable: "Server",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                })
+                    name: "deployedApplicationEntities",
+                    columns: table => new
+                    {
+                        ServerId = table.Column<string>(type: "varchar(255)", nullable: false)
+                            .Annotation("MySql:CharSet", "utf8mb4"),
+                        ApplicationId = table.Column<string>(type: "varchar(255)", nullable: false)
+                            .Annotation("MySql:CharSet", "utf8mb4"),
+                        CustomerId = table.Column<string>(type: "varchar(255)", nullable: false)
+                            .Annotation("MySql:CharSet", "utf8mb4")
+                    },
+                    constraints: table =>
+                    {
+                        table.PrimaryKey("PK_deployedApplicationEntities",
+                            x => new { x.ServerId, x.ApplicationId, x.CustomerId });
+                        table.ForeignKey(
+                            name: "FK_deployedApplicationEntities_Application_ApplicationId",
+                            column: x => x.ApplicationId,
+                            principalTable: "Application",
+                            principalColumn: "Id",
+                            onDelete: ReferentialAction.Cascade);
+                        table.ForeignKey(
+                            name: "FK_deployedApplicationEntities_Customer_CustomerId",
+                            column: x => x.CustomerId,
+                            principalTable: "Customer",
+                            principalColumn: "Id",
+                            onDelete: ReferentialAction.Cascade);
+                        table.ForeignKey(
+                            name: "FK_deployedApplicationEntities_Server_ServerId",
+                            column: x => x.ServerId,
+                            principalTable: "Server",
+                            principalColumn: "Id",
+                            onDelete: ReferentialAction.Cascade);
+                    })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(

@@ -19,10 +19,10 @@ namespace Persist.Migrations
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
             migrationBuilder.AddColumn<string>(
-                name: "FiscalIdentification",
-                table: "Customer",
-                type: "longtext",
-                nullable: false)
+                    name: "FiscalIdentification",
+                    table: "Customer",
+                    type: "longtext",
+                    nullable: false)
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.AddColumn<DateTime>(
