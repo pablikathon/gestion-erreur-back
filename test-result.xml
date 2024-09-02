@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<testsuites time="0.203" tests="13" failures="0">
-  <testsuite id="0" name="/source/Test/bin/Release/net8.0/Test.dll" tests="13" failures="0" time="0.203">
-    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.canNotMap_UpdateApplicationRequest_On_customer" time="0.0893626" />
-    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.canNotMap_CreateApplication_On_customer" time="0.0024817" />
-    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.CreateApplicationRequest_should_generate_CreatedAt" time="0.0054442" />
-    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.CreateApplicationRequest_should_generate_Id" time="0.0026391" />
-    <testcase classname="Test.CustommerAutoMapTest" name="Test.CustommerAutoMapTest.CreateCustomerRequest_should_generate_CreatedAt" time="0.0893840" />
-    <testcase classname="Test.CustommerAutoMapTest" name="Test.CustommerAutoMapTest.CreateCustomerRequest_should_generate_Id" time="0.0065097" />
-    <testcase classname="Test.CustommerAutoMapTest" name="Test.CustommerAutoMapTest.CreateApplicationRequest_should_generate_CreatedAt" time="0.0044316" />
-    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_not_be_a_leap_year(year: 2021)" time="0.0025407" />
-    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_not_be_a_leap_year(year: 2023)" time="0.0001874" />
-    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_not_be_a_leap_year(year: 1900)" time="0.0000060" />
-    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_be_a_leap_year(year: 1992)" time="0.0001885" />
-    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_be_a_leap_year(year: 2020)" time="0.0001667" />
-    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_be_a_leap_year(year: 2000)" time="0.0000058" />
+<testsuites time="0.229" tests="13" failures="0">
+  <testsuite id="0" name="/source/Test/bin/Release/net8.0/Test.dll" tests="13" failures="0" time="0.229">
+    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.canNotMap_UpdateApplicationRequest_On_customer" time="0.0997461" />
+    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.canNotMap_CreateApplication_On_customer" time="0.0038362" />
+    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.CreateApplicationRequest_should_generate_CreatedAt" time="0.0079200" />
+    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.CreateApplicationRequest_should_generate_Id" time="0.0027280" />
+    <testcase classname="Test.CustommerAutoMapTest" name="Test.CustommerAutoMapTest.CreateCustomerRequest_should_generate_CreatedAt" time="0.0997606" />
+    <testcase classname="Test.CustommerAutoMapTest" name="Test.CustommerAutoMapTest.CreateCustomerRequest_should_generate_Id" time="0.0070924" />
+    <testcase classname="Test.CustommerAutoMapTest" name="Test.CustommerAutoMapTest.CreateApplicationRequest_should_generate_CreatedAt" time="0.0046848" />
+    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_not_be_a_leap_year(year: 2021)" time="0.0025555" />
+    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_not_be_a_leap_year(year: 2023)" time="0.0001866" />
+    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_not_be_a_leap_year(year: 1900)" time="0.0000061" />
+    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_be_a_leap_year(year: 1992)" time="0.0001587" />
+    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_be_a_leap_year(year: 2020)" time="0.0001806" />
+    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_be_a_leap_year(year: 2000)" time="0.0000071" />
   </testsuite>
 </testsuites>
