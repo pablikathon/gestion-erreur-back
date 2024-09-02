@@ -9,7 +9,6 @@
   </Information>
   <IssueTypes>
     <IssueType Id="ArrangeModifiersOrder" Category="Syntax Style" CategoryId="CodeStyleIssues" Description="Adjust modifiers declaration order" Severity="SUGGESTION" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=ArrangeModifiersOrder" />
-    <IssueType Id="ArrangeObjectCreationWhenTypeEvident" Category="Syntax Style" CategoryId="CodeStyleIssues" Description="Use preferred style of 'new' expression when created type is evident" Severity="SUGGESTION" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=ArrangeObjectCreationWhenTypeEvident" />
     <IssueType Id="AutoPropertyCanBeMadeGetOnly.Global" Category="Common Practices and Code Improvements" CategoryId="BestPractice" SubCategory="Auto-property can be made get-only" Description="Auto-property can be made get-only: Non-private accessibility" Severity="SUGGESTION" Global="True" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=AutoPropertyCanBeMadeGetOnly.Global" />
     <IssueType Id="CSharpWarnings::CS8597" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Thrown value may be null." Severity="WARNING" WikiUrl="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#possible-null-assigned-to-a-nonnullable-reference" />
     <IssueType Id="CSharpWarnings::CS8600" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Converting null literal or possible null value to non-nullable type." Severity="WARNING" WikiUrl="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#possible-null-assigned-to-a-nonnullable-reference" />
@@ -355,9 +354,7 @@
       <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\DateParameter.cs" Offset="245-249" Line="7" Message="Auto-property can be made get-only" />
       <Issue TypeId="CheckNamespace" File="Services\Model\common\search\GenericQueryParameter.cs" Offset="10-32" Line="1" Message="Namespace does not correspond to file location, must be: 'Services.Model.common.search'" />
       <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\GenericQueryParameter.cs" Offset="116-120" Line="5" Message="Auto-property can be made get-only" />
-      <Issue TypeId="ArrangeObjectCreationWhenTypeEvident" File="Services\Model\common\search\GenericQueryParameter.cs" Offset="129-143" Line="5" Message="Redundant type specification" />
-      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\GenericQueryParameter.cs" Offset="197-201" Line="6" Message="Auto-property can be made get-only" />
-      <Issue TypeId="ArrangeObjectCreationWhenTypeEvident" File="Services\Model\common\search\GenericQueryParameter.cs" Offset="210-230" Line="6" Message="Redundant type specification" />
+      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\GenericQueryParameter.cs" Offset="182-186" Line="6" Message="Auto-property can be made get-only" />
       <Issue TypeId="CheckNamespace" File="Services\Model\common\search\PaginationParameter.cs" Offset="10-32" Line="1" Message="Namespace does not correspond to file location, must be: 'Services.Model.common.search'" />
       <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\PaginationParameter.cs" Offset="116-120" Line="5" Message="Auto-property can be made get-only" />
       <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\PaginationParameter.cs" Offset="163-167" Line="6" Message="Auto-property can be made get-only" />
@@ -369,12 +366,9 @@
       <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\search\PaginationResponse.cs" Offset="286-290" Line="9" Message="Auto-property accessor 'Items.get' is never used" />
       <Issue TypeId="CheckNamespace" File="Services\Model\common\search\QueryParameter.cs" Offset="10-32" Line="1" Message="Namespace does not correspond to file location, must be: 'Services.Model.common.search'" />
       <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\QueryParameter.cs" Offset="110-114" Line="6" Message="Auto-property can be made get-only" />
-      <Issue TypeId="ArrangeObjectCreationWhenTypeEvident" File="Services\Model\common\search\QueryParameter.cs" Offset="123-137" Line="6" Message="Redundant type specification" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\search\QueryParameter.cs" Offset="190-194" Line="7" Message="Auto-property accessor 'SearchParam.set' is never used" />
-      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\QueryParameter.cs" Offset="247-251" Line="9" Message="Auto-property can be made get-only" />
-      <Issue TypeId="ArrangeObjectCreationWhenTypeEvident" File="Services\Model\common\search\QueryParameter.cs" Offset="260-280" Line="9" Message="Redundant type specification" />
-      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\QueryParameter.cs" Offset="322-326" Line="10" Message="Auto-property can be made get-only" />
-      <Issue TypeId="ArrangeObjectCreationWhenTypeEvident" File="Services\Model\common\search\QueryParameter.cs" Offset="335-349" Line="10" Message="Redundant type specification" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\search\QueryParameter.cs" Offset="176-180" Line="7" Message="Auto-property accessor 'SearchParam.set' is never used" />
+      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\QueryParameter.cs" Offset="233-237" Line="9" Message="Auto-property can be made get-only" />
+      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\QueryParameter.cs" Offset="288-292" Line="10" Message="Auto-property can be made get-only" />
       <Issue TypeId="CheckNamespace" File="Services\Model\common\search\SearchParameter.cs" Offset="10-32" Line="1" Message="Namespace does not correspond to file location, must be: 'Services.Model.common.search'" />
       <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\common\search\SearchParameter.cs" Offset="48-64" Line="3" Message="Class 'SearchParameters' is never instantiated" />
       <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\search\SearchParameter.cs" Offset="104-108" Line="5" Message="Auto-property accessor 'SearchTerm.set' is never used" />
