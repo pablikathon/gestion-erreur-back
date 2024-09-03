@@ -76,7 +76,7 @@ public static class PaginationExtension
 
     public static IQueryable<T> TextSearch<T>(this IQueryable<T> query,
         SearchParameters searchParameters
-    ) where T : DateEntity //DateEntity est la classe parente de toute les entitées de la base de données
+    ) where T : class
     {
         if (!searchParameters.SearchColumn.IsNullOrWithSpaceOrEmpty() &&
             !searchParameters.SearchTerm.IsNullOrWithSpaceOrEmpty())

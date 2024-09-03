@@ -68,4 +68,23 @@ public class ErrorController : Controller
             return Problem(e.Message);
         }
     }
+    [HttpGet ("CustomerId")]
+    public ActionResult<PaginationResponse<ErrorForACustommerStatsResponse>> GetErrorForACustommer( string CustomerId,
+    [FromQuery] QueryParameters queryParameters)
+    {
+        try
+        {
+            var data = _errorService.GetErrorsForAClientStats(queryParameters, CustomerId);
+            if (data.TotalItems > 0)
+            {
+                return Ok(data);
+            }
+
+            return NoContent();
+        }
+        catch (System.Exception e)
+        {
+            return Problem(e.Message);
+        }
+    }
 }
