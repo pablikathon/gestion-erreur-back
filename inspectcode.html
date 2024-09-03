@@ -164,6 +164,44 @@
           <br>
           <div class="accordion-item">
             <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#CSharpWarnings::CS8601" aria-expanded="false" aria-controls="flush-collapseOne">
+                <span class="badge bg-warning
+                                            text-dark">WARNING</span>
+                                            : Possible null reference assignment.</button>
+            </h2>
+            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="CSharpWarnings::CS8601">
+              <div class="accordion-body">
+                <table class="table table-hover" style="width:100%">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>File</th>
+                      <th>Line Number</th>
+                      <th>Message</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>Services\Service\ErrorService.cs</td>
+                    <td>87</td>
+                    <td>Possible null reference assignment</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Service\ErrorService.cs</td>
+                    <td>88</td>
+                    <td>Possible null reference assignment</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Service\ErrorService.cs</td>
+                    <td>89</td>
+                    <td>Possible null reference assignment</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#CSharpWarnings::CS8602" aria-expanded="false" aria-controls="flush-collapseOne">
                 <span class="badge bg-warning
                                             text-dark">WARNING</span>
@@ -310,12 +348,12 @@
                   </tr>
                   <tr>
                     <td>Persist\Entity\LookupTable\ErrorStatus.cs</td>
-                    <td>1</td>
+                    <td>3</td>
                     <td>Namespace does not correspond to file location, must be: 'Persist.Entity.LookupTable'</td>
                   </tr>
                   <tr>
                     <td>Persist\Entity\LookupTable\SeverityLevel.cs</td>
-                    <td>1</td>
+                    <td>3</td>
                     <td>Namespace does not correspond to file location, must be: 'Persist.Entity.LookupTable'</td>
                   </tr>
                   <tr>
@@ -470,7 +508,7 @@
                   </tr>
                   <tr>
                     <td>Services\IService\IErrorService.cs</td>
-                    <td>3</td>
+                    <td>4</td>
                     <td>Namespace does not correspond to file location, must be: 'Services.IService'</td>
                   </tr>
                   <tr>
@@ -540,7 +578,7 @@
                   </tr>
                   <tr>
                     <td>Services\Model\Req\Response\CustommerRequest.cs</td>
-                    <td>1</td>
+                    <td>3</td>
                     <td>Namespace does not correspond to file location, must be: 'Services.Model.Req.Response'</td>
                   </tr>
                   <tr>
@@ -570,7 +608,7 @@
                   </tr>
                   <tr>
                     <td>Services\Service\ErrorService.cs</td>
-                    <td>7</td>
+                    <td>9</td>
                     <td>Namespace does not correspond to file location, must be: 'Services.Service'</td>
                   </tr>
                   <tr>
@@ -671,12 +709,12 @@
                   </tr>
                   <tr>
                     <td>Persist\Entity\LookupTable\ErrorStatus.cs</td>
-                    <td>8</td>
+                    <td>10</td>
                     <td>Content of collection 'Errors' is never updated</td>
                   </tr>
                   <tr>
                     <td>Persist\Entity\LookupTable\SeverityLevel.cs</td>
-                    <td>8</td>
+                    <td>10</td>
                     <td>Content of collection 'Errors' is never updated</td>
                   </tr>
                 </table>
@@ -776,6 +814,11 @@
                     <td>Name 'ApplicationDeployedOnServerService' does not match rule 'Parameters'. Suggested name is 'applicationDeployedOnServerService'.</td>
                   </tr>
                   <tr>
+                    <td>Presentation\Controllers\ErrorController.cs</td>
+                    <td>72</td>
+                    <td>Name 'CustomerId' does not match rule 'Parameters'. Suggested name is 'customerId'.</td>
+                  </tr>
+                  <tr>
                     <td>Services\Extension\PaginationExtension.cs</td>
                     <td>20</td>
                     <td>Name 'DateParam' does not match rule 'Parameters'. Suggested name is 'dateParam'.</td>
@@ -822,17 +865,17 @@
                   </tr>
                   <tr>
                     <td>Services\Model\Req\Response\CustommerRequest.cs</td>
-                    <td>5</td>
+                    <td>7</td>
                     <td>Name 'custommerId' does not match rule 'Properties'. Suggested name is 'CustommerId'.</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\Response\CustommerRequest.cs</td>
-                    <td>8</td>
+                    <td>10</td>
                     <td>Name 'nberrorSolved' does not match rule 'Properties'. Suggested name is 'NberrorSolved'.</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\Response\CustommerRequest.cs</td>
-                    <td>9</td>
+                    <td>11</td>
                     <td>Name 'nbErrorUnresolved' does not match rule 'Properties'. Suggested name is 'NbErrorUnresolved'.</td>
                   </tr>
                   <tr>
@@ -1274,12 +1317,7 @@
                   </tr>
                   <tr>
                     <td>Persist\Entity\LookupTable\ErrorStatus.cs</td>
-                    <td>5</td>
-                    <td>Property can be made init-only</td>
-                  </tr>
-                  <tr>
-                    <td>Persist\Entity\LookupTable\ErrorStatus.cs</td>
-                    <td>6</td>
+                    <td>7</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
@@ -1288,18 +1326,23 @@
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
-                    <td>Persist\Entity\LookupTable\SeverityLevel.cs</td>
-                    <td>5</td>
+                    <td>Persist\Entity\LookupTable\ErrorStatus.cs</td>
+                    <td>10</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
                     <td>Persist\Entity\LookupTable\SeverityLevel.cs</td>
-                    <td>6</td>
+                    <td>7</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
                     <td>Persist\Entity\LookupTable\SeverityLevel.cs</td>
                     <td>8</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\LookupTable\SeverityLevel.cs</td>
+                    <td>10</td>
                     <td>Property can be made init-only</td>
                   </tr>
                 </table>
@@ -1328,6 +1371,11 @@
                   <tr>
                     <td>Persist\Repository\CustomerRepository.cs</td>
                     <td>39</td>
+                    <td>Value assigned is not used in any execution path</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Service\ErrorService.cs</td>
+                    <td>96</td>
                     <td>Value assigned is not used in any execution path</td>
                   </tr>
                 </table>
@@ -1745,6 +1793,11 @@
                     <td>Qualifier is redundant</td>
                   </tr>
                   <tr>
+                    <td>Presentation\Controllers\ErrorController.cs</td>
+                    <td>85</td>
+                    <td>Qualifier is redundant</td>
+                  </tr>
+                  <tr>
                     <td>Presentation\Controllers\ServerController.cs</td>
                     <td>35</td>
                     <td>Qualifier is redundant</td>
@@ -1835,11 +1888,6 @@
                   <tr>
                     <td>Presentation\Controllers\ErrorController.cs</td>
                     <td>5</td>
-                    <td>Using directive is not required by the code and can be safely removed</td>
-                  </tr>
-                  <tr>
-                    <td>Presentation\Controllers\ErrorController.cs</td>
-                    <td>6</td>
                     <td>Using directive is not required by the code and can be safely removed</td>
                   </tr>
                   <tr>
@@ -2108,28 +2156,53 @@
                   </tr>
                   <tr>
                     <td>Services\Model\Req\Response\CustommerRequest.cs</td>
-                    <td>5</td>
+                    <td>7</td>
                     <td>Auto-property accessor 'custommerId.get' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\Response\CustommerRequest.cs</td>
-                    <td>6</td>
+                    <td>8</td>
                     <td>Auto-property accessor 'CustommerTitle.get' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\Response\CustommerRequest.cs</td>
-                    <td>7</td>
+                    <td>9</td>
                     <td>Auto-property accessor 'CustomerFiscalIdentification.get' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\Response\CustommerRequest.cs</td>
-                    <td>8</td>
+                    <td>10</td>
                     <td>Auto-property accessor 'nberrorSolved.get' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\Response\CustommerRequest.cs</td>
-                    <td>9</td>
+                    <td>11</td>
                     <td>Auto-property accessor 'nbErrorUnresolved.get' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\Response\CustommerRequest.cs</td>
+                    <td>15</td>
+                    <td>Auto-property accessor 'Nberror.get' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\Response\CustommerRequest.cs</td>
+                    <td>16</td>
+                    <td>Auto-property accessor 'Status.get' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\Response\CustommerRequest.cs</td>
+                    <td>17</td>
+                    <td>Auto-property accessor 'Severity.get' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\Response\CustommerRequest.cs</td>
+                    <td>18</td>
+                    <td>Auto-property accessor 'Server.get' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\Response\CustommerRequest.cs</td>
+                    <td>19</td>
+                    <td>Auto-property accessor 'CreatedAt.get' is never used</td>
                   </tr>
                 </table>
               </div>
