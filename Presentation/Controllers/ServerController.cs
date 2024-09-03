@@ -53,7 +53,7 @@ public class ServerController : Controller
     }
 
     [HttpPut]
-    public async Task<ActionResult<Boolean>> UpdateCustomer([FromBody] UpdateServerRequest updateServerRequest)
+    public async Task<ActionResult<Boolean>> UpdateServer([FromBody] UpdateServerRequest updateServerRequest)
     {
         try
         {
@@ -72,7 +72,7 @@ public class ServerController : Controller
     }
 
     [HttpDelete("id")]
-    public async Task<ActionResult<Boolean>> DeleteCustomer(string id)
+    public async Task<ActionResult<Boolean>> DeleteServer(string id)
     {
         try
         {
