@@ -407,10 +407,11 @@
       <Issue TypeId="InconsistentNaming" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="386-403" Line="11" Message="Name 'nbErrorUnresolved' does not match rule 'Properties'. Suggested name is 'NbErrorUnresolved'." />
       <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="406-410" Line="11" Message="Auto-property accessor 'nbErrorUnresolved.get' is never used" />
       <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="517-521" Line="15" Message="Auto-property accessor 'Nberror.get' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="580-584" Line="16" Message="Auto-property accessor 'Status.get' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="647-651" Line="17" Message="Auto-property accessor 'Severity.get' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="705-709" Line="18" Message="Auto-property accessor 'Server.get' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="762-766" Line="19" Message="Auto-property accessor 'CreatedAt.get' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="585-589" Line="16" Message="Auto-property accessor 'ErrorStatus.get' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="653-657" Line="17" Message="Auto-property accessor 'Application.get' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="721-725" Line="19" Message="Auto-property accessor 'Severity.get' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="779-783" Line="20" Message="Auto-property accessor 'Server.get' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="836-840" Line="21" Message="Auto-property accessor 'CreatedAt.get' is never used" />
       <Issue TypeId="CheckNamespace" File="Services\Model\Req\ServerRequest.cs" Offset="150-169" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req'" />
       <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="467-472" Line="12" Message="Property 'Title' is never used" />
       <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="698-702" Line="16" Message="Property 'Cost' is never used" />
@@ -434,10 +435,11 @@
       <Issue TypeId="ReplaceWithSingleCallToCount" File="Services\Service\CustomerService.cs" Offset="2482-2793" Line="63" Message="Replace with single call to Count(..)" />
       <Issue TypeId="ReplaceWithSingleCallToCount" File="Services\Service\CustomerService.cs" Offset="2831-3142" Line="68" Message="Replace with single call to Count(..)" />
       <Issue TypeId="CheckNamespace" File="Services\Service\ErrorService.cs" Offset="182-190" Line="9" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
-      <Issue TypeId="CSharpWarnings::CS8601" File="Services\Service\ErrorService.cs" Offset="3372-3437" Line="87" Message="Possible null reference assignment" />
-      <Issue TypeId="CSharpWarnings::CS8601" File="Services\Service\ErrorService.cs" Offset="3466-3544" Line="88" Message="Possible null reference assignment" />
-      <Issue TypeId="CSharpWarnings::CS8601" File="Services\Service\ErrorService.cs" Offset="3571-3641" Line="89" Message="Possible null reference assignment" />
-      <Issue TypeId="RedundantAssignment" File="Services\Service\ErrorService.cs" Offset="3861-3868" Line="96" Message="Value assigned is not used in any execution path" />
+      <Issue TypeId="CSharpWarnings::CS8601" File="Services\Service\ErrorService.cs" Offset="3496-3566" Line="88" Message="Possible null reference assignment" />
+      <Issue TypeId="CSharpWarnings::CS8601" File="Services\Service\ErrorService.cs" Offset="3596-3679" Line="89" Message="Possible null reference assignment" />
+      <Issue TypeId="CSharpWarnings::CS8601" File="Services\Service\ErrorService.cs" Offset="3711-3786" Line="90" Message="Possible null reference assignment" />
+      <Issue TypeId="CSharpWarnings::CS8601" File="Services\Service\ErrorService.cs" Offset="3818-3908" Line="91" Message="Possible null reference assignment" />
+      <Issue TypeId="RedundantAssignment" File="Services\Service\ErrorService.cs" Offset="4128-4135" Line="98" Message="Value assigned is not used in any execution path" />
       <Issue TypeId="CheckNamespace" File="Services\Service\ServerService.cs" Offset="175-183" Line="8" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="InconsistentNaming" File="Services\Service\ServerService.cs" Offset="394-410" Line="15" Message="Name 'ServerRepository' does not match rule 'Parameters'. Suggested name is 'serverRepository'." />
     </Project>
