@@ -13,7 +13,9 @@ namespace Services.Models.Req
     public class ErrorForACustommerStatsResponse
     {
         public required int Nberror { get; set; }
-        public required ErrorStatusEntity Status { get; set; }
+        public required ErrorStatusEntity ErrorStatus { get; set; }
+        public required ApplicationEntity Application { get; set; }
+
         public required SeverityLevelEntity Severity { get; set; }
         public required ServerEntity Server { get; set; }
         public required DateTime CreatedAt { get; set; }
