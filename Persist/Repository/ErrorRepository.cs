@@ -25,9 +25,9 @@ namespace Repositories
                 await _context.SaveChangesAsync();
                 return true;
             }
-            catch (System.Exception)
+            catch (System.Exception )
             {
-                return false;
+                throw;
             }
         }
 
