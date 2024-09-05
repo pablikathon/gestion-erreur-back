@@ -513,7 +513,7 @@
                   </tr>
                   <tr>
                     <td>Services\IService\IErrorService.cs</td>
-                    <td>4</td>
+                    <td>5</td>
                     <td>Namespace does not correspond to file location, must be: 'Services.IService'</td>
                   </tr>
                   <tr>
@@ -1391,6 +1391,34 @@
           <br>
           <div class="accordion-item">
             <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#RedundantCatchClause" aria-expanded="false" aria-controls="flush-collapseOne">
+                <span class="badge bg-warning
+                                            text-dark">WARNING</span>
+                                            : Redundant catch clause</button>
+            </h2>
+            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="RedundantCatchClause">
+              <div class="accordion-body">
+                <table class="table table-hover" style="width:100%">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>File</th>
+                      <th>Line Number</th>
+                      <th>Message</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>Persist\Repository\ErrorRepository.cs</td>
+                    <td>28</td>
+                    <td>Catch clause is redundant</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#RedundantDefaultMemberInitializer" aria-expanded="false" aria-controls="flush-collapseOne">
                 <span class="badge bg-warning
                                             text-dark">WARNING</span>
@@ -1803,6 +1831,11 @@
                     <td>Qualifier is redundant</td>
                   </tr>
                   <tr>
+                    <td>Presentation\Controllers\ErrorController.cs</td>
+                    <td>104</td>
+                    <td>Qualifier is redundant</td>
+                  </tr>
+                  <tr>
                     <td>Presentation\Controllers\ServerController.cs</td>
                     <td>35</td>
                     <td>Qualifier is redundant</td>
@@ -1883,11 +1916,6 @@
                   <tr>
                     <td>Presentation\Controllers\ErrorController.cs</td>
                     <td></td>
-                    <td>Using directive is not required by the code and can be safely removed</td>
-                  </tr>
-                  <tr>
-                    <td>Presentation\Controllers\ErrorController.cs</td>
-                    <td>3</td>
                     <td>Using directive is not required by the code and can be safely removed</td>
                   </tr>
                   <tr>
@@ -2141,22 +2169,52 @@
                   </tr>
                   <tr>
                     <td>Services\Model\Req\ErrorRequest.cs</td>
-                    <td>68</td>
+                    <td>56</td>
+                    <td>Auto-property accessor 'ServerId.set' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\ErrorRequest.cs</td>
+                    <td>62</td>
                     <td>Auto-property accessor 'ApplicationId.set' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\ErrorRequest.cs</td>
-                    <td>74</td>
+                    <td>68</td>
                     <td>Auto-property accessor 'SeverityId.set' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\ErrorRequest.cs</td>
-                    <td>79</td>
+                    <td>73</td>
                     <td>Auto-property accessor 'StatusId.set' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\ErrorRequest.cs</td>
-                    <td>81</td>
+                    <td>75</td>
+                    <td>Auto-property accessor 'CreatedAt.set' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\ErrorRequest.cs</td>
+                    <td>82</td>
+                    <td>Auto-property accessor 'ServerId.set' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\ErrorRequest.cs</td>
+                    <td>88</td>
+                    <td>Auto-property accessor 'ApplicationId.set' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\ErrorRequest.cs</td>
+                    <td>94</td>
+                    <td>Auto-property accessor 'SeverityId.set' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\ErrorRequest.cs</td>
+                    <td>99</td>
+                    <td>Auto-property accessor 'StatusId.set' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\Req\ErrorRequest.cs</td>
+                    <td>101</td>
                     <td>Auto-property accessor 'CreatedAt.set' is never used</td>
                   </tr>
                   <tr>
@@ -2569,18 +2627,8 @@
                   </tr>
                   <tr>
                     <td>Services\Model\Req\ErrorRequest.cs</td>
-                    <td>55</td>
-                    <td>Property 'Description' is never used</td>
-                  </tr>
-                  <tr>
-                    <td>Services\Model\Req\ErrorRequest.cs</td>
-                    <td>57</td>
+                    <td>51</td>
                     <td>Property 'EventDate' is never used</td>
-                  </tr>
-                  <tr>
-                    <td>Services\Model\Req\ErrorRequest.cs</td>
-                    <td>62</td>
-                    <td>Property 'ServerId' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\ServerRequest.cs</td>
