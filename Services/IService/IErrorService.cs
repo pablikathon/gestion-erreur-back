@@ -2,7 +2,7 @@ using Persist.Entities;
 using Services.Models.Common;
 using Services.Models.Req;
 
-namespace Repositories
+namespace Services
 {
     public interface IErrorService
     {
