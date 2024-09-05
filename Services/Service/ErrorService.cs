@@ -43,7 +43,7 @@ namespace Services
                 err =>
                     err.ApplicationId.Equals(errorRequest.ApplicationId) &&
                     err.CreatedAt.Date.Equals(errorRequest.CreatedAt.Date) &&
-                    err.ServerId.Equals(errorRequest.SeverityId) &&
+                    err.ServerId.Equals(errorRequest.ServerId) &&
                     err.SeverityId.Equals(errorRequest.OldSeverityId) &&
                     err.StatusId.Equals(errorRequest.OldStatusId)
             ).ExecuteUpdate(
@@ -53,7 +53,7 @@ namespace Services
                         .SetProperty(err => err.UpdatedAt, DateTime.UtcNow)
             );
         }
-        public PaginationResponse<ErrorForACustommerStatsResponse> GetErrorsForAClientStats(
+        public PaginationResponse<ErrorForACustommerStatsResponse> GetErrorsForACustommerAgregate(
             QueryParameters queryParameters, string custommerId)
         {
             var query = _context.Error
@@ -66,16 +66,16 @@ namespace Services
                 g.ServerId,
                 g.SeverityId,
                 g.StatusId,
-                createdAt = EF.Functions.DateDiffDay(new DateTime(1900, 1, 1),g.CreatedAt)
+                createdAt = EF.Functions.DateDiffDay(new DateTime(1900, 1, 1), g.CreatedAt)
             }).Select(s => new
-             {
-                 Nberror = s.Select(e => e.Id).Distinct().Count(),
-                 s.Key.ServerId,
-                 s.Key.SeverityId,
-                 s.Key.StatusId,
-                 s.Key.ApplicationId,
-                 CreatedAt = s.Max(e => e.CreatedAt)
-             });
+            {
+                Nberror = s.Select(e => e.Id).Distinct().Count(),
+                s.Key.ServerId,
+                s.Key.SeverityId,
+                s.Key.StatusId,
+                s.Key.ApplicationId,
+                CreatedAt = s.Max(e => e.CreatedAt)
+            });
             query = query.Pagination(queryParameters.Pagination);
             // ça demande moins de perf de chercher les champs directement avec le groupBy puis le select pour ensuite faire la pagination
             // afin de réduire le de ligne au minimum avant 
@@ -85,20 +85,42 @@ namespace Services
             .Select(s => new ErrorForACustommerStatsResponse
             {
                 Nberror = s.Nberror,
-                Server = _context.Server.FirstOrDefault(server => server.Id.Equals(s.ServerId)) ,
+                Server = _context.Server.FirstOrDefault(server => server.Id.Equals(s.ServerId)),
                 Severity = _context.SeverityLevel.FirstOrDefault(severity => severity.Id.Equals(s.SeverityId)),
                 ErrorStatus = _context.ErrorStatus.FirstOrDefault(status => status.Id.Equals(s.StatusId)),
                 Application = _context.Application.FirstOrDefault(application => application.Id.Equals(s.ApplicationId)),
                 CreatedAt = s.CreatedAt
-            });            
-        
+            });
+
             if (queryParameters.SearchParam != null)
-                    query = query.TextSearch(queryParameters.SearchParam);
+                query = query.TextSearch(queryParameters.SearchParam);
 
             query = query.SortBy(queryParameters.Sort);
             var result = lastquery.ToList();
 
             return new PaginationResponse<ErrorForACustommerStatsResponse>(result, result.Count,
+                queryParameters.Pagination.PageNumber,
+                queryParameters.Pagination.PageSize);
+        }
+        public PaginationResponse<ErrorEntity> GetErrorsForACustommer(
+    QueryParameters queryParameters, GetErrorRequest errorRequest)
+        {
+            var query =
+             _context.Error.Where(
+                err =>
+                    err.ApplicationId.Equals(errorRequest.ApplicationId) &&
+                    EF.Functions.DateDiffDay(new DateTime(1900, 1, 1), err.CreatedAt) == EF.Functions.DateDiffDay(new DateTime(1900, 1, 1), errorRequest.CreatedAt) &&
+                    err.ServerId.Equals(errorRequest.ServerId) &&
+                    err.SeverityId.Equals(errorRequest.SeverityId) &&
+                    err.StatusId.Equals(errorRequest.StatusId)
+            );
+            if (queryParameters.SearchParam != null)
+                query = query.TextSearch(queryParameters.SearchParam);
+            query = query.DateSearchQuery(queryParameters.DateParam);
+            query = query.Pagination(queryParameters.Pagination);
+            query = query.SortBy(queryParameters.Sort);
+            var result = query.ToList();
+            return new PaginationResponse<ErrorEntity>(result, result.Count,
                 queryParameters.Pagination.PageNumber,
                 queryParameters.Pagination.PageSize);
         }

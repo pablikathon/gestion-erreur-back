@@ -48,14 +48,34 @@ namespace Services.Models.Req
         [StringLength((int)FieldRestrictionLentgh.FieldTooLongBy500,
             ErrorMessage = IdentifierRestrictionLentghMessage.IdentifierTooLongBy36)]
         public required string OldSeverityId { get; set; }
+        public DateTime? EventDate { get; set; }
+
+        [Required(ErrorMessage = ValidationMessagesGeneric.IdRequired)]
+        [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy36,
+            ErrorMessage = IdentifierRestrictionLentghMessage.IdentifierTooLongBy36)]
+        public required string ServerId { get; set; }
 
         [Required(ErrorMessage = ValidationMessagesGeneric.DescriptionRequired)]
         [StringLength((int)FieldRestrictionLentgh.FieldTooLongBy500,
-            ErrorMessage = FieldRestrictionLentghMessage.FieldTooLongBy500)]
-        public required string Description { get; set; }
+            ErrorMessage = IdentifierRestrictionLentghMessage.IdentifierTooLongBy36)]
 
-        public DateTime? EventDate { get; set; }
+        public required string ApplicationId { get; set; }
 
+        [Required(ErrorMessage = ValidationMessagesGeneric.IdRequired)]
+        [StringLength((int)FieldRestrictionLentgh.FieldTooLongBy500,
+            ErrorMessage = IdentifierRestrictionLentghMessage.IdentifierTooLongBy36)]
+
+        public required string SeverityId { get; set; }
+
+        [Required(ErrorMessage = ValidationMessagesGeneric.IdRequired)]
+        [StringLength((int)FieldRestrictionLentgh.FieldTooLongBy500,
+            ErrorMessage = IdentifierRestrictionLentghMessage.IdentifierTooLongBy36)]
+        public required string StatusId { get; set; }
+
+        public DateTime CreatedAt { get; set; }
+    }
+    public class GetErrorRequest
+    {
         [Required(ErrorMessage = ValidationMessagesGeneric.IdRequired)]
         [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy36,
             ErrorMessage = IdentifierRestrictionLentghMessage.IdentifierTooLongBy36)]

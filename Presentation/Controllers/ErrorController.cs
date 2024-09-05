@@ -68,13 +68,32 @@ public class ErrorController : Controller
             return Problem(e.Message);
         }
     }
-    [HttpGet ("CustomerId")]
-    public ActionResult<PaginationResponse<ErrorForACustommerStatsResponse>> GetErrorForACustommer( string CustomerId,
+    [HttpGet("Customer/{CustomerId}")]
+    public ActionResult<PaginationResponse<ErrorForACustommerStatsResponse>> GetErrorForACustommerAgregate(string CustomerId,
     [FromQuery] QueryParameters queryParameters)
     {
         try
         {
-            var data = _errorService.GetErrorsForAClientStats(queryParameters, CustomerId);
+            var data = _errorService.GetErrorsForACustommerAgregate(queryParameters, CustomerId);
+            if (data.TotalItems > 0)
+            {
+                return Ok(data);
+            }
+
+            return NoContent();
+        }
+        catch (System.Exception e)
+        {
+            return Problem(e.Message);
+        }
+    }
+    [HttpGet("Customer")]
+    public ActionResult<PaginationResponse<ErrorEntity>> GetErrorForACustommer([FromQuery] GetErrorRequest updateErroRequest,
+    [FromQuery] QueryParameters queryParameters)
+    {
+        try
+        {
+            var data = _errorService.GetErrorsForACustommer(queryParameters, updateErroRequest);
             if (data.TotalItems > 0)
             {
                 return Ok(data);
