@@ -1,8 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Persist;
-using Services;
-using Repositories;
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace Presentation
 {
@@ -26,7 +27,21 @@ namespace Presentation
             //string connectionString = "Server=localhost;Port=8081;User=root;Password=;Database=testntier" ;
             string connectionString = "Server=localhost;Port=3306;User=root;Password=;Database=testntier;Charset=utf8";
 
-
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme= JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x=> {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey= new SymmetricSecurityKey( Encoding.ASCII.GetBytes("Tempory string")),
+                    ValidateIssuer=false,
+                    ValidateAudience=false
+                };
+            });
             // Ajout du contexte de base de données
             services.AddDbContext<AppDbContext>(options =>
                 options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))

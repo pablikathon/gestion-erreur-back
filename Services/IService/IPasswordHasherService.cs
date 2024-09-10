@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 namespace Services
 {
-    public interface IPasswordServiceHasher
+    public interface IPasswordHasherService
     {
         public string Hash(string password);
 

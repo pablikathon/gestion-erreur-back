@@ -70,5 +70,9 @@ namespace Persist
         public DbSet<ErrorStatusEntity> ErrorStatus { get; set; }
         public DbSet<SeverityLevelEntity> SeverityLevel { get; set; }
         public DbSet<ErrorEntity> Error { get; set; }
+        public DbSet<HashPasswordEntity> HashPassword { get; set; }
+        public DbSet<RefreshTokenEntity> RefreshToken{ get; set; }
+        public DbSet<UserEntity> User{ get; set; }
+        
     }
 }

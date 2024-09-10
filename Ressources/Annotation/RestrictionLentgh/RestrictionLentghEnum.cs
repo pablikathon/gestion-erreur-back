@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using Ressources.Annotation.ValidationMessage;
 
 namespace Ressources.Annotation.RestrictionLentgh;
 
@@ -33,4 +34,14 @@ public enum IdRestrictionLentgh
 
     [Description(IdentifierRestrictionLentghMessage.IdentifierTooLongBy36)]
     IdentifierTooLongBy36 = 36
+}
+
+public enum UserRestrictionMessageEnum
+{
+    [Description(ValidationMessagesPassword.PasswordTooShortBy12)]
+    PasswordTooShortBy12 = 12,
+    [Description(ValidationMessagesUserField.EmailShouldBeLongerOrEqualThan5)]
+    EmailMinimalLengh = 5,
+    [Description(ValidationMessagesUserField.EmailShouldBeShorterOrEqualThan50)]
+    EmailMaxLengh = 50,
 }

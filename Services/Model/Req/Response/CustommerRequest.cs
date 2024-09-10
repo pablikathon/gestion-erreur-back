@@ -13,12 +13,12 @@ namespace Services.Models.Req
     public class ErrorForACustommerStatsResponse
     {
         public required int Nberror { get; set; }
-        public required ErrorStatusEntity ErrorStatus { get; set; }
-        public required ApplicationEntity Application { get; set; }
+        public ErrorStatusEntity? ErrorStatus { get; set; }
+        public ApplicationEntity? Application { get; set; }
 
-        public required SeverityLevelEntity Severity { get; set; }
-        public required ServerEntity Server { get; set; }
-        public required DateTime CreatedAt { get; set; }
+        public  SeverityLevelEntity? Severity { get; set; }
+        public  ServerEntity? Server { get; set; }
+        public  DateTime CreatedAt { get; set; }
 
 
     }

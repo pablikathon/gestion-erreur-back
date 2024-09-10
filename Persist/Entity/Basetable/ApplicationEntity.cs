@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 namespace Persist.Entities
 {
     [PrimaryKey(nameof(Id))]
+    [Index(nameof(Title), IsUnique = true)]
+
     public class ApplicationEntity : DateEntity
     {
         [Required] public required string Id { get; set; }
