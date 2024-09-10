@@ -13,18 +13,16 @@
     <IssueType Id="CSharpWarnings::CS8600" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Converting null literal or possible null value to non-nullable type." Severity="WARNING" WikiUrl="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#possible-null-assigned-to-a-nonnullable-reference" />
     <IssueType Id="CSharpWarnings::CS8602" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Dereference of a possibly null reference." Severity="WARNING" WikiUrl="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#possible-dereference-of-null" />
     <IssueType Id="CSharpWarnings::CS8603" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Possible null reference return." Severity="WARNING" WikiUrl="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#possible-null-assigned-to-a-nonnullable-reference" />
-    <IssueType Id="CSharpWarnings::CS8604" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Possible null reference argument for a parameter." Severity="WARNING" WikiUrl="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#possible-null-assigned-to-a-nonnullable-reference" />
     <IssueType Id="CSharpWarnings::CS8620" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Argument cannot be used for corresponding parameter due to differences in the nullability of reference types." Severity="WARNING" WikiUrl="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#mismatch-in-nullability-declaration" />
     <IssueType Id="CheckNamespace" Category="Constraints Violations" CategoryId="ConstraintViolation" Description="Namespace does not correspond to file location" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=CheckNamespace" />
     <IssueType Id="ClassNeverInstantiated.Global" Category="Potential Code Quality Issues" CategoryId="CodeSmell" SubCategory="Class is never instantiated" Description="Class is never instantiated: Non-private accessibility" Severity="SUGGESTION" Global="True" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=ClassNeverInstantiated.Global" />
     <IssueType Id="CollectionNeverQueried.Global" Category="Potential Code Quality Issues" CategoryId="CodeSmell" SubCategory="Collection content is never queried" Description="Collection content is never queried: Non-private accessibility" Severity="WARNING" Global="True" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=CollectionNeverQueried.Global" />
     <IssueType Id="CollectionNeverUpdated.Global" Category="Potential Code Quality Issues" CategoryId="CodeSmell" SubCategory="Collection is never updated" Description="Collection is never updated: Non-private accessibility" Severity="WARNING" Global="True" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=CollectionNeverUpdated.Global" />
-    <IssueType Id="ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract" Category="Redundancies in Code" CategoryId="CodeRedundancy" Description="Expression is always 'true' or 'false' according to nullable reference types' annotations" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract" />
     <IssueType Id="ConvertConstructorToMemberInitializers" Category="Language Usage Opportunities" CategoryId="LanguageUsage" Description="Convert constructor into member initializers" Severity="SUGGESTION" />
+    <IssueType Id="ConvertToUsingDeclaration" Category="Language Usage Opportunities" CategoryId="LanguageUsage" Description="Convert into 'using' declaration" Severity="SUGGESTION" />
     <IssueType Id="EmptyStatement" Category="Common Practices and Code Improvements" CategoryId="BestPractice" Description="Empty statement is redundant" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=EmptyStatement" />
     <IssueType Id="InconsistentNaming" Category="Constraints Violations" CategoryId="ConstraintViolation" Description="Inconsistent Naming" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=InconsistentNaming" />
     <IssueType Id="MemberCanBePrivate.Global" Category="Common Practices and Code Improvements" CategoryId="BestPractice" SubCategory="Member can be made private" Description="Member can be made private: Non-private accessibility" Severity="SUGGESTION" Global="True" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=MemberCanBePrivate.Global" />
-    <IssueType Id="MergeCastWithTypeCheck" Category="Potential Code Quality Issues" CategoryId="CodeSmell" Description="Type check and casts can be merged" Severity="SUGGESTION" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=MergeCastWithTypeCheck" />
     <IssueType Id="MethodHasAsyncOverload" Category="Common Practices and Code Improvements" CategoryId="BestPractice" Description="Method has async overload" Severity="SUGGESTION" />
     <IssueType Id="NotAccessedOutParameterVariable" Category="Redundancies in Symbol Declarations" CategoryId="DeclarationRedundancy" Description="Non-accessed local variable only used to discard the 'out' parameter value" Severity="WARNING" />
     <IssueType Id="PropertyCanBeMadeInitOnly.Global" Category="Common Practices and Code Improvements" CategoryId="BestPractice" SubCategory="Property can be made init-only" Description="Property can be made init-only: Non-private accessibility" Severity="SUGGESTION" Global="True" />
@@ -155,8 +153,7 @@
       <Issue TypeId="CheckNamespace" File="Persist\IRepository\IApplicationRepository.cs" Offset="35-47" Line="3" Message="Namespace does not correspond to file location, must be: 'Persist.IRepository'" />
       <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\IApplicationRepository.cs" Offset="190-202" Line="8" Message="Method 'GetByIdAsync' is never used" />
       <Issue TypeId="CheckNamespace" File="Persist\IRepository\IAuthRepository.cs" Offset="35-47" Line="3" Message="Namespace does not correspond to file location, must be: 'Persist.IRepository'" />
-      <Issue TypeId="UnusedMethodReturnValue.Global" File="Persist\IRepository\IAuthRepository.cs" Offset="231-241" Line="9" Message="Method 'AddPasswordToUser' return value is never used" />
-      <Issue TypeId="UnusedMemberInSuper.Global" File="Persist\IRepository\IAuthRepository.cs" Offset="242-259" Line="9" Message="Only implementations of method 'AddPasswordToUser' are used" />
+      <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\IAuthRepository.cs" Offset="242-255" Line="9" Message="Method 'RenewPassword' is never used" />
       <Issue TypeId="CheckNamespace" File="Persist\IRepository\ICustomerHaveLicenceToRepository.cs" Offset="35-47" Line="3" Message="Namespace does not correspond to file location, must be: 'Persist.IRepository'" />
       <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\ICustomerHaveLicenceToRepository.cs" Offset="249-261" Line="8" Message="Method 'GetByIdAsync' is never used" />
       <Issue TypeId="InconsistentNaming" File="Persist\IRepository\ICustomerHaveLicenceToRepository.cs" Offset="417-449" Line="11" Message="Name 'CustomerHaveLicenceToApplication' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToApplication'." />
@@ -177,13 +174,12 @@
       <Issue TypeId="CheckNamespace" File="Persist\Repository\ApplicationRepository.cs" Offset="87-99" Line="5" Message="Namespace does not correspond to file location, must be: 'Persist.Repository'" />
       <Issue TypeId="MethodHasAsyncOverload" File="Persist\Repository\ApplicationRepository.cs" Offset="1013-1017" Line="35" Message="Method has async overload" />
       <Issue TypeId="CheckNamespace" File="Persist\Repository\AuthRepository.cs" Offset="50-62" Line="4" Message="Namespace does not correspond to file location, must be: 'Persist.Repository'" />
-      <Issue TypeId="CSharpWarnings::CS8604" File="Persist\Repository\AuthRepository.cs" Offset="511-528" Line="20" Message="Possible null reference argument for parameter 'item' in 'System.Collections.Generic.ICollection&lt;T&gt;.Add'" />
-      <Issue TypeId="RedundantCatchClause" File="Persist\Repository\AuthRepository.cs" Offset="687-763" Line="25" Message="Catch clause is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Persist\Repository\AuthRepository.cs" Offset="694-701" Line="25" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantCatchClause" File="Persist\Repository\AuthRepository.cs" Offset="1216-1292" Line="41" Message="Catch clause is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Persist\Repository\AuthRepository.cs" Offset="1223-1230" Line="41" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantCatchClause" File="Persist\Repository\AuthRepository.cs" Offset="1618-1694" Line="57" Message="Catch clause is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Persist\Repository\AuthRepository.cs" Offset="1625-1632" Line="57" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantCatchClause" File="Persist\Repository\AuthRepository.cs" Offset="774-850" Line="28" Message="Catch clause is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Persist\Repository\AuthRepository.cs" Offset="781-788" Line="28" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantCatchClause" File="Persist\Repository\AuthRepository.cs" Offset="1304-1380" Line="44" Message="Catch clause is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Persist\Repository\AuthRepository.cs" Offset="1311-1318" Line="44" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantCatchClause" File="Persist\Repository\AuthRepository.cs" Offset="1635-1711" Line="59" Message="Catch clause is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Persist\Repository\AuthRepository.cs" Offset="1642-1649" Line="59" Message="Qualifier is redundant" />
       <Issue TypeId="CheckNamespace" File="Persist\Repository\CustomerHaveLicenceToApplicationRepository.cs" Offset="87-99" Line="5" Message="Namespace does not correspond to file location, must be: 'Persist.Repository'" />
       <Issue TypeId="InconsistentNaming" File="Persist\Repository\CustomerHaveLicenceToApplicationRepository.cs" Offset="523-555" Line="17" Message="Name 'CustomerHaveLicenceToApplication' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToApplication'." />
       <Issue TypeId="RedundantNameQualifier" File="Persist\Repository\CustomerHaveLicenceToApplicationRepository.cs" Offset="979-986" Line="27" Message="Qualifier is redundant" />
@@ -213,13 +209,7 @@
       <Issue TypeId="RedundantUsingDirective" File="Presentation\Controllers\AuthController.cs" Offset="154-180" Line="7" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="UnusedVariable" File="Presentation\Controllers\AuthController.cs" Offset="597-601" Line="26" Message="Local variable 'data' is never used" />
       <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\AuthController.cs" Offset="694-701" Line="29" Message="Qualifier is redundant" />
-      <Issue TypeId="MergeCastWithTypeCheck" File="Presentation\Controllers\AuthController.cs" Offset="935-937" Line="39" Message="Merge cast with type check" />
-      <Issue TypeId="UnusedVariable" File="Presentation\Controllers\AuthController.cs" Offset="961-983" Line="39" Message="Local variable 'UserSignInWithPassword' is never used" />
-      <Issue TypeId="InconsistentNaming" File="Presentation\Controllers\AuthController.cs" Offset="961-983" Line="39" Message="Name 'UserSignInWithPassword' does not match rule 'Local variables'. Suggested name is 'userSignInWithPassword'." />
-      <Issue TypeId="MergeCastWithTypeCheck" File="Presentation\Controllers\AuthController.cs" Offset="1136-1138" Line="43" Message="Merge cast with type check" />
-      <Issue TypeId="UnusedVariable" File="Presentation\Controllers\AuthController.cs" Offset="1166-1192" Line="43" Message="Local variable 'UserSignInWithRefreshToken' is never used" />
-      <Issue TypeId="InconsistentNaming" File="Presentation\Controllers\AuthController.cs" Offset="1166-1192" Line="43" Message="Name 'UserSignInWithRefreshToken' does not match rule 'Local variables'. Suggested name is 'userSignInWithRefreshToken'." />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\AuthController.cs" Offset="1410-1417" Line="49" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\AuthController.cs" Offset="1181-1188" Line="45" Message="Qualifier is redundant" />
       <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="882-889" Line="35" Message="Qualifier is redundant" />
       <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="1340-1347" Line="52" Message="Qualifier is redundant" />
       <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="1750-1757" Line="66" Message="Qualifier is redundant" />
@@ -363,6 +353,11 @@
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="108-115" Line="5" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="108-115" Line="5" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="122-128" Line="7" Message="Method 'MappingProfileServer' can be made private" />
+      <Issue TypeId="RedundantUsingDirective" File="Services\Extension\JsonConverter.cs" Offset="0-13" Message="Using directive is not required by the code and can be safely removed" />
+      <Issue TypeId="CheckNamespace" File="Services\Extension\JsonConverter.cs" Offset="118-142" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.Extension'" />
+      <Issue TypeId="ConvertToUsingDeclaration" File="Services\Extension\JsonConverter.cs" Offset="313-318" Line="10" Message="Convert into 'using' declaration" />
+      <Issue TypeId="CSharpWarnings::CS8603" File="Services\Extension\JsonConverter.cs" Offset="533-618" Line="16" Message="Possible null reference return" />
+      <Issue TypeId="CSharpWarnings::CS8603" File="Services\Extension\JsonConverter.cs" Offset="743-832" Line="20" Message="Possible null reference return" />
       <Issue TypeId="CheckNamespace" File="Services\Extension\LeapYearExtension.cs" Offset="20-37" Line="1" Message="Namespace does not correspond to file location, must be: 'Services.Extension'" />
       <Issue TypeId="UnusedMember.Global" File="Services\Extension\LeapYearExtension.cs" Offset="302-312" Line="8" Message="Method 'IsLeapYear' is never used" />
       <Issue TypeId="CheckNamespace" File="Services\Extension\PaginationExtension.cs" Offset="107-126" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.Extension'" />
@@ -377,6 +372,7 @@
       <Issue TypeId="CheckNamespace" File="Services\IService\IApplicationService.cs" Offset="92-100" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
       <Issue TypeId="InconsistentNaming" File="Services\IService\IApplicationService.cs" Offset="406-430" Line="11" Message="Name 'UpdateApplicationRequest' does not match rule 'Parameters'. Suggested name is 'updateApplicationRequest'." />
       <Issue TypeId="CheckNamespace" File="Services\IService\IAuthService.cs" Offset="38-46" Line="2" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
+      <Issue TypeId="UnusedMember.Global" File="Services\IService\IAuthService.cs" Offset="247-273" Line="8" Message="Method 'UserSignInWithRefreshToken' is never used" />
       <Issue TypeId="UnusedParameter.Global" File="Services\IService\IAuthService.cs" Offset="301-305" Line="8" Message="Parameter 'user' is not used in any of the implementations" />
       <Issue TypeId="UnusedMemberInSuper.Global" File="Services\IService\IAuthService.cs" Offset="330-343" Line="9" Message="Only implementations of method 'GenerateToken' are used" />
       <Issue TypeId="InconsistentNaming" File="Services\IService\IAuthService.cs" Offset="351-356" Line="9" Message="Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'." />
@@ -390,14 +386,14 @@
       <Issue TypeId="CheckNamespace" File="Services\IService\IPasswordHasherService.cs" Offset="46-54" Line="2" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
       <Issue TypeId="UnusedMemberInSuper.Global" File="Services\IService\IPasswordHasherService.cs" Offset="129-133" Line="6" Message="Only implementations of method 'Hash' are used" />
       <Issue TypeId="CheckNamespace" File="Services\IService\IServerService.cs" Offset="92-100" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
-      <Issue TypeId="CheckNamespace" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="150-170" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.Model.common.auth'" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="249-253" Line="9" Message="Auto-property accessor 'GrantType.get' is never used" />
-      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="277-299" Line="12" Message="Class 'UserSignInWithPassword' is never instantiated" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="680-684" Line="17" Message="Auto-property accessor 'Email.set' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="1006-1010" Line="21" Message="Auto-property accessor 'Password.set' is never used" />
-      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="1102-1128" Line="28" Message="Class 'UserSignInWithRefreshToken' is never instantiated" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="1496-1501" Line="33" Message="Property 'Email' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="1543-1555" Line="34" Message="Property 'RefreshToken' is never used" />
+      <Issue TypeId="CheckNamespace" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="188-208" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.Model.common.auth'" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="282-286" Line="9" Message="Auto-property accessor 'GrantType.set' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="401-405" Line="12" Message="Auto-property accessor 'GrantDetails.set' is never used" />
+      <Issue TypeId="InconsistentNaming" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="433-449" Line="15" Message="Name 'IGrantConnection' does not match rule 'Types and namespaces'. Suggested name is 'GrantConnection'." />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="815-819" Line="20" Message="Auto-property accessor 'Email.set' is never used" />
+      <Issue TypeId="UnusedMemberInSuper.Global" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="848-856" Line="21" Message="Only overrides of method 'Validate' are used" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="1239-1242" Line="29" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="1457-1460" Line="37" Message="Property can be made init-only" />
       <Issue TypeId="CheckNamespace" File="Services\Model\common\auth\Token.cs" Offset="10-30" Line="1" Message="Namespace does not correspond to file location, must be: 'Services.Model.common.auth'" />
       <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\auth\Token.cs" Offset="95-99" Line="5" Message="Auto-property accessor 'AccessToken.get' is never used" />
       <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\auth\Token.cs" Offset="149-153" Line="6" Message="Auto-property accessor 'RefreshToken.get' is never used" />
@@ -536,20 +532,18 @@
       <Issue TypeId="CheckNamespace" File="Services\Service\ApplicationDeployedOnServerService.cs" Offset="175-183" Line="8" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="CheckNamespace" File="Services\Service\ApplicationService.cs" Offset="175-183" Line="8" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="InconsistentNaming" File="Services\Service\ApplicationService.cs" Offset="422-443" Line="15" Message="Name 'ApplicationRepository' does not match rule 'Parameters'. Suggested name is 'applicationRepository'." />
-      <Issue TypeId="CheckNamespace" File="Services\Service\AuthService.cs" Offset="277-285" Line="11" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
-      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="370-373" Line="15" Message="Name 'Key' does not match rule 'Instance fields (private)'. Suggested name is '_key'." />
-      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="1765-1776" Line="48" Message="Name 'AccessToken' does not match rule 'Local variables'. Suggested name is 'accessToken'." />
-      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="1830-1842" Line="49" Message="Name 'RefreshToken' does not match rule 'Local variables'. Suggested name is 'refreshToken'." />
-      <Issue TypeId="RedundantCatchClause" File="Services\Service\AuthService.cs" Offset="2283-2370" Line="56" Message="Catch clause is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Services\Service\AuthService.cs" Offset="2290-2297" Line="56" Message="Qualifier is redundant" />
-      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="2645-2650" Line="69" Message="Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'." />
-      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\AuthService.cs" Offset="3394-3400" Line="89" Message="Method 'GenerateRefreshToken' can be made private" />
-      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\AuthService.cs" Offset="3669-3675" Line="97" Message="Method 'IsUserExist' can be made private" />
-      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="3700-3705" Line="97" Message="Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'." />
-      <Issue TypeId="ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract" File="Services\Service\AuthService.cs" Offset="3736-3786" Line="99" Message="Expression is always false according to nullable reference types' annotations" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Service\AuthService.cs" Offset="3819-3839" Line="102" Message="Method 'IsUserEmailConfirmed' is never used" />
-      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="3847-3852" Line="102" Message="Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'." />
-      <Issue TypeId="ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract" File="Services\Service\AuthService.cs" Offset="3883-3955" Line="104" Message="Expression is always false according to nullable reference types' annotations" />
+      <Issue TypeId="CheckNamespace" File="Services\Service\AuthService.cs" Offset="314-322" Line="12" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
+      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="407-410" Line="16" Message="Name 'Key' does not match rule 'Instance fields (private)'. Suggested name is '_key'." />
+      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="1947-1958" Line="47" Message="Name 'AccessToken' does not match rule 'Local variables'. Suggested name is 'accessToken'." />
+      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="2012-2024" Line="48" Message="Name 'RefreshToken' does not match rule 'Local variables'. Suggested name is 'refreshToken'." />
+      <Issue TypeId="RedundantCatchClause" File="Services\Service\AuthService.cs" Offset="2465-2552" Line="55" Message="Catch clause is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Services\Service\AuthService.cs" Offset="2472-2479" Line="55" Message="Qualifier is redundant" />
+      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="2827-2832" Line="68" Message="Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'." />
+      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\AuthService.cs" Offset="3576-3582" Line="88" Message="Method 'GenerateRefreshToken' can be made private" />
+      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\AuthService.cs" Offset="3851-3857" Line="96" Message="Method 'IsUserExist' can be made private" />
+      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="3882-3887" Line="96" Message="Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'." />
+      <Issue TypeId="UnusedMember.Global" File="Services\Service\AuthService.cs" Offset="4010-4030" Line="101" Message="Method 'IsUserEmailConfirmed' is never used" />
+      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="4038-4043" Line="101" Message="Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'." />
       <Issue TypeId="CheckNamespace" File="Services\Service\CustomerHaveLicenceToApplicationService.cs" Offset="130-138" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="InconsistentNaming" File="Services\Service\CustomerHaveLicenceToApplicationService.cs" Offset="505-547" Line="15" Message="Name 'CustomerHaveLicenceToApplicationRepository' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToApplicationRepository'." />
       <Issue TypeId="CheckNamespace" File="Services\Service\CustomerService.cs" Offset="182-190" Line="9" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
@@ -559,8 +553,8 @@
       <Issue TypeId="CheckNamespace" File="Services\Service\ErrorService.cs" Offset="182-190" Line="9" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="RedundantAssignment" File="Services\Service\ErrorService.cs" Offset="4100-4107" Line="98" Message="Value assigned is not used in any execution path" />
       <Issue TypeId="CheckNamespace" File="Services\Service\PasswordHasherService.cs" Offset="46-66" Line="2" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
-      <Issue TypeId="InconsistentNaming" File="Services\Service\PasswordHasherService.cs" Offset="305-314" Line="8" Message="Name 'Algorithm' does not match rule 'Instance fields (private)'. Suggested name is '_algorithm'." />
-      <Issue TypeId="ConvertConstructorToMemberInitializers" File="Services\Service\PasswordHasherService.cs" Offset="332-353" Line="9" Message="Convert constructor into member initializers" />
+      <Issue TypeId="InconsistentNaming" File="Services\Service\PasswordHasherService.cs" Offset="306-315" Line="8" Message="Name 'Algorithm' does not match rule 'Instance fields (private)'. Suggested name is '_algorithm'." />
+      <Issue TypeId="ConvertConstructorToMemberInitializers" File="Services\Service\PasswordHasherService.cs" Offset="333-354" Line="9" Message="Convert constructor into member initializers" />
       <Issue TypeId="CheckNamespace" File="Services\Service\ServerService.cs" Offset="175-183" Line="8" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="InconsistentNaming" File="Services\Service\ServerService.cs" Offset="394-410" Line="15" Message="Name 'ServerRepository' does not match rule 'Parameters'. Suggested name is 'serverRepository'." />
     </Project>
