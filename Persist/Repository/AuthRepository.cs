@@ -17,7 +17,10 @@ namespace Repositories
             try
             {
                 _context.RefreshToken.Add(refreshToken);
-                user.OldRefreshTokens.Add(user.RefreshToken);
+                if (user.RefreshToken != null)
+                {
+                    user.OldRefreshTokens.Add(user.RefreshToken);
+                }
                 user.RefreshToken = refreshToken;
                 await _context.SaveChangesAsync();
                 return true;
@@ -28,12 +31,12 @@ namespace Repositories
                 throw;
             }
         }
-        public async Task<bool> AddPasswordToUser(UserEntity user, HashPasswordEntity hashPasswordEntity)
+        public async Task<bool> RenewPassword(UserEntity user, HashPasswordEntity hashPasswordEntity)
         {
             try
             {
                 _context.HashPassword.Add(hashPasswordEntity);
-                user.OldppHashPasswords.Add(hashPasswordEntity);
+                user.OldppHashPasswords.Add(user.HashPasswordEntity);
                 user.HashPasswordEntity = hashPasswordEntity;
                 await _context.SaveChangesAsync();
                 return true;
@@ -50,7 +53,6 @@ namespace Repositories
             try
             {
                 _context.User.Add(user);
-                await AddPasswordToUser(user,user.HashPasswordEntity);
                 await _context.SaveChangesAsync();
                 return true;
             }

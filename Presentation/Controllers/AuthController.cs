@@ -36,13 +36,9 @@ public class AuthController : Controller
     {
         try
         {
-            if (grant is UserSignInWithPassword UserSignInWithPassword)
+            if (grant.GrantType == "password")
             {
-                return Ok(await _authService.UserSignInWithPassword((UserSignInWithPassword)grant));
-            }
-            if (grant is UserSignInWithRefreshToken UserSignInWithRefreshToken)
-            {
-                return Ok(await _authService.UserSignInWithRefreshToken((UserSignInWithRefreshToken)grant));
+                return Ok(await _authService.UserSignInWithPassword((UserSignInWithPassword)grant.GrantDetails));
             }
             return NotFound("No grant type founded");
         }

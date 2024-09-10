@@ -6,6 +6,6 @@ namespace Repositories
     {
         Task <bool> Signup(UserEntity user);
         Task<bool> AddTokenToUser(UserEntity user, RefreshTokenEntity refreshToken);
-        Task<bool> AddPasswordToUser(UserEntity user, HashPasswordEntity hashPasswordEntity);
+        Task<bool> RenewPassword(UserEntity user, HashPasswordEntity hashPasswordEntity);
     }
 }

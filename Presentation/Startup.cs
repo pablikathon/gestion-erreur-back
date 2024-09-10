@@ -37,7 +37,7 @@ namespace Presentation
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey= new SymmetricSecurityKey( Encoding.ASCII.GetBytes("Tempory string")),
+                    IssuerSigningKey= new SymmetricSecurityKey( Encoding.ASCII.GetBytes("ayuidajhkcxewbyryebbbefgrkdwdzwyhhammygfgisnnweocdskgvgikvmtqpccmjihjggvdkrvcugqelerpfglbqypgfunddgggrhcpdbaiwopcpftgjfiopgxruas")),
                     ValidateIssuer=false,
                     ValidateAudience=false
                 };

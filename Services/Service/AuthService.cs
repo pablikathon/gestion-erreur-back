@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Persist;
 using Persist.Entities;
@@ -20,7 +21,7 @@ namespace Services
         public AuthService(IAuthRepository authRepository, IMapper mapper, AppDbContext context, IPasswordHasherService passwordHasherService)
         {
             _authRepository = authRepository;
-            Key = "Tempory string";
+            Key = "ayuidajhkcxewbyryebbbefgrkdwdzwyhhammygfgisnnweocdskgvgikvmtqpccmjihjggvdkrvcugqelerpfglbqypgfunddgggrhcpdbaiwopcpftgjfiopgxruas";
             _mapper = mapper;
             _context = context;
             _passwordHasherService = passwordHasherService;
@@ -36,11 +37,9 @@ namespace Services
 
         public async Task<Token> UserSignInWithPassword(UserSignInWithPassword user)
         {
-            var u = _context.User.First(u => u.Email == user.Email && u.IsEmailConfirmed);
-            if (u == null)
-            {
-                throw new EntryPointNotFoundException("No verified user founded");
-            }
+            //En attendant d'implémenter la confirmation d'email
+            var u = _context.User.Include( p => p.HashPasswordEntity)
+            .First(u => u.Email == user.Email /*&& u.IsEmailConfirmed*/) ?? throw new Exception("No verified user founded");
             if (_passwordHasherService.Validate(u.HashPasswordEntity.Password, user.Password))
             {
                 try
@@ -96,12 +95,12 @@ namespace Services
 
         public bool IsUserExist(string Email)
         {
-            return _context.User.First(u => u.Email == Email) == null;
+            return _context.User.FirstOrDefault(u => u.Email == Email) != null;
         }
 
         public bool IsUserEmailConfirmed(string Email)
         {
-            return _context.User.First(u => u.Email == Email && u.IsEmailConfirmed) == null;
+            return _context.User.FirstOrDefault(u => u.Email == Email && u.IsEmailConfirmed) == null;
         }
     }
 }
