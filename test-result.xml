@@ -1,18 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<testsuites time="0.202" tests="13" failures="0">
-  <testsuite id="0" name="/source/Test/bin/Release/net8.0/Test.dll" tests="13" failures="0" time="0.202">
-    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.canNotMap_UpdateApplicationRequest_On_customer" time="0.0884775" />
-    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.canNotMap_CreateApplication_On_customer" time="0.0025875" />
-    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.CreateApplicationRequest_should_generate_CreatedAt" time="0.0053955" />
-    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.CreateApplicationRequest_should_generate_Id" time="0.0027495" />
-    <testcase classname="Test.CustommerAutoMapTest" name="Test.CustommerAutoMapTest.CreateCustomerRequest_should_generate_CreatedAt" time="0.0885004" />
-    <testcase classname="Test.CustommerAutoMapTest" name="Test.CustommerAutoMapTest.CreateCustomerRequest_should_generate_Id" time="0.0065109" />
-    <testcase classname="Test.CustommerAutoMapTest" name="Test.CustommerAutoMapTest.CreateApplicationRequest_should_generate_CreatedAt" time="0.0044370" />
-    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_not_be_a_leap_year(year: 2021)" time="0.0027372" />
-    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_not_be_a_leap_year(year: 2023)" time="0.0001942" />
-    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_not_be_a_leap_year(year: 1900)" time="0.0000056" />
-    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_be_a_leap_year(year: 1992)" time="0.0001841" />
-    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_be_a_leap_year(year: 2020)" time="0.0001832" />
-    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_be_a_leap_year(year: 2000)" time="0.0000063" />
+<testsuites time="0.328" tests="14" failures="0">
+  <testsuite id="0" name="/source/Test/bin/Release/net8.0/Test.dll" tests="14" failures="0" time="0.328">
+    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.canNotMap_UpdateApplicationRequest_On_customer" time="0.0978136" />
+    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.canNotMap_CreateApplication_On_customer" time="0.0042915" />
+    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.CreateApplicationRequest_should_generate_CreatedAt" time="0.0074410" />
+    <testcase classname="Test.ApplicationAutoMapTest" name="Test.ApplicationAutoMapTest.CreateApplicationRequest_should_generate_Id" time="0.0029160" />
+    <testcase classname="Test.CustommerAutoMapTest" name="Test.CustommerAutoMapTest.CreateCustomerRequest_should_generate_CreatedAt" time="0.0978132" />
+    <testcase classname="Test.CustommerAutoMapTest" name="Test.CustommerAutoMapTest.CreateCustomerRequest_should_generate_Id" time="0.0052734" />
+    <testcase classname="Test.CustommerAutoMapTest" name="Test.CustommerAutoMapTest.CreateApplicationRequest_should_generate_CreatedAt" time="0.0064691" />
+    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_not_be_a_leap_year(year: 2021)" time="0.0031717" />
+    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_not_be_a_leap_year(year: 2023)" time="0.0002200" />
+    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_not_be_a_leap_year(year: 1900)" time="0.0000046" />
+    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_be_a_leap_year(year: 1992)" time="0.0001360" />
+    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_be_a_leap_year(year: 2020)" time="0.0001815" />
+    <testcase classname="Test.LeapYearTests" name="Test.LeapYearTests.Should_be_a_leap_year(year: 2000)" time="0.0000065" />
+    <testcase classname="Test.UserSignAutoMapTest" name="Test.UserSignAutoMapTest.SignUp_should_generate_hasPassword" time="0.1027058" />
   </testsuite>
 </testsuites>

@@ -164,49 +164,6 @@
           <br>
           <div class="accordion-item">
             <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#CSharpWarnings::CS8601" aria-expanded="false" aria-controls="flush-collapseOne">
-                <span class="badge bg-warning
-                                            text-dark">WARNING</span>
-                                            : Possible null reference assignment.</button>
-            </h2>
-            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="CSharpWarnings::CS8601">
-              <div class="accordion-body">
-                <table class="table table-hover" style="width:100%">
-                  <thead class="table-dark">
-                    <tr>
-                      <th>File</th>
-                      <th>Line Number</th>
-                      <th>Message</th>
-                    </tr>
-                  </thead>
-                  <tr>
-                    <td>Services\Service\ErrorService.cs</td>
-                    <td>88</td>
-                    <td>Possible null reference assignment</td>
-                  </tr>
-                  <tr>
-                    <td>Services\Service\ErrorService.cs</td>
-                    <td>89</td>
-                    <td>Possible null reference assignment</td>
-                  </tr>
-                  <tr>
-                    <td>Services\Service\ErrorService.cs</td>
-                    <td>90</td>
-                    <td>Possible null reference assignment</td>
-                  </tr>
-                  <tr>
-                    <td>Services\Service\ErrorService.cs</td>
-                    <td>91</td>
-                    <td>Possible null reference assignment</td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </div>
-          <br>
-          <br>
-          <div class="accordion-item">
-            <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#CSharpWarnings::CS8602" aria-expanded="false" aria-controls="flush-collapseOne">
                 <span class="badge bg-warning
                                             text-dark">WARNING</span>
@@ -268,6 +225,34 @@
           <br>
           <div class="accordion-item">
             <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#CSharpWarnings::CS8604" aria-expanded="false" aria-controls="flush-collapseOne">
+                <span class="badge bg-warning
+                                            text-dark">WARNING</span>
+                                            : Possible null reference argument for a parameter.</button>
+            </h2>
+            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="CSharpWarnings::CS8604">
+              <div class="accordion-body">
+                <table class="table table-hover" style="width:100%">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>File</th>
+                      <th>Line Number</th>
+                      <th>Message</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>Persist\Repository\AuthRepository.cs</td>
+                    <td>20</td>
+                    <td>Possible null reference argument for parameter 'item' in 'System.Collections.Generic.ICollection&lt;T&gt;.Add'</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#CSharpWarnings::CS8620" aria-expanded="false" aria-controls="flush-collapseOne">
                 <span class="badge bg-warning
                                             text-dark">WARNING</span>
@@ -311,6 +296,21 @@
                       <th>Message</th>
                     </tr>
                   </thead>
+                  <tr>
+                    <td>Persist\Entity\Auth\HashPasswordEntity.cs</td>
+                    <td>5</td>
+                    <td>Namespace does not correspond to file location, must be: 'Persist.Entity.Auth'</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\Auth\RefreshTokenEntity.cs</td>
+                    <td>4</td>
+                    <td>Namespace does not correspond to file location, must be: 'Persist.Entity.Auth'</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\Auth\UserEntity.cs</td>
+                    <td>7</td>
+                    <td>Namespace does not correspond to file location, must be: 'Persist.Entity.Auth'</td>
+                  </tr>
                   <tr>
                     <td>Persist\Entity\Basetable\ApplicationEntity.cs</td>
                     <td>5</td>
@@ -377,6 +377,11 @@
                     <td>Namespace does not correspond to file location, must be: 'Persist.IRepository'</td>
                   </tr>
                   <tr>
+                    <td>Persist\IRepository\IAuthRepository.cs</td>
+                    <td>3</td>
+                    <td>Namespace does not correspond to file location, must be: 'Persist.IRepository'</td>
+                  </tr>
+                  <tr>
                     <td>Persist\IRepository\ICustomerHaveLicenceToRepository.cs</td>
                     <td>3</td>
                     <td>Namespace does not correspond to file location, must be: 'Persist.IRepository'</td>
@@ -407,6 +412,11 @@
                     <td>Namespace does not correspond to file location, must be: 'Persist.Repository'</td>
                   </tr>
                   <tr>
+                    <td>Persist\Repository\AuthRepository.cs</td>
+                    <td>4</td>
+                    <td>Namespace does not correspond to file location, must be: 'Persist.Repository'</td>
+                  </tr>
+                  <tr>
                     <td>Persist\Repository\CustomerHaveLicenceToApplicationRepository.cs</td>
                     <td>5</td>
                     <td>Namespace does not correspond to file location, must be: 'Persist.Repository'</td>
@@ -428,7 +438,7 @@
                   </tr>
                   <tr>
                     <td>Presentation\Extension\ServicesCollectionExtension.cs</td>
-                    <td>5</td>
+                    <td>7</td>
                     <td>Namespace does not correspond to file location, must be: 'Presentation.Extension'</td>
                   </tr>
                   <tr>
@@ -442,8 +452,13 @@
                     <td>Namespace does not correspond to file location, must be: 'Ressources.Extension'</td>
                   </tr>
                   <tr>
+                    <td>Services\Automapper\AuthEntity\AutoMapperMapperUser.cs</td>
+                    <td>4</td>
+                    <td>Namespace does not correspond to file location, must be: 'Services.Automapper.AuthEntity'</td>
+                  </tr>
+                  <tr>
                     <td>Services\Automapper\AutoMapper.cs</td>
-                    <td>5</td>
+                    <td>7</td>
                     <td>Namespace does not correspond to file location, must be: 'Services.Automapper'</td>
                   </tr>
                   <tr>
@@ -502,6 +517,11 @@
                     <td>Namespace does not correspond to file location, must be: 'Services.IService'</td>
                   </tr>
                   <tr>
+                    <td>Services\IService\IAuthService.cs</td>
+                    <td>2</td>
+                    <td>Namespace does not correspond to file location, must be: 'Services.IService'</td>
+                  </tr>
+                  <tr>
                     <td>Services\IService\ICustomerHaveLicenceToService.cs</td>
                     <td>5</td>
                     <td>Namespace does not correspond to file location, must be: 'Services.IService'</td>
@@ -517,9 +537,29 @@
                     <td>Namespace does not correspond to file location, must be: 'Services.IService'</td>
                   </tr>
                   <tr>
+                    <td>Services\IService\IPasswordHasherService.cs</td>
+                    <td>2</td>
+                    <td>Namespace does not correspond to file location, must be: 'Services.IService'</td>
+                  </tr>
+                  <tr>
                     <td>Services\IService\IServerService.cs</td>
                     <td>5</td>
                     <td>Namespace does not correspond to file location, must be: 'Services.IService'</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\auth\GrantTypeRequest.cs</td>
+                    <td>5</td>
+                    <td>Namespace does not correspond to file location, must be: 'Services.Model.common.auth'</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\auth\Token.cs</td>
+                    <td>1</td>
+                    <td>Namespace does not correspond to file location, must be: 'Services.Model.common.auth'</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\auth\UserSign.cs</td>
+                    <td>5</td>
+                    <td>Namespace does not correspond to file location, must be: 'Services.Model.common.auth'</td>
                   </tr>
                   <tr>
                     <td>Services\Model\common\search\DateParameter.cs</td>
@@ -602,6 +642,11 @@
                     <td>Namespace does not correspond to file location, must be: 'Services.Service'</td>
                   </tr>
                   <tr>
+                    <td>Services\Service\AuthService.cs</td>
+                    <td>11</td>
+                    <td>Namespace does not correspond to file location, must be: 'Services.Service'</td>
+                  </tr>
+                  <tr>
                     <td>Services\Service\CustomerHaveLicenceToApplicationService.cs</td>
                     <td>7</td>
                     <td>Namespace does not correspond to file location, must be: 'Services.Service'</td>
@@ -617,6 +662,11 @@
                     <td>Namespace does not correspond to file location, must be: 'Services.Service'</td>
                   </tr>
                   <tr>
+                    <td>Services\Service\PasswordHasherService.cs</td>
+                    <td>2</td>
+                    <td>Namespace does not correspond to file location, must be: 'Services.Service'</td>
+                  </tr>
+                  <tr>
                     <td>Services\Service\ServerService.cs</td>
                     <td>8</td>
                     <td>Namespace does not correspond to file location, must be: 'Services.Service'</td>
@@ -628,6 +678,11 @@
                   </tr>
                   <tr>
                     <td>Test\AutomapperTest\CustomerAutomapTest.cs</td>
+                    <td>1</td>
+                    <td>Namespace does not correspond to file location, must be: 'Gestion_Erreur_Back_C_.AutomapperTest'</td>
+                  </tr>
+                  <tr>
+                    <td>Test\AutomapperTest\UserSignTest.cs</td>
                     <td>1</td>
                     <td>Namespace does not correspond to file location, must be: 'Gestion_Erreur_Back_C_.AutomapperTest'</td>
                   </tr>
@@ -665,9 +720,52 @@
                     <td>Class 'Program' is never instantiated</td>
                   </tr>
                   <tr>
+                    <td>Services\Model\common\auth\GrantTypeRequest.cs</td>
+                    <td>12</td>
+                    <td>Class 'UserSignInWithPassword' is never instantiated</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\auth\GrantTypeRequest.cs</td>
+                    <td>28</td>
+                    <td>Class 'UserSignInWithRefreshToken' is never instantiated</td>
+                  </tr>
+                  <tr>
                     <td>Services\Model\common\search\SearchParameter.cs</td>
                     <td>3</td>
                     <td>Class 'SearchParameters' is never instantiated</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#CollectionNeverQueried.Global" aria-expanded="false" aria-controls="flush-collapseOne">
+                <span class="badge bg-warning
+                                            text-dark">WARNING</span>
+                                            : Collection content is never queried: Non-private accessibility</button>
+            </h2>
+            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="CollectionNeverQueried.Global">
+              <div class="accordion-body">
+                <table class="table table-hover" style="width:100%">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>File</th>
+                      <th>Line Number</th>
+                      <th>Message</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>Persist\Entity\Auth\UserEntity.cs</td>
+                    <td>23</td>
+                    <td>Content of collection 'OldRefreshTokens' is only updated but never used</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\Auth\UserEntity.cs</td>
+                    <td>24</td>
+                    <td>Content of collection 'OldppHashPasswords' is only updated but never used</td>
                   </tr>
                 </table>
               </div>
@@ -694,22 +792,22 @@
                   </thead>
                   <tr>
                     <td>Persist\Entity\Basetable\ApplicationEntity.cs</td>
-                    <td>16</td>
+                    <td>18</td>
                     <td>Content of collection 'ApplicationDeployedOnServers' is never updated</td>
                   </tr>
                   <tr>
                     <td>Persist\Entity\Basetable\ApplicationEntity.cs</td>
-                    <td>20</td>
+                    <td>22</td>
                     <td>Content of collection 'CustomerHaveLicenceToApplication' is never updated</td>
                   </tr>
                   <tr>
                     <td>Persist\Entity\Basetable\CustomerEntity.cs</td>
-                    <td>20</td>
+                    <td>22</td>
                     <td>Content of collection 'CustomerHaveLicenceToApplication' is never updated</td>
                   </tr>
                   <tr>
                     <td>Persist\Entity\Basetable\ServerEntity.cs</td>
-                    <td>27</td>
+                    <td>28</td>
                     <td>Content of collection 'ApplicationDeployedOnServers' is never updated</td>
                   </tr>
                   <tr>
@@ -721,6 +819,67 @@
                     <td>Persist\Entity\LookupTable\SeverityLevel.cs</td>
                     <td>10</td>
                     <td>Content of collection 'Errors' is never updated</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract" aria-expanded="false" aria-controls="flush-collapseOne">
+                <span class="badge bg-warning
+                                            text-dark">WARNING</span>
+                                            : Expression is always 'true' or 'false' according to nullable reference types' annotations</button>
+            </h2>
+            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract">
+              <div class="accordion-body">
+                <table class="table table-hover" style="width:100%">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>File</th>
+                      <th>Line Number</th>
+                      <th>Message</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>Services\Service\AuthService.cs</td>
+                    <td>99</td>
+                    <td>Expression is always false according to nullable reference types' annotations</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Service\AuthService.cs</td>
+                    <td>104</td>
+                    <td>Expression is always false according to nullable reference types' annotations</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ConvertConstructorToMemberInitializers" aria-expanded="false" aria-controls="flush-collapseOne">
+                <span class="badge bg-info
+                                            text-dark">SUGGESTION</span>
+                                            : Convert constructor into member initializers</button>
+            </h2>
+            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="ConvertConstructorToMemberInitializers">
+              <div class="accordion-body">
+                <table class="table table-hover" style="width:100%">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>File</th>
+                      <th>Line Number</th>
+                      <th>Message</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>Services\Service\PasswordHasherService.cs</td>
+                    <td>9</td>
+                    <td>Convert constructor into member initializers</td>
                   </tr>
                 </table>
               </div>
@@ -809,6 +968,16 @@
                     <td>Name 'CustomerHaveLicenceToApplication' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToApplication'.</td>
                   </tr>
                   <tr>
+                    <td>Presentation\Controllers\AuthController.cs</td>
+                    <td>39</td>
+                    <td>Name 'UserSignInWithPassword' does not match rule 'Local variables'. Suggested name is 'userSignInWithPassword'.</td>
+                  </tr>
+                  <tr>
+                    <td>Presentation\Controllers\AuthController.cs</td>
+                    <td>43</td>
+                    <td>Name 'UserSignInWithRefreshToken' does not match rule 'Local variables'. Suggested name is 'userSignInWithRefreshToken'.</td>
+                  </tr>
+                  <tr>
                     <td>Presentation\Controllers\CustomerLicenceController.cs</td>
                     <td>16</td>
                     <td>Name 'CustomerHaveLicenceToService' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToService'.</td>
@@ -842,6 +1011,11 @@
                     <td>Services\IService\IApplicationService.cs</td>
                     <td>11</td>
                     <td>Name 'UpdateApplicationRequest' does not match rule 'Parameters'. Suggested name is 'updateApplicationRequest'.</td>
+                  </tr>
+                  <tr>
+                    <td>Services\IService\IAuthService.cs</td>
+                    <td>9</td>
+                    <td>Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'.</td>
                   </tr>
                   <tr>
                     <td>Services\IService\ICustomerHaveLicenceToService.cs</td>
@@ -889,6 +1063,36 @@
                     <td>Name 'ApplicationRepository' does not match rule 'Parameters'. Suggested name is 'applicationRepository'.</td>
                   </tr>
                   <tr>
+                    <td>Services\Service\AuthService.cs</td>
+                    <td>15</td>
+                    <td>Name 'Key' does not match rule 'Instance fields (private)'. Suggested name is '_key'.</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Service\AuthService.cs</td>
+                    <td>48</td>
+                    <td>Name 'AccessToken' does not match rule 'Local variables'. Suggested name is 'accessToken'.</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Service\AuthService.cs</td>
+                    <td>49</td>
+                    <td>Name 'RefreshToken' does not match rule 'Local variables'. Suggested name is 'refreshToken'.</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Service\AuthService.cs</td>
+                    <td>69</td>
+                    <td>Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'.</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Service\AuthService.cs</td>
+                    <td>97</td>
+                    <td>Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'.</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Service\AuthService.cs</td>
+                    <td>102</td>
+                    <td>Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'.</td>
+                  </tr>
+                  <tr>
                     <td>Services\Service\CustomerHaveLicenceToApplicationService.cs</td>
                     <td>15</td>
                     <td>Name 'CustomerHaveLicenceToApplicationRepository' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToApplicationRepository'.</td>
@@ -897,6 +1101,11 @@
                     <td>Services\Service\CustomerService.cs</td>
                     <td>41</td>
                     <td>Name 'CustomerEntity' does not match rule 'Local variables'. Suggested name is 'customerEntity'.</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Service\PasswordHasherService.cs</td>
+                    <td>8</td>
+                    <td>Name 'Algorithm' does not match rule 'Instance fields (private)'. Suggested name is '_algorithm'.</td>
                   </tr>
                   <tr>
                     <td>Services\Service\ServerService.cs</td>
@@ -958,6 +1167,16 @@
                     <td>56</td>
                     <td>Name 'CreateCustomerRequest' does not match rule 'Local variables'. Suggested name is 'createCustomerRequest'.</td>
                   </tr>
+                  <tr>
+                    <td>Test\AutomapperTest\UserSignTest.cs</td>
+                    <td>23</td>
+                    <td>Name 'UserSignUp' does not match rule 'Local variables'. Suggested name is 'userSignUp'.</td>
+                  </tr>
+                  <tr>
+                    <td>Test\AutomapperTest\UserSignTest.cs</td>
+                    <td>34</td>
+                    <td>Name 'ApplicationEntity' does not match rule 'Local variables'. Suggested name is 'applicationEntity'.</td>
+                  </tr>
                 </table>
               </div>
             </div>
@@ -987,14 +1206,24 @@
                     <td>Method 'CreateHostBuilder' can be made private</td>
                   </tr>
                   <tr>
+                    <td>Services\Automapper\AuthEntity\AutoMapperMapperUser.cs</td>
+                    <td>6</td>
+                    <td>Method 'MappingProfileUser' can be made private</td>
+                  </tr>
+                  <tr>
                     <td>Services\Automapper\AutoMapper.cs</td>
-                    <td>13</td>
+                    <td>18</td>
                     <td>Method 'MappingProfilRegularEntity' can be made private</td>
                   </tr>
                   <tr>
                     <td>Services\Automapper\AutoMapper.cs</td>
-                    <td>21</td>
+                    <td>26</td>
                     <td>Method 'MappingProfilJoiningEnity' can be made private</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\AutoMapper.cs</td>
+                    <td>31</td>
+                    <td>Method 'MappingProfileAuthEntity' can be made private</td>
                   </tr>
                   <tr>
                     <td>Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs</td>
@@ -1025,6 +1254,49 @@
                     <td>Services\Automapper\RegularEntity\AutoMapperServer.cs</td>
                     <td>7</td>
                     <td>Method 'MappingProfileServer' can be made private</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Service\AuthService.cs</td>
+                    <td>89</td>
+                    <td>Method 'GenerateRefreshToken' can be made private</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Service\AuthService.cs</td>
+                    <td>97</td>
+                    <td>Method 'IsUserExist' can be made private</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#MergeCastWithTypeCheck" aria-expanded="false" aria-controls="flush-collapseOne">
+                <span class="badge bg-info
+                                            text-dark">SUGGESTION</span>
+                                            : Type check and casts can be merged</button>
+            </h2>
+            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="MergeCastWithTypeCheck">
+              <div class="accordion-body">
+                <table class="table table-hover" style="width:100%">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>File</th>
+                      <th>Line Number</th>
+                      <th>Message</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>Presentation\Controllers\AuthController.cs</td>
+                    <td>39</td>
+                    <td>Merge cast with type check</td>
+                  </tr>
+                  <tr>
+                    <td>Presentation\Controllers\AuthController.cs</td>
+                    <td>43</td>
+                    <td>Merge cast with type check</td>
                   </tr>
                 </table>
               </div>
@@ -1107,6 +1379,11 @@
                     <td>45</td>
                     <td>Local variable 'y' is only used to discard 'out' parameter value</td>
                   </tr>
+                  <tr>
+                    <td>Test\AutomapperTest\UserSignTest.cs</td>
+                    <td>31</td>
+                    <td>Local variable 'x' is only used to discard 'out' parameter value</td>
+                  </tr>
                 </table>
               </div>
             </div>
@@ -1171,28 +1448,108 @@
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
-                    <td>Persist\Entity\Basetable\ApplicationEntity.cs</td>
+                    <td>Persist\AppDbContext.cs</td>
+                    <td>73</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\AppDbContext.cs</td>
+                    <td>74</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\AppDbContext.cs</td>
+                    <td>75</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\Auth\HashPasswordEntity.cs</td>
                     <td>10</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
-                    <td>Persist\Entity\Basetable\ApplicationEntity.cs</td>
+                    <td>Persist\Entity\Auth\HashPasswordEntity.cs</td>
+                    <td>11</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\Auth\HashPasswordEntity.cs</td>
+                    <td>12</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\Auth\RefreshTokenEntity.cs</td>
+                    <td>9</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\Auth\RefreshTokenEntity.cs</td>
+                    <td>10</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\Auth\RefreshTokenEntity.cs</td>
+                    <td>11</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\Auth\UserEntity.cs</td>
+                    <td>14</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\Auth\UserEntity.cs</td>
+                    <td>15</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\Auth\UserEntity.cs</td>
                     <td>16</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
+                    <td>Persist\Entity\Auth\UserEntity.cs</td>
+                    <td>17</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\Auth\UserEntity.cs</td>
+                    <td>18</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\Auth\UserEntity.cs</td>
+                    <td>19</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\Auth\UserEntity.cs</td>
+                    <td>23</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\Auth\UserEntity.cs</td>
+                    <td>24</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
                     <td>Persist\Entity\Basetable\ApplicationEntity.cs</td>
-                    <td>20</td>
+                    <td>12</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\Basetable\ApplicationEntity.cs</td>
+                    <td>18</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\Basetable\ApplicationEntity.cs</td>
+                    <td>22</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
                     <td>Persist\Entity\Basetable\CustomerEntity.cs</td>
-                    <td>10</td>
-                    <td>Property can be made init-only</td>
-                  </tr>
-                  <tr>
-                    <td>Persist\Entity\Basetable\CustomerEntity.cs</td>
-                    <td>11</td>
+                    <td>12</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
@@ -1202,12 +1559,12 @@
                   </tr>
                   <tr>
                     <td>Persist\Entity\Basetable\CustomerEntity.cs</td>
-                    <td>14</td>
+                    <td>15</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
                     <td>Persist\Entity\Basetable\CustomerEntity.cs</td>
-                    <td>15</td>
+                    <td>16</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
@@ -1217,7 +1574,12 @@
                   </tr>
                   <tr>
                     <td>Persist\Entity\Basetable\CustomerEntity.cs</td>
-                    <td>20</td>
+                    <td>19</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\Basetable\CustomerEntity.cs</td>
+                    <td>22</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
@@ -1247,12 +1609,7 @@
                   </tr>
                   <tr>
                     <td>Persist\Entity\Basetable\ServerEntity.cs</td>
-                    <td>11</td>
-                    <td>Property can be made init-only</td>
-                  </tr>
-                  <tr>
-                    <td>Persist\Entity\Basetable\ServerEntity.cs</td>
-                    <td>20</td>
+                    <td>12</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
@@ -1262,12 +1619,22 @@
                   </tr>
                   <tr>
                     <td>Persist\Entity\Basetable\ServerEntity.cs</td>
-                    <td>24</td>
+                    <td>22</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
                     <td>Persist\Entity\Basetable\ServerEntity.cs</td>
-                    <td>27</td>
+                    <td>25</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\Basetable\ServerEntity.cs</td>
+                    <td>28</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\CommonField\DateEntity.cs</td>
+                    <td>3</td>
                     <td>Property can be made init-only</td>
                   </tr>
                   <tr>
@@ -1350,6 +1717,16 @@
                     <td>10</td>
                     <td>Property can be made init-only</td>
                   </tr>
+                  <tr>
+                    <td>Services\Model\common\auth\UserSign.cs</td>
+                    <td>16</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\auth\UserSign.cs</td>
+                    <td>20</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
                 </table>
               </div>
             </div>
@@ -1407,8 +1784,28 @@
                     </tr>
                   </thead>
                   <tr>
+                    <td>Persist\Repository\AuthRepository.cs</td>
+                    <td>25</td>
+                    <td>Catch clause is redundant</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Repository\AuthRepository.cs</td>
+                    <td>41</td>
+                    <td>Catch clause is redundant</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Repository\AuthRepository.cs</td>
+                    <td>57</td>
+                    <td>Catch clause is redundant</td>
+                  </tr>
+                  <tr>
                     <td>Persist\Repository\ErrorRepository.cs</td>
                     <td>28</td>
+                    <td>Catch clause is redundant</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Service\AuthService.cs</td>
+                    <td>56</td>
                     <td>Catch clause is redundant</td>
                   </tr>
                 </table>
@@ -1435,18 +1832,33 @@
                     </tr>
                   </thead>
                   <tr>
-                    <td>Persist\Entity\Basetable\ApplicationEntity.cs</td>
+                    <td>Persist\Entity\Auth\HashPasswordEntity.cs</td>
                     <td>12</td>
                     <td>Initializing property by default value is redundant</td>
                   </tr>
                   <tr>
-                    <td>Persist\Entity\Basetable\CustomerEntity.cs</td>
+                    <td>Persist\Entity\Auth\RefreshTokenEntity.cs</td>
+                    <td>11</td>
+                    <td>Initializing property by default value is redundant</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\Auth\UserEntity.cs</td>
+                    <td>18</td>
+                    <td>Initializing property by default value is redundant</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\Basetable\ApplicationEntity.cs</td>
                     <td>14</td>
                     <td>Initializing property by default value is redundant</td>
                   </tr>
                   <tr>
+                    <td>Persist\Entity\Basetable\CustomerEntity.cs</td>
+                    <td>16</td>
+                    <td>Initializing property by default value is redundant</td>
+                  </tr>
+                  <tr>
                     <td>Persist\Entity\Basetable\ServerEntity.cs</td>
-                    <td>17</td>
+                    <td>18</td>
                     <td>Initializing property by default value is redundant</td>
                   </tr>
                   <tr>
@@ -1483,32 +1895,77 @@
                     </tr>
                   </thead>
                   <tr>
-                    <td>Services\Automapper\AutoMapper.cs</td>
-                    <td>5</td>
+                    <td>Services\Automapper\AuthEntity\AutoMapperMapperUser.cs</td>
+                    <td>4</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\AuthEntity\AutoMapperMapperUser.cs</td>
+                    <td>4</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\AuthEntity\AutoMapperMapperUser.cs</td>
+                    <td>4</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\AuthEntity\AutoMapperMapperUser.cs</td>
+                    <td>4</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\AuthEntity\AutoMapperMapperUser.cs</td>
+                    <td>4</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\AuthEntity\AutoMapperMapperUser.cs</td>
+                    <td>4</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\AuthEntity\AutoMapperMapperUser.cs</td>
+                    <td>4</td>
                     <td>Base type 'Profile' is already specified in other parts</td>
                   </tr>
                   <tr>
                     <td>Services\Automapper\AutoMapper.cs</td>
-                    <td>5</td>
+                    <td>7</td>
                     <td>Base type 'Profile' is already specified in other parts</td>
                   </tr>
                   <tr>
                     <td>Services\Automapper\AutoMapper.cs</td>
-                    <td>5</td>
+                    <td>7</td>
                     <td>Base type 'Profile' is already specified in other parts</td>
                   </tr>
                   <tr>
                     <td>Services\Automapper\AutoMapper.cs</td>
-                    <td>5</td>
+                    <td>7</td>
                     <td>Base type 'Profile' is already specified in other parts</td>
                   </tr>
                   <tr>
                     <td>Services\Automapper\AutoMapper.cs</td>
-                    <td>5</td>
+                    <td>7</td>
                     <td>Base type 'Profile' is already specified in other parts</td>
                   </tr>
                   <tr>
                     <td>Services\Automapper\AutoMapper.cs</td>
+                    <td>7</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\AutoMapper.cs</td>
+                    <td>7</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\AutoMapper.cs</td>
+                    <td>7</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs</td>
                     <td>5</td>
                     <td>Base type 'Profile' is already specified in other parts</td>
                   </tr>
@@ -1573,6 +2030,16 @@
                     <td>Base type 'Profile' is already specified in other parts</td>
                   </tr>
                   <tr>
+                    <td>Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperApplication.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
                     <td>Services\Automapper\RegularEntity\AutoMapperApplication.cs</td>
                     <td>5</td>
                     <td>Base type 'Profile' is already specified in other parts</td>
@@ -1633,7 +2100,7 @@
                     <td>Base type 'Profile' is already specified in other parts</td>
                   </tr>
                   <tr>
-                    <td>Services\Automapper\RegularEntity\AutoMapperError.cs</td>
+                    <td>Services\Automapper\RegularEntity\AutoMapperCustomer.cs</td>
                     <td>5</td>
                     <td>Base type 'Profile' is already specified in other parts</td>
                   </tr>
@@ -1659,6 +2126,21 @@
                   </tr>
                   <tr>
                     <td>Services\Automapper\RegularEntity\AutoMapperError.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperError.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperError.cs</td>
+                    <td>5</td>
+                    <td>Base type 'Profile' is already specified in other parts</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\RegularEntity\AutoMapperServer.cs</td>
                     <td>5</td>
                     <td>Base type 'Profile' is already specified in other parts</td>
                   </tr>
@@ -1716,6 +2198,21 @@
                     </tr>
                   </thead>
                   <tr>
+                    <td>Persist\Repository\AuthRepository.cs</td>
+                    <td>25</td>
+                    <td>Qualifier is redundant</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Repository\AuthRepository.cs</td>
+                    <td>41</td>
+                    <td>Qualifier is redundant</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Repository\AuthRepository.cs</td>
+                    <td>57</td>
+                    <td>Qualifier is redundant</td>
+                  </tr>
+                  <tr>
                     <td>Persist\Repository\CustomerHaveLicenceToApplicationRepository.cs</td>
                     <td>27</td>
                     <td>Qualifier is redundant</td>
@@ -1743,6 +2240,16 @@
                   <tr>
                     <td>Presentation\Controllers\ApplicationController.cs</td>
                     <td>89</td>
+                    <td>Qualifier is redundant</td>
+                  </tr>
+                  <tr>
+                    <td>Presentation\Controllers\AuthController.cs</td>
+                    <td>29</td>
+                    <td>Qualifier is redundant</td>
+                  </tr>
+                  <tr>
+                    <td>Presentation\Controllers\AuthController.cs</td>
+                    <td>49</td>
                     <td>Qualifier is redundant</td>
                   </tr>
                   <tr>
@@ -1855,6 +2362,11 @@
                     <td>87</td>
                     <td>Qualifier is redundant</td>
                   </tr>
+                  <tr>
+                    <td>Services\Service\AuthService.cs</td>
+                    <td>56</td>
+                    <td>Qualifier is redundant</td>
+                  </tr>
                 </table>
               </div>
             </div>
@@ -1878,6 +2390,16 @@
                       <th>Message</th>
                     </tr>
                   </thead>
+                  <tr>
+                    <td>Persist\Entity\Auth\HashPasswordEntity.cs</td>
+                    <td>2</td>
+                    <td>Using directive is not required by the code and can be safely removed</td>
+                  </tr>
+                  <tr>
+                    <td>Persist\Entity\Auth\UserEntity.cs</td>
+                    <td>4</td>
+                    <td>Using directive is not required by the code and can be safely removed</td>
+                  </tr>
                   <tr>
                     <td>Persist\Entity\Basetable\ErrorEntity.cs</td>
                     <td>2</td>
@@ -1914,13 +2436,33 @@
                     <td>Using directive is not required by the code and can be safely removed</td>
                   </tr>
                   <tr>
+                    <td>Presentation\Controllers\AuthController.cs</td>
+                    <td></td>
+                    <td>Using directive is not required by the code and can be safely removed</td>
+                  </tr>
+                  <tr>
+                    <td>Presentation\Controllers\AuthController.cs</td>
+                    <td>3</td>
+                    <td>Using directive is not required by the code and can be safely removed</td>
+                  </tr>
+                  <tr>
+                    <td>Presentation\Controllers\AuthController.cs</td>
+                    <td>6</td>
+                    <td>Using directive is not required by the code and can be safely removed</td>
+                  </tr>
+                  <tr>
+                    <td>Presentation\Controllers\AuthController.cs</td>
+                    <td>7</td>
+                    <td>Using directive is not required by the code and can be safely removed</td>
+                  </tr>
+                  <tr>
                     <td>Presentation\Controllers\ErrorController.cs</td>
                     <td></td>
                     <td>Using directive is not required by the code and can be safely removed</td>
                   </tr>
                   <tr>
                     <td>Presentation\Controllers\ErrorController.cs</td>
-                    <td>5</td>
+                    <td>4</td>
                     <td>Using directive is not required by the code and can be safely removed</td>
                   </tr>
                   <tr>
@@ -1929,12 +2471,7 @@
                     <td>Using directive is not required by the code and can be safely removed</td>
                   </tr>
                   <tr>
-                    <td>Presentation\Startup.cs</td>
-                    <td>3</td>
-                    <td>Using directive is not required by the code and can be safely removed</td>
-                  </tr>
-                  <tr>
-                    <td>Presentation\Startup.cs</td>
+                    <td>Presentation\Extension\ServicesCollectionExtension.cs</td>
                     <td>4</td>
                     <td>Using directive is not required by the code and can be safely removed</td>
                   </tr>
@@ -1949,8 +2486,23 @@
                     <td>Using directive is not required by the code and can be safely removed</td>
                   </tr>
                   <tr>
+                    <td>Services\Automapper\AutoMapper.cs</td>
+                    <td>5</td>
+                    <td>Using directive is not required by the code and can be safely removed</td>
+                  </tr>
+                  <tr>
+                    <td>Services\IService\IPasswordHasherService.cs</td>
+                    <td></td>
+                    <td>Using directive is not required by the code and can be safely removed</td>
+                  </tr>
+                  <tr>
                     <td>Services\Service\ApplicationDeployedOnServerService.cs</td>
                     <td></td>
+                    <td>Using directive is not required by the code and can be safely removed</td>
+                  </tr>
+                  <tr>
+                    <td>Test\AutomapperTest\UserSignTest.cs</td>
+                    <td>6</td>
                     <td>Using directive is not required by the code and can be safely removed</td>
                   </tr>
                 </table>
@@ -2059,8 +2611,43 @@
                   </tr>
                   <tr>
                     <td>Presentation\Startup.cs</td>
-                    <td>16</td>
+                    <td>17</td>
                     <td>Auto-property accessor 'Configuration.get' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\auth\GrantTypeRequest.cs</td>
+                    <td>9</td>
+                    <td>Auto-property accessor 'GrantType.get' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\auth\GrantTypeRequest.cs</td>
+                    <td>17</td>
+                    <td>Auto-property accessor 'Email.set' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\auth\GrantTypeRequest.cs</td>
+                    <td>21</td>
+                    <td>Auto-property accessor 'Password.set' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\auth\Token.cs</td>
+                    <td>5</td>
+                    <td>Auto-property accessor 'AccessToken.get' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\auth\Token.cs</td>
+                    <td>6</td>
+                    <td>Auto-property accessor 'RefreshToken.get' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\auth\UserSign.cs</td>
+                    <td>10</td>
+                    <td>Auto-property accessor 'FirstName.get' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\auth\UserSign.cs</td>
+                    <td>12</td>
+                    <td>Auto-property accessor 'LastName.get' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\common\search\PaginationResponse.cs</td>
@@ -2337,27 +2924,27 @@
                   </tr>
                   <tr>
                     <td>Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs</td>
-                    <td>8</td>
+                    <td>9</td>
                     <td>Enum member 'FieldTooLongBy50' is never used</td>
                   </tr>
                   <tr>
                     <td>Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs</td>
-                    <td>14</td>
+                    <td>15</td>
                     <td>Enum member 'FieldTooLongBy150' is never used</td>
                   </tr>
                   <tr>
                     <td>Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs</td>
-                    <td>17</td>
+                    <td>18</td>
                     <td>Enum member 'FieldTooLongBy200' is never used</td>
                   </tr>
                   <tr>
                     <td>Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs</td>
-                    <td>20</td>
+                    <td>21</td>
                     <td>Enum member 'FieldTooLongBy300' is never used</td>
                   </tr>
                   <tr>
                     <td>Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs</td>
-                    <td>29</td>
+                    <td>30</td>
                     <td>Enum member 'NicTooLongBy5' is never used</td>
                   </tr>
                   <tr>
@@ -2384,6 +2971,16 @@
                     <td>Ressources\Annotation\ValidationMessage\ValidationMessageServer.cs</td>
                     <td>9</td>
                     <td>Constant 'FiscalIdentificationRequired' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Ressources\Annotation\ValidationMessage\ValidationMessageUser.cs</td>
+                    <td>6</td>
+                    <td>Constant 'PasswordShouldHaveSpecialCharacter' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Ressources\Annotation\ValidationMessage\ValidationMessageUser.cs</td>
+                    <td>7</td>
+                    <td>Constant 'PasswordShouldHaveCapitalLetter' is never used</td>
                   </tr>
                   <tr>
                     <td>Ressources\DefaultValue\Event\ErrorStatusEnum.cs</td>
@@ -2429,6 +3026,16 @@
                     <td>Services\Extension\LeapYearExtension.cs</td>
                     <td>8</td>
                     <td>Method 'IsLeapYear' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\auth\GrantTypeRequest.cs</td>
+                    <td>33</td>
+                    <td>Property 'Email' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Model\common\auth\GrantTypeRequest.cs</td>
+                    <td>34</td>
+                    <td>Property 'RefreshToken' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\Req\ApplicationRequest.cs</td>
@@ -2685,6 +3292,49 @@
                     <td>47</td>
                     <td>Property 'StopHost' is never used</td>
                   </tr>
+                  <tr>
+                    <td>Services\Service\AuthService.cs</td>
+                    <td>102</td>
+                    <td>Method 'IsUserEmailConfirmed' is never used</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#UnusedMemberInSuper.Global" aria-expanded="false" aria-controls="flush-collapseOne">
+                <span class="badge bg-info
+                                            text-dark">SUGGESTION</span>
+                                            : Type member is never accessed via base type: Non-private accessibility</button>
+            </h2>
+            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="UnusedMemberInSuper.Global">
+              <div class="accordion-body">
+                <table class="table table-hover" style="width:100%">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>File</th>
+                      <th>Line Number</th>
+                      <th>Message</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>Persist\IRepository\IAuthRepository.cs</td>
+                    <td>9</td>
+                    <td>Only implementations of method 'AddPasswordToUser' are used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\IService\IAuthService.cs</td>
+                    <td>9</td>
+                    <td>Only implementations of method 'GenerateToken' are used</td>
+                  </tr>
+                  <tr>
+                    <td>Services\IService\IPasswordHasherService.cs</td>
+                    <td>6</td>
+                    <td>Only implementations of method 'Hash' are used</td>
+                  </tr>
                 </table>
               </div>
             </div>
@@ -2709,9 +3359,42 @@
                     </tr>
                   </thead>
                   <tr>
+                    <td>Persist\IRepository\IAuthRepository.cs</td>
+                    <td>9</td>
+                    <td>Method 'AddPasswordToUser' return value is never used</td>
+                  </tr>
+                  <tr>
                     <td>Presentation\Extension\ServicesCollectionExtension.cs</td>
-                    <td>7</td>
+                    <td>9</td>
                     <td>Method 'AddCustomServices' return value is never used</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#UnusedParameter.Global" aria-expanded="false" aria-controls="flush-collapseOne">
+                <span class="badge bg-info
+                                            text-dark">SUGGESTION</span>
+                                            : Unused parameter: Non-private accessibility</button>
+            </h2>
+            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="UnusedParameter.Global">
+              <div class="accordion-body">
+                <table class="table table-hover" style="width:100%">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>File</th>
+                      <th>Line Number</th>
+                      <th>Message</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>Services\IService\IAuthService.cs</td>
+                    <td>8</td>
+                    <td>Parameter 'user' is not used in any of the implementations</td>
                   </tr>
                 </table>
               </div>
@@ -2790,9 +3473,52 @@
                     <td>Local variable 'connectionString' is never used</td>
                   </tr>
                   <tr>
+                    <td>Presentation\Controllers\AuthController.cs</td>
+                    <td>26</td>
+                    <td>Local variable 'data' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Presentation\Controllers\AuthController.cs</td>
+                    <td>39</td>
+                    <td>Local variable 'UserSignInWithPassword' is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Presentation\Controllers\AuthController.cs</td>
+                    <td>43</td>
+                    <td>Local variable 'UserSignInWithRefreshToken' is never used</td>
+                  </tr>
+                  <tr>
                     <td>Ressources\Extension\GetDescription.cs</td>
                     <td>13</td>
                     <td>Local variable 'attributes' is never used</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#UseUtf8StringLiteral" aria-expanded="false" aria-controls="flush-collapseOne">
+                <span class="badge bg-info
+                                            text-dark">SUGGESTION</span>
+                                            : Use UTF-8 string literal</button>
+            </h2>
+            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="UseUtf8StringLiteral">
+              <div class="accordion-body">
+                <table class="table table-hover" style="width:100%">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>File</th>
+                      <th>Line Number</th>
+                      <th>Message</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>Presentation\Startup.cs</td>
+                    <td>40</td>
+                    <td>'Encoding.GetBytes' invocation can be replaced with a UTF-8 string literal</td>
                   </tr>
                 </table>
               </div>
