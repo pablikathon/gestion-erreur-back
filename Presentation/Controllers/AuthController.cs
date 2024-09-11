@@ -36,11 +36,15 @@ public class AuthController : Controller
     {
         try
         {
-            if (grant.GrantType == "password")
+            switch (grant.GrantType)
             {
-                return Ok(await _authService.UserSignInWithPassword((UserSignInWithPassword)grant.GrantDetails));
+                case "password":
+                    return Ok(await _authService.UserSignInWithPassword((UserSignInWithPassword)grant.GrantDetails));
+                case "refreshToken":
+                    return Ok(await _authService.UserSignInWithRefreshToken((UserSignInWithRefreshToken)grant.GrantDetails));
+                default:
+                    return NotFound($"{grant.GrantType} is not a valid grant type");
             }
-            return NotFound("No grant type founded");
         }
         catch (System.Exception e)
         {

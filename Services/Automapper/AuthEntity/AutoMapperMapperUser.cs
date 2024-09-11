@@ -16,7 +16,7 @@ public partial class MappingProfile : Profile
                     return new HashPasswordEntity
                     {
                         Id = hashPasswordId, // Assignation de l'ID à l'entité HashPasswordEntity
-                        Password = _passwordHasherService.Hash(src.Password),
+                        Password = _securityService.Hash(src.Password),
                         CreatedAt = DateTime.UtcNow
                     };
                 }

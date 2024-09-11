@@ -1,12 +1,9 @@
 using AutoMapper;
-using Persist.Entities;
-using Services;
 using Services.Models.Auth;
-using Services.Models.Req;
 
 public partial class MappingProfile : Profile
 {
-    private readonly PasswordHasherService  _passwordHasherService = new();
+    private readonly SecurityService  _securityService = new();
     public MappingProfile()
     {
         
