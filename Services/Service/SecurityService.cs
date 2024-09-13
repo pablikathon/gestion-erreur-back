@@ -1,23 +1,25 @@
 using System.Security.Cryptography;
-using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.Extensions.Configuration;
+using Persist.Entities;
+using Microsoft.IdentityModel.JsonWebTokens;
+
 namespace Services.Models.Auth
 {
-    public class SecurityService : ISecurityService
+    public sealed class SecurityService : ISecurityService
     {
         private const int SaltSize = 16;
         private const int HasSize = 32;
         private const int Iteration = 10000;
-        private readonly string Key ;
-
+        public required IConfiguration Configuration { get; set; }
 
         private readonly HashAlgorithmName Algorithm;
-        public SecurityService()
+        public SecurityService(IConfiguration configuration)
         {
             this.Algorithm = HashAlgorithmName.SHA512;
-            this.Key = "ayuidajhkcxewbyryebbbefgrkdwdzwyhhammygfgisnnweocdskgvgikvmtqpccmjihjggvdkrvcugqelerpfglbqypgfunddgggrhcpdbaiwopcpftgjfiopgxruas";
+            this.Configuration = configuration;
         }
         public string Hash(string password)
         {
@@ -35,32 +37,34 @@ namespace Services.Models.Auth
             byte[] inputHash = Rfc2898DeriveBytes.Pbkdf2(password, salt, Iteration, Algorithm, HasSize);
             return CryptographicOperations.FixedTimeEquals(hash, inputHash);
         }
-        public string GenerateAccessToken(string Email)
-        {
-            var tokenhandler = new JwtSecurityTokenHandler();
-            var tokenKey = Encoding.ASCII.GetBytes(this.Key);
-
-            var tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(new Claim[]
-                {
-                    new(ClaimTypes.Name, Email)
-                }),
-                Expires = DateTime.UtcNow.AddMinutes(10),
-                SigningCredentials = new SigningCredentials(
-                    new SymmetricSecurityKey(tokenKey), SecurityAlgorithms.HmacSha256Signature
-                    )
-            };
-
-            var token = tokenhandler.CreateToken(tokenDescriptor);
-            return tokenhandler.WriteToken(token);
-        }
         public string GenerateRefreshToken()
         {
             var randomNumber = new byte[32];
             using var rng = RandomNumberGenerator.Create();
             rng.GetBytes(randomNumber);
             return Convert.ToBase64String(randomNumber);
+        }
+        public string GenerateAccessToken(UserEntity user)
+        {
+            string secureString = Configuration["Jwt:secret"]!;
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secureString));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new Claim[]
+                {
+                    new Claim(JwtRegisteredClaimNames.Sub,user.Id),
+                    new Claim(JwtRegisteredClaimNames.Email,user.Email),
+                    new Claim("email_verified",user.IsEmailConfirmed.ToString())
+                }),
+                Expires = DateTime.UtcNow.AddMinutes(Configuration.GetValue<int>("Jwt:ExpirationMinutes")),
+                SigningCredentials = credentials,
+                Issuer = Configuration["Jwt:Issuer"],
+                Audience = Configuration["Jwt:Audience"]
+            };
+            var handler = new JsonWebTokenHandler();
+            string token = handler.CreateToken(tokenDescriptor);
+            return token;
         }
 
     }

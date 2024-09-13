@@ -1,17 +1,17 @@
 using AutoMapper;
+using Microsoft.Extensions.Configuration;
+using Services;
 using Services.Models.Auth;
 
 public partial class MappingProfile : Profile
 {
-    private readonly SecurityService  _securityService = new();
     public MappingProfile()
     {
-        
         this.MappingProfilRegularEntity();
         this.MappingProfilJoiningEnity();
         this.MappingProfileAuthEntity();
     }
-
+    
     public void MappingProfilRegularEntity()
     {
         this.MappingProfileServer();

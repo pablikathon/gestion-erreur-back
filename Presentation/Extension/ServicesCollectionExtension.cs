@@ -1,12 +1,12 @@
-using Persist;
 using Services;
 using Repositories;
-using Microsoft.AspNetCore.Identity;
 using Services.Models.Auth;
+using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
-public static class ServiceCollectionExtensions
+internal static class ServiceCollectionExtensions
 {
-    public static IServiceCollection AddCustomServices(this IServiceCollection services)
+    internal static IServiceCollection AddCustomServices(this IServiceCollection services)
     {
         services.AddScoped<IServerRepository, ServerRepository>();
         services.AddScoped<IServerService, ServerServices>();
@@ -29,7 +29,41 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IAuthRepository, AuthRepository>();
         services.AddScoped<IAuthService, AuthService>();
 
-        services.AddScoped<ISecurityService,SecurityService>();
+        services.AddScoped<ISecurityService, SecurityService>();
+        return services;
+    }
+    internal static IServiceCollection AddSwaggerWithAuth(this IServiceCollection services)
+    {
+        services.AddSwaggerGen(c =>
+        {
+
+            c.CustomSchemaIds(Id => Id.FullName!.Replace('+', '-'));
+            var securityScheme = new OpenApiSecurityScheme
+            {
+                Name = "Bearer",
+                Description = "Enter your Bearer token in the format **Bearer {token}**",
+                In = ParameterLocation.Header,
+                Type = SecuritySchemeType.Http,
+                BearerFormat = "JWT",
+                Scheme = "bearer",
+            };
+            c.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, securityScheme);
+
+            var securityRequirement = new OpenApiSecurityRequirement{
+                {
+                    new OpenApiSecurityScheme{
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = JwtBearerDefaults.AuthenticationScheme
+                        }
+                    },
+                    new List<string>()
+
+                }
+            };
+            c.AddSecurityRequirement(securityRequirement);
+        });
         return services;
     }
 }

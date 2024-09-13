@@ -26,9 +26,17 @@ namespace Services
             {
                 throw new EntryPointNotFoundException("User Already Exist");
             }
-            return await _authRepository.Signup(_mapper.Map<UserEntity>(user));
+            var u = _mapper.Map<UserEntity>(user);
+            var id = Guid.NewGuid().ToString();
+            u.HashPasswordId = id;
+            u.HashPasswordEntity = new HashPasswordEntity
+                    {
+                        Id = id,
+                        Password = _securityService.Hash(user.Password),
+                        CreatedAt = DateTime.UtcNow
+                    };
+            return await _authRepository.Signup(u);
         }
-
         public async Task<Token> UserSignInWithPassword(UserSignInWithPassword user)
         {
             //En attendant d'implémenter la confirmation d'email
@@ -38,7 +46,7 @@ namespace Services
             {
                 try
                 {
-                    var AccessToken = _securityService.GenerateAccessToken(user.Email);
+                    var AccessToken = _securityService.GenerateAccessToken(u);
                     var RefreshToken = _securityService.GenerateRefreshToken();
                     if (await _authRepository.AddTokenToUser(u, new RefreshTokenEntity() { Id = Guid.NewGuid().ToString(), RefreshToken =_securityService.Hash(RefreshToken), CreatedAt = DateTime.Now }))
                     {
@@ -64,7 +72,7 @@ namespace Services
             {
                 try
                 {
-                    var AccessToken = _securityService.GenerateAccessToken(user.Email);
+                    var AccessToken = _securityService.GenerateAccessToken(u);
                     var RefreshToken = _securityService.GenerateRefreshToken();
                     if (await _authRepository.AddTokenToUser(u, new RefreshTokenEntity() { Id = Guid.NewGuid().ToString(), RefreshToken = _securityService.Hash(RefreshToken), CreatedAt = DateTime.Now }))
                     {

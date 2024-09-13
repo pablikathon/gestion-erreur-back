@@ -1,4 +1,5 @@
 using System.Security.Cryptography;
+using Persist.Entities;
 namespace Services
 {
     public interface ISecurityService
@@ -6,7 +7,7 @@ namespace Services
         public string Hash(string password);
 
         public bool Validate(string passwordToCheck, string password);
-        public string GenerateAccessToken(string Email);
+        public string GenerateAccessToken(UserEntity user);
         public string GenerateRefreshToken();
 
 

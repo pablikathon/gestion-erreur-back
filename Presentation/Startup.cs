@@ -18,34 +18,36 @@ namespace Presentation
 
         public void ConfigureServices(IServiceCollection services)
         {
+
+
             services.AddAutoMapper(typeof(MappingProfile));
 
             services.AddCustomServices();
 
-            services.AddOpenApiDocument();
             // Configuration de la chaîne de connexion
             //string connectionString = "Server=localhost;Port=8081;User=root;Password=;Database=testntier" ;
             string connectionString = "Server=localhost;Port=3306;User=root;Password=;Database=testntier;Charset=utf8";
 
-            services.AddAuthentication(x =>
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .AddJwtBearer(o =>
             {
-                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultChallengeScheme= JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(x=> {
-                x.RequireHttpsMetadata = false;
-                x.SaveToken = true;
-                x.TokenValidationParameters = new TokenValidationParameters
+                o.RequireHttpsMetadata = false;
+                o.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey= new SymmetricSecurityKey( Encoding.ASCII.GetBytes("ayuidajhkcxewbyryebbbefgrkdwdzwyhhammygfgisnnweocdskgvgikvmtqpccmjihjggvdkrvcugqelerpfglbqypgfunddgggrhcpdbaiwopcpftgjfiopgxruas")),
-                    ValidateIssuer=false,
-                    ValidateAudience=false
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:secret"]!)),
+                    ValidIssuer = Configuration["Jwt:Issuer"],
+                    ValidAudience = Configuration["Jwt:Audience"],
+                    ClockSkew = TimeSpan.Zero
                 };
+
             });
             // Ajout du contexte de base de données
             services.AddDbContext<AppDbContext>(options =>
                 options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
             );
+            services.AddEndpointsApiExplorer();
+            services.AddSwaggerWithAuth();
+
             services.AddControllers().AddJsonOptions(options =>
                 {
                     options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
@@ -59,17 +61,18 @@ namespace Presentation
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
             }
-
-            app.UseOpenApi();
-            app.UseSwaggerUI();
-
             app.UseRouting();
+            app.UseSwagger();
             app.UseSwaggerUI(options =>
             {
                 options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
                 options.RoutePrefix = string.Empty;
             });
+            app.UseAuthentication();
+            app.UseAuthorization();
+
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }
