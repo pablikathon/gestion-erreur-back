@@ -8,6 +8,7 @@
     </InspectionScope>
   </Information>
   <IssueTypes>
+    <IssueType Id="ArrangeObjectCreationWhenTypeEvident" Category="Syntax Style" CategoryId="CodeStyleIssues" Description="Use preferred style of 'new' expression when created type is evident" Severity="SUGGESTION" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=ArrangeObjectCreationWhenTypeEvident" />
     <IssueType Id="AutoPropertyCanBeMadeGetOnly.Global" Category="Common Practices and Code Improvements" CategoryId="BestPractice" SubCategory="Auto-property can be made get-only" Description="Auto-property can be made get-only: Non-private accessibility" Severity="SUGGESTION" Global="True" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=AutoPropertyCanBeMadeGetOnly.Global" />
     <IssueType Id="CSharpWarnings::CS8597" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Thrown value may be null." Severity="WARNING" WikiUrl="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#possible-null-assigned-to-a-nonnullable-reference" />
     <IssueType Id="CSharpWarnings::CS8600" Category="Compiler Warnings" CategoryId="CompilerWarnings" Description="Converting null literal or possible null value to non-nullable type." Severity="WARNING" WikiUrl="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/compiler-messages/nullable-warnings#possible-null-assigned-to-a-nonnullable-reference" />
@@ -19,7 +20,6 @@
     <IssueType Id="CollectionNeverQueried.Global" Category="Potential Code Quality Issues" CategoryId="CodeSmell" SubCategory="Collection content is never queried" Description="Collection content is never queried: Non-private accessibility" Severity="WARNING" Global="True" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=CollectionNeverQueried.Global" />
     <IssueType Id="CollectionNeverUpdated.Global" Category="Potential Code Quality Issues" CategoryId="CodeSmell" SubCategory="Collection is never updated" Description="Collection is never updated: Non-private accessibility" Severity="WARNING" Global="True" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=CollectionNeverUpdated.Global" />
     <IssueType Id="ConstantConditionalAccessQualifier" Category="Redundancies in Code" CategoryId="CodeRedundancy" Description="Conditional access qualifier expression is known to be null or not null" Severity="WARNING" />
-    <IssueType Id="ConvertConstructorToMemberInitializers" Category="Language Usage Opportunities" CategoryId="LanguageUsage" Description="Convert constructor into member initializers" Severity="SUGGESTION" />
     <IssueType Id="ConvertToUsingDeclaration" Category="Language Usage Opportunities" CategoryId="LanguageUsage" Description="Convert into 'using' declaration" Severity="SUGGESTION" />
     <IssueType Id="EmptyStatement" Category="Common Practices and Code Improvements" CategoryId="BestPractice" Description="Empty statement is redundant" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=EmptyStatement" />
     <IssueType Id="InconsistentNaming" Category="Constraints Violations" CategoryId="ConstraintViolation" Description="Inconsistent Naming" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=InconsistentNaming" />
@@ -30,6 +30,7 @@
     <IssueType Id="RedundantAssignment" Category="Redundancies in Code" CategoryId="CodeRedundancy" Description="Assignment is not used" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=RedundantAssignment" />
     <IssueType Id="RedundantCatchClause" Category="Redundancies in Code" CategoryId="CodeRedundancy" Description="Redundant catch clause" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=RedundantCatchClause" />
     <IssueType Id="RedundantDefaultMemberInitializer" Category="Redundancies in Symbol Declarations" CategoryId="DeclarationRedundancy" Description="Redundant member initializer" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=RedundantDefaultMemberInitializer" />
+    <IssueType Id="RedundantExplicitArrayCreation" Category="Redundancies in Code" CategoryId="CodeRedundancy" Description="Redundant explicit type in array creation" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=RedundantExplicitArrayCreation" />
     <IssueType Id="RedundantExtendsListEntry" Category="Redundancies in Symbol Declarations" CategoryId="DeclarationRedundancy" Description="Redundant class or interface specification in base types list" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=RedundantExtendsListEntry" />
     <IssueType Id="RedundantNameQualifier" Category="Redundancies in Code" CategoryId="CodeRedundancy" Description="Redundant name qualifier" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=RedundantNameQualifier" />
     <IssueType Id="RedundantUsingDirective" Category="Redundancies in Code" CategoryId="CodeRedundancy" Description="Redundant using directive" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=RedundantUsingDirective" />
@@ -41,7 +42,6 @@
     <IssueType Id="UnusedMethodReturnValue.Global" Category="Redundancies in Symbol Declarations" CategoryId="DeclarationRedundancy" SubCategory="Method return value is never used" Description="Method return value is never used: Non-private accessibility" Severity="SUGGESTION" Global="True" />
     <IssueType Id="UnusedType.Global" Category="Redundancies in Symbol Declarations" CategoryId="DeclarationRedundancy" SubCategory="Type is never used" Description="Type is never used: Non-private accessibility" Severity="SUGGESTION" Global="True" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=UnusedType.Global" />
     <IssueType Id="UnusedVariable" Category="Redundancies in Symbol Declarations" CategoryId="DeclarationRedundancy" Description="Unused local variable" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=UnusedVariable" />
-    <IssueType Id="UseUtf8StringLiteral" Category="Language Usage Opportunities" CategoryId="LanguageUsage" Description="Use UTF-8 string literal" Severity="SUGGESTION" />
   </IssueTypes>
   <Issues>
     <Project Name="Persist">
@@ -199,10 +199,10 @@
       <Issue TypeId="MethodHasAsyncOverload" File="Persist\Repository\ServerRepository.cs" Offset="925-929" Line="35" Message="Method has async overload" />
     </Project>
     <Project Name="Presentation">
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="922-929" Line="35" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="1365-1372" Line="50" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="1902-1909" Line="70" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="2328-2335" Line="89" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="976-983" Line="37" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="1419-1426" Line="52" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="1956-1963" Line="72" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="2382-2389" Line="91" Message="Qualifier is redundant" />
       <Issue TypeId="RedundantUsingDirective" File="Presentation\Controllers\AuthController.cs" Offset="0-23" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="RedundantUsingDirective" File="Presentation\Controllers\AuthController.cs" Offset="56-79" Line="3" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="RedundantUsingDirective" File="Presentation\Controllers\AuthController.cs" Offset="124-153" Line="6" Message="Using directive is not required by the code and can be safely removed" />
@@ -237,15 +237,14 @@
       <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ServerController.cs" Offset="1269-1276" Line="49" Message="Qualifier is redundant" />
       <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ServerController.cs" Offset="1729-1736" Line="68" Message="Qualifier is redundant" />
       <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ServerController.cs" Offset="2140-2147" Line="87" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantUsingDirective" File="Presentation\Extension\ServicesCollectionExtension.cs" Offset="0-14" Message="Using directive is not required by the code and can be safely removed" />
-      <Issue TypeId="RedundantUsingDirective" File="Presentation\Extension\ServicesCollectionExtension.cs" Offset="51-87" Line="4" Message="Using directive is not required by the code and can be safely removed" />
-      <Issue TypeId="CheckNamespace" File="Presentation\Extension\ServicesCollectionExtension.cs" Offset="137-164" Line="7" Message="Namespace does not correspond to file location, must be: 'Presentation.Extension'" />
-      <Issue TypeId="UnusedMethodReturnValue.Global" File="Presentation\Extension\ServicesCollectionExtension.cs" Offset="185-203" Line="9" Message="Method 'AddCustomServices' return value is never used" />
+      <Issue TypeId="CheckNamespace" File="Presentation\Extension\ServicesCollectionExtension.cs" Offset="172-199" Line="7" Message="Namespace does not correspond to file location, must be: 'Presentation.Extension'" />
+      <Issue TypeId="UnusedMethodReturnValue.Global" File="Presentation\Extension\ServicesCollectionExtension.cs" Offset="222-240" Line="9" Message="Method 'AddCustomServices' return value is never used" />
+      <Issue TypeId="UnusedMethodReturnValue.Global" File="Presentation\Extension\ServicesCollectionExtension.cs" Offset="1512-1530" Line="35" Message="Method 'AddSwaggerWithAuth' return value is never used" />
+      <Issue TypeId="InconsistentNaming" File="Presentation\Extension\ServicesCollectionExtension.cs" Offset="1667-1669" Line="40" Message="Name 'Id' does not match rule 'Parameters'. Suggested name is 'id'." />
       <Issue TypeId="ClassNeverInstantiated.Global" File="Presentation\Program.cs" Offset="34-41" Line="3" Message="Class 'Program' is never instantiated" />
       <Issue TypeId="CheckNamespace" File="Presentation\Program.cs" Offset="34-41" Line="3" Message="Namespace does not correspond to file location, must be: 'Presentation'" />
       <Issue TypeId="MemberCanBePrivate.Global" File="Presentation\Program.cs" Offset="151-157" Line="10" Message="Method 'CreateHostBuilder' can be made private" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Presentation\Startup.cs" Offset="420-424" Line="17" Message="Auto-property accessor 'Configuration.get' is never used" />
-      <Issue TypeId="UseUtf8StringLiteral" File="Presentation\Startup.cs" Offset="1493-1516" Line="40" Message="'Encoding.GetBytes' invocation can be replaced with a UTF-8 string literal" />
+      <Issue TypeId="MemberCanBePrivate.Global" File="Presentation\Startup.cs" Offset="382-388" Line="17" Message="Property 'Configuration' can be made private" />
     </Project>
     <Project Name="Ressources">
       <Issue TypeId="UnusedMember.Global" File="Ressources\Annotation\RestrictionLentgh\RestrictionLentghEnum.cs" Offset="236-252" Line="9" Message="Enum member 'FieldTooLongBy50' is never used" />
@@ -285,17 +284,20 @@
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="108-115" Line="4" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="108-115" Line="4" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="122-128" Line="6" Message="Method 'MappingProfileUser' can be made private" />
-      <Issue TypeId="CheckNamespace" File="Services\Automapper\AutoMapper.cs" Offset="68-82" Line="4" Message="Namespace does not correspond to file location, must be: 'Services.Automapper'" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AutoMapper.cs" Offset="85-92" Line="4" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AutoMapper.cs" Offset="85-92" Line="4" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AutoMapper.cs" Offset="85-92" Line="4" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AutoMapper.cs" Offset="85-92" Line="4" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AutoMapper.cs" Offset="85-92" Line="4" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AutoMapper.cs" Offset="85-92" Line="4" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AutoMapper.cs" Offset="85-92" Line="4" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\AutoMapper.cs" Offset="339-345" Line="15" Message="Method 'MappingProfilRegularEntity' can be made private" />
-      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\AutoMapper.cs" Offset="551-557" Line="23" Message="Method 'MappingProfilJoiningEnity' can be made private" />
-      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\AutoMapper.cs" Offset="710-716" Line="28" Message="Method 'MappingProfileAuthEntity' can be made private" />
+      <Issue TypeId="RedundantUsingDirective" File="Services\Automapper\AutoMapper.cs" Offset="18-59" Line="2" Message="Using directive is not required by the code and can be safely removed" />
+      <Issue TypeId="RedundantUsingDirective" File="Services\Automapper\AutoMapper.cs" Offset="60-75" Line="3" Message="Using directive is not required by the code and can be safely removed" />
+      <Issue TypeId="RedundantUsingDirective" File="Services\Automapper\AutoMapper.cs" Offset="76-103" Line="4" Message="Using directive is not required by the code and can be safely removed" />
+      <Issue TypeId="CheckNamespace" File="Services\Automapper\AutoMapper.cs" Offset="126-140" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.Automapper'" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AutoMapper.cs" Offset="143-150" Line="6" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AutoMapper.cs" Offset="143-150" Line="6" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AutoMapper.cs" Offset="143-150" Line="6" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AutoMapper.cs" Offset="143-150" Line="6" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AutoMapper.cs" Offset="143-150" Line="6" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AutoMapper.cs" Offset="143-150" Line="6" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AutoMapper.cs" Offset="143-150" Line="6" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\AutoMapper.cs" Offset="328-334" Line="15" Message="Method 'MappingProfilRegularEntity' can be made private" />
+      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\AutoMapper.cs" Offset="540-546" Line="23" Message="Method 'MappingProfilJoiningEnity' can be made private" />
+      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\AutoMapper.cs" Offset="699-705" Line="28" Message="Method 'MappingProfileAuthEntity' can be made private" />
       <Issue TypeId="CheckNamespace" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="91-105" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.Automapper.JoiningEntity'" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="108-115" Line="5" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="108-115" Line="5" Message="Base type 'Profile' is already specified in other parts" />
@@ -376,8 +378,7 @@
       <Issue TypeId="InconsistentNaming" File="Services\IService\ICustomerService.cs" Offset="525-549" Line="15" Message="Name 'UpdateApplicationRequest' does not match rule 'Parameters'. Suggested name is 'updateApplicationRequest'." />
       <Issue TypeId="CheckNamespace" File="Services\IService\IErrorService.cs" Offset="92-100" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
       <Issue TypeId="RedundantUsingDirective" File="Services\IService\IPasswordHasherService.cs" Offset="0-35" Message="Using directive is not required by the code and can be safely removed" />
-      <Issue TypeId="CheckNamespace" File="Services\IService\IPasswordHasherService.cs" Offset="46-54" Line="2" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
-      <Issue TypeId="InconsistentNaming" File="Services\IService\IPasswordHasherService.cs" Offset="267-272" Line="9" Message="Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'." />
+      <Issue TypeId="CheckNamespace" File="Services\IService\IPasswordHasherService.cs" Offset="70-78" Line="3" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
       <Issue TypeId="CheckNamespace" File="Services\IService\IServerService.cs" Offset="92-100" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
       <Issue TypeId="CheckNamespace" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="188-208" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.Model.common.auth'" />
       <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="282-286" Line="9" Message="Auto-property accessor 'GrantType.set' is never used" />
@@ -526,19 +527,19 @@
       <Issue TypeId="CheckNamespace" File="Services\Service\ApplicationService.cs" Offset="175-183" Line="8" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="InconsistentNaming" File="Services\Service\ApplicationService.cs" Offset="422-443" Line="15" Message="Name 'ApplicationRepository' does not match rule 'Parameters'. Suggested name is 'applicationRepository'." />
       <Issue TypeId="CheckNamespace" File="Services\Service\AuthService.cs" Offset="153-161" Line="8" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
-      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="1556-1567" Line="41" Message="Name 'AccessToken' does not match rule 'Local variables'. Suggested name is 'accessToken'." />
-      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="1644-1656" Line="42" Message="Name 'RefreshToken' does not match rule 'Local variables'. Suggested name is 'refreshToken'." />
-      <Issue TypeId="RedundantCatchClause" File="Services\Service\AuthService.cs" Offset="2162-2249" Line="49" Message="Catch clause is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Services\Service\AuthService.cs" Offset="2169-2176" Line="49" Message="Qualifier is redundant" />
-      <Issue TypeId="ConstantConditionalAccessQualifier" File="Services\Service\AuthService.cs" Offset="2725-2726" Line="63" Message="Conditional access qualifier expression is known to be not null" />
-      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="2905-2916" Line="67" Message="Name 'AccessToken' does not match rule 'Local variables'. Suggested name is 'accessToken'." />
-      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="2993-3005" Line="68" Message="Name 'RefreshToken' does not match rule 'Local variables'. Suggested name is 'refreshToken'." />
-      <Issue TypeId="RedundantCatchClause" File="Services\Service\AuthService.cs" Offset="3512-3599" Line="75" Message="Catch clause is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Services\Service\AuthService.cs" Offset="3519-3526" Line="75" Message="Qualifier is redundant" />
-      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\AuthService.cs" Offset="3683-3689" Line="84" Message="Method 'IsUserExist' can be made private" />
-      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="3714-3719" Line="84" Message="Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'." />
-      <Issue TypeId="UnusedMember.Global" File="Services\Service\AuthService.cs" Offset="3842-3862" Line="89" Message="Method 'IsUserEmailConfirmed' is never used" />
-      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="3870-3875" Line="89" Message="Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'." />
+      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="1922-1933" Line="49" Message="Name 'AccessToken' does not match rule 'Local variables'. Suggested name is 'accessToken'." />
+      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="2001-2013" Line="50" Message="Name 'RefreshToken' does not match rule 'Local variables'. Suggested name is 'refreshToken'." />
+      <Issue TypeId="RedundantCatchClause" File="Services\Service\AuthService.cs" Offset="2519-2606" Line="57" Message="Catch clause is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Services\Service\AuthService.cs" Offset="2526-2533" Line="57" Message="Qualifier is redundant" />
+      <Issue TypeId="ConstantConditionalAccessQualifier" File="Services\Service\AuthService.cs" Offset="3082-3083" Line="71" Message="Conditional access qualifier expression is known to be not null" />
+      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="3262-3273" Line="75" Message="Name 'AccessToken' does not match rule 'Local variables'. Suggested name is 'accessToken'." />
+      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="3341-3353" Line="76" Message="Name 'RefreshToken' does not match rule 'Local variables'. Suggested name is 'refreshToken'." />
+      <Issue TypeId="RedundantCatchClause" File="Services\Service\AuthService.cs" Offset="3860-3947" Line="83" Message="Catch clause is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Services\Service\AuthService.cs" Offset="3867-3874" Line="83" Message="Qualifier is redundant" />
+      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\AuthService.cs" Offset="4031-4037" Line="92" Message="Method 'IsUserExist' can be made private" />
+      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="4062-4067" Line="92" Message="Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'." />
+      <Issue TypeId="UnusedMember.Global" File="Services\Service\AuthService.cs" Offset="4190-4210" Line="97" Message="Method 'IsUserEmailConfirmed' is never used" />
+      <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="4218-4223" Line="97" Message="Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'." />
       <Issue TypeId="CheckNamespace" File="Services\Service\CustomerHaveLicenceToApplicationService.cs" Offset="130-138" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="InconsistentNaming" File="Services\Service\CustomerHaveLicenceToApplicationService.cs" Offset="505-547" Line="15" Message="Name 'CustomerHaveLicenceToApplicationRepository' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToApplicationRepository'." />
       <Issue TypeId="CheckNamespace" File="Services\Service\CustomerService.cs" Offset="182-190" Line="9" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
@@ -547,11 +548,13 @@
       <Issue TypeId="ReplaceWithSingleCallToCount" File="Services\Service\CustomerService.cs" Offset="2831-3142" Line="68" Message="Replace with single call to Count(..)" />
       <Issue TypeId="CheckNamespace" File="Services\Service\ErrorService.cs" Offset="182-190" Line="9" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="RedundantAssignment" File="Services\Service\ErrorService.cs" Offset="4100-4107" Line="98" Message="Value assigned is not used in any execution path" />
-      <Issue TypeId="CheckNamespace" File="Services\Service\SecurityService.cs" Offset="172-192" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
-      <Issue TypeId="InconsistentNaming" File="Services\Service\SecurityService.cs" Offset="411-414" Line="13" Message="Name 'Key' does not match rule 'Instance fields (private)'. Suggested name is '_key'." />
-      <Issue TypeId="InconsistentNaming" File="Services\Service\SecurityService.cs" Offset="462-471" Line="16" Message="Name 'Algorithm' does not match rule 'Instance fields (private)'. Suggested name is '_algorithm'." />
-      <Issue TypeId="ConvertConstructorToMemberInitializers" File="Services\Service\SecurityService.cs" Offset="488-503" Line="17" Message="Convert constructor into member initializers" />
-      <Issue TypeId="InconsistentNaming" File="Services\Service\SecurityService.cs" Offset="1577-1582" Line="38" Message="Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'." />
+      <Issue TypeId="CheckNamespace" File="Services\Service\SecurityService.cs" Offset="245-265" Line="9" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Service\SecurityService.cs" Offset="519-522" Line="16" Message="Property can be made init-only" />
+      <Issue TypeId="InconsistentNaming" File="Services\Service\SecurityService.cs" Offset="570-579" Line="18" Message="Name 'Algorithm' does not match rule 'Instance fields (private)'. Suggested name is '_algorithm'." />
+      <Issue TypeId="RedundantExplicitArrayCreation" File="Services\Service\SecurityService.cs" Offset="2283-2288" Line="54" Message="Redundant explicit array type specification" />
+      <Issue TypeId="ArrangeObjectCreationWhenTypeEvident" File="Services\Service\SecurityService.cs" Offset="2333-2338" Line="56" Message="Redundant type specification" />
+      <Issue TypeId="ArrangeObjectCreationWhenTypeEvident" File="Services\Service\SecurityService.cs" Offset="2401-2406" Line="57" Message="Redundant type specification" />
+      <Issue TypeId="ArrangeObjectCreationWhenTypeEvident" File="Services\Service\SecurityService.cs" Offset="2474-2479" Line="58" Message="Redundant type specification" />
       <Issue TypeId="CheckNamespace" File="Services\Service\ServerService.cs" Offset="175-183" Line="8" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="InconsistentNaming" File="Services\Service\ServerService.cs" Offset="394-410" Line="15" Message="Name 'ServerRepository' does not match rule 'Parameters'. Suggested name is 'serverRepository'." />
     </Project>

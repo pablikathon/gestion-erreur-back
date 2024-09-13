@@ -25,6 +25,44 @@
         <div class="accordion accordion-flush">
           <div class="accordion-item">
             <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ArrangeObjectCreationWhenTypeEvident" aria-expanded="false" aria-controls="flush-collapseOne">
+                <span class="badge bg-info
+                                            text-dark">SUGGESTION</span>
+                                            : Use preferred style of 'new' expression when created type is evident</button>
+            </h2>
+            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="ArrangeObjectCreationWhenTypeEvident">
+              <div class="accordion-body">
+                <table class="table table-hover" style="width:100%">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>File</th>
+                      <th>Line Number</th>
+                      <th>Message</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>Services\Service\SecurityService.cs</td>
+                    <td>56</td>
+                    <td>Redundant type specification</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Service\SecurityService.cs</td>
+                    <td>57</td>
+                    <td>Redundant type specification</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Service\SecurityService.cs</td>
+                    <td>58</td>
+                    <td>Redundant type specification</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#AutoPropertyCanBeMadeGetOnly.Global" aria-expanded="false" aria-controls="flush-collapseOne">
                 <span class="badge bg-info
                                             text-dark">SUGGESTION</span>
@@ -440,7 +478,7 @@
                   </tr>
                   <tr>
                     <td>Services\Automapper\AutoMapper.cs</td>
-                    <td>4</td>
+                    <td>6</td>
                     <td>Namespace does not correspond to file location, must be: 'Services.Automapper'</td>
                   </tr>
                   <tr>
@@ -525,7 +563,7 @@
                   </tr>
                   <tr>
                     <td>Services\IService\IPasswordHasherService.cs</td>
-                    <td>2</td>
+                    <td>3</td>
                     <td>Namespace does not correspond to file location, must be: 'Services.IService'</td>
                   </tr>
                   <tr>
@@ -650,7 +688,7 @@
                   </tr>
                   <tr>
                     <td>Services\Service\SecurityService.cs</td>
-                    <td>6</td>
+                    <td>9</td>
                     <td>Namespace does not correspond to file location, must be: 'Services.Service'</td>
                   </tr>
                   <tr>
@@ -822,36 +860,8 @@
                   </thead>
                   <tr>
                     <td>Services\Service\AuthService.cs</td>
-                    <td>63</td>
+                    <td>71</td>
                     <td>Conditional access qualifier expression is known to be not null</td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </div>
-          <br>
-          <br>
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ConvertConstructorToMemberInitializers" aria-expanded="false" aria-controls="flush-collapseOne">
-                <span class="badge bg-info
-                                            text-dark">SUGGESTION</span>
-                                            : Convert constructor into member initializers</button>
-            </h2>
-            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="ConvertConstructorToMemberInitializers">
-              <div class="accordion-body">
-                <table class="table table-hover" style="width:100%">
-                  <thead class="table-dark">
-                    <tr>
-                      <th>File</th>
-                      <th>Line Number</th>
-                      <th>Message</th>
-                    </tr>
-                  </thead>
-                  <tr>
-                    <td>Services\Service\SecurityService.cs</td>
-                    <td>17</td>
-                    <td>Convert constructor into member initializers</td>
                   </tr>
                 </table>
               </div>
@@ -983,6 +993,11 @@
                     <td>Name 'CustomerId' does not match rule 'Parameters'. Suggested name is 'customerId'.</td>
                   </tr>
                   <tr>
+                    <td>Presentation\Extension\ServicesCollectionExtension.cs</td>
+                    <td>40</td>
+                    <td>Name 'Id' does not match rule 'Parameters'. Suggested name is 'id'.</td>
+                  </tr>
+                  <tr>
                     <td>Services\Extension\PaginationExtension.cs</td>
                     <td>20</td>
                     <td>Name 'DateParam' does not match rule 'Parameters'. Suggested name is 'dateParam'.</td>
@@ -1016,11 +1031,6 @@
                     <td>Services\IService\ICustomerService.cs</td>
                     <td>15</td>
                     <td>Name 'UpdateApplicationRequest' does not match rule 'Parameters'. Suggested name is 'updateApplicationRequest'.</td>
-                  </tr>
-                  <tr>
-                    <td>Services\IService\IPasswordHasherService.cs</td>
-                    <td>9</td>
-                    <td>Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'.</td>
                   </tr>
                   <tr>
                     <td>Services\Model\common\auth\GrantTypeRequest.cs</td>
@@ -1059,32 +1069,32 @@
                   </tr>
                   <tr>
                     <td>Services\Service\AuthService.cs</td>
-                    <td>41</td>
+                    <td>49</td>
                     <td>Name 'AccessToken' does not match rule 'Local variables'. Suggested name is 'accessToken'.</td>
                   </tr>
                   <tr>
                     <td>Services\Service\AuthService.cs</td>
-                    <td>42</td>
+                    <td>50</td>
                     <td>Name 'RefreshToken' does not match rule 'Local variables'. Suggested name is 'refreshToken'.</td>
                   </tr>
                   <tr>
                     <td>Services\Service\AuthService.cs</td>
-                    <td>67</td>
+                    <td>75</td>
                     <td>Name 'AccessToken' does not match rule 'Local variables'. Suggested name is 'accessToken'.</td>
                   </tr>
                   <tr>
                     <td>Services\Service\AuthService.cs</td>
-                    <td>68</td>
+                    <td>76</td>
                     <td>Name 'RefreshToken' does not match rule 'Local variables'. Suggested name is 'refreshToken'.</td>
                   </tr>
                   <tr>
                     <td>Services\Service\AuthService.cs</td>
-                    <td>84</td>
+                    <td>92</td>
                     <td>Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'.</td>
                   </tr>
                   <tr>
                     <td>Services\Service\AuthService.cs</td>
-                    <td>89</td>
+                    <td>97</td>
                     <td>Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'.</td>
                   </tr>
                   <tr>
@@ -1099,18 +1109,8 @@
                   </tr>
                   <tr>
                     <td>Services\Service\SecurityService.cs</td>
-                    <td>13</td>
-                    <td>Name 'Key' does not match rule 'Instance fields (private)'. Suggested name is '_key'.</td>
-                  </tr>
-                  <tr>
-                    <td>Services\Service\SecurityService.cs</td>
-                    <td>16</td>
+                    <td>18</td>
                     <td>Name 'Algorithm' does not match rule 'Instance fields (private)'. Suggested name is '_algorithm'.</td>
-                  </tr>
-                  <tr>
-                    <td>Services\Service\SecurityService.cs</td>
-                    <td>38</td>
-                    <td>Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'.</td>
                   </tr>
                   <tr>
                     <td>Services\Service\ServerService.cs</td>
@@ -1211,6 +1211,11 @@
                     <td>Method 'CreateHostBuilder' can be made private</td>
                   </tr>
                   <tr>
+                    <td>Presentation\Startup.cs</td>
+                    <td>17</td>
+                    <td>Property 'Configuration' can be made private</td>
+                  </tr>
+                  <tr>
                     <td>Services\Automapper\AuthEntity\AutoMapperMapperUser.cs</td>
                     <td>6</td>
                     <td>Method 'MappingProfileUser' can be made private</td>
@@ -1262,7 +1267,7 @@
                   </tr>
                   <tr>
                     <td>Services\Service\AuthService.cs</td>
-                    <td>84</td>
+                    <td>92</td>
                     <td>Method 'IsUserExist' can be made private</td>
                   </tr>
                 </table>
@@ -1704,6 +1709,11 @@
                     <td>20</td>
                     <td>Property can be made init-only</td>
                   </tr>
+                  <tr>
+                    <td>Services\Service\SecurityService.cs</td>
+                    <td>16</td>
+                    <td>Property can be made init-only</td>
+                  </tr>
                 </table>
               </div>
             </div>
@@ -1782,12 +1792,12 @@
                   </tr>
                   <tr>
                     <td>Services\Service\AuthService.cs</td>
-                    <td>49</td>
+                    <td>57</td>
                     <td>Catch clause is redundant</td>
                   </tr>
                   <tr>
                     <td>Services\Service\AuthService.cs</td>
-                    <td>75</td>
+                    <td>83</td>
                     <td>Catch clause is redundant</td>
                   </tr>
                 </table>
@@ -1861,6 +1871,34 @@
           <br>
           <div class="accordion-item">
             <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#RedundantExplicitArrayCreation" aria-expanded="false" aria-controls="flush-collapseOne">
+                <span class="badge bg-warning
+                                            text-dark">WARNING</span>
+                                            : Redundant explicit type in array creation</button>
+            </h2>
+            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="RedundantExplicitArrayCreation">
+              <div class="accordion-body">
+                <table class="table table-hover" style="width:100%">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>File</th>
+                      <th>Line Number</th>
+                      <th>Message</th>
+                    </tr>
+                  </thead>
+                  <tr>
+                    <td>Services\Service\SecurityService.cs</td>
+                    <td>54</td>
+                    <td>Redundant explicit array type specification</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+          <br>
+          <br>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#RedundantExtendsListEntry" aria-expanded="false" aria-controls="flush-collapseOne">
                 <span class="badge bg-warning
                                             text-dark">WARNING</span>
@@ -1913,37 +1951,37 @@
                   </tr>
                   <tr>
                     <td>Services\Automapper\AutoMapper.cs</td>
-                    <td>4</td>
+                    <td>6</td>
                     <td>Base type 'Profile' is already specified in other parts</td>
                   </tr>
                   <tr>
                     <td>Services\Automapper\AutoMapper.cs</td>
-                    <td>4</td>
+                    <td>6</td>
                     <td>Base type 'Profile' is already specified in other parts</td>
                   </tr>
                   <tr>
                     <td>Services\Automapper\AutoMapper.cs</td>
-                    <td>4</td>
+                    <td>6</td>
                     <td>Base type 'Profile' is already specified in other parts</td>
                   </tr>
                   <tr>
                     <td>Services\Automapper\AutoMapper.cs</td>
-                    <td>4</td>
+                    <td>6</td>
                     <td>Base type 'Profile' is already specified in other parts</td>
                   </tr>
                   <tr>
                     <td>Services\Automapper\AutoMapper.cs</td>
-                    <td>4</td>
+                    <td>6</td>
                     <td>Base type 'Profile' is already specified in other parts</td>
                   </tr>
                   <tr>
                     <td>Services\Automapper\AutoMapper.cs</td>
-                    <td>4</td>
+                    <td>6</td>
                     <td>Base type 'Profile' is already specified in other parts</td>
                   </tr>
                   <tr>
                     <td>Services\Automapper\AutoMapper.cs</td>
-                    <td>4</td>
+                    <td>6</td>
                     <td>Base type 'Profile' is already specified in other parts</td>
                   </tr>
                   <tr>
@@ -2206,22 +2244,22 @@
                   </tr>
                   <tr>
                     <td>Presentation\Controllers\ApplicationController.cs</td>
-                    <td>35</td>
+                    <td>37</td>
                     <td>Qualifier is redundant</td>
                   </tr>
                   <tr>
                     <td>Presentation\Controllers\ApplicationController.cs</td>
-                    <td>50</td>
+                    <td>52</td>
                     <td>Qualifier is redundant</td>
                   </tr>
                   <tr>
                     <td>Presentation\Controllers\ApplicationController.cs</td>
-                    <td>70</td>
+                    <td>72</td>
                     <td>Qualifier is redundant</td>
                   </tr>
                   <tr>
                     <td>Presentation\Controllers\ApplicationController.cs</td>
-                    <td>89</td>
+                    <td>91</td>
                     <td>Qualifier is redundant</td>
                   </tr>
                   <tr>
@@ -2346,12 +2384,12 @@
                   </tr>
                   <tr>
                     <td>Services\Service\AuthService.cs</td>
-                    <td>49</td>
+                    <td>57</td>
                     <td>Qualifier is redundant</td>
                   </tr>
                   <tr>
                     <td>Services\Service\AuthService.cs</td>
-                    <td>75</td>
+                    <td>83</td>
                     <td>Qualifier is redundant</td>
                   </tr>
                 </table>
@@ -2453,12 +2491,17 @@
                     <td>Using directive is not required by the code and can be safely removed</td>
                   </tr>
                   <tr>
-                    <td>Presentation\Extension\ServicesCollectionExtension.cs</td>
-                    <td></td>
+                    <td>Services\Automapper\AutoMapper.cs</td>
+                    <td>2</td>
                     <td>Using directive is not required by the code and can be safely removed</td>
                   </tr>
                   <tr>
-                    <td>Presentation\Extension\ServicesCollectionExtension.cs</td>
+                    <td>Services\Automapper\AutoMapper.cs</td>
+                    <td>3</td>
+                    <td>Using directive is not required by the code and can be safely removed</td>
+                  </tr>
+                  <tr>
+                    <td>Services\Automapper\AutoMapper.cs</td>
                     <td>4</td>
                     <td>Using directive is not required by the code and can be safely removed</td>
                   </tr>
@@ -2585,11 +2628,6 @@
                     <td>Persist\Entity\CommonField\EventEntity.cs</td>
                     <td>12</td>
                     <td>Auto-property accessor 'Application.set' is never used</td>
-                  </tr>
-                  <tr>
-                    <td>Presentation\Startup.cs</td>
-                    <td>17</td>
-                    <td>Auto-property accessor 'Configuration.get' is never used</td>
                   </tr>
                   <tr>
                     <td>Services\Model\common\auth\GrantTypeRequest.cs</td>
@@ -3266,7 +3304,7 @@
                   </tr>
                   <tr>
                     <td>Services\Service\AuthService.cs</td>
-                    <td>89</td>
+                    <td>97</td>
                     <td>Method 'IsUserEmailConfirmed' is never used</td>
                   </tr>
                 </table>
@@ -3324,6 +3362,11 @@
                     <td>Presentation\Extension\ServicesCollectionExtension.cs</td>
                     <td>9</td>
                     <td>Method 'AddCustomServices' return value is never used</td>
+                  </tr>
+                  <tr>
+                    <td>Presentation\Extension\ServicesCollectionExtension.cs</td>
+                    <td>35</td>
+                    <td>Method 'AddSwaggerWithAuth' return value is never used</td>
                   </tr>
                 </table>
               </div>
@@ -3410,34 +3453,6 @@
                     <td>Ressources\Extension\GetDescription.cs</td>
                     <td>13</td>
                     <td>Local variable 'attributes' is never used</td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-          </div>
-          <br>
-          <br>
-          <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#UseUtf8StringLiteral" aria-expanded="false" aria-controls="flush-collapseOne">
-                <span class="badge bg-info
-                                            text-dark">SUGGESTION</span>
-                                            : Use UTF-8 string literal</button>
-            </h2>
-            <div class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample" id="UseUtf8StringLiteral">
-              <div class="accordion-body">
-                <table class="table table-hover" style="width:100%">
-                  <thead class="table-dark">
-                    <tr>
-                      <th>File</th>
-                      <th>Line Number</th>
-                      <th>Message</th>
-                    </tr>
-                  </thead>
-                  <tr>
-                    <td>Presentation\Startup.cs</td>
-                    <td>40</td>
-                    <td>'Encoding.GetBytes' invocation can be replaced with a UTF-8 string literal</td>
                   </tr>
                 </table>
               </div>
