@@ -1,4 +1,5 @@
 using AutoMapper;
+using exception.Message;
 using Microsoft.EntityFrameworkCore;
 using Persist;
 using Persist.Entities;
@@ -24,7 +25,7 @@ namespace Services
         {
             if (this.IsUserExist(user.Email))
             {
-                throw new EntryPointNotFoundException("User Already Exist");
+                throw new EntryPointNotFoundException(AuthMessage.UserAlreadyExist);
             }
             var u = _mapper.Map<UserEntity>(user);
             var id = Guid.NewGuid().ToString();
@@ -52,23 +53,23 @@ namespace Services
                     {
                         return new Token { AccessToken = AccessToken, RefreshToken = RefreshToken };
                     }
-                    throw new Exception("Error updt user refresh token in db");
+                    throw new Exception(AuthMessage.ErrorUpdateUserToken);
                 }
-                catch (System.Exception)
+                catch 
                 {
                     throw;
                 }
 
             }
-            throw new Exception("Bad Password");
+            throw new Exception(AuthMessage.WrongPassword);
         }
 
         public async Task<Token> UserSignInWithRefreshToken(UserSignInWithRefreshToken user)
         {
             //En attendant d'implémenter la confirmation d'email
             var u = _context.User.Include(p => p.RefreshToken)
-            .First(u => u.Email == user.Email /*&& u.IsEmailConfirmed*/) ?? throw new Exception("No verified user founded");
-            if ( _securityService.Validate(u?.RefreshToken?.RefreshToken ?? throw new Exception ("User have no refresh token"), user.RefreshToken))
+            .First(u => u.Email == user.Email /*&& u.IsEmailConfirmed*/) ?? throw new Exception(AuthMessage.NoVerifiedUserFound);
+            if ( _securityService.Validate(u?.RefreshToken?.RefreshToken ?? throw new Exception (AuthMessage.RefreshTokenNotFound), user.RefreshToken))
             {
                 try
                 {
@@ -78,7 +79,7 @@ namespace Services
                     {
                         return new Token { AccessToken = AccessToken, RefreshToken = RefreshToken };
                     }
-                    throw new Exception("Error updt user refresh token in db");
+                    throw new Exception(AuthMessage.ErrorUpdateUserToken);
                 }
                 catch (System.Exception)
                 {
@@ -86,7 +87,7 @@ namespace Services
                 }
 
             }
-            throw new Exception("Bad Password");
+            throw new Exception(AuthMessage.WrongToken);
         }
 
         public bool IsUserExist(string Email)

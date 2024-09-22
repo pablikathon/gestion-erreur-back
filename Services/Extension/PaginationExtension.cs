@@ -1,7 +1,10 @@
 using Services.Models.Common;
 using System.Linq.Expressions;
 using System.Reflection;
+using exception.Message;
+using exception;
 
+namespace Services.Extension;
 public static class PaginationExtension
 {
     public static IQueryable<T> Pagination<T>(this IQueryable<T> query, PaginationParameters paginationParameters)
@@ -31,7 +34,7 @@ public static class PaginationExtension
                     a.UpdatedAt >= DateParam.StartDate && a.UpdatedAt <= DateParam.EndDate);
                 break;
             default:
-                throw new ArgumentException("Bad column date name");
+                throw new FieldNotFoundException($"'{NotFoundMessage.FieldNotFound}' : '{DateParam.DateField}'" );
         }
 
         return query;
@@ -41,11 +44,10 @@ public static class PaginationExtension
     {
         if (string.IsNullOrWhiteSpace(sort.SortBy))
             throw new ArgumentNullException(nameof(sort.SortBy));
-
         
         BuildProperty<T>(sort.SortBy, out Type entityType, out Expression propertyAccess, out LambdaExpression lambdaExpression);
 
-        var methodName = sort.Ascending ? "OrderBy" : "OrderByDescending";
+        var methodName = sort.Ascending ? nameof(Queryable.OrderBy) : nameof(Queryable.OrderByDescending);
         var method = typeof(Queryable).GetMethods()
             .First(m => m.Name == methodName && m.GetParameters().Length == 2);
         var genericMethod = method.MakeGenericMethod(entityType, propertyAccess.Type);
@@ -69,7 +71,7 @@ public static class PaginationExtension
             var property = currentType.GetProperty(propertyName, BindingFlags.Public | BindingFlags.Instance | BindingFlags.IgnoreCase)
             ??
             throw new ArgumentException(
-                $"Property '{propertyName}' doesn't exist on '{currentType.Name}'."
+                $"'{NotFoundMessage.FieldNotFound}' '{currentType.Name}'"
             );
             propertyAccess = Expression.MakeMemberAccess(propertyAccess, property);
             currentType = property.PropertyType;
@@ -87,10 +89,10 @@ public static class PaginationExtension
         BuildProperty<T>(searchParameters.SearchColumn, out Type entityType, out Expression propertyAccess, out LambdaExpression lambdaExpression);
 
         if (propertyAccess.Type != typeof(string))
-            throw new ArgumentException($" Property'{searchParameters.SearchColumn}' must be string.");
+            throw new ArgumentException($"'{TypoMessage.PropertyMustBeString}' : '{searchParameters.SearchColumn}'");
 
-        var toLowerMethod = typeof(string).GetMethod("ToLower", Type.EmptyTypes) ?? throw new InvalidOperationException("Impossible de trouver la méthode 'ToLower' sur le type string.");;            
-        var containsMethod = typeof(string).GetMethod("Contains", new[] { typeof(string) }) ?? throw new InvalidOperationException("Impossible de trouver la méthode 'Contains' sur le type string.");;
+        var toLowerMethod = typeof(string).GetMethod(nameof(String.ToLower), Type.EmptyTypes) ?? throw new InvalidOperationException( $"'{NotFoundMessage.MethodNotFound}' :  '{nameof(String.ToLower)}' ");;            
+        var containsMethod = typeof(string).GetMethod(nameof(String.Contains), new[] { typeof(string) }) ?? throw new InvalidOperationException($" '{NotFoundMessage.MethodNotFound}' : '{nameof(String.Contains)} ");;
             
 
         var toLowerExpression = Expression.Call(propertyAccess, toLowerMethod);

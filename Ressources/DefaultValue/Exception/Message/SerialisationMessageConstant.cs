@@ -1,4 +1,4 @@
-namespace exception;
+namespace exception.Message;
 
 public static class SerializationMessage
 {

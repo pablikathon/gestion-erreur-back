@@ -1,8 +1,8 @@
-using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Services.Models.Auth;
 using exception;
+using exception.Message;
 public class GrantConnectionConverter : JsonConverter<IGrantConnection>
 {
     public override IGrantConnection Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)

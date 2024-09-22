@@ -12,5 +12,9 @@ namespace exception;
         public FieldNotFoundException(string message, Exception innerException): base(message, innerException) { }
     }
 
-
+    public class MethodNotFoundException : Exception{
+        public MethodNotFoundException(string message) : base(message){}
+        public MethodNotFoundException(): base(){}
+        public MethodNotFoundException(string message, Exception innerException): base(message, innerException) { }
+    }
 

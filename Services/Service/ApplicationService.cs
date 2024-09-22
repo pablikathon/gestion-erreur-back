@@ -1,7 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using AutoMapper;
+using exception.Message;
 using Persist.Entities;
 using Repositories;
+using Services.Extension;
 using Services.Models.Common;
 using Services.Models.Req;
 
@@ -39,7 +41,7 @@ namespace Services
             bool isValid = Validator.TryValidateObject(createApplication, validation, validationResults, true);
             if (isValid)
                 return await _applicationRepository.AddAsync(_mapper.Map<ApplicationEntity>(createApplication));
-            throw new ArgumentException("not valid object");
+            throw new ArgumentException(TypoMessage.ObjectNotValid);
         }
 
         public async Task<Boolean> UpdateApplication(UpdateApplicationRequest updateApplication)

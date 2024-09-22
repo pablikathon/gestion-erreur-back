@@ -3,6 +3,7 @@ using Persist;
 using Persist.Entities;
 using Repositories;
 using Ressources.DefaultValue.Event;
+using Services.Extension;
 using Services.Models.Common;
 using Services.Models.Req;
 
