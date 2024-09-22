@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+using Microsoft.IdentityModel.Tokens;
 using Ressources.Annotation.RestrictionLentgh;
 using Ressources.Annotation.ValidationMessage;
 
@@ -29,7 +30,7 @@ public class UserSignInWithPassword : IGrantConnection
     public required string Password { get; set; }
     public override bool Validate()
     {
-        return !Password.IsNullOrWithSpaceOrEmpty();
+        return !Password.IsNullOrEmpty();
     }
 }
 public class UserSignInWithRefreshToken : IGrantConnection
@@ -37,7 +38,7 @@ public class UserSignInWithRefreshToken : IGrantConnection
     public required string RefreshToken { get; set; }
     public override bool Validate()
     {
-        return !RefreshToken.IsNullOrWithSpaceOrEmpty();
+        return !RefreshToken.IsNullOrEmpty();
     }
 }
 

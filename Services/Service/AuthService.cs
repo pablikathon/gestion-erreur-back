@@ -41,7 +41,7 @@ namespace Services
         {
             //En attendant d'implémenter la confirmation d'email
             var u = _context.User.Include(p => p.HashPasswordEntity)
-            .First(u => u.Email == user.Email /*&& u.IsEmailConfirmed*/) ?? throw new Exception("No verified user founded");
+            .First(u => u.Email == user.Email /*&& u.IsEmailConfirmed*/)! ;
             if (_securityService.Validate(u.HashPasswordEntity.Password, user.Password))
             {
                 try

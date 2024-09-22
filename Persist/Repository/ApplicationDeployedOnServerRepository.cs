@@ -34,8 +34,6 @@ namespace Repositories
         {
             _context.ApplicationDeployedOnServer.Add(deployedApplicationEntity);
             await _context.SaveChangesAsync();
-            await _context.LoadReferencesAsync(deployedApplicationEntity, e => e.Server, e => e.Customer,
-                e => e.Application);
             return deployedApplicationEntity;
         }
 

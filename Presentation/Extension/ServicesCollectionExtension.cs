@@ -3,6 +3,7 @@ using Repositories;
 using Services.Models.Auth;
 using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Ressources.Auth.Message;
 
 internal static class ServiceCollectionExtensions
 {
@@ -40,12 +41,12 @@ internal static class ServiceCollectionExtensions
             c.CustomSchemaIds(Id => Id.FullName!.Replace('+', '-'));
             var securityScheme = new OpenApiSecurityScheme
             {
-                Name = "Bearer",
-                Description = "Enter your Bearer token in the format **Bearer {token}**",
+                Name = SecuritySchemeConstant.Name,
+                Description = SecuritySchemeConstant.Description,
                 In = ParameterLocation.Header,
                 Type = SecuritySchemeType.Http,
-                BearerFormat = "JWT",
-                Scheme = "bearer",
+                BearerFormat = SecuritySchemeConstant.BearerFormat,
+                Scheme = SecuritySchemeConstant.Scheme,
             };
             c.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, securityScheme);
 

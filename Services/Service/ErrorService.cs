@@ -75,14 +75,11 @@ namespace Services
                 s.Key.StatusId,
                 s.Key.ApplicationId,
                 CreatedAt = s.Max(e => e.CreatedAt)
-            });
-            query = query.Pagination(queryParameters.Pagination);
-            // ça demande moins de perf de chercher les champs directement avec le groupBy puis le select pour ensuite faire la pagination
-            // afin de réduire le de ligne au minimum avant 
+            })
+            .Pagination(queryParameters.Pagination).ToList();
 
-            //J'ai besoins d'utiliser un asenumerable pour chercher mes éléments
-            var lastquery = query.ToList()
-            .Select(s => new ErrorForACustommerStatsResponse
+
+            var lastquery = query.Select(s => new ErrorForACustommerStatsResponse
             {
                 Nberror = s.Nberror,
                 Server = _context.Server.FirstOrDefault(server => server.Id.Equals(s.ServerId)),
@@ -90,14 +87,13 @@ namespace Services
                 ErrorStatus = _context.ErrorStatus.FirstOrDefault(status => status.Id.Equals(s.StatusId)),
                 Application = _context.Application.FirstOrDefault(application => application.Id.Equals(s.ApplicationId)),
                 CreatedAt = s.CreatedAt
-            });
+            }).AsQueryable();
 
             if (queryParameters.SearchParam != null)
-                query = query.TextSearch(queryParameters.SearchParam);
+                lastquery = lastquery.TextSearch(queryParameters.SearchParam);
 
-            query = query.SortBy(queryParameters.Sort);
-            var result = lastquery.ToList();
-
+            var result = lastquery.SortBy(queryParameters.Sort).ToList();
+            //var result = lastquery.OrderBy(x => x.Server.Title).ToList();
             return new PaginationResponse<ErrorForACustommerStatsResponse>(result, result.Count,
                 queryParameters.Pagination.PageNumber,
                 queryParameters.Pagination.PageSize);

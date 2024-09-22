@@ -24,9 +24,9 @@ namespace Repositories
                     e => e.Customer);
                 return CustomerHaveLicenceToApplication;
             }
-            catch (System.Exception e)
+            catch (System.Exception)
             {
-                throw e.InnerException;
+                throw ;
             }
         }
 

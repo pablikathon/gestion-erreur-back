@@ -39,7 +39,7 @@ public class CustomerLicenceController : Controller
     }
 
     [HttpPost]
-    public async Task<ActionResult<ApplicationEntity>> Create(
+    public async Task<ActionResult<CustomerHaveLicenceToApplicationEntity>> Create(
         [FromBody] CreateCustomerHasLicenceToRequest createCustomerHasLicenceToRequest)
     {
         try
