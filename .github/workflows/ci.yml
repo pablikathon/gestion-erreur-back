@@ -35,7 +35,7 @@ jobs:
           image: ${{ env.IMAGE_NAME }}
           path: source/artifacts/.
       - name: Push artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: reports
           path: ${{ steps.extract.outputs.destination }}
