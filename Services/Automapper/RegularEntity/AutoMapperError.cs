@@ -1,5 +1,6 @@
 using AutoMapper;
 using Persist.Entities;
+using Persist.Entities.BaseTable;
 using Services.Models.Req;
 
 public partial class MappingProfile : Profile

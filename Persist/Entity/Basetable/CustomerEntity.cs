@@ -1,8 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
+using Persist.Entity.CommonField;
 
-namespace Persist.Entities
+namespace Persist.Entities.BaseTable
 {
     [PrimaryKey(nameof(Id))]
     [Index(nameof(Title), IsUnique = true)]

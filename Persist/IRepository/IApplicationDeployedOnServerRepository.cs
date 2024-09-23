@@ -1,4 +1,5 @@
-using Persist.Entities;
+using Persist.Entities.JoiningTable;
+using Persist.Migrations;
 
 namespace Repositories
 {

@@ -1,7 +1,5 @@
-using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
-using Persist.Entities;
-using Repositories;
+using Persist.Entities.BaseTable;
 using Services;
 using Services.Models.Common;
 using Services.Models.Req;

@@ -1,3 +1,5 @@
+using Persist.Entity.CommonField;
+
 namespace Services.Models.Common;
 
 public class DateParameters

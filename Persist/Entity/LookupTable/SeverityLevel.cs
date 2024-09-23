@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using Persist.Entities.BaseTable;
 
 namespace Persist.Entities
 {

@@ -1,6 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Persist.Entities;
+using Persist.Entities.BaseTable;
+using Persist.Entity.CommonField;
+
+namespace Persist.Entity.Basetable;
 
 public abstract class EventEntity : DateEntity
 {

@@ -1,6 +1,6 @@
 using AutoMapper;
 using Persist;
-using Persist.Entities;
+using Persist.Entities.BaseTable;
 using Repositories;
 using Ressources.DefaultValue.Event;
 using Services.Extension;

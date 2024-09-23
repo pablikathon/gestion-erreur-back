@@ -1,7 +1,7 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Persist;
-using Persist.Entities;
+using Persist.Entities.BaseTable;
 using Repositories;
 using Services.Extension;
 using Services.Models.Common;

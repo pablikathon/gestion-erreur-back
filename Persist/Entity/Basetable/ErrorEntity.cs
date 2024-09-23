@@ -1,8 +1,9 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Persist.Entity.Basetable;
 using Ressources.DefaultValue.Event;
 
-namespace Persist.Entities
+namespace Persist.Entities.BaseTable
 {
     public class ErrorEntity : EventEntity
     {

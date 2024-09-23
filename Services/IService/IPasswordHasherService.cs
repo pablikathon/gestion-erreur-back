@@ -1,5 +1,4 @@
-using System.Security.Cryptography;
-using Persist.Entities;
+using Persist.Entities.Auth;
 namespace Services
 {
     public interface ISecurityService

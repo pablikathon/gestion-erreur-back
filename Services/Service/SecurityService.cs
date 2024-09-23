@@ -3,8 +3,8 @@ using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.Extensions.Configuration;
-using Persist.Entities;
 using Microsoft.IdentityModel.JsonWebTokens;
+using Persist.Entities.Auth;
 
 namespace Services.Models.Auth
 {
@@ -53,9 +53,9 @@ namespace Services.Models.Auth
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(JwtRegisteredClaimNames.Sub,user.Id),
-                    new Claim(JwtRegisteredClaimNames.Email,user.Email),
-                    new Claim("email_verified",user.IsEmailConfirmed.ToString())
+                    new (JwtRegisteredClaimNames.Sub,user.Id),
+                    new (JwtRegisteredClaimNames.Email,user.Email),
+                    new ("email_verified",user.IsEmailConfirmed.ToString())
                 }),
                 Expires = DateTime.UtcNow.AddMinutes(Configuration.GetValue<int>("Jwt:ExpirationMinutes")),
                 SigningCredentials = credentials,

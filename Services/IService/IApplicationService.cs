@@ -1,4 +1,4 @@
-using Persist.Entities;
+using Persist.Entities.BaseTable;
 using Services.Models.Common;
 using Services.Models.Req;
 

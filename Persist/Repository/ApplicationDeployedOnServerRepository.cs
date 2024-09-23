@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Persist;
 using Persist.Entities;
+using Persist.Entities.JoiningTable;
 
 namespace Repositories
 {

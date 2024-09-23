@@ -1,10 +1,10 @@
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
+using Persist.Entity.CommonField;
 
-namespace Persist.Entities
+namespace Persist.Entities.Auth
 {
     [PrimaryKey(nameof(Id))]
     [Index(nameof(Email), IsUnique=true)]

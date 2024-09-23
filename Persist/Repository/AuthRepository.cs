@@ -1,5 +1,6 @@
 using Persist;
 using Persist.Entities;
+using Persist.Entities.Auth;
 
 namespace Repositories
 {

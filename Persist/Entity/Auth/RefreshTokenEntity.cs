@@ -1,7 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
+using Persist.Entity.CommonField;
 
-namespace Persist.Entities
+namespace Persist.Entities.Auth
 {
     [PrimaryKey(nameof(Id))]
     public class RefreshTokenEntity : DateEntity

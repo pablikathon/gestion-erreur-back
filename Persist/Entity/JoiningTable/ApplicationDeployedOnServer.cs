@@ -1,8 +1,10 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
+using Persist.Entities.BaseTable;
+using Persist.Entity.CommonField;
 
-namespace Persist.Entities
+namespace Persist.Entities.JoiningTable
 {
     [PrimaryKey(nameof(ServerId), nameof(ApplicationId))]
     public class ApplicationDeployedOnServerEntity : DateEntity

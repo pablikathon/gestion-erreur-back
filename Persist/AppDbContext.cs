@@ -1,5 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Persist.Entities;
+using Persist.Entities.Auth;
+using Persist.Entities.BaseTable;
+using Persist.Entities.JoiningTable;
+using Persist.Migrations;
 using Ressources.DefaultValue.Event;
 
 

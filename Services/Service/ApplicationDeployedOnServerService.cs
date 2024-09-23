@@ -1,5 +1,5 @@
 using AutoMapper;
-using Persist.Entities;
+using Persist.Entities.JoiningTable;
 using Repositories;
 using Services.Extension;
 using Services.Models.Common;
