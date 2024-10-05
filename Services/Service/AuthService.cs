@@ -2,7 +2,6 @@ using AutoMapper;
 using exception.Message;
 using Microsoft.EntityFrameworkCore;
 using Persist;
-using Persist.Entities;
 using Persist.Entities.Auth;
 using Repositories;
 using Services.Models.Auth;
