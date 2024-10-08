@@ -41,20 +41,21 @@
   </IssueTypes>
   <Issues>
     <Project Name="Persist">
-      <Issue TypeId="RedundantUsingDirective" File="Persist\AppDbContext.cs" Offset="161-186" Line="6" Message="Using directive is not required by the code and can be safely removed" />
-      <Issue TypeId="UnusedVariable" File="Persist\AppDbContext.cs" Offset="629-645" Line="26" Message="Local variable 'connectionString' is never used" />
-      <Issue TypeId="EmptyStatement" File="Persist\AppDbContext.cs" Offset="1782-1783" Line="50" Message="Empty statement is redundant" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="3008-3011" Line="69" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="3064-3067" Line="70" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="3124-3127" Line="71" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="3222-3225" Line="72" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="3331-3334" Line="73" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="3397-3400" Line="74" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="3467-3470" Line="75" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="3521-3524" Line="76" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="3589-3592" Line="77" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="3656-3659" Line="78" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="3707-3710" Line="79" Message="Property can be made init-only" />
+      <Issue TypeId="UnusedVariable" File="Persist\AppDbContext.cs" Offset="644-660" Line="25" Message="Local variable 'connectionString' is never used" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="1477-1480" Line="42" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="1533-1536" Line="43" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="1593-1596" Line="44" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="1691-1694" Line="45" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="1800-1803" Line="46" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="1866-1869" Line="47" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="1936-1939" Line="48" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="1990-1993" Line="49" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="2058-2061" Line="50" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="2126-2129" Line="51" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="2178-2181" Line="52" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="2236-2239" Line="53" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="2305-2308" Line="55" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\AppDbContext.cs" Offset="2379-2382" Line="56" Message="Property can be made init-only" />
       <Issue TypeId="CheckNamespace" File="Persist\Entity\Auth\HashPasswordEntity.cs" Offset="127-148" Line="5" Message="Namespace does not correspond to file location, must be: 'Persist.Entity.Auth'" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Auth\HashPasswordEntity.cs" Offset="287-290" Line="10" Message="Property can be made init-only" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Auth\HashPasswordEntity.cs" Offset="352-355" Line="11" Message="Property can be made init-only" />
@@ -94,13 +95,12 @@
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\CustomerEntity.cs" Offset="652-655" Line="20" Message="Property can be made init-only" />
       <Issue TypeId="CollectionNeverUpdated.Global" File="Persist\Entity\Basetable\CustomerEntity.cs" Offset="748-780" Line="23" Message="Content of collection 'CustomerHaveLicenceToApplication' is never updated" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\CustomerEntity.cs" Offset="788-791" Line="23" Message="Property can be made init-only" />
-      <Issue TypeId="RedundantUsingDirective" File="Persist\Entity\Basetable\ErrorEntity.cs" Offset="52-106" Line="2" Message="Using directive is not required by the code and can be safely removed" />
-      <Issue TypeId="CheckNamespace" File="Persist\Entity\Basetable\ErrorEntity.cs" Offset="187-213" Line="6" Message="Namespace does not correspond to file location, must be: 'Persist.Entity.Basetable'" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ErrorEntity.cs" Offset="314-317" Line="10" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ErrorEntity.cs" Offset="459-462" Line="13" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ErrorEntity.cs" Offset="528-531" Line="15" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ErrorEntity.cs" Offset="664-667" Line="16" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ErrorEntity.cs" Offset="720-723" Line="17" Message="Property can be made init-only" />
+      <Issue TypeId="CheckNamespace" File="Persist\Entity\Basetable\ErrorEntity.cs" Offset="224-250" Line="7" Message="Namespace does not correspond to file location, must be: 'Persist.Entity.Basetable'" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ErrorEntity.cs" Offset="351-354" Line="11" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ErrorEntity.cs" Offset="496-499" Line="14" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ErrorEntity.cs" Offset="565-568" Line="16" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ErrorEntity.cs" Offset="701-704" Line="17" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ErrorEntity.cs" Offset="757-760" Line="18" Message="Property can be made init-only" />
       <Issue TypeId="CheckNamespace" File="Persist\Entity\Basetable\ServerEntity.cs" Offset="254-280" Line="8" Message="Namespace does not correspond to file location, must be: 'Persist.Entity.Basetable'" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ServerEntity.cs" Offset="457-460" Line="14" Message="Property can be made init-only" />
       <Issue TypeId="RedundantDefaultMemberInitializer" File="Persist\Entity\Basetable\ServerEntity.cs" Offset="681-688" Line="20" Message="Initializing property by default value is redundant" />
@@ -109,6 +109,22 @@
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ServerEntity.cs" Offset="1011-1014" Line="27" Message="Property can be made init-only" />
       <Issue TypeId="CollectionNeverUpdated.Global" File="Persist\Entity\Basetable\ServerEntity.cs" Offset="1102-1130" Line="30" Message="Content of collection 'ApplicationDeployedOnServers' is never updated" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Basetable\ServerEntity.cs" Offset="1138-1141" Line="30" Message="Property can be made init-only" />
+      <Issue TypeId="RedundantUsingDirective" File="Persist\Entity\Catalyst\JoiningTable\TagCategoryTagsEntity.cs" Offset="0-44" Message="Using directive is not required by the code and can be safely removed" />
+      <Issue TypeId="CheckNamespace" File="Persist\Entity\Catalyst\JoiningTable\TagCategoryTagsEntity.cs" Offset="182-220" Line="6" Message="Namespace does not correspond to file location, must be: 'Persist.Entity.Catalyst.JoiningTable'" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Catalyst\JoiningTable\TagCategoryTagsEntity.cs" Offset="397-400" Line="11" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Catalyst\JoiningTable\TagCategoryTagsEntity.cs" Offset="455-458" Line="12" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Catalyst\JoiningTable\TagCategoryTagsEntity.cs" Offset="521-524" Line="14" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Catalyst\JoiningTable\TagCategoryTagsEntity.cs" Offset="595-598" Line="15" Message="Property can be made init-only" />
+      <Issue TypeId="CheckNamespace" File="Persist\Entity\Catalyst\TagCategoryEntity.cs" Offset="228-253" Line="7" Message="Namespace does not correspond to file location, must be: 'Persist.Entity.Catalyst'" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Catalyst\TagCategoryEntity.cs" Offset="436-439" Line="14" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Catalyst\TagCategoryEntity.cs" Offset="498-501" Line="15" Message="Property can be made init-only" />
+      <Issue TypeId="CollectionNeverUpdated.Global" File="Persist\Entity\Catalyst\TagCategoryEntity.cs" Offset="554-569" Line="16" Message="Content of collection 'TagCategoryTags' is never updated" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Catalyst\TagCategoryEntity.cs" Offset="577-580" Line="16" Message="Property can be made init-only" />
+      <Issue TypeId="CheckNamespace" File="Persist\Entity\Catalyst\TagEntity.cs" Offset="228-253" Line="7" Message="Namespace does not correspond to file location, must be: 'Persist.Entity.Catalyst'" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Catalyst\TagEntity.cs" Offset="428-431" Line="14" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Catalyst\TagEntity.cs" Offset="490-493" Line="15" Message="Property can be made init-only" />
+      <Issue TypeId="CollectionNeverUpdated.Global" File="Persist\Entity\Catalyst\TagEntity.cs" Offset="546-561" Line="16" Message="Content of collection 'TagCategoryTags' is never updated" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Catalyst\TagEntity.cs" Offset="569-572" Line="16" Message="Property can be made init-only" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\CommonField\DateEntity.cs" Offset="111-114" Line="5" Message="Property can be made init-only" />
       <Issue TypeId="CheckNamespace" File="Persist\Entity\CommonField\EventEntity.cs" Offset="176-200" Line="6" Message="Namespace does not correspond to file location, must be: 'Persist.Entity.CommonField'" />
       <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Persist\Entity\CommonField\EventEntity.cs" Offset="289-293" Line="10" Message="Auto-property accessor 'Id.set' is never used" />
@@ -130,16 +146,16 @@
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\JoiningTable\CustomerHaveLicenceToApplicationEntity.cs" Offset="640-643" Line="16" Message="Property can be made init-only" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\JoiningTable\CustomerHaveLicenceToApplicationEntity.cs" Offset="736-739" Line="18" Message="Property can be made init-only" />
       <Issue TypeId="RedundantDefaultMemberInitializer" File="Persist\Entity\JoiningTable\CustomerHaveLicenceToApplicationEntity.cs" Offset="1015-1022" Line="27" Message="Initializing property by default value is redundant" />
-      <Issue TypeId="CheckNamespace" File="Persist\Entity\LookupTable\ErrorStatus.cs" Offset="83-99" Line="4" Message="Namespace does not correspond to file location, must be: 'Persist.Entity.LookupTable'" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\LookupTable\ErrorStatus.cs" Offset="184-187" Line="8" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\LookupTable\ErrorStatus.cs" Offset="235-238" Line="9" Message="Property can be made init-only" />
-      <Issue TypeId="CollectionNeverUpdated.Global" File="Persist\Entity\LookupTable\ErrorStatus.cs" Offset="304-310" Line="11" Message="Content of collection 'Errors' is never updated" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\LookupTable\ErrorStatus.cs" Offset="318-321" Line="11" Message="Property can be made init-only" />
-      <Issue TypeId="CheckNamespace" File="Persist\Entity\LookupTable\SeverityLevel.cs" Offset="83-99" Line="4" Message="Namespace does not correspond to file location, must be: 'Persist.Entity.LookupTable'" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\LookupTable\SeverityLevel.cs" Offset="186-189" Line="8" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\LookupTable\SeverityLevel.cs" Offset="237-240" Line="9" Message="Property can be made init-only" />
-      <Issue TypeId="CollectionNeverUpdated.Global" File="Persist\Entity\LookupTable\SeverityLevel.cs" Offset="306-312" Line="11" Message="Content of collection 'Errors' is never updated" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\LookupTable\SeverityLevel.cs" Offset="320-323" Line="11" Message="Property can be made init-only" />
+      <Issue TypeId="CheckNamespace" File="Persist\Entity\LookupTable\ErrorStatus.cs" Offset="212-228" Line="7" Message="Namespace does not correspond to file location, must be: 'Persist.Entity.LookupTable'" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\LookupTable\ErrorStatus.cs" Offset="313-316" Line="11" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\LookupTable\ErrorStatus.cs" Offset="364-367" Line="12" Message="Property can be made init-only" />
+      <Issue TypeId="CollectionNeverUpdated.Global" File="Persist\Entity\LookupTable\ErrorStatus.cs" Offset="433-439" Line="14" Message="Content of collection 'Errors' is never updated" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\LookupTable\ErrorStatus.cs" Offset="447-450" Line="14" Message="Property can be made init-only" />
+      <Issue TypeId="CheckNamespace" File="Persist\Entity\LookupTable\SeverityLevel.cs" Offset="212-228" Line="7" Message="Namespace does not correspond to file location, must be: 'Persist.Entity.LookupTable'" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\LookupTable\SeverityLevel.cs" Offset="315-318" Line="11" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\LookupTable\SeverityLevel.cs" Offset="366-369" Line="12" Message="Property can be made init-only" />
+      <Issue TypeId="CollectionNeverUpdated.Global" File="Persist\Entity\LookupTable\SeverityLevel.cs" Offset="435-441" Line="14" Message="Content of collection 'Errors' is never updated" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\LookupTable\SeverityLevel.cs" Offset="449-452" Line="14" Message="Property can be made init-only" />
       <Issue TypeId="CheckNamespace" File="Persist\Extension\LoadReferenceExtension.cs" Offset="89-108" Line="4" Message="Namespace does not correspond to file location, must be: 'Persist.Extension'" />
       <Issue TypeId="ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract" File="Persist\Extension\LoadReferenceExtension.cs" Offset="343-358" Line="11" Message="Expression is always true according to nullable reference types' annotations" />
       <Issue TypeId="RedundantUsingDirective" File="Persist\IRepository\IApplicationDeployedOnServerRepository.cs" Offset="37-62" Line="2" Message="Using directive is not required by the code and can be safely removed" />
