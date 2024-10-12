@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Persist;
 using Persist.Entities;
 using Persist.Entities.BaseTable;
+using Persist.Entities.Application;
 
 namespace Repositories
 {

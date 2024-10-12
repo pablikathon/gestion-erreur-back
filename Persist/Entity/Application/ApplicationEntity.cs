@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Persist.Entities.JoiningTable;
 using Persist.Entity.CommonField;
 
-namespace Persist.Entities.BaseTable
+namespace Persist.Entities.Application
 {
     [PrimaryKey(nameof(Id))]
     [Index(nameof(Title), IsUnique = true)]
@@ -23,5 +23,7 @@ namespace Persist.Entities.BaseTable
         [JsonIgnore]
         public ICollection<CustomerHaveLicenceToApplicationEntity> CustomerHaveLicenceToApplication { get; set; } =
             new List<CustomerHaveLicenceToApplicationEntity>();
+        public ICollection<FeatureEntity> Features { get; set; } = new List<FeatureEntity>();
     }
+    
 }

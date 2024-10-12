@@ -40,7 +40,7 @@ public class DeployedApplicationController : Controller
     }
 
     [HttpPost]
-    public async Task<ActionResult<ApplicationEntity>> DeployedApplicationOnServer(
+    public async Task<ActionResult<ApplicationDeployedOnServerEntity>> DeployedApplicationOnServer(
         [FromBody] CreateApplicationDeployedRequest createApplicationDeployedRequest)
     {
         try

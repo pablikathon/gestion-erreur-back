@@ -1,4 +1,4 @@
-using Persist.Entities.BaseTable;
+using Persist.Entities.Application;
 
 namespace Repositories
 {

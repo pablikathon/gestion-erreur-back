@@ -5,6 +5,7 @@ using Persist.Entities.BaseTable;
 using Persist.Entities.Catalyst;
 using Persist.Entities.Catalyst.JoiningTable;
 using Persist.Entities.JoiningTable;
+using Persist.Entities.Application;
 
 namespace Persist
 {
@@ -50,9 +51,12 @@ namespace Persist
         public DbSet<HashPasswordEntity> HashPassword { get; set; }
         public DbSet<RefreshTokenEntity> RefreshToken { get; set; }
         public DbSet<UserEntity> User { get; set; }
-        public DbSet<TagEntity> TagEntities { get; set; }
+        public DbSet<TagEntity> Tag { get; set; }
 
         public DbSet<TagCategoryEntity> TagCategories { get; set; }
         public DbSet<TagCategoryTagEntity> TagCategoriesTag { get; set; }
+        public DbSet<FeatureEntity> Feature { get; set; }
+        public DbSet<StepEntity> Step { get; set; }
+
     }
 }

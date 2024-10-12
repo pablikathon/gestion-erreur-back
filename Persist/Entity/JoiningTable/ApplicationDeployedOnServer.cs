@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 using Persist.Entities.BaseTable;
 using Persist.Entity.CommonField;
+using Persist.Entities.Application;
 
 namespace Persist.Entities.JoiningTable
 {

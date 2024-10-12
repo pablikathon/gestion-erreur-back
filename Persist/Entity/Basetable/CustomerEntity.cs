@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
+using Persist.Entities.Application;
 using Persist.Entity.CommonField;
 
 namespace Persist.Entities.BaseTable
@@ -18,7 +19,7 @@ namespace Persist.Entities.BaseTable
         public DateTime? FirstInteraction { get; set; }
 
         public DateTime LastInteraction { get; set; }
-
+        public ICollection<FeatureEntity> CustomerHaveAccessToAFeature { get; set; } = new List<FeatureEntity>();
         [JsonIgnore]
         public ICollection<CustomerHaveLicenceToApplicationEntity> CustomerHaveLicenceToApplication { get; set; } =
             new List<CustomerHaveLicenceToApplicationEntity>();
