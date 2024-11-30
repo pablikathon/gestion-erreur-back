@@ -13,6 +13,7 @@ namespace Persist.Entities.Catalyst
     {
         [Required] public required string Id { get; set; }
         [Required] public required string Title { get; set; }
+        [Required] public string Language {get; set;} = "English"; 
         public ICollection<TagCategoryTagEntity> TagCategoryTags { get; set; } = new List<TagCategoryTagEntity>();
 
     }

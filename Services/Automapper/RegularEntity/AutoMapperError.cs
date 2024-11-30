@@ -1,5 +1,4 @@
 using AutoMapper;
-using Persist.Entities;
 using Persist.Entities.BaseTable;
 using Services.Models.Req;
 

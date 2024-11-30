@@ -1,6 +1,5 @@
 using System.ComponentModel.DataAnnotations;
 using AutoMapper;
-using Persist.Entities;
 using Persist.Entities.BaseTable;
 using Repositories;
 using Services.Extension;

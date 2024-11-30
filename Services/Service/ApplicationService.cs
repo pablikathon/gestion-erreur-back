@@ -1,9 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using AutoMapper;
 using exception.Message;
-using Persist.Entities;
 using Persist.Entities.Application;
-using Persist.Entities.BaseTable;
 using Repositories;
 using Services.Extension;
 using Services.Models.Common;
