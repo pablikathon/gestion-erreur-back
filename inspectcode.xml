@@ -36,6 +36,7 @@
     <IssueType Id="UnusedMember.Global" Category="Redundancies in Symbol Declarations" CategoryId="DeclarationRedundancy" SubCategory="Type member is never used" Description="Type member is never used: Non-private accessibility" Severity="SUGGESTION" Global="True" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=UnusedMember.Global" />
     <IssueType Id="UnusedMemberInSuper.Global" Category="Redundancies in Symbol Declarations" CategoryId="DeclarationRedundancy" SubCategory="Type member is never accessed via base type" Description="Type member is never accessed via base type: Non-private accessibility" Severity="SUGGESTION" Global="True" />
     <IssueType Id="UnusedMethodReturnValue.Global" Category="Redundancies in Symbol Declarations" CategoryId="DeclarationRedundancy" SubCategory="Method return value is never used" Description="Method return value is never used: Non-private accessibility" Severity="SUGGESTION" Global="True" />
+    <IssueType Id="UnusedParameter.Global" Category="Redundancies in Symbol Declarations" CategoryId="DeclarationRedundancy" SubCategory="Unused parameter" Description="Unused parameter: Non-private accessibility" Severity="SUGGESTION" Global="True" />
     <IssueType Id="UnusedType.Global" Category="Redundancies in Symbol Declarations" CategoryId="DeclarationRedundancy" SubCategory="Type is never used" Description="Type is never used: Non-private accessibility" Severity="SUGGESTION" Global="True" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=UnusedType.Global" />
     <IssueType Id="UnusedVariable" Category="Redundancies in Symbol Declarations" CategoryId="DeclarationRedundancy" Description="Unused local variable" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=UnusedVariable" />
   </IssueTypes>
@@ -146,14 +147,14 @@
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Catalyst\JoiningTable\TagCategoryTagsEntity.cs" Offset="595-598" Line="15" Message="Property can be made init-only" />
       <Issue TypeId="CheckNamespace" File="Persist\Entity\Catalyst\TagCategoryEntity.cs" Offset="228-253" Line="7" Message="Namespace does not correspond to file location, must be: 'Persist.Entity.Catalyst'" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Catalyst\TagCategoryEntity.cs" Offset="436-439" Line="14" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Catalyst\TagCategoryEntity.cs" Offset="498-501" Line="15" Message="Property can be made init-only" />
-      <Issue TypeId="CollectionNeverUpdated.Global" File="Persist\Entity\Catalyst\TagCategoryEntity.cs" Offset="554-569" Line="16" Message="Content of collection 'TagCategoryTags' is never updated" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Catalyst\TagCategoryEntity.cs" Offset="577-580" Line="16" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Catalyst\TagCategoryEntity.cs" Offset="554-557" Line="16" Message="Property can be made init-only" />
+      <Issue TypeId="CollectionNeverUpdated.Global" File="Persist\Entity\Catalyst\TagCategoryEntity.cs" Offset="624-639" Line="18" Message="Content of collection 'TagCategoryTags' is never updated" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Catalyst\TagCategoryEntity.cs" Offset="647-650" Line="18" Message="Property can be made init-only" />
       <Issue TypeId="CheckNamespace" File="Persist\Entity\Catalyst\TagEntity.cs" Offset="228-253" Line="7" Message="Namespace does not correspond to file location, must be: 'Persist.Entity.Catalyst'" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Catalyst\TagEntity.cs" Offset="428-431" Line="14" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Catalyst\TagEntity.cs" Offset="490-493" Line="15" Message="Property can be made init-only" />
-      <Issue TypeId="CollectionNeverUpdated.Global" File="Persist\Entity\Catalyst\TagEntity.cs" Offset="546-561" Line="16" Message="Content of collection 'TagCategoryTags' is never updated" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Catalyst\TagEntity.cs" Offset="569-572" Line="16" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Catalyst\TagEntity.cs" Offset="545-548" Line="16" Message="Property can be made init-only" />
+      <Issue TypeId="CollectionNeverUpdated.Global" File="Persist\Entity\Catalyst\TagEntity.cs" Offset="614-629" Line="17" Message="Content of collection 'TagCategoryTags' is never updated" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\Catalyst\TagEntity.cs" Offset="637-640" Line="17" Message="Property can be made init-only" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\CommonField\DateEntity.cs" Offset="111-114" Line="5" Message="Property can be made init-only" />
       <Issue TypeId="CheckNamespace" File="Persist\Entity\CommonField\EventEntity.cs" Offset="212-236" Line="7" Message="Namespace does not correspond to file location, must be: 'Persist.Entity.CommonField'" />
       <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Persist\Entity\CommonField\EventEntity.cs" Offset="325-329" Line="11" Message="Auto-property accessor 'Id.set' is never used" />
@@ -184,6 +185,12 @@
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\LookupTable\SeverityLevel.cs" Offset="366-369" Line="12" Message="Property can be made init-only" />
       <Issue TypeId="CollectionNeverUpdated.Global" File="Persist\Entity\LookupTable\SeverityLevel.cs" Offset="435-441" Line="14" Message="Content of collection 'Errors' is never updated" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Persist\Entity\LookupTable\SeverityLevel.cs" Offset="449-452" Line="14" Message="Property can be made init-only" />
+      <Issue TypeId="CheckNamespace" File="Persist\ErrorHandler\ErrorHandler.cs" Offset="37-49" Line="3" Message="Namespace does not correspond to file location, must be: 'Persist.ErrorHandler'" />
+      <Issue TypeId="UnusedType.Global" File="Persist\ErrorHandler\ErrorHandler.cs" Offset="64-82" Line="4" Message="Class 'ErrorObjectHandler' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Persist\ErrorHandler\ErrorHandler.cs" Offset="104-111" Line="6" Message="Property 'Success' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Persist\ErrorHandler\ErrorHandler.cs" Offset="148-152" Line="7" Message="Property 'Data' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Persist\ErrorHandler\ErrorHandler.cs" Offset="194-206" Line="8" Message="Property 'ErrorMessage' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Persist\ErrorHandler\ErrorHandler.cs" Offset="244-254" Line="9" Message="Property 'StackTrace' is never used" />
       <Issue TypeId="CheckNamespace" File="Persist\Extension\LoadReferenceExtension.cs" Offset="89-108" Line="4" Message="Namespace does not correspond to file location, must be: 'Persist.Extension'" />
       <Issue TypeId="ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract" File="Persist\Extension\LoadReferenceExtension.cs" Offset="343-358" Line="11" Message="Expression is always true according to nullable reference types' annotations" />
       <Issue TypeId="RedundantUsingDirective" File="Persist\IRepository\IApplicationDeployedOnServerRepository.cs" Offset="37-62" Line="2" Message="Using directive is not required by the code and can be safely removed" />
@@ -206,6 +213,10 @@
       <Issue TypeId="CheckNamespace" File="Persist\IRepository\IErrorRepository.cs" Offset="45-57" Line="3" Message="Namespace does not correspond to file location, must be: 'Persist.IRepository'" />
       <Issue TypeId="CheckNamespace" File="Persist\IRepository\IServerRepository.cs" Offset="45-57" Line="3" Message="Namespace does not correspond to file location, must be: 'Persist.IRepository'" />
       <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\IServerRepository.cs" Offset="180-192" Line="8" Message="Method 'GetByIdAsync' is never used" />
+      <Issue TypeId="RedundantUsingDirective" File="Persist\IRepository\ITagRepository.cs" Offset="79-104" Line="3" Message="Using directive is not required by the code and can be safely removed" />
+      <Issue TypeId="CheckNamespace" File="Persist\IRepository\ITagRepository.cs" Offset="116-128" Line="5" Message="Namespace does not correspond to file location, must be: 'Persist.IRepository'" />
+      <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\ITagRepository.cs" Offset="312-345" Line="11" Message="Method 'GetRelationBetwenTagAndCategories' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\ITagRepository.cs" Offset="706-727" Line="20" Message="Method 'RelateATagAndCategory' is never used" />
       <Issue TypeId="RedundantUsingDirective" File="Persist\Repository\ApplicationDeployedOnServerRepository.cs" Offset="52-75" Line="3" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="CheckNamespace" File="Persist\Repository\ApplicationDeployedOnServerRepository.cs" Offset="124-136" Line="6" Message="Namespace does not correspond to file location, must be: 'Persist.Repository'" />
       <Issue TypeId="InconsistentNaming" File="Persist\Repository\ApplicationDeployedOnServerRepository.cs" Offset="935-960" Line="28" Message="Name 'DeployedApplicationEntity' does not match rule 'Parameters'. Suggested name is 'deployedApplicationEntity'." />
@@ -236,10 +247,22 @@
       <Issue TypeId="CheckNamespace" File="Persist\Repository\ErrorRepository.cs" Offset="84-96" Line="5" Message="Namespace does not correspond to file location, must be: 'Persist.Repository'" />
       <Issue TypeId="RedundantCatchClause" File="Persist\Repository\ErrorRepository.cs" Offset="696-772" Line="29" Message="Catch clause is redundant" />
       <Issue TypeId="RedundantNameQualifier" File="Persist\Repository\ErrorRepository.cs" Offset="703-710" Line="29" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantUsingDirective" File="Persist\Repository\ServerRepository.cs" Offset="0-36" Message="Using directive is not required by the code and can be safely removed" />
-      <Issue TypeId="RedundantUsingDirective" File="Persist\Repository\ServerRepository.cs" Offset="52-75" Line="3" Message="Using directive is not required by the code and can be safely removed" />
-      <Issue TypeId="CheckNamespace" File="Persist\Repository\ServerRepository.cs" Offset="121-133" Line="6" Message="Namespace does not correspond to file location, must be: 'Persist.Repository'" />
-      <Issue TypeId="MethodHasAsyncOverload" File="Persist\Repository\ServerRepository.cs" Offset="959-963" Line="36" Message="Method has async overload" />
+      <Issue TypeId="CheckNamespace" File="Persist\Repository\ServerRepository.cs" Offset="60-72" Line="4" Message="Namespace does not correspond to file location, must be: 'Persist.Repository'" />
+      <Issue TypeId="MethodHasAsyncOverload" File="Persist\Repository\ServerRepository.cs" Offset="898-902" Line="34" Message="Method has async overload" />
+      <Issue TypeId="CheckNamespace" File="Persist\Repository\TagRepository.cs" Offset="104-116" Line="4" Message="Namespace does not correspond to file location, must be: 'Persist.Repository'" />
+      <Issue TypeId="UnusedType.Global" File="Persist\Repository\TagRepository.cs" Offset="136-149" Line="6" Message="Class 'TagRepository' is never used" />
+      <Issue TypeId="RedundantCatchClause" File="Persist\Repository\TagRepository.cs" Offset="568-644" Line="23" Message="Catch clause is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Persist\Repository\TagRepository.cs" Offset="575-582" Line="23" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantCatchClause" File="Persist\Repository\TagRepository.cs" Offset="934-1010" Line="38" Message="Catch clause is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Persist\Repository\TagRepository.cs" Offset="941-948" Line="38" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantCatchClause" File="Persist\Repository\TagRepository.cs" Offset="1459-1535" Line="58" Message="Catch clause is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Persist\Repository\TagRepository.cs" Offset="1466-1473" Line="58" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantCatchClause" File="Persist\Repository\TagRepository.cs" Offset="2022-2098" Line="78" Message="Catch clause is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Persist\Repository\TagRepository.cs" Offset="2029-2036" Line="78" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantCatchClause" File="Persist\Repository\TagRepository.cs" Offset="2829-2905" Line="108" Message="Catch clause is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Persist\Repository\TagRepository.cs" Offset="2836-2843" Line="108" Message="Qualifier is redundant" />
+      <Issue TypeId="MethodHasAsyncOverload" File="Persist\Repository\TagRepository.cs" Offset="3035-3039" Line="117" Message="Method has async overload" />
+      <Issue TypeId="MethodHasAsyncOverload" File="Persist\Repository\TagRepository.cs" Offset="3457-3461" Line="130" Message="Method has async overload" />
     </Project>
     <Project Name="Presentation">
       <Issue TypeId="RedundantUsingDirective" File="Presentation\Controllers\ApplicationController.cs" Offset="134-167" Line="5" Message="Using directive is not required by the code and can be safely removed" />
@@ -345,11 +368,13 @@
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="113-120" Line="4" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="113-120" Line="4" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="113-120" Line="4" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="113-120" Line="4" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="127-133" Line="6" Message="Method 'MappingProfileUser' can be made private" />
       <Issue TypeId="RedundantUsingDirective" File="Services\Automapper\AutoMapper.cs" Offset="18-59" Line="2" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="RedundantUsingDirective" File="Services\Automapper\AutoMapper.cs" Offset="60-75" Line="3" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="RedundantUsingDirective" File="Services\Automapper\AutoMapper.cs" Offset="76-103" Line="4" Message="Using directive is not required by the code and can be safely removed" />
       <Issue TypeId="CheckNamespace" File="Services\Automapper\AutoMapper.cs" Offset="126-140" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.Automapper'" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AutoMapper.cs" Offset="143-150" Line="6" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AutoMapper.cs" Offset="143-150" Line="6" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AutoMapper.cs" Offset="143-150" Line="6" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AutoMapper.cs" Offset="143-150" Line="6" Message="Base type 'Profile' is already specified in other parts" />
@@ -368,6 +393,7 @@
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="121-128" Line="5" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="121-128" Line="5" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="121-128" Line="5" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="121-128" Line="5" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="135-141" Line="7" Message="Method 'MappingProfileApplicationDeployement' can be made private" />
       <Issue TypeId="CheckNamespace" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="91-105" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.Automapper.JoiningEntity'" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="108-115" Line="5" Message="Base type 'Profile' is already specified in other parts" />
@@ -377,8 +403,10 @@
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="108-115" Line="5" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="108-115" Line="5" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="108-115" Line="5" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="108-115" Line="5" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="122-128" Line="7" Message="Method 'MappingProfileCustomerHaveLicence' can be made private" />
       <Issue TypeId="CheckNamespace" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="103-117" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.Automapper.RegularEntity'" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="120-127" Line="5" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="120-127" Line="5" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="120-127" Line="5" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="120-127" Line="5" Message="Base type 'Profile' is already specified in other parts" />
@@ -396,17 +424,18 @@
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="142-149" Line="6" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="142-149" Line="6" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="142-149" Line="6" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="142-149" Line="6" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="156-162" Line="8" Message="Method 'MappingProfileCustomer' can be made private" />
-      <Issue TypeId="RedundantUsingDirective" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="18-41" Line="2" Message="Using directive is not required by the code and can be safely removed" />
-      <Issue TypeId="CheckNamespace" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="125-139" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.Automapper.RegularEntity'" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="142-149" Line="6" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="142-149" Line="6" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="142-149" Line="6" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="142-149" Line="6" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="142-149" Line="6" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="142-149" Line="6" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="142-149" Line="6" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="156-162" Line="8" Message="Method 'MappingProfileError' can be made private" />
+      <Issue TypeId="CheckNamespace" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="101-115" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.Automapper.RegularEntity'" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="118-125" Line="5" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="118-125" Line="5" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="118-125" Line="5" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="118-125" Line="5" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="118-125" Line="5" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="118-125" Line="5" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="118-125" Line="5" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="118-125" Line="5" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="132-138" Line="7" Message="Method 'MappingProfileError' can be made private" />
       <Issue TypeId="CheckNamespace" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="101-115" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.Automapper.RegularEntity'" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="118-125" Line="5" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="118-125" Line="5" Message="Base type 'Profile' is already specified in other parts" />
@@ -415,7 +444,18 @@
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="118-125" Line="5" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="118-125" Line="5" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="118-125" Line="5" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="118-125" Line="5" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="132-138" Line="7" Message="Method 'MappingProfileServer' can be made private" />
+      <Issue TypeId="CheckNamespace" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="100-114" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.Automapper.RegularEntity'" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="117-124" Line="5" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="117-124" Line="5" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="117-124" Line="5" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="117-124" Line="5" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="117-124" Line="5" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="117-124" Line="5" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="117-124" Line="5" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="117-124" Line="5" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="143-160" Line="7" Message="Method 'MappingProfileTag' is never used" />
       <Issue TypeId="CheckNamespace" File="Services\Extension\JsonConverter.cs" Offset="145-169" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.Extension'" />
       <Issue TypeId="ConvertToUsingDeclaration" File="Services\Extension\JsonConverter.cs" Offset="340-345" Line="10" Message="Convert into 'using' declaration" />
       <Issue TypeId="InconsistentNaming" File="Services\Extension\JsonConverter.cs" Offset="990-1016" Line="21" Message="Name 'UserSignInWithRefreshToken' does not match rule 'Local variables'. Suggested name is 'userSignInWithRefreshToken'." />
@@ -442,18 +482,18 @@
       <Issue TypeId="UnusedMember.Global" File="Services\IService\IMailer.cs" Offset="69-83" Line="5" Message="Method 'SendEmailAsync' is never used" />
       <Issue TypeId="CheckNamespace" File="Services\IService\IPasswordHasherService.cs" Offset="39-47" Line="2" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
       <Issue TypeId="CheckNamespace" File="Services\IService\IServerService.cs" Offset="102-110" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
-      <Issue TypeId="CheckNamespace" File="Services\IService\ITagServices.cs" Offset="101-109" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
-      <Issue TypeId="UnusedType.Global" File="Services\IService\ITagServices.cs" Offset="133-144" Line="8" Message="Interface 'ITagService' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\IService\ITagServices.cs" Offset="189-196" Line="10" Message="Method 'GetTags' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\IService\ITagServices.cs" Offset="273-286" Line="11" Message="Method 'GetCategories' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\IService\ITagServices.cs" Offset="334-343" Line="12" Message="Method 'CreateTag' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\IService\ITagServices.cs" Offset="373-390" Line="13" Message="Method 'CreateTagCategory' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\IService\ITagServices.cs" Offset="429-438" Line="14" Message="Method 'DeleteTag' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\IService\ITagServices.cs" Offset="468-487" Line="15" Message="Method 'DeleteTagCategories' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\IService\ITagServices.cs" Offset="527-536" Line="17" Message="Method 'UpdateTag' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\IService\ITagServices.cs" Offset="566-583" Line="18" Message="Method 'UpdateTagCategory' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\IService\ITagServices.cs" Offset="631-642" Line="20" Message="Method 'AanalyzText' is never used" />
-      <Issue TypeId="InconsistentNaming" File="Services\IService\ITagServices.cs" Offset="650-655" Line="20" Message="Name 'Query' does not match rule 'Parameters'. Suggested name is 'query'." />
+      <Issue TypeId="CheckNamespace" File="Services\IService\ITagServices.cs" Offset="102-110" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
+      <Issue TypeId="UnusedMember.Global" File="Services\IService\ITagServices.cs" Offset="190-197" Line="10" Message="Method 'GetTags' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\IService\ITagServices.cs" Offset="278-291" Line="11" Message="Method 'GetCategories' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\IService\ITagServices.cs" Offset="345-354" Line="12" Message="Method 'CreateTag' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\IService\ITagServices.cs" Offset="397-414" Line="13" Message="Method 'CreateTagCategory' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\IService\ITagServices.cs" Offset="470-479" Line="14" Message="Method 'DeleteTag' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\IService\ITagServices.cs" Offset="511-530" Line="15" Message="Method 'DeleteTagCategories' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\IService\ITagServices.cs" Offset="563-572" Line="17" Message="Method 'UpdateTag' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\IService\ITagServices.cs" Offset="625-642" Line="18" Message="Method 'UpdateTagCategory' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\IService\ITagServices.cs" Offset="711-722" Line="20" Message="Method 'AanalyzText' is never used" />
+      <Issue TypeId="InconsistentNaming" File="Services\IService\ITagServices.cs" Offset="730-735" Line="20" Message="Name 'Query' does not match rule 'Parameters'. Suggested name is 'query'." />
+      <Issue TypeId="UnusedParameter.Global" File="Services\IService\ITagServices.cs" Offset="730-735" Line="20" Message="Parameter 'Query' is not used in any of the implementations" />
       <Issue TypeId="CheckNamespace" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="226-246" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.Model.common.auth'" />
       <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="320-324" Line="10" Message="Auto-property accessor 'GrantType.set' is never used" />
       <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="439-443" Line="13" Message="Auto-property accessor 'GrantDetails.set' is never used" />
@@ -528,11 +568,6 @@
       <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="1341-1346" Line="32" Message="Property 'Title' is never used" />
       <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="1558-1578" Line="37" Message="Property 'FiscalIdentification' is never used" />
       <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="1714-1729" Line="40" Message="Property 'LastInteraction' is never used" />
-      <Issue TypeId="UnusedType.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="1768-1790" Line="43" Message="Class 'UpdateCustomerRequest2' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="2003-2005" Line="48" Message="Property 'Id' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="2217-2222" Line="53" Message="Property 'Title' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="2434-2454" Line="58" Message="Property 'FiscalIdentification' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="2590-2605" Line="61" Message="Property 'LastInteraction' is never used" />
       <Issue TypeId="CheckNamespace" File="Services\Model\Req\DeployedApplicationRequest.cs" Offset="150-169" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req'" />
       <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\DeployedApplicationRequest.cs" Offset="487-500" Line="12" Message="Property 'ApplicationId' is never used" />
       <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\DeployedApplicationRequest.cs" Offset="775-783" Line="17" Message="Property 'ServerId' is never used" />
@@ -593,11 +628,25 @@
       <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="1760-1768" Line="41" Message="Property 'IsActive' is never used" />
       <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="1906-1917" Line="44" Message="Property 'HostedSince' is never used" />
       <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="2043-2051" Line="47" Message="Property 'StopHost' is never used" />
+      <Issue TypeId="CheckNamespace" File="Services\Model\Req\TagRequest.cs" Offset="150-169" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req'" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\Req\TagRequest.cs" Offset="304-320" Line="8" Message="Class 'CreateTagRequest' is never instantiated" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\TagRequest.cs" Offset="575-580" Line="13" Message="Property 'Title' is never used" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\Req\TagRequest.cs" Offset="618-634" Line="15" Message="Class 'UpdateTagRequest' is never instantiated" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\TagRequest.cs" Offset="889-894" Line="20" Message="Property 'Title' is never used" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\Req\TagRequest.cs" Offset="932-956" Line="22" Message="Class 'CreateTagCategoryRequest' is never instantiated" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\TagRequest.cs" Offset="1211-1216" Line="27" Message="Property 'Title' is never used" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\Req\TagRequest.cs" Offset="1254-1278" Line="29" Message="Class 'UpdateTagCategoryRequest' is never instantiated" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\TagRequest.cs" Offset="1540-1542" Line="34" Message="Property 'Id' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\TagRequest.cs" Offset="1806-1811" Line="39" Message="Property 'Title' is never used" />
+      <Issue TypeId="UnusedType.Global" File="Services\Model\Req\TagRequest.cs" Offset="1849-1876" Line="41" Message="Class 'CreateTagCategoryTagRequest' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\TagRequest.cs" Offset="2138-2143" Line="46" Message="Property 'IdTag' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\TagRequest.cs" Offset="2413-2426" Line="50" Message="Property 'IdTagCategory' is never used" />
+      <Issue TypeId="UnusedType.Global" File="Services\Model\Req\TagRequest.cs" Offset="2464-2491" Line="52" Message="Class 'UpdateTagCategoryTagRequest' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\TagRequest.cs" Offset="2753-2758" Line="57" Message="Property 'IdTag' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\TagRequest.cs" Offset="3028-3041" Line="61" Message="Property 'IdTagCategory' is never used" />
       <Issue TypeId="CheckNamespace" File="Services\Service\ApplicationDeployedOnServerService.cs" Offset="169-177" Line="8" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
-      <Issue TypeId="RedundantUsingDirective" File="Services\Service\ApplicationService.cs" Offset="88-111" Line="4" Message="Using directive is not required by the code and can be safely removed" />
-      <Issue TypeId="RedundantUsingDirective" File="Services\Service\ApplicationService.cs" Offset="148-181" Line="6" Message="Using directive is not required by the code and can be safely removed" />
-      <Issue TypeId="CheckNamespace" File="Services\Service\ApplicationService.cs" Offset="296-304" Line="12" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
-      <Issue TypeId="InconsistentNaming" File="Services\Service\ApplicationService.cs" Offset="543-564" Line="19" Message="Name 'ApplicationRepository' does not match rule 'Parameters'. Suggested name is 'applicationRepository'." />
+      <Issue TypeId="CheckNamespace" File="Services\Service\ApplicationService.cs" Offset="238-246" Line="10" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
+      <Issue TypeId="InconsistentNaming" File="Services\Service\ApplicationService.cs" Offset="485-506" Line="17" Message="Name 'ApplicationRepository' does not match rule 'Parameters'. Suggested name is 'applicationRepository'." />
       <Issue TypeId="CheckNamespace" File="Services\Service\AuthService.cs" Offset="183-191" Line="9" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="RedundantSuppressNullableWarningExpression" File="Services\Service\AuthService.cs" Offset="1742-1743" Line="45" Message="The nullable warning suppression expression is redundant" />
       <Issue TypeId="InconsistentNaming" File="Services\Service\AuthService.cs" Offset="1911-1922" Line="50" Message="Name 'AccessToken' does not match rule 'Local variables'. Suggested name is 'accessToken'." />
@@ -625,9 +674,14 @@
       <Issue TypeId="CheckNamespace" File="Services\Service\SecurityService.cs" Offset="250-270" Line="9" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Service\SecurityService.cs" Offset="524-527" Line="16" Message="Property can be made init-only" />
       <Issue TypeId="InconsistentNaming" File="Services\Service\SecurityService.cs" Offset="575-584" Line="18" Message="Name 'Algorithm' does not match rule 'Instance fields (private)'. Suggested name is '_algorithm'." />
-      <Issue TypeId="RedundantUsingDirective" File="Services\Service\ServerService.cs" Offset="63-86" Line="3" Message="Using directive is not required by the code and can be safely removed" />
-      <Issue TypeId="CheckNamespace" File="Services\Service\ServerService.cs" Offset="235-243" Line="10" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
-      <Issue TypeId="InconsistentNaming" File="Services\Service\ServerService.cs" Offset="454-470" Line="17" Message="Name 'ServerRepository' does not match rule 'Parameters'. Suggested name is 'serverRepository'." />
+      <Issue TypeId="CheckNamespace" File="Services\Service\ServerService.cs" Offset="211-219" Line="9" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
+      <Issue TypeId="InconsistentNaming" File="Services\Service\ServerService.cs" Offset="430-446" Line="16" Message="Name 'ServerRepository' does not match rule 'Parameters'. Suggested name is 'serverRepository'." />
+      <Issue TypeId="RedundantUsingDirective" File="Services\Service\TagService.cs" Offset="18-32" Line="2" Message="Using directive is not required by the code and can be safely removed" />
+      <Issue TypeId="RedundantUsingDirective" File="Services\Service\TagService.cs" Offset="66-91" Line="4" Message="Using directive is not required by the code and can be safely removed" />
+      <Issue TypeId="CheckNamespace" File="Services\Service\TagService.cs" Offset="206-214" Line="10" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
+      <Issue TypeId="UnusedType.Global" File="Services\Service\TagService.cs" Offset="234-244" Line="12" Message="Class 'TagService' is never used" />
+      <Issue TypeId="InconsistentNaming" File="Services\Service\TagService.cs" Offset="573-578" Line="24" Message="Name 'Query' does not match rule 'Parameters'. Suggested name is 'query'." />
+      <Issue TypeId="InconsistentNaming" File="Services\Service\TagService.cs" Offset="744-747" Line="29" Message="Name 'Tag' does not match rule 'Parameters'. Suggested name is 'tag'." />
     </Project>
     <Project Name="Test">
       <Issue TypeId="CheckNamespace" File="Test\AutomapperTest\ApplicationAutoMapTest.cs" Offset="10-14" Line="1" Message="Namespace does not correspond to file location, must be: 'Gestion_Erreur_Back_C_.AutomapperTest'" />
