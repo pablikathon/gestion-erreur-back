@@ -33,7 +33,7 @@ public class UserSignInWithPassword : IGrantConnection
     public required string Password { get; set; }
     public override bool Validate()
     {
-        return !Password.IsNullOrEmpty();
+        return !string.IsNullOrWhiteSpace(Password);
     }
 }
 public class UserSignInWithRefreshToken : IGrantConnection
@@ -41,7 +41,7 @@ public class UserSignInWithRefreshToken : IGrantConnection
     public required string RefreshToken { get; set; }
     public override bool Validate()
     {
-        return !RefreshToken.IsNullOrEmpty();
+        return !string.IsNullOrWhiteSpace(RefreshToken);
     }
 }
 
