@@ -1,6 +1,5 @@
 using Persist.Entities.Catalyst;
 using Persist.Entities.Catalyst.JoiningTable;
-using Persist.Migrations;
 
 namespace Repositories
 {

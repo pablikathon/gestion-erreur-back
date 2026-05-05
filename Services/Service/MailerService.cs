@@ -1,5 +1,6 @@
 using System.Net;
 using System.Net.Mail;
+
 using Microsoft.Extensions.Configuration;
 
 namespace Services
@@ -28,8 +29,8 @@ namespace Services
                 };
                 return client.SendMailAsync(
                     new MailMessage(
-                            from : email,
-                            to : to,
+                            from: email,
+                            to: to,
                             subject,
                             message
                     )

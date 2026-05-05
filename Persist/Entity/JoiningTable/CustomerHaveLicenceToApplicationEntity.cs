@@ -1,9 +1,11 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
 using Microsoft.EntityFrameworkCore;
+
+using Persist.Entities.Application;
 using Persist.Entities.BaseTable;
 using Persist.Entity.CommonField;
-using Persist.Entities.Application;
 namespace Persist.Entities
 {
     [PrimaryKey(nameof(CustomerId), nameof(ApplicationId))]
@@ -11,7 +13,7 @@ namespace Persist.Entities
     {
         [Required] public required string ApplicationId { get; set; }
 
-        [ForeignKey(nameof(ApplicationId))] public required ApplicationEntity  Application { get; set; }
+        [ForeignKey(nameof(ApplicationId))] public required ApplicationEntity Application { get; set; }
         [Required] public required string CustomerId { get; set; }
 
         [ForeignKey(nameof(CustomerId))] public required CustomerEntity Customer { get; set; }

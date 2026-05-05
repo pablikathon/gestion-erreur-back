@@ -1,6 +1,8 @@
 using System.ComponentModel.DataAnnotations;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
 using Persist.Entities.Catalyst.JoiningTable;
 using Persist.Entity.CommonField;
 
@@ -13,7 +15,7 @@ namespace Persist.Entities.Catalyst
     {
         [Required] public required string Id { get; set; }
         [Required] public required string Title { get; set; }
-        [Required] public string Language {get; set;} = "English"; 
+        [Required] public string Language { get; set; } = "English";
         public ICollection<TagCategoryTagEntity> TagCategoryTags { get; set; } = new List<TagCategoryTagEntity>();
 
     }

@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+
 using Persist;
 using Persist.Entities;
 
@@ -26,7 +27,7 @@ namespace Repositories
             }
             catch (System.Exception)
             {
-                throw ;
+                throw;
             }
         }
 

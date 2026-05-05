@@ -1,8 +1,12 @@
 using AutoMapper;
+
 using Microsoft.EntityFrameworkCore;
+
 using Persist;
 using Persist.Entities.BaseTable;
+
 using Repositories;
+
 using Services.Extension;
 using Services.Models.Common;
 using Services.Models.Req;
@@ -91,7 +95,9 @@ namespace Services
             }).AsQueryable();
 
             if (queryParameters.SearchParam != null)
+            {
                 lastquery = lastquery.TextSearch(queryParameters.SearchParam);
+            }
 
             var result = lastquery.SortBy(queryParameters.Sort).ToList();
             //var result = lastquery.OrderBy(x => x.Server.Title).ToList();
@@ -112,7 +118,10 @@ namespace Services
                     err.StatusId.Equals(errorRequest.StatusId)
             );
             if (queryParameters.SearchParam != null)
+            {
                 query = query.TextSearch(queryParameters.SearchParam);
+            }
+
             query = query.DateSearchQuery(queryParameters.DateParam);
             query = query.Pagination(queryParameters.Pagination);
             query = query.SortBy(queryParameters.Sort);

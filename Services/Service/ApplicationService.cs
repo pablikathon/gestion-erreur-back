@@ -1,8 +1,13 @@
 using System.ComponentModel.DataAnnotations;
+
 using AutoMapper;
+
 using exception.Message;
+
 using Persist.Entities.Application;
+
 using Repositories;
+
 using Services.Extension;
 using Services.Models.Common;
 using Services.Models.Req;
@@ -24,7 +29,10 @@ namespace Services
         {
             var query = _applicationRepository.GetApplications();
             if (queryParameters.SearchParam != null)
+            {
                 query = query.TextSearch(queryParameters.SearchParam);
+            }
+
             query = query.DateSearchQuery(queryParameters.DateParam);
             query = query.SortBy(queryParameters.Sort);
             query = query.Pagination(queryParameters.Pagination);
@@ -40,7 +48,10 @@ namespace Services
             var validationResults = new List<ValidationResult>();
             bool isValid = Validator.TryValidateObject(createApplication, validation, validationResults, true);
             if (isValid)
+            {
                 return await _applicationRepository.AddAsync(_mapper.Map<ApplicationEntity>(createApplication));
+            }
+
             throw new ArgumentException(TypoMessage.ObjectNotValid);
         }
 

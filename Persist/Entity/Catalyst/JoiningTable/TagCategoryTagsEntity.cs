@@ -1,6 +1,6 @@
-using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
 using Persist.Entity.CommonField;
 
 namespace Persist.Entities.Catalyst.JoiningTable
@@ -17,7 +17,7 @@ namespace Persist.Entities.Catalyst.JoiningTable
     }
     public class TagCategoryTagConfiguration : IEntityTypeConfiguration<TagCategoryTagEntity>
     {
-        
+
         public void Configure(EntityTypeBuilder<TagCategoryTagEntity> builder)
         {
             builder.HasKey(tct => new { tct.TagEntityId, tct.TagCategoryEntityId });

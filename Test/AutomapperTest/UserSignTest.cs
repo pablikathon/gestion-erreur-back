@@ -1,8 +1,11 @@
 namespace Test;
 
 using AutoMapper;
+
 using Persist.Entities.Auth;
+
 using Services.Models.Auth;
+
 using Xunit;
 
 public class UserSignAutoMapTest

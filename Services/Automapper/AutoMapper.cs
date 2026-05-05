@@ -1,7 +1,4 @@
 using AutoMapper;
-using Microsoft.Extensions.Configuration;
-using Services;
-using Services.Models.Auth;
 
 public partial class MappingProfile : Profile
 {
@@ -11,7 +8,7 @@ public partial class MappingProfile : Profile
         this.MappingProfilJoiningEnity();
         this.MappingProfileAuthEntity();
     }
-    
+
     public void MappingProfilRegularEntity()
     {
         this.MappingProfileServer();
@@ -25,7 +22,8 @@ public partial class MappingProfile : Profile
         this.MappingProfileApplicationDeployement();
         this.MappingProfileCustomerHaveLicence();
     }
-    public void MappingProfileAuthEntity(){
+    public void MappingProfileAuthEntity()
+    {
         this.MappingProfileUser();
     }
 }

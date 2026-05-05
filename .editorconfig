@@ -1,0 +1,117 @@
+root = true
+
+########################################
+# GLOBAL
+########################################
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+
+########################################
+# C#
+########################################
+[*.cs]
+
+#### USING
+dotnet_sort_system_directives_first = true
+dotnet_separate_import_directive_groups = true
+
+#### VAR (type implicite)
+dotnet_style_var_for_built_in_types = true:suggestion
+dotnet_style_var_when_type_is_apparent = true:suggestion
+dotnet_style_var_elsewhere = false:suggestion
+
+#### EXPRESSION BODIES
+csharp_style_expression_bodied_methods = false:suggestion
+csharp_style_expression_bodied_constructors = false:suggestion
+csharp_style_expression_bodied_properties = true:suggestion
+
+#### NULL CHECK / SIMPLIFICATION
+dotnet_style_coalesce_expression = true:suggestion
+dotnet_style_null_propagation = true:suggestion
+dotnet_style_prefer_is_null_check_over_reference_equality_method = true:suggestion
+
+#### STRING
+dotnet_style_prefer_interpolation = true:suggestion
+
+#### PARENTHESES
+dotnet_style_parentheses_in_arithmetic_binary_operators = always_for_clarity:silent
+dotnet_style_parentheses_in_other_binary_operators = always_for_clarity:silent
+
+#### MODIFIERS
+dotnet_style_require_accessibility_modifiers = for_non_interface_members:suggestion
+
+#### THIS.
+dotnet_style_qualification_for_field = false:suggestion
+dotnet_style_qualification_for_property = false:suggestion
+dotnet_style_qualification_for_method = false:suggestion
+dotnet_style_qualification_for_event = false:suggestion
+
+#### VARIOUS
+csharp_prefer_simple_using_statement = true:suggestion
+csharp_prefer_braces = true:warning
+csharp_style_prefer_switch_expression = true:suggestion
+
+########################################
+# NAMING
+########################################
+
+# Interfaces : IMyService
+dotnet_naming_rule.interfaces_should_start_with_i.severity = suggestion
+dotnet_naming_rule.interfaces_should_start_with_i.symbols = interfaces
+dotnet_naming_rule.interfaces_should_start_with_i.style = prefix_i
+
+dotnet_naming_symbols.interfaces.applicable_kinds = interface
+dotnet_naming_symbols.interfaces.applicable_accessibilities = *
+
+dotnet_naming_style.prefix_i.required_prefix = I
+dotnet_naming_style.prefix_i.capitalization = pascal_case
+
+# Private fields : _myField
+dotnet_naming_rule.private_fields_should_have_underscore.severity = suggestion
+dotnet_naming_rule.private_fields_should_have_underscore.symbols = private_fields
+dotnet_naming_rule.private_fields_should_have_underscore.style = underscore_prefix
+
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private
+
+dotnet_naming_style.underscore_prefix.required_prefix = _
+dotnet_naming_style.underscore_prefix.capitalization = camel_case
+
+########################################
+# FORMATTING
+########################################
+csharp_new_line_before_open_brace = all
+csharp_indent_case_contents = true
+csharp_indent_switch_labels = true
+
+########################################
+# ANALYZERS (important)
+########################################
+
+# Supprimer using inutiles
+dotnet_diagnostic.IDE0005.severity = warning
+
+# Simplifications
+dotnet_diagnostic.IDE0003.severity = suggestion
+dotnet_diagnostic.IDE0044.severity = suggestion
+
+# var suggestions
+dotnet_diagnostic.IDE0007.severity = suggestion
+dotnet_diagnostic.IDE0008.severity = suggestion
+
+# Braces obligatoires
+dotnet_diagnostic.IDE0011.severity = warning
+
+# Utiliser 'var' quand pertinent
+dotnet_diagnostic.IDE0007.severity = suggestion
+
+########################################
+# FILES
+########################################
+[*.{json,yml,yaml}]
+indent_size = 2

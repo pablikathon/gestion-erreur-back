@@ -1,10 +1,13 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+
 using Microsoft.IdentityModel.Tokens;
+
 using Ressources.Annotation.RestrictionLentgh;
 using Ressources.Annotation.ValidationMessage;
 
 namespace Services.Models.Auth;
+
 public class GrantRequest
 {
     public required string GrantType { get; set; }
@@ -19,7 +22,7 @@ public abstract class IGrantConnection
     [StringLength((int)UserRestrictionMessageEnum.EmailMaxLengh, MinimumLength = (int)UserRestrictionMessageEnum.EmailMinimalLengh, ErrorMessage = ValidationMessagesUserField.EmailLengthShouldBeBetween5And50)]
     [DataType(DataType.EmailAddress)]
     public required string Email { get; set; }
-    public abstract bool  Validate();
+    public abstract bool Validate();
 }
 
 public class UserSignInWithPassword : IGrantConnection

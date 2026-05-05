@@ -1,5 +1,4 @@
 using Persist;
-using Persist.Entities;
 using Persist.Entities.BaseTable;
 
 namespace Repositories
@@ -26,7 +25,7 @@ namespace Repositories
                 await _context.SaveChangesAsync();
                 return true;
             }
-            catch (System.Exception )
+            catch (System.Exception)
             {
                 throw;
             }

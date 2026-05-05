@@ -1,4 +1,5 @@
 using System.Linq.Expressions;
+
 using Microsoft.EntityFrameworkCore;
 
 public static class DbContextExtensions
@@ -9,7 +10,9 @@ public static class DbContextExtensions
         foreach (var include in includes)
         {
             if (include != null)
+            {
                 await context.Entry(entity).Reference(include).LoadAsync();
+            }
         }
     }
 }

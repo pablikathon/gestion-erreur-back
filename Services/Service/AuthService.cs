@@ -1,9 +1,14 @@
 using AutoMapper;
+
 using exception.Message;
+
 using Microsoft.EntityFrameworkCore;
+
 using Persist;
 using Persist.Entities.Auth;
+
 using Repositories;
+
 using Services.Models.Auth;
 
 namespace Services
@@ -31,31 +36,31 @@ namespace Services
             var id = Guid.NewGuid().ToString();
             u.HashPasswordId = id;
             u.HashPasswordEntity = new HashPasswordEntity
-                    {
-                        Id = id,
-                        Password = _securityService.Hash(user.Password),
-                        CreatedAt = DateTime.UtcNow
-                    };
+            {
+                Id = id,
+                Password = _securityService.Hash(user.Password),
+                CreatedAt = DateTime.UtcNow
+            };
             return await _authRepository.Signup(u);
         }
         public async Task<Token> UserSignInWithPassword(UserSignInWithPassword user)
         {
             //En attendant d'implémenter la confirmation d'email
             var u = _context.User.Include(p => p.HashPasswordEntity)
-            .First(u => u.Email == user.Email /*&& u.IsEmailConfirmed*/)! ;
+            .First(u => u.Email == user.Email /*&& u.IsEmailConfirmed*/)!;
             if (_securityService.Validate(u.HashPasswordEntity.Password, user.Password))
             {
                 try
                 {
                     var AccessToken = _securityService.GenerateAccessToken(u);
                     var RefreshToken = _securityService.GenerateRefreshToken();
-                    if (await _authRepository.AddTokenToUser(u, new RefreshTokenEntity() { Id = Guid.NewGuid().ToString(), RefreshToken =_securityService.Hash(RefreshToken), CreatedAt = DateTime.Now }))
+                    if (await _authRepository.AddTokenToUser(u, new RefreshTokenEntity() { Id = Guid.NewGuid().ToString(), RefreshToken = _securityService.Hash(RefreshToken), CreatedAt = DateTime.Now }))
                     {
                         return new Token { AccessToken = AccessToken, RefreshToken = RefreshToken };
                     }
                     throw new Exception(AuthMessage.ErrorUpdateUserToken);
                 }
-                catch 
+                catch
                 {
                     throw;
                 }
@@ -69,7 +74,7 @@ namespace Services
             //En attendant d'implémenter la confirmation d'email
             var u = _context.User.Include(p => p.RefreshToken)
             .First(u => u.Email == user.Email /*&& u.IsEmailConfirmed*/) ?? throw new Exception(AuthMessage.NoVerifiedUserFound);
-            if ( _securityService.Validate(u?.RefreshToken?.RefreshToken ?? throw new Exception (AuthMessage.RefreshTokenNotFound), user.RefreshToken))
+            if (_securityService.Validate(u?.RefreshToken?.RefreshToken ?? throw new Exception(AuthMessage.RefreshTokenNotFound), user.RefreshToken))
             {
                 try
                 {

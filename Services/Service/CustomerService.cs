@@ -1,8 +1,12 @@
 using AutoMapper;
+
 using Persist;
 using Persist.Entities.BaseTable;
+
 using Repositories;
+
 using Ressources.DefaultValue.Event;
+
 using Services.Extension;
 using Services.Models.Common;
 using Services.Models.Req;
@@ -27,7 +31,10 @@ namespace Services
         {
             var query = _customerRepository.GetAllAsync();
             if (queryParameters.SearchParam != null)
+            {
                 query = query.TextSearch(queryParameters.SearchParam);
+            }
+
             query = query.DateSearchQuery(queryParameters.DateParam);
             query = query.SortBy(queryParameters.Sort);
             query = query.Pagination(queryParameters.Pagination);

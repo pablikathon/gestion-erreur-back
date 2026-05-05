@@ -1,6 +1,8 @@
 using System.ComponentModel.DataAnnotations;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
 using Persist.Entities.BaseTable;
 using Persist.Entity.CommonField;
 
@@ -28,7 +30,7 @@ namespace Persist.Entities.Application
             .WithOne(s => s.Feature)
             .HasForeignKey(s => s.FeatureId)
             .OnDelete(DeleteBehavior.Cascade);
-            
+
             builder.HasMany(ft => ft.CustomersWhoCanUseFeature)
             .WithMany(c => c.CustomerHaveAccessToAFeature);
         }

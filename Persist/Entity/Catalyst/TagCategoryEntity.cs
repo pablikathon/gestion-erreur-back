@@ -1,6 +1,8 @@
 using System.ComponentModel.DataAnnotations;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
 using Persist.Entities.Catalyst.JoiningTable;
 using Persist.Entity.CommonField;
 

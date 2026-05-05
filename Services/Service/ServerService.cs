@@ -1,7 +1,11 @@
 using System.ComponentModel.DataAnnotations;
+
 using AutoMapper;
+
 using Persist.Entities.BaseTable;
+
 using Repositories;
+
 using Services.Extension;
 using Services.Models.Common;
 using Services.Models.Req;
@@ -23,7 +27,10 @@ namespace Services
         {
             var query = _serverRepository.GetServers();
             if (queryParameters.SearchParam != null)
+            {
                 query = query.TextSearch(queryParameters.SearchParam);
+            }
+
             query = query.DateSearchQuery(queryParameters.DateParam);
             query = query.SortBy(queryParameters.Sort);
             query = query.Pagination(queryParameters.Pagination);
@@ -39,7 +46,10 @@ namespace Services
             var validationResults = new List<ValidationResult>();
             bool isValid = Validator.TryValidateObject(createServerRequest, validation, validationResults, true);
             if (isValid)
+            {
                 return await _serverRepository.AddAsync(_mapper.Map<ServerEntity>(createServerRequest));
+            }
+
             throw new ArgumentException("not valid object");
         }
 

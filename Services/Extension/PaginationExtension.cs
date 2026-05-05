@@ -1,11 +1,15 @@
-using Services.Models.Common;
 using System.Linq.Expressions;
 using System.Reflection;
-using exception.Message;
+
 using exception;
+using exception.Message;
+
 using Persist.Entity.CommonField;
 
+using Services.Models.Common;
+
 namespace Services.Extension;
+
 public static class PaginationExtension
 {
     public static IQueryable<T> Pagination<T>(this IQueryable<T> query, PaginationParameters paginationParameters)
@@ -35,7 +39,7 @@ public static class PaginationExtension
                     a.UpdatedAt >= DateParam.StartDate && a.UpdatedAt <= DateParam.EndDate);
                 break;
             default:
-                throw new FieldNotFoundException($"'{NotFoundMessage.FieldNotFound}' : '{DateParam.DateField}'" );
+                throw new FieldNotFoundException($"'{NotFoundMessage.FieldNotFound}' : '{DateParam.DateField}'");
         }
 
         return query;
@@ -44,8 +48,10 @@ public static class PaginationExtension
     public static IQueryable<T> SortBy<T>(this IQueryable<T> source, SortParameters sort) where T : class
     {
         if (string.IsNullOrWhiteSpace(sort.SortBy))
+        {
             throw new ArgumentNullException(nameof(sort.SortBy));
-        
+        }
+
         BuildProperty<T>(sort.SortBy, out Type entityType, out Expression propertyAccess, out LambdaExpression lambdaExpression);
 
         var methodName = sort.Ascending ? nameof(Queryable.OrderBy) : nameof(Queryable.OrderByDescending);
@@ -59,7 +65,9 @@ public static class PaginationExtension
     {
         //Could be Title or Server.Title
         if (string.IsNullOrWhiteSpace(PropertyToBuild))
+        {
             throw new ArgumentNullException(nameof(PropertyToBuild));
+        }
 
         var sortBy = PropertyToBuild.Split('.');
         entityType = typeof(T);
@@ -83,18 +91,25 @@ public static class PaginationExtension
     public static IQueryable<T> TextSearch<T>(this IQueryable<T> source, SearchParameters searchParameters) where T : class
     {
         if (string.IsNullOrWhiteSpace(searchParameters.SearchColumn))
+        {
             throw new ArgumentNullException(nameof(searchParameters.SearchColumn));
+        }
+
         if (string.IsNullOrWhiteSpace(searchParameters.SearchTerm))
+        {
             throw new ArgumentNullException(nameof(searchParameters.SearchTerm));
+        }
 
         BuildProperty<T>(searchParameters.SearchColumn, out Type entityType, out Expression propertyAccess, out LambdaExpression lambdaExpression);
 
         if (propertyAccess.Type != typeof(string))
+        {
             throw new ArgumentException($"'{TypoMessage.PropertyMustBeString}' : '{searchParameters.SearchColumn}'");
+        }
 
-        var toLowerMethod = typeof(string).GetMethod(nameof(String.ToLower), Type.EmptyTypes) ?? throw new InvalidOperationException( $"'{NotFoundMessage.MethodNotFound}' :  '{nameof(String.ToLower)}' ");;            
-        var containsMethod = typeof(string).GetMethod(nameof(String.Contains), new[] { typeof(string) }) ?? throw new InvalidOperationException($" '{NotFoundMessage.MethodNotFound}' : '{nameof(String.Contains)} ");;
-            
+        var toLowerMethod = typeof(string).GetMethod(nameof(String.ToLower), Type.EmptyTypes) ?? throw new InvalidOperationException($"'{NotFoundMessage.MethodNotFound}' :  '{nameof(String.ToLower)}' "); ;
+        var containsMethod = typeof(string).GetMethod(nameof(String.Contains), new[] { typeof(string) }) ?? throw new InvalidOperationException($" '{NotFoundMessage.MethodNotFound}' : '{nameof(String.Contains)} "); ;
+
 
         var toLowerExpression = Expression.Call(propertyAccess, toLowerMethod);
         var searchExpression = Expression.Constant(searchParameters.SearchTerm.ToLower());

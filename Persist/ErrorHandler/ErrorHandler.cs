@@ -1,6 +1,7 @@
 using System.Diagnostics;
 
 namespace ErrorHandler;
+
 public class ErrorObjectHandler<T>
 {
     public bool Success { get; set; }

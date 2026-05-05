@@ -1,9 +1,12 @@
-using Services;
-using Repositories;
-using Services.Models.Auth;
-using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.OpenApi.Models;
+
+using Repositories;
+
 using Ressources.Auth.Message;
+
+using Services;
+using Services.Models.Auth;
 
 internal static class ServiceCollectionExtensions
 {

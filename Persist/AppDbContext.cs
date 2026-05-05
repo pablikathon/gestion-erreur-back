@@ -1,11 +1,12 @@
 using Microsoft.EntityFrameworkCore;
+
 using Persist.Entities;
+using Persist.Entities.Application;
 using Persist.Entities.Auth;
 using Persist.Entities.BaseTable;
 using Persist.Entities.Catalyst;
 using Persist.Entities.Catalyst.JoiningTable;
 using Persist.Entities.JoiningTable;
-using Persist.Entities.Application;
 
 namespace Persist
 {

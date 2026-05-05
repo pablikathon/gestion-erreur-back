@@ -1,6 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+
 using Microsoft.EntityFrameworkCore;
+
 using Persist.Entities.JoiningTable;
 using Persist.Entity.CommonField;
 
@@ -25,5 +27,5 @@ namespace Persist.Entities.Application
             new List<CustomerHaveLicenceToApplicationEntity>();
         public ICollection<FeatureEntity> Features { get; set; } = new List<FeatureEntity>();
     }
-    
+
 }

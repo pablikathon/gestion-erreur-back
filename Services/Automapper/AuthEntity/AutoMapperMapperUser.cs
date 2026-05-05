@@ -1,5 +1,7 @@
 using AutoMapper;
+
 using Persist.Entities.Auth;
+
 using Services.Models.Auth;
 public partial class MappingProfile : Profile
 {

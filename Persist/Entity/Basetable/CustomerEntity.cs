@@ -1,6 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+
 using Microsoft.EntityFrameworkCore;
+
 using Persist.Entities.Application;
 using Persist.Entity.CommonField;
 

@@ -18,9 +18,9 @@ namespace Services.Models.Req
         public ErrorStatusEntity? ErrorStatus { get; set; }
         public ApplicationEntity? Application { get; set; }
 
-        public  SeverityLevelEntity? Severity { get; set; }
-        public  ServerEntity? Server { get; set; }
-        public  DateTime CreatedAt { get; set; }
+        public SeverityLevelEntity? Severity { get; set; }
+        public ServerEntity? Server { get; set; }
+        public DateTime CreatedAt { get; set; }
 
 
     }

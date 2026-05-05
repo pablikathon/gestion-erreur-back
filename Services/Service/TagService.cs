@@ -1,8 +1,9 @@
 using AutoMapper;
-using Persist;
+
 using Persist.Entities.Catalyst;
-using Persist.Migrations;
+
 using Repositories;
+
 using Services.Extension;
 using Services.Models.Common;
 using Services.Models.Req;
@@ -15,7 +16,7 @@ namespace Services
 
         private readonly ITagRepository _repository;
 
-        public TagService( IMapper mapper,ITagRepository tagRepository)
+        public TagService(IMapper mapper, ITagRepository tagRepository)
         {
             _mapper = mapper;
             _repository = tagRepository;
@@ -26,9 +27,9 @@ namespace Services
             throw new NotImplementedException();
         }
         //todo move into repository
-        public async Task<bool> CreateTag(CreateTagRequest Tag )
+        public async Task<bool> CreateTag(CreateTagRequest Tag)
         {
-            return await _repository.CreateTag(_mapper.Map<TagEntity>(Tag ));
+            return await _repository.CreateTag(_mapper.Map<TagEntity>(Tag));
         }
 
         public async Task<bool> CreateTagCategory(CreateTagCategoryRequest category)
@@ -50,7 +51,10 @@ namespace Services
         {
             var query = _repository.GetTagCategories();
             if (queryParameters.SearchParam != null)
+            {
                 query = query.TextSearch(queryParameters.SearchParam);
+            }
+
             query = query.DateSearchQuery(queryParameters.DateParam);
             query = query.SortBy(queryParameters.Sort);
             query = query.Pagination(queryParameters.Pagination);
@@ -59,13 +63,16 @@ namespace Services
             return new PaginationResponse<TagCategoryEntity>(result, result.Count,
                 queryParameters.Pagination.PageNumber, queryParameters.Pagination.PageSize);
         }
-        
+
 
         public PaginationResponse<TagEntity> GetTags(QueryParameters queryParameters)
         {
             var query = _repository.GetTag();
             if (queryParameters.SearchParam != null)
-               query = query.DateSearchQuery(queryParameters.DateParam);
+            {
+                query = query.DateSearchQuery(queryParameters.DateParam);
+            }
+
             query = query.SortBy(queryParameters.Sort);
             query = query.Pagination(queryParameters.Pagination);
 
@@ -79,7 +86,7 @@ namespace Services
             return _repository.UpdateTag(_mapper.Map<TagEntity>(tag), id);
         }
 
-        public Task<bool> UpdateTagCategory(UpdateTagCategoryRequest category,string id)
+        public Task<bool> UpdateTagCategory(UpdateTagCategoryRequest category, string id)
         {
             return _repository.UpdateTagCategory(_mapper.Map<TagCategoryEntity>(category), id);
         }

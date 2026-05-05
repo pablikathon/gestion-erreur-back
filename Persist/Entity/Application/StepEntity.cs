@@ -1,6 +1,8 @@
 using System.ComponentModel.DataAnnotations;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
 using Persist.Entity.CommonField;
 
 namespace Persist.Entities.Application
@@ -14,7 +16,7 @@ namespace Persist.Entities.Application
         [Required] public required string Title { get; set; }
         public bool NotObligatory { get; set; } = false;
         public required string FeatureId { get; set; }
-        public FeatureEntity Feature { get; set; } = null!; 
+        public FeatureEntity Feature { get; set; } = null!;
 
         public string? PreviousStepId { get; set; }
         public StepEntity? PreviousStep { get; set; }

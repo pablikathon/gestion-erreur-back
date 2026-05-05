@@ -1,20 +1,23 @@
 namespace exception;
 
-    public class EntityNotFoundException : Exception{
-        public EntityNotFoundException(string message) : base(message) { }
-        public EntityNotFoundException() : base() { }
-        public EntityNotFoundException(string message, Exception innerException) : base(message, innerException)  { }
-    }
+public class EntityNotFoundException : Exception
+{
+    public EntityNotFoundException(string message) : base(message) { }
+    public EntityNotFoundException() : base() { }
+    public EntityNotFoundException(string message, Exception innerException) : base(message, innerException) { }
+}
 
-    public class FieldNotFoundException : Exception{
-        public FieldNotFoundException(string message) : base(message){}
-        public FieldNotFoundException(): base(){}
-        public FieldNotFoundException(string message, Exception innerException): base(message, innerException) { }
-    }
+public class FieldNotFoundException : Exception
+{
+    public FieldNotFoundException(string message) : base(message) { }
+    public FieldNotFoundException() : base() { }
+    public FieldNotFoundException(string message, Exception innerException) : base(message, innerException) { }
+}
 
-    public class MethodNotFoundException : Exception{
-        public MethodNotFoundException(string message) : base(message){}
-        public MethodNotFoundException(): base(){}
-        public MethodNotFoundException(string message, Exception innerException): base(message, innerException) { }
-    }
+public class MethodNotFoundException : Exception
+{
+    public MethodNotFoundException(string message) : base(message) { }
+    public MethodNotFoundException() : base() { }
+    public MethodNotFoundException(string message, Exception innerException) : base(message, innerException) { }
+}
 

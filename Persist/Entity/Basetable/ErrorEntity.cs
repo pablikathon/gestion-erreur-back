@@ -1,7 +1,10 @@
 using System.ComponentModel.DataAnnotations.Schema;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
 using Persist.Entity.Basetable;
+
 using Ressources.DefaultValue.Event;
 
 namespace Persist.Entities.BaseTable
@@ -31,7 +34,7 @@ namespace Persist.Entities.BaseTable
                 .HasOne(e => e.Severity)
                 .WithMany(es => es.Errors)
                 .HasForeignKey(e => e.SeverityId)
-                .IsRequired();        
+                .IsRequired();
         }
     }
 }

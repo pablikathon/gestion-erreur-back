@@ -1,7 +1,10 @@
 using System.Text.Json.Serialization;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
 using Persist.Entities.BaseTable;
+
 using Ressources.DefaultValue.Event;
 
 namespace Persist.Entities

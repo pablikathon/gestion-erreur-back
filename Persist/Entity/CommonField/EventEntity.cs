@@ -1,8 +1,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
+using Persist.Entities.Application;
 using Persist.Entities.BaseTable;
 using Persist.Entity.CommonField;
-using Persist.Entities.Application;
 
 namespace Persist.Entity.Basetable;
 
