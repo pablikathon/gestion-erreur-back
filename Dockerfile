@@ -1,5 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:8.0.101	AS build
-
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
 WORKDIR /source
 
 # copy csproj and restore as distinct layers
