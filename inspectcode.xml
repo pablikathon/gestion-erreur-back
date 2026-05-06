@@ -203,7 +203,7 @@
       <Issue TypeId="CheckNamespace" File="Persist\IRepository\IApplicationRepository.cs" Offset="47-59" Line="3" Message="Namespace does not correspond to file location, must be: 'Persist.IRepository'" />
       <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\IApplicationRepository.cs" Offset="202-214" Line="8" Message="Method 'GetByIdAsync' is never used" />
       <Issue TypeId="CheckNamespace" File="Persist\IRepository\IAuthRepository.cs" Offset="40-52" Line="3" Message="Namespace does not correspond to file location, must be: 'Persist.IRepository'" />
-      <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\IAuthRepository.cs" Offset="246-259" Line="9" Message="Method 'RenewPassword' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\IAuthRepository.cs" Offset="202-215" Line="8" Message="Method 'RenewPassword' is never used" />
       <Issue TypeId="CheckNamespace" File="Persist\IRepository\ICustomerHaveLicenceToRepository.cs" Offset="35-47" Line="3" Message="Namespace does not correspond to file location, must be: 'Persist.IRepository'" />
       <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\ICustomerHaveLicenceToRepository.cs" Offset="249-261" Line="8" Message="Method 'GetByIdAsync' is never used" />
       <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Persist\IRepository\ICustomerHaveLicenceToRepository.cs" Offset="417-449" Line="11" Message="Name 'CustomerHaveLicenceToApplication' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToApplication'." />
@@ -218,6 +218,7 @@
       <Issue TypeId="CheckNamespace" File="Persist\IRepository\ITagRepository.cs" Offset="90-102" Line="4" Message="Namespace does not correspond to file location, must be: 'Persist.IRepository'" />
       <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\ITagRepository.cs" Offset="286-319" Line="10" Message="Method 'GetRelationBetwenTagAndCategories' is never used" />
       <Issue TypeId="UnusedMember.Global" File="Persist\IRepository\ITagRepository.cs" Offset="680-701" Line="19" Message="Method 'RelateATagAndCategory' is never used" />
+      <Issue TypeId="CheckNamespace" File="Persist\IRepository\IUserRepository.cs" Offset="40-52" Line="3" Message="Namespace does not correspond to file location, must be: 'Persist.IRepository'" />
       <Issue TypeId="CheckNamespace" File="Persist\Repository\ApplicationDeployedOnServerRepository.cs" Offset="101-113" Line="6" Message="Namespace does not correspond to file location, must be: 'Persist.Repository'" />
       <Issue TypeId="ConvertToPrimaryConstructor" File="Persist\Repository\ApplicationDeployedOnServerRepository.cs" Offset="282-319" Line="12" Message="Convert into primary constructor" />
       <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Persist\Repository\ApplicationDeployedOnServerRepository.cs" Offset="912-937" Line="28" Message="Name 'DeployedApplicationEntity' does not match rule 'Parameters'. Suggested name is 'deployedApplicationEntity'." />
@@ -231,6 +232,7 @@
       <Issue TypeId="RedundantNameQualifier" File="Persist\Repository\AuthRepository.cs" Offset="786-793" Line="28" Message="Qualifier is redundant" />
       <Issue TypeId="RedundantCatchClause" File="Persist\Repository\AuthRepository.cs" Offset="1309-1385" Line="44" Message="Catch clause is redundant" />
       <Issue TypeId="RedundantNameQualifier" File="Persist\Repository\AuthRepository.cs" Offset="1316-1323" Line="44" Message="Qualifier is redundant" />
+      <Issue TypeId="UnusedMember.Global" File="Persist\Repository\AuthRepository.cs" Offset="1429-1435" Line="51" Message="Method 'Signup' is never used" />
       <Issue TypeId="RedundantCatchClause" File="Persist\Repository\AuthRepository.cs" Offset="1640-1716" Line="59" Message="Catch clause is redundant" />
       <Issue TypeId="RedundantNameQualifier" File="Persist\Repository\AuthRepository.cs" Offset="1647-1654" Line="59" Message="Qualifier is redundant" />
       <Issue TypeId="CheckNamespace" File="Persist\Repository\CustomerHaveLicenceToApplicationRepository.cs" Offset="88-100" Line="6" Message="Namespace does not correspond to file location, must be: 'Persist.Repository'" />
@@ -678,21 +680,21 @@
       <Issue TypeId="ConvertToPrimaryConstructor" File="Services\Service\ApplicationService.cs" Offset="448-466" Line="22" Message="Convert into primary constructor" />
       <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\ApplicationService.cs" Offset="490-511" Line="22" Message="Name 'ApplicationRepository' does not match rule 'Parameters'. Suggested name is 'applicationRepository'." />
       <Issue TypeId="CheckNamespace" File="Services\Service\AuthService.cs" Offset="188-196" Line="14" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
-      <Issue TypeId="ConvertToPrimaryConstructor" File="Services\Service\AuthService.cs" Offset="472-483" Line="22" Message="Convert into primary constructor" />
-      <Issue TypeId="ArrangeThisQualifier" Severity="SUGGESTION" File="Services\Service\AuthService.cs" Offset="846-851" Line="31" Message="Qualifier 'this.' is redundant" />
-      <Issue TypeId="RedundantSuppressNullableWarningExpression" File="Services\Service\AuthService.cs" Offset="1707-1708" Line="50" Message="The nullable warning suppression expression is redundant" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\AuthService.cs" Offset="1875-1886" Line="55" Message="Name 'AccessToken' does not match rule 'Local variables'. Suggested name is 'accessToken'." />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\AuthService.cs" Offset="1954-1966" Line="56" Message="Name 'RefreshToken' does not match rule 'Local variables'. Suggested name is 'refreshToken'." />
-      <Issue TypeId="RedundantCatchClause" File="Services\Service\AuthService.cs" Offset="2468-2536" Line="63" Message="Catch clause is redundant" />
-      <Issue TypeId="ConstantConditionalAccessQualifier" File="Services\Service\AuthService.cs" Offset="3027-3028" Line="77" Message="Conditional access qualifier expression is known to be not null" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\AuthService.cs" Offset="3210-3221" Line="81" Message="Name 'AccessToken' does not match rule 'Local variables'. Suggested name is 'accessToken'." />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\AuthService.cs" Offset="3289-3301" Line="82" Message="Name 'RefreshToken' does not match rule 'Local variables'. Suggested name is 'refreshToken'." />
-      <Issue TypeId="RedundantCatchClause" File="Services\Service\AuthService.cs" Offset="3803-3890" Line="89" Message="Catch clause is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Services\Service\AuthService.cs" Offset="3810-3817" Line="89" Message="Qualifier is redundant" />
-      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\AuthService.cs" Offset="3982-3988" Line="98" Message="Method 'IsUserExist' can be made private" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\AuthService.cs" Offset="4013-4018" Line="98" Message="Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'." />
-      <Issue TypeId="UnusedMember.Global" File="Services\Service\AuthService.cs" Offset="4141-4161" Line="103" Message="Method 'IsUserEmailConfirmed' is never used" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\AuthService.cs" Offset="4169-4174" Line="103" Message="Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'." />
+      <Issue TypeId="ConvertToPrimaryConstructor" File="Services\Service\AuthService.cs" Offset="530-541" Line="23" Message="Convert into primary constructor" />
+      <Issue TypeId="ArrangeThisQualifier" Severity="SUGGESTION" File="Services\Service\AuthService.cs" Offset="982-987" Line="33" Message="Qualifier 'this.' is redundant" />
+      <Issue TypeId="RedundantSuppressNullableWarningExpression" File="Services\Service\AuthService.cs" Offset="1845-1846" Line="52" Message="The nullable warning suppression expression is redundant" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\AuthService.cs" Offset="2013-2024" Line="57" Message="Name 'AccessToken' does not match rule 'Local variables'. Suggested name is 'accessToken'." />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\AuthService.cs" Offset="2092-2104" Line="58" Message="Name 'RefreshToken' does not match rule 'Local variables'. Suggested name is 'refreshToken'." />
+      <Issue TypeId="RedundantCatchClause" File="Services\Service\AuthService.cs" Offset="2606-2674" Line="65" Message="Catch clause is redundant" />
+      <Issue TypeId="ConstantConditionalAccessQualifier" File="Services\Service\AuthService.cs" Offset="3165-3166" Line="79" Message="Conditional access qualifier expression is known to be not null" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\AuthService.cs" Offset="3348-3359" Line="83" Message="Name 'AccessToken' does not match rule 'Local variables'. Suggested name is 'accessToken'." />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\AuthService.cs" Offset="3427-3439" Line="84" Message="Name 'RefreshToken' does not match rule 'Local variables'. Suggested name is 'refreshToken'." />
+      <Issue TypeId="RedundantCatchClause" File="Services\Service\AuthService.cs" Offset="3941-4028" Line="91" Message="Catch clause is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Services\Service\AuthService.cs" Offset="3948-3955" Line="91" Message="Qualifier is redundant" />
+      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Service\AuthService.cs" Offset="4120-4126" Line="100" Message="Method 'IsUserExist' can be made private" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\AuthService.cs" Offset="4151-4156" Line="100" Message="Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'." />
+      <Issue TypeId="UnusedMember.Global" File="Services\Service\AuthService.cs" Offset="4279-4299" Line="105" Message="Method 'IsUserEmailConfirmed' is never used" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\AuthService.cs" Offset="4307-4312" Line="105" Message="Name 'Email' does not match rule 'Parameters'. Suggested name is 'email'." />
       <Issue TypeId="CheckNamespace" File="Services\Service\CustomerHaveLicenceToApplicationService.cs" Offset="159-167" Line="11" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="ConvertToPrimaryConstructor" File="Services\Service\CustomerHaveLicenceToApplicationService.cs" Offset="437-476" Line="18" Message="Convert into primary constructor" />
       <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\CustomerHaveLicenceToApplicationService.cs" Offset="534-576" Line="19" Message="Name 'CustomerHaveLicenceToApplicationRepository' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToApplicationRepository'." />
