@@ -19,18 +19,20 @@ namespace Services
         private readonly IMapper _mapper;
         private readonly AppDbContext _context;
         private readonly ISecurityService _securityService;
-        public AuthService(IAuthRepository authRepository, IMapper mapper, AppDbContext context, ISecurityService securityService)
+        private readonly IUserRepository _userRepository;
+        public AuthService(IAuthRepository authRepository, IMapper mapper, AppDbContext context, ISecurityService securityService, IUserRepository userRepository)
         {
             _authRepository = authRepository;
             _mapper = mapper;
             _context = context;
             _securityService = securityService;
+            _userRepository = userRepository;
         }
         public async Task<bool> SignUp(UserSignUp user)
         {
             if (this.IsUserExist(user.Email))
             {
-                throw new EntryPointNotFoundException(AuthMessage.UserAlreadyExist);
+                throw new InvalidOperationException(AuthMessage.UserAlreadyExist);
             }
             var u = _mapper.Map<UserEntity>(user);
             var id = Guid.NewGuid().ToString();
@@ -41,7 +43,7 @@ namespace Services
                 Password = _securityService.Hash(user.Password),
                 CreatedAt = DateTime.UtcNow
             };
-            return await _authRepository.Signup(u);
+            return await _userRepository.CreateUser(u);
         }
         public async Task<Token> UserSignInWithPassword(UserSignInWithPassword user)
         {
