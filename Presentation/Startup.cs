@@ -7,7 +7,6 @@ using Microsoft.IdentityModel.Tokens;
 
 using Persist;
 
-using AutoMapper;
 namespace Presentation
 {
     public class Startup
