@@ -18,8 +18,8 @@ public class TagController : Controller
     {
         _tagService = tagService;
     }
-    [HttpGet]
-    public ActionResult<PaginationResponse<TagEntity>> GetTags(
+    [HttpGet()]
+    public ActionResult<PaginationResponse<TagEntity>> GetAllTags(
         [FromQuery] QueryParameters queryParameters)
     {
         try
@@ -89,7 +89,7 @@ public class TagController : Controller
             return Problem(e.Message);
         }
     }
-    [HttpGet]
+    [HttpGet("categories")]
     public ActionResult<PaginationResponse<TagCategoryEntity>> GetTagsCategories(
         [FromQuery] QueryParameters queryParameters)
     {
@@ -108,6 +108,7 @@ public class TagController : Controller
             return Problem(e.Message);
         }
     }
+    [HttpPost("categories")]
     public async Task<ActionResult<TagEntity>> CreateTagCategories(
     [FromBody] CreateTagCategoryRequest CreateTagRequest)
     {
@@ -122,7 +123,7 @@ public class TagController : Controller
             return Problem(e.Message);
         }
     }
-    [HttpPut("id")]
+    [HttpPut("categories/{id}")]
     public async Task<ActionResult<Boolean>> UpdateTagCategories([FromBody] UpdateTagCategoryRequest updateTagRequest, string id)
     {
         try
@@ -140,7 +141,7 @@ public class TagController : Controller
             return Problem(e.Message);
         }
     }
-    [HttpDelete("id")]
+    [HttpDelete("categories/{id}")]
     public async Task<ActionResult<Boolean>> DeleteTagCategories(string id)
     {
         try

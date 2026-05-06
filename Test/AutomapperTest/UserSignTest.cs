@@ -2,6 +2,8 @@ namespace Test;
 
 using AutoMapper;
 
+using Microsoft.Extensions.Logging;
+
 using Persist.Entities.Auth;
 
 using Services.Models.Auth;
@@ -11,10 +13,12 @@ using Xunit;
 public class UserSignAutoMapTest
 {
     private readonly IMapper _mapper;
-
+    private readonly ILoggerFactory _loggerFactoryMock;
     public UserSignAutoMapTest()
     {
-        var config = new MapperConfiguration(cfg => cfg.AddProfile<MappingProfile>());
+        _loggerFactoryMock = new LoggerFactory();
+
+        var config = new MapperConfiguration(cfg => cfg.AddProfile<MappingProfile>(), _loggerFactoryMock);
         _mapper = config.CreateMapper();
     }
 
