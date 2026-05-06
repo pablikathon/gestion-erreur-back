@@ -7,6 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 
 using Persist;
 
+using AutoMapper;
 namespace Presentation
 {
     public class Startup
@@ -22,8 +23,7 @@ namespace Presentation
         {
 
 
-            services.AddAutoMapper(typeof(MappingProfile));
-
+            services.AddAutoMapper(cfg => { }, typeof(MappingProfile).Assembly);
             services.AddCustomServices();
 
             // Configuration de la chaîne de connexion
