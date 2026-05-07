@@ -48,19 +48,6 @@ namespace Repositories
             }
         }
 
-        public async Task<bool> Signup(UserEntity user)
-        {
-            try
-            {
-                _context.User.Add(user);
-                await _context.SaveChangesAsync();
-                return true;
-            }
-            catch (System.Exception)
-            {
 
-                throw;
-            }
-        }
     }
 }

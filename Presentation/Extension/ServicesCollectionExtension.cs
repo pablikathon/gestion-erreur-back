@@ -33,6 +33,8 @@ internal static class ServiceCollectionExtensions
         services.AddScoped<IAuthRepository, AuthRepository>();
         services.AddScoped<IAuthService, AuthService>();
 
+        services.AddScoped<IUserRepository, UserRepository>();
+
         services.AddScoped<ISecurityService, SecurityService>();
         return services;
     }

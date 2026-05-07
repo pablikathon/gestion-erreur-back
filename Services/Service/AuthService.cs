@@ -2,9 +2,8 @@ using AutoMapper;
 
 using exception.Message;
 
-using Microsoft.EntityFrameworkCore;
 
-using Persist;
+
 using Persist.Entities.Auth;
 
 using Repositories;
@@ -17,20 +16,18 @@ namespace Services
     {
         private readonly IAuthRepository _authRepository;
         private readonly IMapper _mapper;
-        private readonly AppDbContext _context;
         private readonly ISecurityService _securityService;
         private readonly IUserRepository _userRepository;
-        public AuthService(IAuthRepository authRepository, IMapper mapper, AppDbContext context, ISecurityService securityService, IUserRepository userRepository)
+        public AuthService(IAuthRepository authRepository, IMapper mapper, ISecurityService securityService, IUserRepository userRepository)
         {
             _authRepository = authRepository;
             _mapper = mapper;
-            _context = context;
             _securityService = securityService;
             _userRepository = userRepository;
         }
         public async Task<bool> SignUp(UserSignUp user)
         {
-            if (this.IsUserExist(user.Email))
+            if (await _userRepository.IsUserExist(user.Email))
             {
                 throw new InvalidOperationException(AuthMessage.UserAlreadyExist);
             }
@@ -48,8 +45,7 @@ namespace Services
         public async Task<Token> UserSignInWithPassword(UserSignInWithPassword user)
         {
             //En attendant d'implémenter la confirmation d'email
-            var u = _context.User.Include(p => p.HashPasswordEntity)
-            .First(u => u.Email == user.Email /*&& u.IsEmailConfirmed*/)!;
+            var u = await _userRepository.GetUserByEmail(user.Email) ?? throw new Exception(AuthMessage.NoVerifiedUserFound);
             if (_securityService.Validate(u.HashPasswordEntity.Password, user.Password))
             {
                 try
@@ -74,8 +70,7 @@ namespace Services
         public async Task<Token> UserSignInWithRefreshToken(UserSignInWithRefreshToken user)
         {
             //En attendant d'implémenter la confirmation d'email
-            var u = _context.User.Include(p => p.RefreshToken)
-            .First(u => u.Email == user.Email /*&& u.IsEmailConfirmed*/) ?? throw new Exception(AuthMessage.NoVerifiedUserFound);
+            var u = await _userRepository.GetUserByToken(user.RefreshToken) ?? throw new Exception(AuthMessage.NoVerifiedUserFound);
             if (_securityService.Validate(u?.RefreshToken?.RefreshToken ?? throw new Exception(AuthMessage.RefreshTokenNotFound), user.RefreshToken))
             {
                 try
@@ -97,14 +92,6 @@ namespace Services
             throw new Exception(AuthMessage.WrongToken);
         }
 
-        public bool IsUserExist(string Email)
-        {
-            return _context.User.FirstOrDefault(u => u.Email == Email) != null;
-        }
 
-        public bool IsUserEmailConfirmed(string Email)
-        {
-            return _context.User.FirstOrDefault(u => u.Email == Email && u.IsEmailConfirmed) == null;
-        }
     }
 }
