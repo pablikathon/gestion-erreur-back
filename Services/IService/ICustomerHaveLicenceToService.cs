@@ -1,7 +1,7 @@
 using Persist.Entities;
 
+using Services.Models.Command;
 using Services.Models.Common;
-using Services.Models.Req;
 
 namespace Services
 {
@@ -9,10 +9,10 @@ namespace Services
     {
         PaginationResponse<CustomerHaveLicenceToApplicationEntity> GetAll(GenericQueryParameter queryParameters);
 
-        Task<CustomerHaveLicenceToApplicationEntity> AddAsync(
-            CreateCustomerHasLicenceToRequest createCustomerHasLicenceToRequest);
+        Task<CreateCustomerHasLicenceToCommand> AddAsync(
+            CreateCustomerHasLicenceToCommand createCustomerHasLicenceToRequest);
 
-        Task<Boolean> UpdateAsync(UpdateCustomerHasLicenceRequest updateApplicationDeployed);
+        Task<Boolean> UpdateAsync(UpdateCustomerHasLicenceCommand updateCustomerHasLicenceToCommand);
         Task<Boolean> DeleteAsync(string id_application, string id_server);
     }
 }

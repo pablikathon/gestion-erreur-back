@@ -7,10 +7,10 @@ namespace Services
 {
     public interface IErrorService
     {
-        Task<bool> AddAsync(CreateErrorRequest errorRequest);
-        int UpdateErrors(UpdateErroRequest errorRequest);
+        Task<bool> AddAsync(CreateErrorCommand errorRequest);
+        int UpdateErrors(UpdateErroCommand errorRequest);
         Task<Boolean> DeleteAsync(string idErreur);
         PaginationResponse<ErrorForACustommerStatsResponse> GetErrorsForACustommerAgregate(QueryParameters queryParameters, string custommerId);
-        PaginationResponse<ErrorEntity> GetErrorsForACustommer(QueryParameters queryParameters, GetErrorRequest errorRequest);
+        PaginationResponse<ErrorEntity> GetErrorsForACustommer(QueryParameters queryParameters, GetErrorCommand errorRequest);
     }
 }

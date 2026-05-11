@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Ressources.Annotation.RestrictionLentgh;
 using Ressources.Annotation.ValidationMessage;
 
-namespace Services.Models.Req
+namespace Presentation.Models.Req
 {
     //lors de la création d'une application le champ Title ne doit pas être null / createdAt sinitialise tout seul
     public class CreateApplicationRequest

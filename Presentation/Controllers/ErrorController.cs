@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 
 using Persist.Entities.BaseTable;
 
+using Presentation.Models.Req;
+
 using Services;
 using Services.Models.Common;
 using Services.Models.Req;

@@ -4,9 +4,9 @@ using Ressources.Annotation.RestrictionLentgh;
 using Ressources.Annotation.ValidationMessage;
 using Ressources.DefaultValue.Event;
 
-namespace Services.Models.Req
+namespace Services.Models.Command
 {
-    public class CreateErrorRequest
+    public class CreateErrorCommand
     {
         [Required(ErrorMessage = ValidationMessagesGeneric.DescriptionRequired)]
         [StringLength((int)FieldRestrictionLentgh.FieldTooLongBy500,
@@ -38,7 +38,7 @@ namespace Services.Models.Req
         public string StatusId { get; set; } = ErrorStatusConstantId.UnresolvedStatus;
     }
 
-    public class UpdateErroRequest
+    public class UpdateErroCommand
     {
         [Required(ErrorMessage = ValidationMessagesGeneric.IdRequired)]
         [StringLength((int)FieldRestrictionLentgh.FieldTooLongBy500,
@@ -75,7 +75,7 @@ namespace Services.Models.Req
 
         public DateTime CreatedAt { get; set; }
     }
-    public class GetErrorRequest
+    public class GetErrorCommand
     {
         [Required(ErrorMessage = ValidationMessagesGeneric.IdRequired)]
         [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy36,

@@ -12,8 +12,8 @@ namespace Services
         public PaginationResponse<ErrorForCustommerStatsResponse> GetErrorsForClientStats(
             QueryParameters queryParameters);
 
-        Task<CustomerEntity> CreateCustomer(CreateCustomerRequest createCustomerRequest);
-        Task<Boolean> UpdateCustomer(UpdateCustomerRequest UpdateApplicationRequest);
-        Task<Boolean> DeleteApplication(string id);
+        Task<CustomerEntity> CreateCustomer(CreateCustomerCommand createCustomerRequest);
+        Task<Boolean> UpdateCustomer(UpdateCustomerCommand UpdateCustomerCommand);
+        Task<Boolean> DeleteCustomer(string id);
     }
 }

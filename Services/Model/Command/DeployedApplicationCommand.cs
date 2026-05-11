@@ -3,9 +3,9 @@ using System.ComponentModel.DataAnnotations;
 using Ressources.Annotation.RestrictionLentgh;
 using Ressources.Annotation.ValidationMessage;
 
-namespace Services.Models.Req
+namespace Services.Models.Command
 {
-    public class CreateApplicationDeployedRequest
+    public class CreateApplicationDeployedCommand
     {
         [Required(ErrorMessage = ValidationMessagesGeneric.IdRequired)]
         [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy36,
@@ -29,7 +29,7 @@ namespace Services.Models.Req
         public bool IsActive { get; set; } = false;
     }
 
-    public class UpdateApplicationDeployedRequest
+    public class UpdateApplicationDeployedCommand
     {
         [Required(ErrorMessage = ValidationMessagesGeneric.IdRequired)]
         [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy36,
@@ -53,7 +53,7 @@ namespace Services.Models.Req
         public bool IsActive { get; set; } = false;
     }
 
-    public class DeleteApplicationDeployedRequest
+    public class DeleteApplicationDeployedCommand
     {
         [Required(ErrorMessage = ValidationMessagesGeneric.IdRequired)]
         [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy36,
@@ -66,3 +66,6 @@ namespace Services.Models.Req
         public required string ServerId { get; set; }
     }
 }
+
+
+

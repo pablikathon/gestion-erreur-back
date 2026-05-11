@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Ressources.Annotation.RestrictionLentgh;
 using Ressources.Annotation.ValidationMessage;
 
-namespace Services.Models.Req
+namespace Presentation.Models.Req
 {
     public class CreateCustomerRequest
     {

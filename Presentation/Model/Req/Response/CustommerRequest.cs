@@ -2,7 +2,7 @@ using Persist.Entities;
 using Persist.Entities.Application;
 using Persist.Entities.BaseTable;
 
-namespace Services.Models.Req
+namespace Presentation.Models.Req
 {
     public class ErrorForCustommerStatsResponse
     {

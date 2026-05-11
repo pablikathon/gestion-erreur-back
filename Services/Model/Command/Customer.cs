@@ -3,9 +3,46 @@ using System.ComponentModel.DataAnnotations;
 using Ressources.Annotation.RestrictionLentgh;
 using Ressources.Annotation.ValidationMessage;
 
-namespace Services.Models.Req
+namespace Services.Models.Command
 {
-    public class CreateCustomerHasLicenceToRequest
+    public class CreateCustomerCommand
+    {
+        [Required(ErrorMessage = ValidationMessagesGeneric.TitleRequired)]
+        [StringLength((int)FieldRestrictionLentgh.FieldTooLongBy100)]
+        public required string Title { get; set; }
+
+        [Required(ErrorMessage = ValidationMessagesCustommer.FiscalIdentificationRequired)]
+        [StringLength((int)IdRestrictionLentgh.SiretTooLongBy14,
+            ErrorMessage = IdentifierRestrictionLentghMessage.SiretTooLongBy14)]
+        public required string FiscalIdentification { get; set; }
+
+        [Required(ErrorMessage = ValidationMessagesCustommer.LastInteractionRequired)]
+        public required DateTime LastInteraction { get; set; }
+    }
+
+    public class UpdateCustomerCommand
+    {
+        [Required]
+        [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy36,
+            ErrorMessage = IdentifierRestrictionLentghMessage.IdentifierTooLongBy36)]
+        public required string Id { get; set; }
+
+        [Required]
+        [StringLength((int)FieldRestrictionLentgh.FieldTooLongBy100,
+            ErrorMessage = FieldRestrictionLentghMessage.FieldTooLongBy100)]
+        public required string Title { get; set; }
+
+        [Required]
+        [StringLength((int)IdRestrictionLentgh.SiretTooLongBy14,
+            ErrorMessage = IdentifierRestrictionLentghMessage.SiretTooLongBy14)]
+        public required string FiscalIdentification { get; set; }
+
+        [Required(ErrorMessage = ValidationMessagesCustommer.LastInteractionRequired)]
+        public required DateTime LastInteraction { get; set; }
+    }
+
+
+    public class CreateCustomerHasLicenceToCommand
     {
         [Required(ErrorMessage = ValidationMessagesGeneric.IdRequired)]
         [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy36,
@@ -24,7 +61,7 @@ namespace Services.Models.Req
         public bool IsActive { get; set; } = false;
     }
 
-    public class UpdateCustomerHasLicenceRequest
+    public class UpdateCustomerHasLicenceCommand
     {
         [Required(ErrorMessage = ValidationMessagesGeneric.IdRequired)]
         [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy36,
@@ -43,7 +80,7 @@ namespace Services.Models.Req
         public bool IsActive { get; set; } = false;
     }
 
-    public class DeleteCustomerHasLicenceRequest
+    public class DeleteCustomerHasLicenceCommand
     {
         [Required(ErrorMessage = ValidationMessagesGeneric.IdRequired)]
         [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy36,
@@ -55,4 +92,6 @@ namespace Services.Models.Req
             ErrorMessage = IdentifierRestrictionLentghMessage.IdentifierTooLongBy36)]
         public required string ServerId { get; set; }
     }
+
+
 }

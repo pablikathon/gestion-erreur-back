@@ -1,3 +1,5 @@
+using AutoMapper;
+
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.OpenApi.Models;
 
@@ -72,4 +74,7 @@ internal static class ServiceCollectionExtensions
         });
         return services;
     }
+
+
+
 }
