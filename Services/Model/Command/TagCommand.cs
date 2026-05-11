@@ -20,7 +20,7 @@ namespace Services.Models.Command
         ErrorMessage = FieldRestrictionLentghMessage.FieldTooLongBy100)]
         public required string Title { get; set; }
     }
-    public class CreateTagCategoryRequest
+    public class CreateTagCategoryCommand
     {
         [Required(ErrorMessage = ValidationMessagesGeneric.TitleRequired)]
         [StringLength((int)FieldRestrictionLentgh.FieldTooLongBy100,
