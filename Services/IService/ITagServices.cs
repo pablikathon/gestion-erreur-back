@@ -1,7 +1,7 @@
 using Persist.Entities.Catalyst;
 
+using Services.Models.Command;
 using Services.Models.Common;
-using Services.Models.Req;
 
 
 namespace Services
@@ -16,7 +16,7 @@ namespace Services
         Task<bool> DeleteTagCategories(string id);
 
         Task<bool> UpdateTag(UpdateTagCommand tag, string id);
-        Task<bool> UpdateTagCategory(UpdateTagCategoryRequest category, string id);
+        Task<bool> UpdateTagCategory(UpdateTagCategoryCommand category, string id);
 
         Task<String> AanalyzText(string Query);
 

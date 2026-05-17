@@ -1,12 +1,16 @@
 using System.Text.Json;
 
+using AutoMapper;
+
 using Microsoft.AspNetCore.Mvc;
 
 using Persist.Entities.BaseTable;
 
+using Presentation.Models.Req;
+
 using Services;
+using Services.Models.Command;
 using Services.Models.Common;
-using Services.Models.Req;
 
 namespace Presentation.Controllers;
 
@@ -15,10 +19,12 @@ namespace Presentation.Controllers;
 public class ServerController : Controller
 {
     private readonly IServerService _serverService;
+    private readonly IMapper _mapper;
 
-    public ServerController(IServerService serverService)
+    public ServerController(IServerService serverService, IMapper mapper)
     {
         _serverService = serverService;
+        _mapper = mapper;
     }
 
     [HttpGet]
@@ -46,8 +52,9 @@ public class ServerController : Controller
     {
         try
         {
+            var createServerCommand = _mapper.Map<CreateServerCommand>(createServerRequest);
             return Created("/application",
-                JsonSerializer.Serialize(await _serverService.CreateServer(createServerRequest)));
+                JsonSerializer.Serialize(await _serverService.CreateServer(createServerCommand)));
         }
         catch (System.Exception e)
         {
@@ -60,7 +67,8 @@ public class ServerController : Controller
     {
         try
         {
-            var data = await _serverService.UpdateServer(updateServerRequest);
+            var updateServerCommand = _mapper.Map<UpdateServerCommand>(updateServerRequest);
+            var data = await _serverService.UpdateServer(updateServerCommand);
             if (data)
             {
                 return NoContent();

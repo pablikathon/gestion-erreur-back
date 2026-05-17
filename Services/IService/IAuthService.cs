@@ -1,4 +1,4 @@
-using Services.Models.Auth;
+using Services.Models.Command;
 namespace Services
 {
     public interface IAuthService

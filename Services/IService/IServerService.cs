@@ -1,9 +1,8 @@
 using Persist.Entities.BaseTable;
 
-using Presentation.Models.Req;
 
+using Services.Models.Command;
 using Services.Models.Common;
-using Services.Models.Req;
 
 namespace Services
 {

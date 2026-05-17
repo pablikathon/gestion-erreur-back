@@ -17,7 +17,7 @@ public class MappingProfile : Profile
         CreateMap<CreateTagRequest, CreateTagCommand>();
         CreateMap<UpdateTagRequest, UpdateTagCommand>();
         CreateMap<CreateTagCategoryRequest, CreateTagCategoryCommand>();
-
+        CreateMap<UpdateTagCategoryRequest, UpdateTagCategoryCommand>();
 
     }
 }
