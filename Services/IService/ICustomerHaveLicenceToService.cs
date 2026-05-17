@@ -9,7 +9,7 @@ namespace Services
     {
         PaginationResponse<CustomerHaveLicenceToApplicationEntity> GetAll(GenericQueryParameter queryParameters);
 
-        Task<CreateCustomerHasLicenceToCommand> AddAsync(
+        Task<CustomerHaveLicenceToApplicationEntity> AddAsync(
             CreateCustomerHasLicenceToCommand createCustomerHasLicenceToRequest);
 
         Task<Boolean> UpdateAsync(UpdateCustomerHasLicenceCommand updateCustomerHasLicenceToCommand);

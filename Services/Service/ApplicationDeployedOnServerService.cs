@@ -5,8 +5,8 @@ using Persist.Entities.JoiningTable;
 using Repositories;
 
 using Services.Extension;
+using Services.Models.Command;
 using Services.Models.Common;
-using Services.Models.Req;
 
 namespace Services
 {
@@ -28,7 +28,7 @@ namespace Services
         }
 
         public Task<ApplicationDeployedOnServerEntity> DeployedApplicationOnServer(
-            CreateApplicationDeployedRequest createApplicationDeployedRequest)
+            CreateApplicationDeployedCommand createApplicationDeployedRequest)
         {
             return _applicationDeployedRepository.AddAsync(
                 _mapper.Map<ApplicationDeployedOnServerEntity>(createApplicationDeployedRequest));
@@ -47,7 +47,7 @@ namespace Services
         }
 
 
-        public Task<bool> UpdateDeployedApplicationDeployed(UpdateApplicationDeployedRequest updateApplicationDeployed)
+        public Task<bool> UpdateDeployedApplicationDeployed(UpdateApplicationDeployedCommand updateApplicationDeployed)
         {
             return _applicationDeployedRepository.UpdateAsync(
                 _mapper.Map<ApplicationDeployedOnServerEntity>(updateApplicationDeployed));

@@ -8,8 +8,8 @@ using Repositories;
 using Ressources.DefaultValue.Event;
 
 using Services.Extension;
+using Services.Models.Command;
 using Services.Models.Common;
-using Services.Models.Req;
 
 namespace Services
 {
@@ -44,20 +44,15 @@ namespace Services
         }
 
 
-        public async Task<CustomerEntity> CreateCustomer(CreateCustomerRequest createCustomerRequest)
+        public async Task<CustomerEntity> CreateCustomer(CreateCustomerCommand createCustomerRequest)
         {
             var CustomerEntity = _mapper.Map<CustomerEntity>(createCustomerRequest);
             return await _customerRepository.AddAsync(CustomerEntity);
         }
 
-        public async Task<Boolean> UpdateCustomer(UpdateCustomerRequest updateApplicationRequest)
+        public async Task<Boolean> UpdateCustomer(UpdateCustomerCommand updateApplicationRequest)
         {
             return await _customerRepository.UpdateAsync(_mapper.Map<CustomerEntity>(updateApplicationRequest));
-        }
-
-        public async Task<Boolean> DeleteApplication(string id)
-        {
-            return await _customerRepository.DeleteAsync(id);
         }
 
         public PaginationResponse<ErrorForCustommerStatsResponse> GetErrorsForClientStats(
@@ -89,7 +84,9 @@ namespace Services
                 queryParameters.Pagination.PageSize);
         }
 
-
-
+        public Task<bool> DeleteCustomer(string id)
+        {
+            return _customerRepository.DeleteAsync(id);
+        }
     }
 }

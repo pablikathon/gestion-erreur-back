@@ -7,8 +7,8 @@ using Persist.Entities.BaseTable;
 using Repositories;
 
 using Services.Extension;
+using Services.Models.Command;
 using Services.Models.Common;
-using Services.Models.Req;
 
 namespace Services
 {
@@ -40,7 +40,7 @@ namespace Services
                 queryParameters.Pagination.PageNumber, queryParameters.Pagination.PageSize);
         }
 
-        public async Task<ServerEntity> CreateServer(CreateServerRequest createServerRequest)
+        public async Task<ServerEntity> CreateServer(CreateServerCommand createServerRequest)
         {
             var validation = new ValidationContext(createServerRequest);
             var validationResults = new List<ValidationResult>();
@@ -53,7 +53,7 @@ namespace Services
             throw new ArgumentException("not valid object");
         }
 
-        public async Task<Boolean> UpdateServer(UpdateServerRequest updateServerRequest)
+        public async Task<Boolean> UpdateServer(UpdateServerCommand updateServerRequest)
         {
             return await _serverRepository.UpdateAsync(_mapper.Map<ServerEntity>(updateServerRequest));
         }

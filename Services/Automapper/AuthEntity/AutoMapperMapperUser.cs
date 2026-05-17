@@ -2,7 +2,7 @@ using AutoMapper;
 
 using Persist.Entities.Auth;
 
-using Services.Models.Auth;
+using Services.Models.Command;
 public partial class MappingProfile : Profile
 {
     public void MappingProfileUser()

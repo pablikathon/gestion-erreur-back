@@ -1,3 +1,5 @@
+using AutoMapper;
+
 using Microsoft.AspNetCore.Mvc;
 
 using Persist.Entities.BaseTable;
@@ -5,8 +7,8 @@ using Persist.Entities.BaseTable;
 using Presentation.Models.Req;
 
 using Services;
+using Services.Models.Command;
 using Services.Models.Common;
-using Services.Models.Req;
 
 namespace Presentation.Controllers;
 
@@ -15,10 +17,12 @@ namespace Presentation.Controllers;
 public class ErrorController : Controller
 {
     private readonly IErrorService _errorService;
+    private readonly IMapper _mapper;
 
-    public ErrorController(IErrorService errorService)
+    public ErrorController(IErrorService errorService, IMapper mapper)
     {
         this._errorService = errorService;
+        this._mapper = mapper;
     }
 
     [HttpPost]
@@ -26,7 +30,8 @@ public class ErrorController : Controller
     {
         try
         {
-            var data = await _errorService.AddAsync(createErrorRequest);
+            var createErrorCommand = _mapper.Map<CreateErrorCommand>(createErrorRequest);
+            var data = await _errorService.AddAsync(createErrorCommand);
             if (data)
             {
                 return Ok();
@@ -63,7 +68,8 @@ public class ErrorController : Controller
     {
         try
         {
-            return Ok(_errorService.UpdateErrors(updateErroRequest));
+            var updateErrorCommand = _mapper.Map<UpdateErroCommand>(updateErroRequest);
+            return Ok(_errorService.UpdateErrors(updateErrorCommand));
         }
         catch (System.Exception e)
         {
@@ -71,7 +77,7 @@ public class ErrorController : Controller
         }
     }
     [HttpGet("Customer/{CustomerId}")]
-    public ActionResult<PaginationResponse<ErrorForACustommerStatsResponse>> GetErrorForACustommerAgregate(string CustomerId,
+    public ActionResult<PaginationResponse<Services.Models.Command.ErrorForACustommerStatsResponse>> GetErrorForACustommerAgregate(string CustomerId,
     [FromQuery] QueryParameters queryParameters)
     {
         try
@@ -90,12 +96,13 @@ public class ErrorController : Controller
         }
     }
     [HttpGet("Customer")]
-    public ActionResult<PaginationResponse<ErrorEntity>> GetErrorForACustommer([FromQuery] GetErrorRequest updateErroRequest,
+    public ActionResult<PaginationResponse<ErrorEntity>> GetErrorForACustommer([FromQuery] GetErrorRequest GetErrorRequest,
     [FromQuery] QueryParameters queryParameters)
     {
         try
         {
-            var data = _errorService.GetErrorsForACustommer(queryParameters, updateErroRequest);
+            var getErrorCommand = _mapper.Map<GetErrorCommand>(GetErrorRequest);
+            var data = _errorService.GetErrorsForACustommer(queryParameters, getErrorCommand);
             if (data.TotalItems > 0)
             {
                 return Ok(data);

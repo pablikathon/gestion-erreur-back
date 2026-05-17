@@ -10,7 +10,7 @@ using Repositories;
 
 using Services.Extension;
 using Services.Models.Common;
-using Services.Models.Req;
+using Services.Models.Command;
 
 namespace Services
 {
@@ -42,7 +42,7 @@ namespace Services
                 queryParameters.Pagination.PageNumber, queryParameters.Pagination.PageSize);
         }
 
-        public async Task<ApplicationEntity> CreateApplication(CreateApplicationRequest createApplication)
+        public async Task<ApplicationEntity> CreateApplication(CreateApplicationCommand createApplication)
         {
             var validation = new ValidationContext(createApplication);
             var validationResults = new List<ValidationResult>();
@@ -55,7 +55,7 @@ namespace Services
             throw new ArgumentException(TypoMessage.ObjectNotValid);
         }
 
-        public async Task<Boolean> UpdateApplication(UpdateApplicationRequest updateApplication)
+        public async Task<Boolean> UpdateApplication(UpdateApplicationCommand updateApplication)
         {
             return await _applicationRepository.UpdateAsync(_mapper.Map<ApplicationEntity>(updateApplication));
         }

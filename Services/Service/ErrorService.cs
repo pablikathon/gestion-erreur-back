@@ -8,8 +8,8 @@ using Persist.Entities.BaseTable;
 using Repositories;
 
 using Services.Extension;
+using Services.Models.Command;
 using Services.Models.Common;
-using Services.Models.Req;
 
 namespace Services
 {
@@ -26,7 +26,7 @@ namespace Services
             _context = context;
         }
 
-        public async Task<bool> AddAsync(CreateErrorRequest errorRequest)
+        public async Task<bool> AddAsync(CreateErrorCommand errorRequest)
         {
             return await _errorRepository.AddAsync(_mapper.Map<ErrorEntity>(errorRequest));
         }
@@ -41,7 +41,7 @@ namespace Services
         /// </summary>
         /// <param name="errorRequest"></param>
         /// <returns>number of row affected</returns>
-        public int UpdateErrors(UpdateErroRequest errorRequest)
+        public int UpdateErrors(UpdateErroCommand errorRequest)
         {
             var query = _errorRepository.GetAllAsync();
             return query.Where(
@@ -106,7 +106,7 @@ namespace Services
                 queryParameters.Pagination.PageSize);
         }
         public PaginationResponse<ErrorEntity> GetErrorsForACustommer(
-    QueryParameters queryParameters, GetErrorRequest errorRequest)
+        QueryParameters queryParameters, GetErrorCommand errorRequest)
         {
             var query =
              _context.Error.Where(

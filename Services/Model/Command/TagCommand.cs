@@ -39,26 +39,4 @@ namespace Services.Models.Command
         ErrorMessage = FieldRestrictionLentghMessage.FieldTooLongBy100)]
         public required string Title { get; set; }
     }
-    public class CreateTagCategoryCommand
-    {
-        [Required(ErrorMessage = ValidationMessagesGeneric.IdRequired)]
-        [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy36,
-        ErrorMessage = IdentifierRestrictionLentghMessage.IdentifierTooLongBy36)]
-        public required string IdTag { get; set; }
-        [Required(ErrorMessage = ValidationMessagesGeneric.IdRequired)]
-        [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy36,
-        ErrorMessage = IdentifierRestrictionLentghMessage.IdentifierTooLongBy36)]
-        public required string IdTagCategory { get; set; }
-    }
-    public class UpdateTagCategoryCommand
-    {
-        [Required(ErrorMessage = ValidationMessagesGeneric.IdRequired)]
-        [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy36,
-        ErrorMessage = IdentifierRestrictionLentghMessage.IdentifierTooLongBy36)]
-        public required string IdTag { get; set; }
-        [Required(ErrorMessage = ValidationMessagesGeneric.IdRequired)]
-        [StringLength((int)IdRestrictionLentgh.IdentifierTooLongBy36,
-        ErrorMessage = IdentifierRestrictionLentghMessage.IdentifierTooLongBy36)]
-        public required string IdTagCategory { get; set; }
-    }
 }

@@ -1,5 +1,7 @@
 using System.Text.Json;
 
+using AutoMapper;
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,6 +10,7 @@ using Persist.Entities.Application;
 using Presentation.Models.Req;
 
 using Services;
+using Services.Models.Command;
 using Services.Models.Common;
 
 namespace Presentation.Controllers;
@@ -18,10 +21,12 @@ namespace Presentation.Controllers;
 public class ApplicationController : Controller
 {
     private readonly IApplicationService _applicationService;
+    private readonly IMapper _mapper;
 
-    public ApplicationController(IApplicationService applicationService)
+    public ApplicationController(IApplicationService applicationService, IMapper mapper)
     {
         this._applicationService = applicationService;
+        this._mapper = mapper;
     }
 
     [HttpGet]
@@ -30,6 +35,7 @@ public class ApplicationController : Controller
     {
         try
         {
+
             var data = _applicationService.GetApplications(queryParameters);
             if (data.TotalItems > 0)
             {
@@ -50,8 +56,9 @@ public class ApplicationController : Controller
     {
         try
         {
+            var application = _mapper.Map<CreateApplicationCommand>(applicationRequest);
             return Created("/Application",
-                JsonSerializer.Serialize(await _applicationService.CreateApplication(applicationRequest)));
+                JsonSerializer.Serialize(await _applicationService.CreateApplication(application)));
         }
         catch (System.Exception e)
         {
@@ -65,7 +72,9 @@ public class ApplicationController : Controller
     {
         try
         {
-            var data = await _applicationService.UpdateApplication(applicationRequest);
+            var updateApplicationCommand = _mapper.Map<UpdateApplicationCommand>(applicationRequest);
+
+            var data = await _applicationService.UpdateApplication(updateApplicationCommand);
             if (data)
             {
                 return NoContent();

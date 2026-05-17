@@ -8,7 +8,7 @@ using Persist.Entities.Auth;
 
 using Repositories;
 
-using Services.Models.Auth;
+using Services.Models.Command;
 
 namespace Services
 {

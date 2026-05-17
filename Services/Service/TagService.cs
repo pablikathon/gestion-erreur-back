@@ -5,8 +5,8 @@ using Persist.Entities.Catalyst;
 using Repositories;
 
 using Services.Extension;
+using Services.Models.Command;
 using Services.Models.Common;
-using Services.Models.Req;
 
 namespace Services
 {
@@ -27,12 +27,12 @@ namespace Services
             throw new NotImplementedException();
         }
         //todo move into repository
-        public async Task<bool> CreateTag(CreateTagRequest Tag)
+        public async Task<bool> CreateTag(CreateTagCommand Tag)
         {
             return await _repository.CreateTag(_mapper.Map<TagEntity>(Tag));
         }
 
-        public async Task<bool> CreateTagCategory(CreateTagCategoryRequest category)
+        public async Task<bool> CreateTagCategory(CreateTagCategoryCommand category)
         {
             return await _repository.CreateTagCategory(_mapper.Map<TagCategoryEntity>(category));
         }
@@ -81,12 +81,12 @@ namespace Services
                 queryParameters.Pagination.PageNumber, queryParameters.Pagination.PageSize);
         }
 
-        public Task<bool> UpdateTag(UpdateTagRequest tag, string id)
+        public Task<bool> UpdateTag(UpdateTagCommand tag, string id)
         {
             return _repository.UpdateTag(_mapper.Map<TagEntity>(tag), id);
         }
 
-        public Task<bool> UpdateTagCategory(UpdateTagCategoryRequest category, string id)
+        public Task<bool> UpdateTagCategory(UpdateTagCategoryCommand category, string id)
         {
             return _repository.UpdateTagCategory(_mapper.Map<TagCategoryEntity>(category), id);
         }

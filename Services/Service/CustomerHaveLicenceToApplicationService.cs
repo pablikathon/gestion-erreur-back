@@ -5,8 +5,8 @@ using Persist.Entities;
 using Repositories;
 
 using Services.Extension;
+using Services.Models.Command;
 using Services.Models.Common;
-using Services.Models.Req;
 
 namespace Services
 {
@@ -28,7 +28,7 @@ namespace Services
         }
 
         public Task<CustomerHaveLicenceToApplicationEntity> AddAsync(
-            CreateCustomerHasLicenceToRequest createCustomerHasLicenceToRequest)
+           CreateCustomerHasLicenceToCommand createCustomerHasLicenceToRequest)
         {
             return _customerHaveLicenceToApplicationRepository.AddAsync(
                 _mapper.Map<CustomerHaveLicenceToApplicationEntity>(createCustomerHasLicenceToRequest));
@@ -46,10 +46,12 @@ namespace Services
         }
 
 
-        public Task<bool> UpdateAsync(UpdateCustomerHasLicenceRequest updateCustomerHasLicenceRequest)
+        public Task<bool> UpdateAsync(UpdateCustomerHasLicenceCommand updateCustomerHasLicenceRequest)
         {
             return _customerHaveLicenceToApplicationRepository.UpdateAsync(
                 _mapper.Map<CustomerHaveLicenceToApplicationEntity>(updateCustomerHasLicenceRequest));
         }
+
+
     }
 }
