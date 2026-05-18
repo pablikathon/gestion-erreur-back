@@ -1,5 +1,7 @@
 using System.Text.Json;
 
+using AutoMapper;
+
 using Microsoft.AspNetCore.Mvc;
 
 using Persist.Entities.JoiningTable;
@@ -7,6 +9,7 @@ using Persist.Entities.JoiningTable;
 using Presentation.Models.Req;
 
 using Services;
+using Services.Models.Command;
 using Services.Models.Common;
 
 namespace Presentation.Controllers;
@@ -16,10 +19,12 @@ namespace Presentation.Controllers;
 public class DeployedApplicationController : Controller
 {
     private readonly IApplicationDeployedOnServerService _applicationDeployedOnServerService;
+    private readonly IMapper _mapper;
 
-    public DeployedApplicationController(IApplicationDeployedOnServerService ApplicationDeployedOnServerService)
+    public DeployedApplicationController(IApplicationDeployedOnServerService ApplicationDeployedOnServerService, IMapper mapper)
     {
         this._applicationDeployedOnServerService = ApplicationDeployedOnServerService;
+        this._mapper = mapper;
     }
 
     [HttpGet]
@@ -48,10 +53,11 @@ public class DeployedApplicationController : Controller
     {
         try
         {
+            var createApplicationDeployedCommand = _mapper.Map<CreateApplicationDeployedCommand>(createApplicationDeployedRequest);
             return Created("/deployedServer",
                 JsonSerializer.Serialize(
                     await _applicationDeployedOnServerService.DeployedApplicationOnServer(
-                        createApplicationDeployedRequest)));
+                        createApplicationDeployedCommand)));
         }
         catch (System.Exception e)
         {
@@ -66,9 +72,10 @@ public class DeployedApplicationController : Controller
     {
         try
         {
+            var updateApplicationDeployedCommand = _mapper.Map<UpdateApplicationDeployedCommand>(updateApplicationDeployedRequest);
             var data =
                 await _applicationDeployedOnServerService.UpdateDeployedApplicationDeployed(
-                    updateApplicationDeployedRequest);
+                    updateApplicationDeployedCommand);
             if (data)
             {
                 return NoContent();

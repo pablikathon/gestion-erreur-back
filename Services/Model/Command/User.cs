@@ -23,7 +23,7 @@ public abstract class IGrantConnection
     public abstract bool Validate();
 }
 
-public class UserSignInWithPassword : IGrantConnection
+public class UserSignInWithPasswordCommand : IGrantConnection
 {
     [Required(ErrorMessage = ValidationMessagesPassword.PasswordRequired)]
     [StringLength(int.MaxValue, MinimumLength = (int)UserRestrictionMessageEnum.PasswordTooShortBy12, ErrorMessage = ValidationMessagesPassword.PasswordTooShortBy12)]
@@ -34,7 +34,7 @@ public class UserSignInWithPassword : IGrantConnection
         return !string.IsNullOrWhiteSpace(Password);
     }
 }
-public class UserSignInWithRefreshToken : IGrantConnection
+public class UserSignInWithRefreshTokenCommand : IGrantConnection
 {
     public required string RefreshToken { get; set; }
     public override bool Validate()
@@ -43,7 +43,7 @@ public class UserSignInWithRefreshToken : IGrantConnection
     }
 }
 
-public class UserSignUp
+public class UserSignUpCommand
 {
     [Required(ErrorMessage = ValidationMessagesUserField.NameIsRequired)]
     public required string FirstName { get; set; }
@@ -59,7 +59,7 @@ public class UserSignUp
     public required string Password { get; set; }
 }
 
-public class Token
+public class TokenCommand
 {
     public required string AccessToken { get; set; }
     public required string RefreshToken { get; set; }

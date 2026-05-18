@@ -105,7 +105,7 @@ namespace Services.Models.Command
 
         public DateTime CreatedAt { get; set; }
     }
-    public class ErrorForCustommerStatsResponse
+    public class ErrorForCustommerStatsResponseCommand
     {
         public required string custommerId { get; set; }
         public required string CustommerTitle { get; set; }

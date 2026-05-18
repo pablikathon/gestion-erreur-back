@@ -13,14 +13,14 @@ public class GrantConnectionConverter : JsonConverter<IGrantConnection>
         {
             var rootElement = jsonDoc.RootElement;
 
-            if (rootElement.TryGetProperty(nameof(UserSignInWithPassword.Password), out _))
+            if (rootElement.TryGetProperty(nameof(UserSignInWithPasswordCommand.Password), out _))
             {
-                var userSignInWithPassword = JsonSerializer.Deserialize<UserSignInWithPassword>(rootElement.GetRawText(), options);
+                var userSignInWithPassword = JsonSerializer.Deserialize<UserSignInWithPasswordCommand>(rootElement.GetRawText(), options);
                 return userSignInWithPassword ?? throw new DeserializationException(SerializationMessage.DeserializationSignPasswordNull);
             }
-            else if (rootElement.TryGetProperty(nameof(UserSignInWithRefreshToken.RefreshToken), out _))
+            else if (rootElement.TryGetProperty(nameof(UserSignInWithRefreshTokenCommand.RefreshToken), out _))
             {
-                var UserSignInWithRefreshToken = JsonSerializer.Deserialize<UserSignInWithRefreshToken>(rootElement.GetRawText(), options);
+                var UserSignInWithRefreshToken = JsonSerializer.Deserialize<UserSignInWithRefreshTokenCommand>(rootElement.GetRawText(), options);
                 return UserSignInWithRefreshToken ?? throw new DeserializationException(SerializationMessage.DeserializationSignRefreshTokenNull);
             }
             else

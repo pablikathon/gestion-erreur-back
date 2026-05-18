@@ -1,14 +1,12 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-using Microsoft.IdentityModel.Tokens;
-
 using Ressources.Annotation.RestrictionLentgh;
 using Ressources.Annotation.ValidationMessage;
 
 namespace Services.Models.Auth;
 
-public class GrantRequest
+public class GrantTypeRequest
 {
     public required string GrantType { get; set; }
 
@@ -25,7 +23,7 @@ public abstract class IGrantConnection
     public abstract bool Validate();
 }
 
-public class UserSignInWithPassword : IGrantConnection
+public class UserSignInWithPasswordRequest : IGrantConnection
 {
     [Required(ErrorMessage = ValidationMessagesPassword.PasswordRequired)]
     [StringLength(int.MaxValue, MinimumLength = (int)UserRestrictionMessageEnum.PasswordTooShortBy12, ErrorMessage = ValidationMessagesPassword.PasswordTooShortBy12)]
@@ -36,7 +34,7 @@ public class UserSignInWithPassword : IGrantConnection
         return !string.IsNullOrWhiteSpace(Password);
     }
 }
-public class UserSignInWithRefreshToken : IGrantConnection
+public class UserSignInWithRefreshTokenRequest : IGrantConnection
 {
     public required string RefreshToken { get; set; }
     public override bool Validate()

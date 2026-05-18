@@ -10,6 +10,7 @@ using Repositories;
 
 using Services.Models.Command;
 
+
 namespace Services
 {
     public class AuthService : IAuthService
@@ -25,7 +26,7 @@ namespace Services
             _securityService = securityService;
             _userRepository = userRepository;
         }
-        public async Task<bool> SignUp(UserSignUp user)
+        public async Task<bool> SignUp(UserSignUpCommand user)
         {
             if (await _userRepository.IsUserExist(user.Email))
             {
@@ -42,7 +43,7 @@ namespace Services
             };
             return await _userRepository.CreateUser(u);
         }
-        public async Task<Token> UserSignInWithPassword(UserSignInWithPassword user)
+        public async Task<TokenCommand> UserSignInWithPassword(UserSignInWithPasswordCommand user)
         {
             //En attendant d'implémenter la confirmation d'email
             var u = await _userRepository.GetUserByEmail(user.Email) ?? throw new Exception(AuthMessage.NoVerifiedUserFound);
@@ -54,7 +55,7 @@ namespace Services
                     var RefreshToken = _securityService.GenerateRefreshToken();
                     if (await _authRepository.AddTokenToUser(u, new RefreshTokenEntity() { Id = Guid.NewGuid().ToString(), RefreshToken = _securityService.Hash(RefreshToken), CreatedAt = DateTime.Now }))
                     {
-                        return new Token { AccessToken = AccessToken, RefreshToken = RefreshToken };
+                        return new TokenCommand { AccessToken = AccessToken, RefreshToken = RefreshToken };
                     }
                     throw new Exception(AuthMessage.ErrorUpdateUserToken);
                 }
@@ -67,7 +68,7 @@ namespace Services
             throw new Exception(AuthMessage.WrongPassword);
         }
 
-        public async Task<Token> UserSignInWithRefreshToken(UserSignInWithRefreshToken user)
+        public async Task<TokenCommand> UserSignInWithRefreshToken(UserSignInWithRefreshTokenCommand user)
         {
             //En attendant d'implémenter la confirmation d'email
             var u = await _userRepository.GetUserByToken(user.RefreshToken) ?? throw new Exception(AuthMessage.NoVerifiedUserFound);
@@ -79,7 +80,7 @@ namespace Services
                     var RefreshToken = _securityService.GenerateRefreshToken();
                     if (await _authRepository.AddTokenToUser(u, new RefreshTokenEntity() { Id = Guid.NewGuid().ToString(), RefreshToken = _securityService.Hash(RefreshToken), CreatedAt = DateTime.Now }))
                     {
-                        return new Token { AccessToken = AccessToken, RefreshToken = RefreshToken };
+                        return new TokenCommand { AccessToken = AccessToken, RefreshToken = RefreshToken };
                     }
                     throw new Exception(AuthMessage.ErrorUpdateUserToken);
                 }

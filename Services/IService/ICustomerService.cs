@@ -9,7 +9,7 @@ namespace Services
     {
         PaginationResponse<CustomerEntity> GetCustomers(QueryParameters queryParameters);
 
-        public PaginationResponse<ErrorForCustommerStatsResponse> GetErrorsForClientStats(
+        public PaginationResponse<ErrorForCustommerStatsResponseCommand> GetErrorsForClientStats(
             QueryParameters queryParameters);
 
         Task<CustomerEntity> CreateCustomer(CreateCustomerCommand createCustomerRequest);

@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 using Persist.Entities.Auth;
 
 using Services.Models.Auth;
+using Services.Models.Command;
 
 using Xunit;
 
@@ -26,7 +27,7 @@ public class UserSignAutoMapTest
     public void SignUp_should_generate_hasPassword()
     {
         // Arrange
-        var UserSignUp = new UserSignUp()
+        var UserSignUp = new UserSignUpCommand()
         {
             FirstName = "Edouard",
             LastName = "Philipe",

@@ -1,12 +1,16 @@
 using System.Text.Json;
 
+using AutoMapper;
+
 using Microsoft.AspNetCore.Mvc;
 
 using Persist.Entities;
 
+using Presentation.Models.Req;
+
 using Services;
+using Services.Models.Command;
 using Services.Models.Common;
-using Services.Models.Req;
 
 namespace Presentation.Controllers;
 
@@ -15,10 +19,12 @@ namespace Presentation.Controllers;
 public class CustomerLicenceController : Controller
 {
     private readonly ICustomerHaveLicenceToService _customerHaveLicenceTo;
+    private readonly IMapper _mapper;
 
-    public CustomerLicenceController(ICustomerHaveLicenceToService CustomerHaveLicenceToService)
+    public CustomerLicenceController(ICustomerHaveLicenceToService CustomerHaveLicenceToService, IMapper mapper)
     {
         this._customerHaveLicenceTo = CustomerHaveLicenceToService;
+        this._mapper = mapper;
     }
 
     [HttpGet]
@@ -47,8 +53,9 @@ public class CustomerLicenceController : Controller
     {
         try
         {
+            var createCustomerHaveLicenceToCommand = _mapper.Map<CreateCustomerHasLicenceToCommand>(createCustomerHasLicenceToRequest);
             return Created("/deployedServer",
-                JsonSerializer.Serialize(await _customerHaveLicenceTo.AddAsync(createCustomerHasLicenceToRequest)));
+                JsonSerializer.Serialize(await _customerHaveLicenceTo.AddAsync(createCustomerHaveLicenceToCommand)));
         }
         catch (System.Exception e)
         {
@@ -62,7 +69,8 @@ public class CustomerLicenceController : Controller
     {
         try
         {
-            var data = await _customerHaveLicenceTo.UpdateAsync(updateApplicationDeployedRequest);
+            var updateCustomerHaveLicenceToCommand = _mapper.Map<UpdateCustomerHasLicenceCommand>(updateApplicationDeployedRequest);
+            var data = await _customerHaveLicenceTo.UpdateAsync(updateCustomerHaveLicenceToCommand);
             if (data)
             {
                 return NoContent();

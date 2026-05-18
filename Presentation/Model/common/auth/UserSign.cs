@@ -3,9 +3,9 @@ using System.ComponentModel.DataAnnotations;
 using Ressources.Annotation.RestrictionLentgh;
 using Ressources.Annotation.ValidationMessage;
 
-namespace Services.Models.Auth;
+namespace Presentation.Models.Auth;
 
-public class UserSignUp
+public class UserSignUpRequest
 {
     [Required(ErrorMessage = ValidationMessagesUserField.NameIsRequired)]
     public required string FirstName { get; set; }

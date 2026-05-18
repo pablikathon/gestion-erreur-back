@@ -55,10 +55,10 @@ namespace Services
             return await _customerRepository.UpdateAsync(_mapper.Map<CustomerEntity>(updateApplicationRequest));
         }
 
-        public PaginationResponse<ErrorForCustommerStatsResponse> GetErrorsForClientStats(
+        public PaginationResponse<ErrorForCustommerStatsResponseCommand> GetErrorsForClientStats(
             QueryParameters queryParameters)
         {
-            var query = _context.Customer.Select(custommer => new ErrorForCustommerStatsResponse
+            var query = _context.Customer.Select(custommer => new ErrorForCustommerStatsResponseCommand
             {
                 custommerId = custommer.Id,
                 CustommerTitle = custommer.Title,
@@ -79,7 +79,7 @@ namespace Services
             query = query.Pagination(queryParameters.Pagination);
             var result = query.ToList();
 
-            return new PaginationResponse<ErrorForCustommerStatsResponse>(result, result.Count,
+            return new PaginationResponse<ErrorForCustommerStatsResponseCommand>(result, result.Count,
                 queryParameters.Pagination.PageNumber,
                 queryParameters.Pagination.PageSize);
         }

@@ -1,12 +1,16 @@
 using System.Text.Json;
 
+using AutoMapper;
+
 using Microsoft.AspNetCore.Mvc;
 
 using Persist.Entities.BaseTable;
 
+using Presentation.Models.Req;
+
 using Services;
+using Services.Models.Command;
 using Services.Models.Common;
-using Services.Models.Req;
 
 namespace Presentation.Controllers;
 
@@ -15,10 +19,12 @@ namespace Presentation.Controllers;
 public class CustomerController : Controller
 {
     private readonly ICustomerService _customerService;
+    private readonly IMapper _mapper;
 
-    public CustomerController(ICustomerService customerService)
+    public CustomerController(ICustomerService customerService, IMapper mapper)
     {
         _customerService = customerService;
+        _mapper = mapper;
     }
 
     [HttpGet]
@@ -63,8 +69,9 @@ public class CustomerController : Controller
     {
         try
         {
+            var createCustomerCommand = _mapper.Map<CreateCustomerCommand>(customerRequest);
             return Created("/Customer",
-                JsonSerializer.Serialize(await _customerService.CreateCustomer(customerRequest)));
+                JsonSerializer.Serialize(await _customerService.CreateCustomer(createCustomerCommand)));
         }
         catch (System.Exception e)
         {
@@ -77,7 +84,8 @@ public class CustomerController : Controller
     {
         try
         {
-            var data = await _customerService.UpdateCustomer(customerRequest);
+            var updateCustomerCommand = _mapper.Map<UpdateCustomerCommand>(customerRequest);
+            var data = await _customerService.UpdateCustomer(updateCustomerCommand);
             if (data)
             {
                 return NoContent();
@@ -96,7 +104,7 @@ public class CustomerController : Controller
     {
         try
         {
-            var data = await _customerService.DeleteApplication(id);
+            var data = await _customerService.DeleteCustomer(id);
             if (data)
             {
                 return NoContent();

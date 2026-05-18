@@ -1,3 +1,5 @@
+using AutoMapper;
+
 using Microsoft.AspNetCore.Mvc;
 
 using Persist.Entities.Catalyst;
@@ -5,6 +7,7 @@ using Persist.Entities.Catalyst;
 using Presentation.Models.Req;
 
 using Services;
+using Services.Models.Command;
 using Services.Models.Common;
 
 namespace Presentation.Controllers;
@@ -14,10 +17,12 @@ namespace Presentation.Controllers;
 public class TagController : Controller
 {
     private readonly ITagService _tagService;
+    private readonly IMapper _mapper;
 
-    public TagController(ITagService tagService)
+    public TagController(ITagService tagService, IMapper mapper)
     {
         _tagService = tagService;
+        _mapper = mapper;
     }
     [HttpGet()]
     public ActionResult<PaginationResponse<TagEntity>> GetAllTags(
@@ -44,8 +49,9 @@ public class TagController : Controller
     {
         try
         {
+            var createTagCommand = _mapper.Map<CreateTagCommand>(CreateTagRequest);
             return Created("/CreateTag",
-                await _tagService.CreateTag(CreateTagRequest));
+                await _tagService.CreateTag(createTagCommand));
         }
         catch (System.Exception e)
         {
@@ -58,7 +64,8 @@ public class TagController : Controller
     {
         try
         {
-            var data = await _tagService.UpdateTag(updateTagRequest, id);
+            var updateTagCommand = _mapper.Map<UpdateTagCommand>(updateTagRequest);
+            var data = await _tagService.UpdateTag(updateTagCommand, id);
             if (data)
             {
                 return NoContent();
@@ -115,8 +122,9 @@ public class TagController : Controller
     {
         try
         {
+            var createTagCategoryCommand = _mapper.Map<CreateTagCategoryCommand>(CreateTagRequest);
             return Created("/CreateTagCategories",
-                await _tagService.CreateTagCategory(CreateTagRequest));
+                await _tagService.CreateTagCategory(createTagCategoryCommand));
         }
         catch (System.Exception e)
         {
@@ -129,7 +137,8 @@ public class TagController : Controller
     {
         try
         {
-            var data = await _tagService.UpdateTagCategory(updateTagRequest, id);
+            var updateTagCategoryCommand = _mapper.Map<UpdateTagCategoryCommand>(updateTagRequest);
+            var data = await _tagService.UpdateTagCategory(updateTagCategoryCommand, id);
             if (data)
             {
                 return NoContent();
