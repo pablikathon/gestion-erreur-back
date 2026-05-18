@@ -24,6 +24,7 @@
     <IssueType Id="InconsistentNaming" Category="Constraints Violations" CategoryId="ConstraintViolation" Description="Inconsistent Naming" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=InconsistentNaming" />
     <IssueType Id="MemberCanBePrivate.Global" Category="Common Practices and Code Improvements" CategoryId="BestPractice" SubCategory="Member can be made private" Description="Member can be made private: Non-private accessibility" Severity="SUGGESTION" Global="True" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=MemberCanBePrivate.Global" />
     <IssueType Id="MethodHasAsyncOverload" Category="Common Practices and Code Improvements" CategoryId="BestPractice" Description="Method has async overload" Severity="SUGGESTION" />
+    <IssueType Id="NotAccessedField.Local" Category="Potential Code Quality Issues" CategoryId="CodeSmell" SubCategory="Non-accessed field" Description="Non-accessed field: Private accessibility" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=NotAccessedField.Local" />
     <IssueType Id="NotAccessedOutParameterVariable" Category="Redundancies in Symbol Declarations" CategoryId="DeclarationRedundancy" Description="Non-accessed local variable only used to discard the 'out' parameter value" Severity="WARNING" />
     <IssueType Id="PrivateFieldCanBeConvertedToLocalVariable" Category="Redundancies in Code" CategoryId="CodeRedundancy" Description="Private field can be converted into local variable" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=PrivateFieldCanBeConvertedToLocalVariable" />
     <IssueType Id="PropertyCanBeMadeInitOnly.Global" Category="Common Practices and Code Improvements" CategoryId="BestPractice" SubCategory="Property can be made init-only" Description="Property can be made init-only: Non-private accessibility" Severity="SUGGESTION" Global="True" />
@@ -36,7 +37,6 @@
     <IssueType Id="RedundantUsingDirective" Category="Redundancies in Code" CategoryId="CodeRedundancy" Description="Redundant using directive" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=RedundantUsingDirective" />
     <IssueType Id="ReplaceWithPrimaryConstructorParameter" Category="Language Usage Opportunities" CategoryId="LanguageUsage" Description="Replace with primary constructor parameter" Severity="SUGGESTION" />
     <IssueType Id="ReplaceWithSingleCallToCount" Category="Common Practices and Code Improvements" CategoryId="BestPractice" SubCategory="Replace with single call to Count(..)" Description="Replace with single call to Count(..): Replace with single call to Count(..)" Severity="SUGGESTION" />
-    <IssueType Id="SpecifyACultureInStringConversionExplicitly" Category="Common Practices and Code Improvements" CategoryId="BestPractice" Description="Specify string culture explicitly" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=SpecifyACultureInStringConversionExplicitly" />
     <IssueType Id="UnusedAutoPropertyAccessor.Global" Category="Potential Code Quality Issues" CategoryId="CodeSmell" SubCategory="Auto-property accessor is never used" Description="Auto-property accessor is never used: Non-private accessibility" Severity="WARNING" Global="True" />
     <IssueType Id="UnusedMember.Global" Category="Redundancies in Symbol Declarations" CategoryId="DeclarationRedundancy" SubCategory="Type member is never used" Description="Type member is never used: Non-private accessibility" Severity="SUGGESTION" Global="True" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=UnusedMember.Global" />
     <IssueType Id="UnusedMemberInSuper.Global" Category="Redundancies in Symbol Declarations" CategoryId="DeclarationRedundancy" SubCategory="Type member is never accessed via base type" Description="Type member is never accessed via base type: Non-private accessibility" Severity="SUGGESTION" Global="True" />
@@ -276,65 +276,199 @@
       <Issue TypeId="UnusedParameter.Global" File="Persist\Repository\UserRepository.cs" Offset="293-297" Line="12" Message="Parameter 'user' is never used" />
     </Project>
     <Project Name="Presentation">
-      <Issue TypeId="ConvertToPrimaryConstructor" File="Presentation\Controllers\ApplicationController.cs" Offset="428-449" Line="21" Message="Convert into primary constructor" />
-      <Issue TypeId="ArrangeThisQualifier" Severity="SUGGESTION" File="Presentation\Controllers\ApplicationController.cs" Offset="504-509" Line="23" Message="Qualifier 'this.' is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="991-998" Line="40" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="1434-1441" Line="55" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="1971-1978" Line="75" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="2397-2404" Line="94" Message="Qualifier is redundant" />
-      <Issue TypeId="ConvertToPrimaryConstructor" File="Presentation\Controllers\AuthController.cs" Offset="250-264" Line="14" Message="Convert into primary constructor" />
-      <Issue TypeId="ArrangeThisQualifier" Severity="SUGGESTION" File="Presentation\Controllers\AuthController.cs" Offset="305-310" Line="16" Message="Qualifier 'this.' is redundant" />
-      <Issue TypeId="UnusedVariable" File="Presentation\Controllers\AuthController.cs" Offset="493-497" Line="23" Message="Local variable 'data' is never used" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\AuthController.cs" Offset="590-597" Line="26" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\AuthController.cs" Offset="1323-1330" Line="46" Message="Qualifier is redundant" />
-      <Issue TypeId="ConvertToPrimaryConstructor" File="Presentation\Controllers\CustomerController.cs" Offset="363-381" Line="19" Message="Convert into primary constructor" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="895-902" Line="38" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="1353-1360" Line="55" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="1763-1770" Line="69" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="2223-2230" Line="88" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="2643-2650" Line="107" Message="Qualifier is redundant" />
-      <Issue TypeId="ConvertToPrimaryConstructor" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="379-404" Line="19" Message="Convert into primary constructor" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="435-463" Line="19" Message="Name 'CustomerHaveLicenceToService' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToService'." />
-      <Issue TypeId="ArrangeThisQualifier" Severity="SUGGESTION" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="479-484" Line="21" Message="Qualifier 'this.' is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="1009-1016" Line="38" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="1498-1505" Line="53" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="2006-2013" Line="73" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="2612-2619" Line="94" Message="Qualifier is redundant" />
-      <Issue TypeId="ConvertToPrimaryConstructor" File="Presentation\Controllers\DeployedApplicationController.cs" Offset="415-444" Line="19" Message="Convert into primary constructor" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Presentation\Controllers\DeployedApplicationController.cs" Offset="481-515" Line="19" Message="Name 'ApplicationDeployedOnServerService' does not match rule 'Parameters'. Suggested name is 'applicationDeployedOnServerService'." />
-      <Issue TypeId="ArrangeThisQualifier" Severity="SUGGESTION" File="Presentation\Controllers\DeployedApplicationController.cs" Offset="531-536" Line="21" Message="Qualifier 'this.' is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\DeployedApplicationController.cs" Offset="1105-1112" Line="38" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\DeployedApplicationController.cs" Offset="1685-1692" Line="55" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\DeployedApplicationController.cs" Offset="2336-2343" Line="78" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\DeployedApplicationController.cs" Offset="2974-2981" Line="99" Message="Qualifier is redundant" />
-      <Issue TypeId="ConvertToPrimaryConstructor" File="Presentation\Controllers\ErrorController.cs" Offset="329-344" Line="17" Message="Convert into primary constructor" />
-      <Issue TypeId="ArrangeThisQualifier" Severity="SUGGESTION" File="Presentation\Controllers\ErrorController.cs" Offset="387-392" Line="19" Message="Qualifier 'this.' is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ErrorController.cs" Offset="786-793" Line="35" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ErrorController.cs" Offset="1148-1155" Line="53" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ErrorController.cs" Offset="1444-1451" Line="66" Message="Qualifier is redundant" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Presentation\Controllers\ErrorController.cs" Offset="1682-1692" Line="72" Message="Name 'CustomerId' does not match rule 'Parameters'. Suggested name is 'customerId'." />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ErrorController.cs" Offset="2025-2032" Line="85" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ErrorController.cs" Offset="2592-2599" Line="104" Message="Qualifier is redundant" />
-      <Issue TypeId="ConvertToPrimaryConstructor" File="Presentation\Controllers\ServerController.cs" Offset="357-373" Line="19" Message="Convert into primary constructor" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ServerController.cs" Offset="871-878" Line="38" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ServerController.cs" Offset="1282-1289" Line="52" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ServerController.cs" Offset="1742-1749" Line="71" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ServerController.cs" Offset="2153-2160" Line="90" Message="Qualifier is redundant" />
-      <Issue TypeId="ConvertToPrimaryConstructor" File="Presentation\Controllers\TagController.cs" Offset="322-335" Line="17" Message="Convert into primary constructor" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\TagController.cs" Offset="789-796" Line="35" Message="Qualifier is redundant" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Presentation\Controllers\TagController.cs" Offset="979-995" Line="42" Message="Name 'CreateTagRequest' does not match rule 'Parameters'. Suggested name is 'createTagRequest'." />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\TagController.cs" Offset="1155-1162" Line="49" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\TagController.cs" Offset="1676-1683" Line="68" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\TagController.cs" Offset="2078-2085" Line="87" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\TagController.cs" Offset="2577-2584" Line="106" Message="Qualifier is redundant" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Presentation\Controllers\TagController.cs" Offset="2799-2815" Line="113" Message="Name 'CreateTagRequest' does not match rule 'Parameters'. Suggested name is 'createTagRequest'." />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\TagController.cs" Offset="2993-3000" Line="120" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\TagController.cs" Offset="3553-3560" Line="139" Message="Qualifier is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\TagController.cs" Offset="3987-3994" Line="157" Message="Qualifier is redundant" />
-      <Issue TypeId="CheckNamespace" File="Presentation\Extension\ServicesCollectionExtension.cs" Offset="206-233" Line="11" Message="Namespace does not correspond to file location, must be: 'Presentation.Extension'" />
-      <Issue TypeId="UnusedMethodReturnValue.Global" File="Presentation\Extension\ServicesCollectionExtension.cs" Offset="256-274" Line="13" Message="Method 'AddCustomServices' return value is never used" />
-      <Issue TypeId="UnusedMethodReturnValue.Global" File="Presentation\Extension\ServicesCollectionExtension.cs" Offset="1610-1628" Line="41" Message="Method 'AddSwaggerWithAuth' return value is never used" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Presentation\Extension\ServicesCollectionExtension.cs" Offset="1765-1767" Line="46" Message="Name 'Id' does not match rule 'Parameters'. Suggested name is 'id'." />
+      <Issue TypeId="ConvertToPrimaryConstructor" File="Presentation\Controllers\ApplicationController.cs" Offset="521-542" Line="26" Message="Convert into primary constructor" />
+      <Issue TypeId="ArrangeThisQualifier" Severity="SUGGESTION" File="Presentation\Controllers\ApplicationController.cs" Offset="613-618" Line="28" Message="Qualifier 'this.' is redundant" />
+      <Issue TypeId="ArrangeThisQualifier" Severity="SUGGESTION" File="Presentation\Controllers\ApplicationController.cs" Offset="668-673" Line="29" Message="Qualifier 'this.' is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="1132-1139" Line="47" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="1657-1664" Line="63" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="2303-2310" Line="85" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ApplicationController.cs" Offset="2729-2736" Line="104" Message="Qualifier is redundant" />
+      <Issue TypeId="ConvertToPrimaryConstructor" File="Presentation\Controllers\AuthController.cs" Offset="371-385" Line="20" Message="Convert into primary constructor" />
+      <Issue TypeId="ArrangeThisQualifier" Severity="SUGGESTION" File="Presentation\Controllers\AuthController.cs" Offset="442-447" Line="22" Message="Qualifier 'this.' is redundant" />
+      <Issue TypeId="ArrangeThisQualifier" Severity="SUGGESTION" File="Presentation\Controllers\AuthController.cs" Offset="483-488" Line="23" Message="Qualifier 'this.' is redundant" />
+      <Issue TypeId="UnusedVariable" File="Presentation\Controllers\AuthController.cs" Offset="736-740" Line="31" Message="Local variable 'data' is never used" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\AuthController.cs" Offset="840-847" Line="34" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\AuthController.cs" Offset="1866-1873" Line="57" Message="Qualifier is redundant" />
+      <Issue TypeId="ConvertToPrimaryConstructor" File="Presentation\Controllers\CustomerController.cs" Offset="456-474" Line="24" Message="Convert into primary constructor" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="1030-1037" Line="44" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="1488-1495" Line="61" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="1997-2004" Line="76" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="2556-2563" Line="96" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerController.cs" Offset="2973-2980" Line="115" Message="Qualifier is redundant" />
+      <Issue TypeId="ConvertToPrimaryConstructor" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="472-497" Line="24" Message="Convert into primary constructor" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="528-556" Line="24" Message="Name 'CustomerHaveLicenceToService' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToService'." />
+      <Issue TypeId="ArrangeThisQualifier" Severity="SUGGESTION" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="588-593" Line="26" Message="Qualifier 'this.' is redundant" />
+      <Issue TypeId="ArrangeThisQualifier" Severity="SUGGESTION" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="656-661" Line="27" Message="Qualifier 'this.' is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="1149-1156" Line="44" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="1775-1782" Line="60" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="2418-2425" Line="81" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\CustomerLicenceController.cs" Offset="3024-3031" Line="102" Message="Qualifier is redundant" />
+      <Issue TypeId="ConvertToPrimaryConstructor" File="Presentation\Controllers\DeployedApplicationController.cs" Offset="508-537" Line="24" Message="Convert into primary constructor" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Presentation\Controllers\DeployedApplicationController.cs" Offset="574-608" Line="24" Message="Name 'ApplicationDeployedOnServerService' does not match rule 'Parameters'. Suggested name is 'applicationDeployedOnServerService'." />
+      <Issue TypeId="ArrangeThisQualifier" Severity="SUGGESTION" File="Presentation\Controllers\DeployedApplicationController.cs" Offset="640-645" Line="26" Message="Qualifier 'this.' is redundant" />
+      <Issue TypeId="ArrangeThisQualifier" Severity="SUGGESTION" File="Presentation\Controllers\DeployedApplicationController.cs" Offset="727-732" Line="27" Message="Qualifier 'this.' is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\DeployedApplicationController.cs" Offset="1245-1252" Line="44" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\DeployedApplicationController.cs" Offset="1957-1964" Line="62" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\DeployedApplicationController.cs" Offset="2740-2747" Line="86" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\DeployedApplicationController.cs" Offset="3378-3385" Line="107" Message="Qualifier is redundant" />
+      <Issue TypeId="ConvertToPrimaryConstructor" File="Presentation\Controllers\ErrorController.cs" Offset="422-437" Line="22" Message="Convert into primary constructor" />
+      <Issue TypeId="ArrangeThisQualifier" Severity="SUGGESTION" File="Presentation\Controllers\ErrorController.cs" Offset="496-501" Line="24" Message="Qualifier 'this.' is redundant" />
+      <Issue TypeId="ArrangeThisQualifier" Severity="SUGGESTION" File="Presentation\Controllers\ErrorController.cs" Offset="539-544" Line="25" Message="Qualifier 'this.' is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ErrorController.cs" Offset="1016-1023" Line="42" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ErrorController.cs" Offset="1378-1385" Line="60" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ErrorController.cs" Offset="1763-1770" Line="74" Message="Qualifier is redundant" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Presentation\Controllers\ErrorController.cs" Offset="2025-2035" Line="80" Message="Name 'CustomerId' does not match rule 'Parameters'. Suggested name is 'customerId'." />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ErrorController.cs" Offset="2368-2375" Line="93" Message="Qualifier is redundant" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Presentation\Controllers\ErrorController.cs" Offset="2586-2601" Line="99" Message="Name 'GetErrorRequest' does not match rule 'Parameters'. Suggested name is 'getErrorRequest'." />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ErrorController.cs" Offset="3012-3019" Line="113" Message="Qualifier is redundant" />
+      <Issue TypeId="ConvertToPrimaryConstructor" File="Presentation\Controllers\ServerController.cs" Offset="450-466" Line="24" Message="Convert into primary constructor" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ServerController.cs" Offset="1006-1013" Line="44" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ServerController.cs" Offset="1510-1517" Line="59" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ServerController.cs" Offset="2063-2070" Line="79" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\ServerController.cs" Offset="2474-2481" Line="98" Message="Qualifier is redundant" />
+      <Issue TypeId="ConvertToPrimaryConstructor" File="Presentation\Controllers\TagController.cs" Offset="415-428" Line="22" Message="Convert into primary constructor" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\TagController.cs" Offset="924-931" Line="41" Message="Qualifier is redundant" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Presentation\Controllers\TagController.cs" Offset="1114-1130" Line="48" Message="Name 'CreateTagRequest' does not match rule 'Parameters'. Suggested name is 'createTagRequest'." />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\TagController.cs" Offset="1374-1381" Line="56" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\TagController.cs" Offset="1979-1986" Line="76" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\TagController.cs" Offset="2381-2388" Line="95" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\TagController.cs" Offset="2880-2887" Line="114" Message="Qualifier is redundant" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Presentation\Controllers\TagController.cs" Offset="3102-3118" Line="121" Message="Name 'CreateTagRequest' does not match rule 'Parameters'. Suggested name is 'createTagRequest'." />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\TagController.cs" Offset="3404-3411" Line="129" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\TagController.cs" Offset="4072-4079" Line="149" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Presentation\Controllers\TagController.cs" Offset="4506-4513" Line="167" Message="Qualifier is redundant" />
+      <Issue TypeId="RedundantUsingDirective" File="Presentation\Extension\ServicesCollectionExtension.cs" Offset="0-17" Message="Using directive is not required by the code and can be safely removed" />
+      <Issue TypeId="CheckNamespace" File="Presentation\Extension\ServicesCollectionExtension.cs" Offset="225-252" Line="13" Message="Namespace does not correspond to file location, must be: 'Presentation.Extension'" />
+      <Issue TypeId="UnusedMethodReturnValue.Global" File="Presentation\Extension\ServicesCollectionExtension.cs" Offset="275-293" Line="15" Message="Method 'AddCustomServices' return value is never used" />
+      <Issue TypeId="UnusedMethodReturnValue.Global" File="Presentation\Extension\ServicesCollectionExtension.cs" Offset="1629-1647" Line="43" Message="Method 'AddSwaggerWithAuth' return value is never used" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Presentation\Extension\ServicesCollectionExtension.cs" Offset="1784-1786" Line="48" Message="Name 'Id' does not match rule 'Parameters'. Suggested name is 'id'." />
+      <Issue TypeId="CheckNamespace" File="Presentation\Mapping\MappingProfile.cs" Offset="96-110" Line="7" Message="Namespace does not correspond to file location, must be: 'Presentation.Mapping'" />
+      <Issue TypeId="CheckNamespace" File="Presentation\Model\common\auth\GrantTypeRequest.cs" Offset="189-209" Line="7" Message="Namespace does not correspond to file location, must be: 'Presentation.Model.common.auth'" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Presentation\Model\common\auth\GrantTypeRequest.cs" Offset="288-292" Line="11" Message="Auto-property accessor 'GrantType.set' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Presentation\Model\common\auth\GrantTypeRequest.cs" Offset="407-411" Line="14" Message="Auto-property accessor 'GrantDetails.set' is never used" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Presentation\Model\common\auth\GrantTypeRequest.cs" Offset="439-455" Line="17" Message="Name 'IGrantConnection' does not match rule 'Types and namespaces'. Suggested name is 'GrantConnection'." />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Presentation\Model\common\auth\GrantTypeRequest.cs" Offset="821-825" Line="22" Message="Auto-property accessor 'Email.set' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\common\auth\GrantTypeRequest.cs" Offset="853-861" Line="23" Message="Method 'Validate' is never used" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Presentation\Model\common\auth\GrantTypeRequest.cs" Offset="881-910" Line="26" Message="Class 'UserSignInWithPasswordRequest' is never instantiated" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Presentation\Model\common\auth\GrantTypeRequest.cs" Offset="1251-1255" Line="31" Message="Auto-property accessor 'Password.set' is never used" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Presentation\Model\common\auth\GrantTypeRequest.cs" Offset="1374-1407" Line="37" Message="Class 'UserSignInWithRefreshTokenRequest' is never instantiated" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Presentation\Model\common\auth\GrantTypeRequest.cs" Offset="1476-1480" Line="39" Message="Auto-property accessor 'RefreshToken.set' is never used" />
+      <Issue TypeId="CheckNamespace" File="Presentation\Model\common\auth\Token.cs" Offset="10-30" Line="1" Message="Namespace does not correspond to file location, must be: 'Presentation.Model.common.auth'" />
+      <Issue TypeId="UnusedType.Global" File="Presentation\Model\common\auth\Token.cs" Offset="46-51" Line="3" Message="Class 'Token' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\common\auth\Token.cs" Offset="81-92" Line="5" Message="Property 'AccessToken' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\common\auth\Token.cs" Offset="134-146" Line="6" Message="Property 'RefreshToken' is never used" />
+      <Issue TypeId="CheckNamespace" File="Presentation\Model\common\auth\UserSign.cs" Offset="151-175" Line="6" Message="Namespace does not correspond to file location, must be: 'Presentation.Model.common.auth'" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\common\auth\UserSign.cs" Offset="312-321" Line="11" Message="Property 'FirstName' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\common\auth\UserSign.cs" Offset="441-449" Line="13" Message="Property 'LastName' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\common\auth\UserSign.cs" Offset="814-819" Line="17" Message="Property 'Email' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\common\auth\UserSign.cs" Offset="1137-1145" Line="21" Message="Property 'Password' is never used" />
+      <Issue TypeId="CheckNamespace" File="Presentation\Model\Req\ApplicationRequest.cs" Offset="151-174" Line="6" Message="Namespace does not correspond to file location, must be: 'Presentation.Model.Req'" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ApplicationRequest.cs" Offset="602-607" Line="14" Message="Property 'Title' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ApplicationRequest.cs" Offset="643-651" Line="16" Message="Property 'Internal' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ApplicationRequest.cs" Offset="934-945" Line="21" Message="Property 'Description' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ApplicationRequest.cs" Offset="1395-1400" Line="30" Message="Property 'Title' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ApplicationRequest.cs" Offset="1590-1592" Line="34" Message="Property 'Id' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ApplicationRequest.cs" Offset="1628-1636" Line="36" Message="Property 'Internal' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ApplicationRequest.cs" Offset="1683-1694" Line="37" Message="Property 'Description' is never used" />
+      <Issue TypeId="CheckNamespace" File="Presentation\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="151-174" Line="6" Message="Namespace does not correspond to file location, must be: 'Presentation.Model.Req'" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="493-506" Line="13" Message="Property 'ApplicationId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="781-791" Line="18" Message="Property 'CustomerId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="832-847" Line="20" Message="Property 'BeginingSupport' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="887-900" Line="21" Message="Property 'EndingSupport' is never used" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Presentation\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="937-941" Line="22" Message="Name 'cost' does not match rule 'Properties'. Suggested name is 'Cost'." />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="937-941" Line="22" Message="Property 'cost' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="982-990" Line="24" Message="Property 'IsActive' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="1335-1348" Line="32" Message="Property 'ApplicationId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="1623-1633" Line="37" Message="Property 'CustomerId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="1674-1689" Line="39" Message="Property 'BeginingSupport' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="1729-1742" Line="40" Message="Property 'EndingSupport' is never used" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Presentation\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="1779-1783" Line="41" Message="Name 'cost' does not match rule 'Properties'. Suggested name is 'Cost'." />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="1779-1783" Line="41" Message="Property 'cost' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="1824-1832" Line="43" Message="Property 'IsActive' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Presentation\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="2198-2202" Line="51" Message="Auto-property accessor 'ApplicationId.set' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Presentation\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="2481-2485" Line="56" Message="Auto-property accessor 'ServerId.set' is never used" />
+      <Issue TypeId="CheckNamespace" File="Presentation\Model\Req\CustomerRequest.cs" Offset="151-174" Line="6" Message="Namespace does not correspond to file location, must be: 'Presentation.Model.Req'" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\CustomerRequest.cs" Offset="398-403" Line="12" Message="Property 'Title' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\CustomerRequest.cs" Offset="688-708" Line="17" Message="Property 'FiscalIdentification' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\CustomerRequest.cs" Offset="844-859" Line="20" Message="Property 'LastInteraction' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\CustomerRequest.cs" Offset="1132-1134" Line="28" Message="Property 'Id' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\CustomerRequest.cs" Offset="1346-1351" Line="33" Message="Property 'Title' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\CustomerRequest.cs" Offset="1563-1583" Line="38" Message="Property 'FiscalIdentification' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\CustomerRequest.cs" Offset="1719-1734" Line="41" Message="Property 'LastInteraction' is never used" />
+      <Issue TypeId="CheckNamespace" File="Presentation\Model\Req\DeployedApplicationRequest.cs" Offset="151-174" Line="6" Message="Namespace does not correspond to file location, must be: 'Presentation.Model.Req'" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\DeployedApplicationRequest.cs" Offset="492-505" Line="13" Message="Property 'ApplicationId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\DeployedApplicationRequest.cs" Offset="780-788" Line="18" Message="Property 'ServerId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\DeployedApplicationRequest.cs" Offset="983-993" Line="22" Message="Property 'CustomerId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\DeployedApplicationRequest.cs" Offset="1274-1289" Line="27" Message="Property 'ApplicationPath' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\DeployedApplicationRequest.cs" Offset="1325-1333" Line="29" Message="Property 'IsActive' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\DeployedApplicationRequest.cs" Offset="1679-1692" Line="37" Message="Property 'ApplicationId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\DeployedApplicationRequest.cs" Offset="1967-1975" Line="42" Message="Property 'ServerId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\DeployedApplicationRequest.cs" Offset="2170-2180" Line="46" Message="Property 'CustomerId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\DeployedApplicationRequest.cs" Offset="2461-2476" Line="51" Message="Property 'ApplicationPath' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\DeployedApplicationRequest.cs" Offset="2512-2520" Line="53" Message="Property 'IsActive' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Presentation\Model\Req\DeployedApplicationRequest.cs" Offset="2887-2891" Line="61" Message="Auto-property accessor 'ApplicationId.set' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Presentation\Model\Req\DeployedApplicationRequest.cs" Offset="3170-3174" Line="66" Message="Auto-property accessor 'ServerId.set' is never used" />
+      <Issue TypeId="CheckNamespace" File="Presentation\Model\Req\ErrorRequest.cs" Offset="188-211" Line="7" Message="Namespace does not correspond to file location, must be: 'Presentation.Model.Req'" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ErrorRequest.cs" Offset="514-525" Line="14" Message="Property 'Description' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ErrorRequest.cs" Offset="566-582" Line="16" Message="Property 'InterventionDate' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ErrorRequest.cs" Offset="857-865" Line="21" Message="Property 'ServerId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ErrorRequest.cs" Offset="1149-1162" Line="27" Message="Property 'ApplicationId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ErrorRequest.cs" Offset="1437-1447" Line="33" Message="Property 'SeverityId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ErrorRequest.cs" Offset="1713-1721" Line="38" Message="Property 'StatusId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ErrorRequest.cs" Offset="2084-2095" Line="46" Message="Property 'OldStatusId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ErrorRequest.cs" Offset="2369-2382" Line="51" Message="Property 'OldSeverityId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ErrorRequest.cs" Offset="2422-2431" Line="52" Message="Property 'EventDate' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ErrorRequest.cs" Offset="2706-2714" Line="57" Message="Property 'ServerId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ErrorRequest.cs" Offset="2998-3011" Line="63" Message="Property 'ApplicationId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ErrorRequest.cs" Offset="3286-3296" Line="69" Message="Property 'SeverityId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ErrorRequest.cs" Offset="3570-3578" Line="74" Message="Property 'StatusId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ErrorRequest.cs" Offset="3618-3627" Line="76" Message="Property 'CreatedAt' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ErrorRequest.cs" Offset="3946-3954" Line="83" Message="Property 'ServerId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ErrorRequest.cs" Offset="4238-4251" Line="89" Message="Property 'ApplicationId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ErrorRequest.cs" Offset="4526-4536" Line="95" Message="Property 'SeverityId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ErrorRequest.cs" Offset="4810-4818" Line="100" Message="Property 'StatusId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ErrorRequest.cs" Offset="4858-4867" Line="102" Message="Property 'CreatedAt' is never used" />
+      <Issue TypeId="CheckNamespace" File="Presentation\Model\Req\Response\CustommerRequest.cs" Offset="105-128" Line="5" Message="Namespace does not correspond to file location, must be: 'Presentation.Model.Req.Response'" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Presentation\Model\Req\Response\CustommerRequest.cs" Offset="148-178" Line="7" Message="Class 'ErrorForCustommerStatsResponse' is never instantiated" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Presentation\Model\Req\Response\CustommerRequest.cs" Offset="216-227" Line="9" Message="Name 'custommerId' does not match rule 'Properties'. Suggested name is 'CustommerId'." />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\Response\CustommerRequest.cs" Offset="216-227" Line="9" Message="Property 'custommerId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\Response\CustommerRequest.cs" Offset="273-287" Line="10" Message="Property 'CustommerTitle' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\Response\CustommerRequest.cs" Offset="333-361" Line="11" Message="Property 'CustomerFiscalIdentification' is never used" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Presentation\Model\Req\Response\CustommerRequest.cs" Offset="404-417" Line="12" Message="Name 'nberrorSolved' does not match rule 'Properties'. Suggested name is 'NberrorSolved'." />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\Response\CustommerRequest.cs" Offset="404-417" Line="12" Message="Property 'nberrorSolved' is never used" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Presentation\Model\Req\Response\CustommerRequest.cs" Offset="460-477" Line="13" Message="Name 'nbErrorUnresolved' does not match rule 'Properties'. Suggested name is 'NbErrorUnresolved'." />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\Response\CustommerRequest.cs" Offset="460-477" Line="13" Message="Property 'nbErrorUnresolved' is never used" />
+      <Issue TypeId="UnusedType.Global" File="Presentation\Model\Req\Response\CustommerRequest.cs" Offset="515-546" Line="15" Message="Class 'ErrorForACustommerStatsResponse' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\Response\CustommerRequest.cs" Offset="581-588" Line="17" Message="Property 'Nberror' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\Response\CustommerRequest.cs" Offset="637-648" Line="18" Message="Property 'ErrorStatus' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\Response\CustommerRequest.cs" Offset="697-708" Line="19" Message="Property 'Application' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\Response\CustommerRequest.cs" Offset="760-768" Line="21" Message="Property 'Severity' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\Response\CustommerRequest.cs" Offset="812-818" Line="22" Message="Property 'Server' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\Response\CustommerRequest.cs" Offset="857-866" Line="23" Message="Property 'CreatedAt' is never used" />
+      <Issue TypeId="CheckNamespace" File="Presentation\Model\Req\ServerRequest.cs" Offset="151-174" Line="6" Message="Namespace does not correspond to file location, must be: 'Presentation.Model.Req'" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ServerRequest.cs" Offset="472-477" Line="13" Message="Property 'Title' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ServerRequest.cs" Offset="703-707" Line="17" Message="Property 'Cost' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ServerRequest.cs" Offset="743-751" Line="19" Message="Property 'IsActive' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ServerRequest.cs" Offset="801-812" Line="21" Message="Property 'HostedSince' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ServerRequest.cs" Offset="852-860" Line="22" Message="Property 'StopHost' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ServerRequest.cs" Offset="1184-1186" Line="30" Message="Property 'Id' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ServerRequest.cs" Offset="1454-1459" Line="35" Message="Property 'Title' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ServerRequest.cs" Offset="1725-1729" Line="40" Message="Property 'Cost' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ServerRequest.cs" Offset="1765-1773" Line="42" Message="Property 'IsActive' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ServerRequest.cs" Offset="1911-1922" Line="45" Message="Property 'HostedSince' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\ServerRequest.cs" Offset="2048-2056" Line="48" Message="Property 'StopHost' is never used" />
+      <Issue TypeId="CheckNamespace" File="Presentation\Model\Req\TagRequest.cs" Offset="151-174" Line="6" Message="Namespace does not correspond to file location, must be: 'Presentation.Model.Req'" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\TagRequest.cs" Offset="580-585" Line="14" Message="Property 'Title' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\TagRequest.cs" Offset="894-899" Line="21" Message="Property 'Title' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\TagRequest.cs" Offset="1216-1221" Line="28" Message="Property 'Title' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\TagRequest.cs" Offset="1545-1547" Line="35" Message="Property 'Id' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\TagRequest.cs" Offset="1811-1816" Line="40" Message="Property 'Title' is never used" />
+      <Issue TypeId="UnusedType.Global" File="Presentation\Model\Req\TagRequest.cs" Offset="1854-1881" Line="42" Message="Class 'CreateTagCategoryTagRequest' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\TagRequest.cs" Offset="2143-2148" Line="47" Message="Property 'IdTag' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\TagRequest.cs" Offset="2418-2431" Line="51" Message="Property 'IdTagCategory' is never used" />
+      <Issue TypeId="UnusedType.Global" File="Presentation\Model\Req\TagRequest.cs" Offset="2469-2496" Line="53" Message="Class 'UpdateTagCategoryTagRequest' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\TagRequest.cs" Offset="2758-2763" Line="58" Message="Property 'IdTag' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Presentation\Model\Req\TagRequest.cs" Offset="3033-3046" Line="62" Message="Property 'IdTagCategory' is never used" />
       <Issue TypeId="ClassNeverInstantiated.Global" File="Presentation\Program.cs" Offset="34-41" Line="3" Message="Class 'Program' is never instantiated" />
       <Issue TypeId="CheckNamespace" File="Presentation\Program.cs" Offset="34-41" Line="3" Message="Namespace does not correspond to file location, must be: 'Presentation'" />
       <Issue TypeId="MemberCanBePrivate.Global" File="Presentation\Program.cs" Offset="151-157" Line="10" Message="Method 'CreateHostBuilder' can be made private" />
@@ -393,18 +527,44 @@
       <Issue TypeId="UnusedType.Global" File="Ressources\Extension\GetDescription.cs" Offset="81-91" Line="5" Message="Class 'Extensions' is never used" />
       <Issue TypeId="UnusedMember.Global" File="Ressources\Extension\GetDescription.cs" Offset="127-141" Line="7" Message="Method 'GetDescription' is never used" />
       <Issue TypeId="UnusedVariable" File="Ressources\Extension\GetDescription.cs" Offset="370-380" Line="15" Message="Local variable 'attributes' is never used" />
+      <Issue TypeId="CheckNamespace" File="Ressources\GenericModel\search\DateParameter.cs" Offset="10-32" Line="1" Message="Namespace does not correspond to file location, must be: 'Ressources.GenericModel.search'" />
+      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Ressources\GenericModel\search\DateParameter.cs" Offset="102-106" Line="5" Message="Auto-property can be made get-only" />
+      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Ressources\GenericModel\search\DateParameter.cs" Offset="174-178" Line="6" Message="Auto-property can be made get-only" />
+      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Ressources\GenericModel\search\DateParameter.cs" Offset="245-249" Line="7" Message="Auto-property can be made get-only" />
+      <Issue TypeId="CheckNamespace" File="Ressources\GenericModel\search\GenericQueryParameter.cs" Offset="10-32" Line="1" Message="Namespace does not correspond to file location, must be: 'Ressources.GenericModel.search'" />
+      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Ressources\GenericModel\search\GenericQueryParameter.cs" Offset="115-119" Line="5" Message="Auto-property can be made get-only" />
+      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Ressources\GenericModel\search\GenericQueryParameter.cs" Offset="181-185" Line="6" Message="Auto-property can be made get-only" />
+      <Issue TypeId="CheckNamespace" File="Ressources\GenericModel\search\PaginationParameter.cs" Offset="10-32" Line="1" Message="Namespace does not correspond to file location, must be: 'Ressources.GenericModel.search'" />
+      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Ressources\GenericModel\search\PaginationParameter.cs" Offset="116-120" Line="5" Message="Auto-property can be made get-only" />
+      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Ressources\GenericModel\search\PaginationParameter.cs" Offset="163-167" Line="6" Message="Auto-property can be made get-only" />
+      <Issue TypeId="CheckNamespace" File="Ressources\GenericModel\search\PaginationResponse.cs" Offset="10-32" Line="1" Message="Namespace does not correspond to file location, must be: 'Ressources.GenericModel.search'" />
+      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Ressources\GenericModel\search\PaginationResponse.cs" Offset="117-121" Line="5" Message="Auto-property can be made get-only" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Ressources\GenericModel\search\PaginationResponse.cs" Offset="156-160" Line="6" Message="Auto-property accessor 'TotalPages.get' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Ressources\GenericModel\search\PaginationResponse.cs" Offset="201-205" Line="7" Message="Auto-property accessor 'CurrentPage.get' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Ressources\GenericModel\search\PaginationResponse.cs" Offset="243-247" Line="8" Message="Auto-property accessor 'PageSize.get' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Ressources\GenericModel\search\PaginationResponse.cs" Offset="286-290" Line="9" Message="Auto-property accessor 'Items.get' is never used" />
+      <Issue TypeId="ConvertToPrimaryConstructor" File="Ressources\GenericModel\search\PaginationResponse.cs" Offset="314-332" Line="11" Message="Convert into primary constructor" />
+      <Issue TypeId="CheckNamespace" File="Ressources\GenericModel\search\QueryParameter.cs" Offset="10-32" Line="1" Message="Namespace does not correspond to file location, must be: 'Ressources.GenericModel.search'" />
+      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Ressources\GenericModel\search\QueryParameter.cs" Offset="109-113" Line="5" Message="Auto-property can be made get-only" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Ressources\GenericModel\search\QueryParameter.cs" Offset="173-177" Line="6" Message="Auto-property accessor 'SearchParam.set' is never used" />
+      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Ressources\GenericModel\search\QueryParameter.cs" Offset="231-235" Line="8" Message="Auto-property can be made get-only" />
+      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Ressources\GenericModel\search\QueryParameter.cs" Offset="285-289" Line="9" Message="Auto-property can be made get-only" />
+      <Issue TypeId="CheckNamespace" File="Ressources\GenericModel\search\SearchParameter.cs" Offset="10-32" Line="1" Message="Namespace does not correspond to file location, must be: 'Ressources.GenericModel.search'" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Ressources\GenericModel\search\SearchParameter.cs" Offset="48-64" Line="3" Message="Class 'SearchParameters' is never instantiated" />
+      <Issue TypeId="CheckNamespace" File="Ressources\GenericModel\search\SortParameter.cs" Offset="10-32" Line="1" Message="Namespace does not correspond to file location, must be: 'Ressources.GenericModel.search'" />
+      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Ressources\GenericModel\search\SortParameter.cs" Offset="154-158" Line="6" Message="Auto-property can be made get-only" />
     </Project>
     <Project Name="Services">
-      <Issue TypeId="CheckNamespace" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="98-112" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.Automapper.AuthEntity'" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="115-122" Line="6" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="115-122" Line="6" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="115-122" Line="6" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="115-122" Line="6" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="115-122" Line="6" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="115-122" Line="6" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="115-122" Line="6" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="115-122" Line="6" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="129-135" Line="8" Message="Method 'MappingProfileUser' can be made private" />
+      <Issue TypeId="CheckNamespace" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="101-115" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.Automapper.AuthEntity'" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="118-125" Line="6" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="118-125" Line="6" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="118-125" Line="6" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="118-125" Line="6" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="118-125" Line="6" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="118-125" Line="6" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="118-125" Line="6" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="118-125" Line="6" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\AuthEntity\AutoMapperMapperUser.cs" Offset="132-138" Line="8" Message="Method 'MappingProfileUser' can be made private" />
       <Issue TypeId="CheckNamespace" File="Services\Automapper\AutoMapper.cs" Offset="40-54" Line="3" Message="Namespace does not correspond to file location, must be: 'Services.Automapper'" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AutoMapper.cs" Offset="57-64" Line="3" Message="Base type 'Profile' is already specified in other parts" />
       <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\AutoMapper.cs" Offset="57-64" Line="3" Message="Base type 'Profile' is already specified in other parts" />
@@ -427,79 +587,79 @@
       <Issue TypeId="ArrangeThisQualifier" Severity="SUGGESTION" File="Services\Automapper\AutoMapper.cs" Offset="557-562" Line="23" Message="Qualifier 'this.' is redundant" />
       <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\AutoMapper.cs" Offset="609-615" Line="25" Message="Method 'MappingProfileAuthEntity' can be made private" />
       <Issue TypeId="ArrangeThisQualifier" Severity="SUGGESTION" File="Services\Automapper\AutoMapper.cs" Offset="662-667" Line="27" Message="Qualifier 'this.' is redundant" />
-      <Issue TypeId="CheckNamespace" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="106-120" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.Automapper.JoiningEntity'" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="123-130" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="123-130" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="123-130" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="123-130" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="123-130" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="123-130" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="123-130" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="123-130" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="137-143" Line="9" Message="Method 'MappingProfileApplicationDeployement' can be made private" />
-      <Issue TypeId="CheckNamespace" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="93-107" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.Automapper.JoiningEntity'" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="110-117" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="110-117" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="110-117" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="110-117" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="110-117" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="110-117" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="110-117" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="110-117" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="124-130" Line="9" Message="Method 'MappingProfileCustomerHaveLicence' can be made private" />
-      <Issue TypeId="CheckNamespace" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="105-119" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.Automapper.RegularEntity'" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="122-129" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="122-129" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="122-129" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="122-129" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="122-129" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="122-129" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="122-129" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="122-129" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="136-142" Line="9" Message="Method 'MappingProfileApplication' can be made private" />
-      <Issue TypeId="CheckNamespace" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="103-117" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.Automapper.RegularEntity'" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="134-140" Line="9" Message="Method 'MappingProfileCustomer' can be made private" />
-      <Issue TypeId="CheckNamespace" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="103-117" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.Automapper.RegularEntity'" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="134-140" Line="9" Message="Method 'MappingProfileError' can be made private" />
-      <Issue TypeId="CheckNamespace" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="103-117" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.Automapper.RegularEntity'" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="120-127" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="134-140" Line="9" Message="Method 'MappingProfileServer' can be made private" />
-      <Issue TypeId="CheckNamespace" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="102-116" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.Automapper.RegularEntity'" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="119-126" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="119-126" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="119-126" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="119-126" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="119-126" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="119-126" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="119-126" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="119-126" Line="7" Message="Base type 'Profile' is already specified in other parts" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="145-162" Line="9" Message="Method 'MappingProfileTag' is never used" />
-      <Issue TypeId="CheckNamespace" File="Services\Extension\JsonConverter.cs" Offset="147-171" Line="8" Message="Namespace does not correspond to file location, must be: 'Services.Extension'" />
-      <Issue TypeId="ConvertToUsingDeclaration" File="Services\Extension\JsonConverter.cs" Offset="342-347" Line="12" Message="Convert into 'using' declaration" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Extension\JsonConverter.cs" Offset="992-1018" Line="23" Message="Name 'UserSignInWithRefreshToken' does not match rule 'Local variables'. Suggested name is 'userSignInWithRefreshToken'." />
+      <Issue TypeId="CheckNamespace" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="110-124" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.Automapper.JoiningEntity'" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="127-134" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="127-134" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="127-134" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="127-134" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="127-134" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="127-134" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="127-134" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="127-134" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\JoiningEntity\AutoMapperApplicationDeployement.cs" Offset="141-147" Line="9" Message="Method 'MappingProfileApplicationDeployement' can be made private" />
+      <Issue TypeId="CheckNamespace" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="97-111" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.Automapper.JoiningEntity'" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="114-121" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="114-121" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="114-121" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="114-121" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="114-121" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="114-121" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="114-121" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="114-121" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\JoiningEntity\AutoMapperCustomerHaveLicenceTo.cs" Offset="128-134" Line="9" Message="Method 'MappingProfileCustomerHaveLicence' can be made private" />
+      <Issue TypeId="CheckNamespace" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="109-123" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.Automapper.RegularEntity'" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="126-133" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="126-133" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="126-133" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="126-133" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="126-133" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="126-133" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="126-133" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="126-133" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\RegularEntity\AutoMapperApplication.cs" Offset="140-146" Line="9" Message="Method 'MappingProfileApplication' can be made private" />
+      <Issue TypeId="CheckNamespace" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="107-121" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.Automapper.RegularEntity'" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="124-131" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="124-131" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="124-131" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="124-131" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="124-131" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="124-131" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="124-131" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="124-131" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\RegularEntity\AutoMapperCustomer.cs" Offset="138-144" Line="9" Message="Method 'MappingProfileCustomer' can be made private" />
+      <Issue TypeId="CheckNamespace" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="107-121" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.Automapper.RegularEntity'" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="124-131" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="124-131" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="124-131" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="124-131" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="124-131" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="124-131" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="124-131" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="124-131" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\RegularEntity\AutoMapperError.cs" Offset="138-144" Line="9" Message="Method 'MappingProfileError' can be made private" />
+      <Issue TypeId="CheckNamespace" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="108-122" Line="8" Message="Namespace does not correspond to file location, must be: 'Services.Automapper.RegularEntity'" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="125-132" Line="8" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="125-132" Line="8" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="125-132" Line="8" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="125-132" Line="8" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="125-132" Line="8" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="125-132" Line="8" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="125-132" Line="8" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="125-132" Line="8" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="MemberCanBePrivate.Global" File="Services\Automapper\RegularEntity\AutoMapperServer.cs" Offset="139-145" Line="10" Message="Method 'MappingProfileServer' can be made private" />
+      <Issue TypeId="CheckNamespace" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="106-120" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.Automapper.RegularEntity'" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="123-130" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="123-130" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="123-130" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="123-130" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="123-130" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="123-130" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="123-130" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="RedundantExtendsListEntry" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="123-130" Line="7" Message="Base type 'Profile' is already specified in other parts" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Automapper\RegularEntity\AutomapperTag.cs" Offset="149-166" Line="9" Message="Method 'MappingProfileTag' is never used" />
+      <Issue TypeId="CheckNamespace" File="Services\Extension\JsonConverter.cs" Offset="150-174" Line="8" Message="Namespace does not correspond to file location, must be: 'Services.Extension'" />
+      <Issue TypeId="ConvertToUsingDeclaration" File="Services\Extension\JsonConverter.cs" Offset="345-350" Line="12" Message="Convert into 'using' declaration" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Extension\JsonConverter.cs" Offset="1016-1042" Line="23" Message="Name 'UserSignInWithRefreshToken' does not match rule 'Local variables'. Suggested name is 'userSignInWithRefreshToken'." />
       <Issue TypeId="CheckNamespace" File="Services\Extension\LeapYearExtension.cs" Offset="20-37" Line="1" Message="Namespace does not correspond to file location, must be: 'Services.Extension'" />
       <Issue TypeId="ArrangeMethodOrOperatorBody" Severity="SUGGESTION" File="Services\Extension\LeapYearExtension.cs" Offset="108-110" Line="3" Message="Code body does not conform to code style settings: use statement body" />
       <Issue TypeId="ArrangeMethodOrOperatorBody" Severity="SUGGESTION" File="Services\Extension\LeapYearExtension.cs" Offset="184-186" Line="5" Message="Code body does not conform to code style settings: use statement body" />
@@ -512,199 +672,178 @@
       <Issue TypeId="EmptyStatement" File="Services\Extension\PaginationExtension.cs" Offset="4423-4424" Line="110" Message="Empty statement is redundant" />
       <Issue TypeId="UseCollectionExpression" File="Services\Extension\PaginationExtension.cs" Offset="4504-4509" Line="111" Message="Use collection expression" />
       <Issue TypeId="EmptyStatement" File="Services\Extension\PaginationExtension.cs" Offset="4640-4641" Line="111" Message="Empty statement is redundant" />
-      <Issue TypeId="CheckNamespace" File="Services\IService\IApplicationDeployedOnServerService.cs" Offset="106-114" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\IService\IApplicationDeployedOnServerService.cs" Offset="635-649" Line="17" Message="Name 'id_application' does not match rule 'Parameters'. Suggested name is 'idApplication'." />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\IService\IApplicationDeployedOnServerService.cs" Offset="658-667" Line="17" Message="Name 'id_server' does not match rule 'Parameters'. Suggested name is 'idServer'." />
-      <Issue TypeId="CheckNamespace" File="Services\IService\IApplicationService.cs" Offset="105-113" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\IService\IApplicationService.cs" Offset="419-443" Line="12" Message="Name 'UpdateApplicationRequest' does not match rule 'Parameters'. Suggested name is 'updateApplicationRequest'." />
-      <Issue TypeId="CheckNamespace" File="Services\IService\IAuthService.cs" Offset="38-46" Line="2" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
-      <Issue TypeId="CheckNamespace" File="Services\IService\ICustomerHaveLicenceToService.cs" Offset="93-101" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\IService\ICustomerHaveLicenceToService.cs" Offset="557-571" Line="16" Message="Name 'id_application' does not match rule 'Parameters'. Suggested name is 'idApplication'." />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\IService\ICustomerHaveLicenceToService.cs" Offset="580-589" Line="16" Message="Name 'id_server' does not match rule 'Parameters'. Suggested name is 'idServer'." />
-      <Issue TypeId="CheckNamespace" File="Services\IService\ICustomerService.cs" Offset="103-111" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\IService\ICustomerService.cs" Offset="536-560" Line="16" Message="Name 'UpdateApplicationRequest' does not match rule 'Parameters'. Suggested name is 'updateApplicationRequest'." />
-      <Issue TypeId="CheckNamespace" File="Services\IService\IErrorService.cs" Offset="103-111" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
+      <Issue TypeId="CheckNamespace" File="Services\IService\IApplicationDeployedOnServerService.cs" Offset="109-117" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\IService\IApplicationDeployedOnServerService.cs" Offset="638-652" Line="16" Message="Name 'id_application' does not match rule 'Parameters'. Suggested name is 'idApplication'." />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\IService\IApplicationDeployedOnServerService.cs" Offset="661-670" Line="16" Message="Name 'id_server' does not match rule 'Parameters'. Suggested name is 'idServer'." />
+      <Issue TypeId="CheckNamespace" File="Services\IService\IApplicationService.cs" Offset="109-117" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\IService\IApplicationService.cs" Offset="423-447" Line="12" Message="Name 'UpdateApplicationCommand' does not match rule 'Parameters'. Suggested name is 'updateApplicationCommand'." />
+      <Issue TypeId="CheckNamespace" File="Services\IService\IAuthService.cs" Offset="41-49" Line="2" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
+      <Issue TypeId="CheckNamespace" File="Services\IService\ICustomerHaveLicenceToService.cs" Offset="97-105" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\IService\ICustomerHaveLicenceToService.cs" Offset="569-583" Line="16" Message="Name 'id_application' does not match rule 'Parameters'. Suggested name is 'idApplication'." />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\IService\ICustomerHaveLicenceToService.cs" Offset="592-601" Line="16" Message="Name 'id_server' does not match rule 'Parameters'. Suggested name is 'idServer'." />
+      <Issue TypeId="CheckNamespace" File="Services\IService\ICustomerService.cs" Offset="107-115" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\IService\ICustomerService.cs" Offset="547-568" Line="16" Message="Name 'UpdateCustomerCommand' does not match rule 'Parameters'. Suggested name is 'updateCustomerCommand'." />
+      <Issue TypeId="CheckNamespace" File="Services\IService\IErrorService.cs" Offset="107-115" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
       <Issue TypeId="CheckNamespace" File="Services\IService\IMailer.cs" Offset="10-18" Line="1" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
       <Issue TypeId="UnusedMember.Global" File="Services\IService\IMailer.cs" Offset="69-83" Line="5" Message="Method 'SendEmailAsync' is never used" />
       <Issue TypeId="CheckNamespace" File="Services\IService\IPasswordHasherService.cs" Offset="39-47" Line="2" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
-      <Issue TypeId="CheckNamespace" File="Services\IService\IServerService.cs" Offset="103-111" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
-      <Issue TypeId="CheckNamespace" File="Services\IService\ITagServices.cs" Offset="103-111" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
-      <Issue TypeId="UnusedMember.Global" File="Services\IService\ITagServices.cs" Offset="714-725" Line="21" Message="Method 'AanalyzText' is never used" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\IService\ITagServices.cs" Offset="733-738" Line="21" Message="Name 'Query' does not match rule 'Parameters'. Suggested name is 'query'." />
-      <Issue TypeId="UnusedParameter.Global" File="Services\IService\ITagServices.cs" Offset="733-738" Line="21" Message="Parameter 'Query' is not used in any of the implementations" />
-      <Issue TypeId="RedundantUsingDirective" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="84-121" Line="4" Message="Using directive is not required by the code and can be safely removed" />
-      <Issue TypeId="CheckNamespace" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="228-248" Line="9" Message="Namespace does not correspond to file location, must be: 'Services.Model.common.auth'" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="323-327" Line="13" Message="Auto-property accessor 'GrantType.set' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="442-446" Line="16" Message="Auto-property accessor 'GrantDetails.set' is never used" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="474-490" Line="19" Message="Name 'IGrantConnection' does not match rule 'Types and namespaces'. Suggested name is 'GrantConnection'." />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="856-860" Line="24" Message="Auto-property accessor 'Email.set' is never used" />
-      <Issue TypeId="UnusedMemberInSuper.Global" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="888-896" Line="25" Message="Only overrides of method 'Validate' are used" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="1279-1282" Line="33" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\common\auth\GrantTypeRequest.cs" Offset="1497-1500" Line="41" Message="Property can be made init-only" />
-      <Issue TypeId="CheckNamespace" File="Services\Model\common\auth\Token.cs" Offset="10-30" Line="1" Message="Namespace does not correspond to file location, must be: 'Services.Model.common.auth'" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\auth\Token.cs" Offset="95-99" Line="5" Message="Auto-property accessor 'AccessToken.get' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\auth\Token.cs" Offset="149-153" Line="6" Message="Auto-property accessor 'RefreshToken.get' is never used" />
-      <Issue TypeId="CheckNamespace" File="Services\Model\common\auth\UserSign.cs" Offset="151-171" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.Model.common.auth'" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\auth\UserSign.cs" Offset="313-317" Line="11" Message="Auto-property accessor 'FirstName.get' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\auth\UserSign.cs" Offset="441-445" Line="13" Message="Auto-property accessor 'LastName.get' is never used" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\common\auth\UserSign.cs" Offset="816-819" Line="17" Message="Property can be made init-only" />
-      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\common\auth\UserSign.cs" Offset="1142-1145" Line="21" Message="Property can be made init-only" />
-      <Issue TypeId="CheckNamespace" File="Services\Model\common\search\DateParameter.cs" Offset="45-67" Line="3" Message="Namespace does not correspond to file location, must be: 'Services.Model.common.search'" />
-      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\DateParameter.cs" Offset="137-141" Line="7" Message="Auto-property can be made get-only" />
-      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\DateParameter.cs" Offset="209-213" Line="8" Message="Auto-property can be made get-only" />
-      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\DateParameter.cs" Offset="280-284" Line="9" Message="Auto-property can be made get-only" />
-      <Issue TypeId="CheckNamespace" File="Services\Model\common\search\GenericQueryParameter.cs" Offset="10-32" Line="1" Message="Namespace does not correspond to file location, must be: 'Services.Model.common.search'" />
-      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\GenericQueryParameter.cs" Offset="115-119" Line="5" Message="Auto-property can be made get-only" />
-      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\GenericQueryParameter.cs" Offset="181-185" Line="6" Message="Auto-property can be made get-only" />
-      <Issue TypeId="CheckNamespace" File="Services\Model\common\search\PaginationParameter.cs" Offset="10-32" Line="1" Message="Namespace does not correspond to file location, must be: 'Services.Model.common.search'" />
-      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\PaginationParameter.cs" Offset="116-120" Line="5" Message="Auto-property can be made get-only" />
-      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\PaginationParameter.cs" Offset="163-167" Line="6" Message="Auto-property can be made get-only" />
-      <Issue TypeId="CheckNamespace" File="Services\Model\common\search\PaginationResponse.cs" Offset="10-32" Line="1" Message="Namespace does not correspond to file location, must be: 'Services.Model.common.search'" />
-      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\PaginationResponse.cs" Offset="117-121" Line="5" Message="Auto-property can be made get-only" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\search\PaginationResponse.cs" Offset="156-160" Line="6" Message="Auto-property accessor 'TotalPages.get' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\search\PaginationResponse.cs" Offset="201-205" Line="7" Message="Auto-property accessor 'CurrentPage.get' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\search\PaginationResponse.cs" Offset="243-247" Line="8" Message="Auto-property accessor 'PageSize.get' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\search\PaginationResponse.cs" Offset="286-290" Line="9" Message="Auto-property accessor 'Items.get' is never used" />
-      <Issue TypeId="ConvertToPrimaryConstructor" File="Services\Model\common\search\PaginationResponse.cs" Offset="314-332" Line="11" Message="Convert into primary constructor" />
-      <Issue TypeId="CheckNamespace" File="Services\Model\common\search\QueryParameter.cs" Offset="10-32" Line="1" Message="Namespace does not correspond to file location, must be: 'Services.Model.common.search'" />
-      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\QueryParameter.cs" Offset="109-113" Line="5" Message="Auto-property can be made get-only" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\common\search\QueryParameter.cs" Offset="173-177" Line="6" Message="Auto-property accessor 'SearchParam.set' is never used" />
-      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\QueryParameter.cs" Offset="231-235" Line="8" Message="Auto-property can be made get-only" />
-      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\QueryParameter.cs" Offset="285-289" Line="9" Message="Auto-property can be made get-only" />
-      <Issue TypeId="CheckNamespace" File="Services\Model\common\search\SearchParameter.cs" Offset="10-32" Line="1" Message="Namespace does not correspond to file location, must be: 'Services.Model.common.search'" />
-      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\common\search\SearchParameter.cs" Offset="48-64" Line="3" Message="Class 'SearchParameters' is never instantiated" />
-      <Issue TypeId="CheckNamespace" File="Services\Model\common\search\SortParameter.cs" Offset="10-32" Line="1" Message="Namespace does not correspond to file location, must be: 'Services.Model.common.search'" />
-      <Issue TypeId="AutoPropertyCanBeMadeGetOnly.Global" File="Services\Model\common\search\SortParameter.cs" Offset="154-158" Line="6" Message="Auto-property can be made get-only" />
-      <Issue TypeId="CheckNamespace" File="Services\Model\Req\ApplicationRequest.cs" Offset="151-170" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req'" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ApplicationRequest.cs" Offset="606-610" Line="14" Message="Auto-property accessor 'Title.get' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ApplicationRequest.cs" Offset="639-647" Line="16" Message="Property 'Internal' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ApplicationRequest.cs" Offset="944-948" Line="21" Message="Auto-property accessor 'Description.get' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ApplicationRequest.cs" Offset="1399-1403" Line="30" Message="Auto-property accessor 'Title.get' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ApplicationRequest.cs" Offset="1591-1595" Line="34" Message="Auto-property accessor 'Id.get' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ApplicationRequest.cs" Offset="1624-1632" Line="36" Message="Property 'Internal' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ApplicationRequest.cs" Offset="1679-1690" Line="37" Message="Property 'Description' is never used" />
-      <Issue TypeId="CheckNamespace" File="Services\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="151-170" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req'" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="489-502" Line="13" Message="Property 'ApplicationId' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="777-787" Line="18" Message="Property 'CustomerId' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="828-843" Line="20" Message="Property 'BeginingSupport' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="883-896" Line="21" Message="Property 'EndingSupport' is never used" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="933-937" Line="22" Message="Name 'cost' does not match rule 'Properties'. Suggested name is 'Cost'." />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="933-937" Line="22" Message="Property 'cost' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="978-986" Line="24" Message="Property 'IsActive' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="1331-1344" Line="32" Message="Property 'ApplicationId' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="1619-1629" Line="37" Message="Property 'CustomerId' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="1670-1685" Line="39" Message="Property 'BeginingSupport' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="1725-1738" Line="40" Message="Property 'EndingSupport' is never used" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="1775-1779" Line="41" Message="Name 'cost' does not match rule 'Properties'. Suggested name is 'Cost'." />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="1775-1779" Line="41" Message="Property 'cost' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="1820-1828" Line="43" Message="Property 'IsActive' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="2194-2198" Line="51" Message="Auto-property accessor 'ApplicationId.set' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\CustomerHaveLicenceToRequest.cs" Offset="2477-2481" Line="56" Message="Auto-property accessor 'ServerId.set' is never used" />
-      <Issue TypeId="CheckNamespace" File="Services\Model\Req\CustomerRequest.cs" Offset="151-170" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req'" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="402-406" Line="12" Message="Auto-property accessor 'Title.get' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="707-711" Line="17" Message="Auto-property accessor 'FiscalIdentification.get' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="858-862" Line="20" Message="Auto-property accessor 'LastInteraction.get' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="1128-1130" Line="28" Message="Property 'Id' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="1342-1347" Line="33" Message="Property 'Title' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="1559-1579" Line="38" Message="Property 'FiscalIdentification' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\CustomerRequest.cs" Offset="1715-1730" Line="41" Message="Property 'LastInteraction' is never used" />
-      <Issue TypeId="CheckNamespace" File="Services\Model\Req\DeployedApplicationRequest.cs" Offset="151-170" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req'" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\DeployedApplicationRequest.cs" Offset="488-501" Line="13" Message="Property 'ApplicationId' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\DeployedApplicationRequest.cs" Offset="776-784" Line="18" Message="Property 'ServerId' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\DeployedApplicationRequest.cs" Offset="979-989" Line="22" Message="Property 'CustomerId' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\DeployedApplicationRequest.cs" Offset="1270-1285" Line="27" Message="Property 'ApplicationPath' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\DeployedApplicationRequest.cs" Offset="1321-1329" Line="29" Message="Property 'IsActive' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\DeployedApplicationRequest.cs" Offset="1675-1688" Line="37" Message="Property 'ApplicationId' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\DeployedApplicationRequest.cs" Offset="1963-1971" Line="42" Message="Property 'ServerId' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\DeployedApplicationRequest.cs" Offset="2166-2176" Line="46" Message="Property 'CustomerId' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\DeployedApplicationRequest.cs" Offset="2457-2472" Line="51" Message="Property 'ApplicationPath' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\DeployedApplicationRequest.cs" Offset="2508-2516" Line="53" Message="Property 'IsActive' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\DeployedApplicationRequest.cs" Offset="2883-2887" Line="61" Message="Auto-property accessor 'ApplicationId.set' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\DeployedApplicationRequest.cs" Offset="3166-3170" Line="66" Message="Auto-property accessor 'ServerId.set' is never used" />
-      <Issue TypeId="CheckNamespace" File="Services\Model\Req\ErrorRequest.cs" Offset="188-207" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req'" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ErrorRequest.cs" Offset="510-521" Line="14" Message="Property 'Description' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ErrorRequest.cs" Offset="562-578" Line="16" Message="Property 'InterventionDate' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ErrorRequest.cs" Offset="853-861" Line="21" Message="Property 'ServerId' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ErrorRequest.cs" Offset="1145-1158" Line="27" Message="Property 'ApplicationId' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ErrorRequest.cs" Offset="1433-1443" Line="33" Message="Property 'SeverityId' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ErrorRequest.cs" Offset="1709-1717" Line="38" Message="Property 'StatusId' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ErrorRequest.cs" Offset="2099-2103" Line="46" Message="Auto-property accessor 'OldStatusId.set' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ErrorRequest.cs" Offset="2386-2390" Line="51" Message="Auto-property accessor 'OldSeverityId.set' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ErrorRequest.cs" Offset="2418-2427" Line="52" Message="Property 'EventDate' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ErrorRequest.cs" Offset="2718-2722" Line="57" Message="Auto-property accessor 'ServerId.set' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ErrorRequest.cs" Offset="3015-3019" Line="63" Message="Auto-property accessor 'ApplicationId.set' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ErrorRequest.cs" Offset="3300-3304" Line="69" Message="Auto-property accessor 'SeverityId.set' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ErrorRequest.cs" Offset="3582-3586" Line="74" Message="Auto-property accessor 'StatusId.set' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ErrorRequest.cs" Offset="3631-3635" Line="76" Message="Auto-property accessor 'CreatedAt.set' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ErrorRequest.cs" Offset="3958-3962" Line="83" Message="Auto-property accessor 'ServerId.set' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ErrorRequest.cs" Offset="4255-4259" Line="89" Message="Auto-property accessor 'ApplicationId.set' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ErrorRequest.cs" Offset="4540-4544" Line="95" Message="Auto-property accessor 'SeverityId.set' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ErrorRequest.cs" Offset="4822-4826" Line="100" Message="Auto-property accessor 'StatusId.set' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\ErrorRequest.cs" Offset="4871-4875" Line="102" Message="Auto-property accessor 'CreatedAt.set' is never used" />
-      <Issue TypeId="CheckNamespace" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="105-124" Line="5" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req.Response'" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="212-223" Line="9" Message="Name 'custommerId' does not match rule 'Properties'. Suggested name is 'CustommerId'." />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="226-230" Line="9" Message="Auto-property accessor 'custommerId.get' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="286-290" Line="10" Message="Auto-property accessor 'CustommerTitle.get' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="360-364" Line="11" Message="Auto-property accessor 'CustomerFiscalIdentification.get' is never used" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="400-413" Line="12" Message="Name 'nberrorSolved' does not match rule 'Properties'. Suggested name is 'NberrorSolved'." />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="416-420" Line="12" Message="Auto-property accessor 'nberrorSolved.get' is never used" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="456-473" Line="13" Message="Name 'nbErrorUnresolved' does not match rule 'Properties'. Suggested name is 'NbErrorUnresolved'." />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="476-480" Line="13" Message="Auto-property accessor 'nbErrorUnresolved.get' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="587-591" Line="17" Message="Auto-property accessor 'Nberror.get' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="647-651" Line="18" Message="Auto-property accessor 'ErrorStatus.get' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="707-711" Line="19" Message="Auto-property accessor 'Application.get' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="767-771" Line="21" Message="Auto-property accessor 'Severity.get' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="817-821" Line="22" Message="Auto-property accessor 'Server.get' is never used" />
-      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Req\Response\CustommerRequest.cs" Offset="865-869" Line="23" Message="Auto-property accessor 'CreatedAt.get' is never used" />
-      <Issue TypeId="CheckNamespace" File="Services\Model\Req\ServerRequest.cs" Offset="151-170" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req'" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="468-473" Line="13" Message="Property 'Title' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="699-703" Line="17" Message="Property 'Cost' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="739-747" Line="19" Message="Property 'IsActive' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="797-808" Line="21" Message="Property 'HostedSince' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="848-856" Line="22" Message="Property 'StopHost' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="1180-1182" Line="30" Message="Property 'Id' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="1450-1455" Line="35" Message="Property 'Title' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="1721-1725" Line="40" Message="Property 'Cost' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="1761-1769" Line="42" Message="Property 'IsActive' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="1907-1918" Line="45" Message="Property 'HostedSince' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\ServerRequest.cs" Offset="2044-2052" Line="48" Message="Property 'StopHost' is never used" />
-      <Issue TypeId="CheckNamespace" File="Services\Model\Req\TagRequest.cs" Offset="151-170" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.Model.Req'" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\TagRequest.cs" Offset="576-581" Line="14" Message="Property 'Title' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\TagRequest.cs" Offset="890-895" Line="21" Message="Property 'Title' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\TagRequest.cs" Offset="1212-1217" Line="28" Message="Property 'Title' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\TagRequest.cs" Offset="1541-1543" Line="35" Message="Property 'Id' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\TagRequest.cs" Offset="1807-1812" Line="40" Message="Property 'Title' is never used" />
-      <Issue TypeId="UnusedType.Global" File="Services\Model\Req\TagRequest.cs" Offset="1850-1877" Line="42" Message="Class 'CreateTagCategoryTagRequest' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\TagRequest.cs" Offset="2139-2144" Line="47" Message="Property 'IdTag' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\TagRequest.cs" Offset="2414-2427" Line="51" Message="Property 'IdTagCategory' is never used" />
-      <Issue TypeId="UnusedType.Global" File="Services\Model\Req\TagRequest.cs" Offset="2465-2492" Line="53" Message="Class 'UpdateTagCategoryTagRequest' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\TagRequest.cs" Offset="2754-2759" Line="58" Message="Property 'IdTag' is never used" />
-      <Issue TypeId="UnusedMember.Global" File="Services\Model\Req\TagRequest.cs" Offset="3029-3042" Line="62" Message="Property 'IdTagCategory' is never used" />
-      <Issue TypeId="CheckNamespace" File="Services\Service\ApplicationDeployedOnServerService.cs" Offset="172-180" Line="11" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
-      <Issue TypeId="ConvertToPrimaryConstructor" File="Services\Service\ApplicationDeployedOnServerService.cs" Offset="433-467" Line="18" Message="Convert into primary constructor" />
-      <Issue TypeId="CheckNamespace" File="Services\Service\ApplicationService.cs" Offset="243-251" Line="15" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
-      <Issue TypeId="ConvertToPrimaryConstructor" File="Services\Service\ApplicationService.cs" Offset="448-466" Line="22" Message="Convert into primary constructor" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\ApplicationService.cs" Offset="490-511" Line="22" Message="Name 'ApplicationRepository' does not match rule 'Parameters'. Suggested name is 'applicationRepository'." />
-      <Issue TypeId="CheckNamespace" File="Services\Service\AuthService.cs" Offset="137-145" Line="13" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
-      <Issue TypeId="ConvertToPrimaryConstructor" File="Services\Service\AuthService.cs" Offset="431-442" Line="21" Message="Convert into primary constructor" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\AuthService.cs" Offset="1859-1870" Line="53" Message="Name 'AccessToken' does not match rule 'Local variables'. Suggested name is 'accessToken'." />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\AuthService.cs" Offset="1938-1950" Line="54" Message="Name 'RefreshToken' does not match rule 'Local variables'. Suggested name is 'refreshToken'." />
-      <Issue TypeId="RedundantCatchClause" File="Services\Service\AuthService.cs" Offset="2452-2520" Line="61" Message="Catch clause is redundant" />
-      <Issue TypeId="ConstantConditionalAccessQualifier" File="Services\Service\AuthService.cs" Offset="2951-2952" Line="74" Message="Conditional access qualifier expression is known to be not null" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\AuthService.cs" Offset="3134-3145" Line="78" Message="Name 'AccessToken' does not match rule 'Local variables'. Suggested name is 'accessToken'." />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\AuthService.cs" Offset="3213-3225" Line="79" Message="Name 'RefreshToken' does not match rule 'Local variables'. Suggested name is 'refreshToken'." />
-      <Issue TypeId="RedundantCatchClause" File="Services\Service\AuthService.cs" Offset="3727-3814" Line="86" Message="Catch clause is redundant" />
-      <Issue TypeId="RedundantNameQualifier" File="Services\Service\AuthService.cs" Offset="3734-3741" Line="86" Message="Qualifier is redundant" />
-      <Issue TypeId="CheckNamespace" File="Services\Service\CustomerHaveLicenceToApplicationService.cs" Offset="159-167" Line="11" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
-      <Issue TypeId="ConvertToPrimaryConstructor" File="Services\Service\CustomerHaveLicenceToApplicationService.cs" Offset="437-476" Line="18" Message="Convert into primary constructor" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\CustomerHaveLicenceToApplicationService.cs" Offset="534-576" Line="19" Message="Name 'CustomerHaveLicenceToApplicationRepository' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToApplicationRepository'." />
-      <Issue TypeId="CheckNamespace" File="Services\Service\CustomerService.cs" Offset="222-230" Line="14" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
-      <Issue TypeId="ConvertToPrimaryConstructor" File="Services\Service\CustomerService.cs" Offset="464-479" Line="23" Message="Convert into primary constructor" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\CustomerService.cs" Offset="1559-1573" Line="49" Message="Name 'CustomerEntity' does not match rule 'Local variables'. Suggested name is 'customerEntity'." />
-      <Issue TypeId="ReplaceWithSingleCallToCount" File="Services\Service\CustomerService.cs" Offset="2551-2862" Line="71" Message="Replace with single call to Count(..)" />
-      <Issue TypeId="ReplaceWithSingleCallToCount" File="Services\Service\CustomerService.cs" Offset="2900-3211" Line="76" Message="Replace with single call to Count(..)" />
-      <Issue TypeId="CheckNamespace" File="Services\Service\ErrorService.cs" Offset="222-230" Line="14" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
-      <Issue TypeId="ConvertToPrimaryConstructor" File="Services\Service\ErrorService.cs" Offset="451-463" Line="22" Message="Convert into primary constructor" />
+      <Issue TypeId="CheckNamespace" File="Services\IService\IServerService.cs" Offset="108-116" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
+      <Issue TypeId="CheckNamespace" File="Services\IService\ITagServices.cs" Offset="107-115" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.IService'" />
+      <Issue TypeId="UnusedMember.Global" File="Services\IService\ITagServices.cs" Offset="718-729" Line="21" Message="Method 'AanalyzText' is never used" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\IService\ITagServices.cs" Offset="737-742" Line="21" Message="Name 'Query' does not match rule 'Parameters'. Suggested name is 'query'." />
+      <Issue TypeId="UnusedParameter.Global" File="Services\IService\ITagServices.cs" Offset="737-742" Line="21" Message="Parameter 'Query' is not used in any of the implementations" />
+      <Issue TypeId="CheckNamespace" File="Services\Model\Command\Application.cs" Offset="151-174" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.Model.Command'" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\Application.cs" Offset="615-618" Line="14" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\Application.cs" Offset="659-662" Line="16" Message="Property can be made init-only" />
+      <Issue TypeId="RedundantDefaultMemberInitializer" File="Services\Model\Command\Application.cs" Offset="666-673" Line="16" Message="Initializing property by default value is redundant" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\Application.cs" Offset="953-956" Line="21" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\Application.cs" Offset="1408-1411" Line="30" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\Application.cs" Offset="1600-1603" Line="34" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\Application.cs" Offset="1644-1647" Line="36" Message="Property can be made init-only" />
+      <Issue TypeId="RedundantDefaultMemberInitializer" File="Services\Model\Command\Application.cs" Offset="1651-1658" Line="36" Message="Initializing property by default value is redundant" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\Application.cs" Offset="1702-1705" Line="37" Message="Property can be made init-only" />
+      <Issue TypeId="CheckNamespace" File="Services\Model\Command\Customer.cs" Offset="151-174" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.Model.Command'" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\Command\Customer.cs" Offset="194-215" Line="8" Message="Class 'CreateCustomerCommand' is never instantiated" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\Customer.cs" Offset="398-403" Line="12" Message="Property 'Title' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\Customer.cs" Offset="688-708" Line="17" Message="Property 'FiscalIdentification' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\Customer.cs" Offset="844-859" Line="20" Message="Property 'LastInteraction' is never used" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\Command\Customer.cs" Offset="898-919" Line="23" Message="Class 'UpdateCustomerCommand' is never instantiated" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\Customer.cs" Offset="1132-1134" Line="28" Message="Property 'Id' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\Customer.cs" Offset="1346-1351" Line="33" Message="Property 'Title' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\Customer.cs" Offset="1563-1583" Line="38" Message="Property 'FiscalIdentification' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\Customer.cs" Offset="1719-1734" Line="41" Message="Property 'LastInteraction' is never used" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\Command\Customer.cs" Offset="1774-1807" Line="45" Message="Class 'CreateCustomerHasLicenceToCommand' is never instantiated" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\Customer.cs" Offset="2073-2086" Line="50" Message="Property 'ApplicationId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\Customer.cs" Offset="2361-2371" Line="55" Message="Property 'CustomerId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\Customer.cs" Offset="2412-2427" Line="57" Message="Property 'BeginingSupport' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\Customer.cs" Offset="2467-2480" Line="58" Message="Property 'EndingSupport' is never used" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Model\Command\Customer.cs" Offset="2517-2521" Line="59" Message="Name 'cost' does not match rule 'Properties'. Suggested name is 'Cost'." />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\Customer.cs" Offset="2517-2521" Line="59" Message="Property 'cost' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\Customer.cs" Offset="2562-2570" Line="61" Message="Property 'IsActive' is never used" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\Command\Customer.cs" Offset="2618-2649" Line="64" Message="Class 'UpdateCustomerHasLicenceCommand' is never instantiated" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\Customer.cs" Offset="2915-2928" Line="69" Message="Property 'ApplicationId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\Customer.cs" Offset="3203-3213" Line="74" Message="Property 'CustomerId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\Customer.cs" Offset="3254-3269" Line="76" Message="Property 'BeginingSupport' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\Customer.cs" Offset="3309-3322" Line="77" Message="Property 'EndingSupport' is never used" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Model\Command\Customer.cs" Offset="3359-3363" Line="78" Message="Name 'cost' does not match rule 'Properties'. Suggested name is 'Cost'." />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\Customer.cs" Offset="3359-3363" Line="78" Message="Property 'cost' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\Customer.cs" Offset="3404-3412" Line="80" Message="Property 'IsActive' is never used" />
+      <Issue TypeId="UnusedType.Global" File="Services\Model\Command\Customer.cs" Offset="3460-3491" Line="83" Message="Class 'DeleteCustomerHasLicenceCommand' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\Customer.cs" Offset="3757-3770" Line="88" Message="Property 'ApplicationId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\Customer.cs" Offset="4045-4053" Line="93" Message="Property 'ServerId' is never used" />
+      <Issue TypeId="CheckNamespace" File="Services\Model\Command\DeployedApplicationCommand.cs" Offset="151-174" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.Model.Command'" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\Command\DeployedApplicationCommand.cs" Offset="194-226" Line="8" Message="Class 'CreateApplicationDeployedCommand' is never instantiated" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\DeployedApplicationCommand.cs" Offset="492-505" Line="13" Message="Property 'ApplicationId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\DeployedApplicationCommand.cs" Offset="780-788" Line="18" Message="Property 'ServerId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\DeployedApplicationCommand.cs" Offset="983-993" Line="22" Message="Property 'CustomerId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\DeployedApplicationCommand.cs" Offset="1274-1289" Line="27" Message="Property 'ApplicationPath' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\DeployedApplicationCommand.cs" Offset="1325-1333" Line="29" Message="Property 'IsActive' is never used" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\Command\DeployedApplicationCommand.cs" Offset="1381-1413" Line="32" Message="Class 'UpdateApplicationDeployedCommand' is never instantiated" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\DeployedApplicationCommand.cs" Offset="1679-1692" Line="37" Message="Property 'ApplicationId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\DeployedApplicationCommand.cs" Offset="1967-1975" Line="42" Message="Property 'ServerId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\DeployedApplicationCommand.cs" Offset="2170-2180" Line="46" Message="Property 'CustomerId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\DeployedApplicationCommand.cs" Offset="2461-2476" Line="51" Message="Property 'ApplicationPath' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\DeployedApplicationCommand.cs" Offset="2512-2520" Line="53" Message="Property 'IsActive' is never used" />
+      <Issue TypeId="UnusedType.Global" File="Services\Model\Command\DeployedApplicationCommand.cs" Offset="2568-2600" Line="56" Message="Class 'DeleteApplicationDeployedCommand' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\DeployedApplicationCommand.cs" Offset="2866-2879" Line="61" Message="Property 'ApplicationId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\DeployedApplicationCommand.cs" Offset="3154-3162" Line="66" Message="Property 'ServerId' is never used" />
+      <Issue TypeId="CheckNamespace" File="Services\Model\Command\ErrorCommand.cs" Offset="283-306" Line="11" Message="Namespace does not correspond to file location, must be: 'Services.Model.Command'" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="326-344" Line="13" Message="Class 'CreateErrorCommand' is never instantiated" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="609-620" Line="18" Message="Property 'Description' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="661-677" Line="20" Message="Property 'InterventionDate' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="952-960" Line="25" Message="Property 'ServerId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="1244-1257" Line="31" Message="Property 'ApplicationId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="1532-1542" Line="37" Message="Property 'SeverityId' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="1808-1816" Line="42" Message="Property 'StatusId' is never used" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="1897-1914" Line="45" Message="Class 'UpdateErroCommand' is never instantiated" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="2198-2202" Line="50" Message="Auto-property accessor 'OldStatusId.set' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="2485-2489" Line="55" Message="Auto-property accessor 'OldSeverityId.set' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="2517-2526" Line="56" Message="Property 'EventDate' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="2817-2821" Line="61" Message="Auto-property accessor 'ServerId.set' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="3114-3118" Line="67" Message="Auto-property accessor 'ApplicationId.set' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="3399-3403" Line="73" Message="Auto-property accessor 'SeverityId.set' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="3681-3685" Line="78" Message="Auto-property accessor 'StatusId.set' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="3730-3734" Line="80" Message="Auto-property accessor 'CreatedAt.set' is never used" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="3760-3775" Line="82" Message="Class 'GetErrorCommand' is never instantiated" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="4057-4061" Line="87" Message="Auto-property accessor 'ServerId.set' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="4354-4358" Line="93" Message="Auto-property accessor 'ApplicationId.set' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="4639-4643" Line="99" Message="Auto-property accessor 'SeverityId.set' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="4921-4925" Line="104" Message="Auto-property accessor 'StatusId.set' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="4970-4974" Line="106" Message="Auto-property accessor 'CreatedAt.set' is never used" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Model\Command\ErrorCommand.cs" Offset="5075-5086" Line="110" Message="Name 'custommerId' does not match rule 'Properties'. Suggested name is 'CustommerId'." />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="5089-5093" Line="110" Message="Auto-property accessor 'custommerId.get' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="5149-5153" Line="111" Message="Auto-property accessor 'CustommerTitle.get' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="5223-5227" Line="112" Message="Auto-property accessor 'CustomerFiscalIdentification.get' is never used" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Model\Command\ErrorCommand.cs" Offset="5263-5276" Line="113" Message="Name 'nberrorSolved' does not match rule 'Properties'. Suggested name is 'NberrorSolved'." />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="5279-5283" Line="113" Message="Auto-property accessor 'nberrorSolved.get' is never used" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Model\Command\ErrorCommand.cs" Offset="5319-5336" Line="114" Message="Name 'nbErrorUnresolved' does not match rule 'Properties'. Suggested name is 'NbErrorUnresolved'." />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="5339-5343" Line="114" Message="Auto-property accessor 'nbErrorUnresolved.get' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="5450-5454" Line="118" Message="Auto-property accessor 'Nberror.get' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="5551-5555" Line="120" Message="Auto-property accessor 'ErrorStatus.get' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="5611-5615" Line="121" Message="Auto-property accessor 'Application.get' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="5671-5675" Line="123" Message="Auto-property accessor 'Severity.get' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="5721-5725" Line="124" Message="Auto-property accessor 'Server.get' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\ErrorCommand.cs" Offset="5769-5773" Line="125" Message="Auto-property accessor 'CreatedAt.get' is never used" />
+      <Issue TypeId="CheckNamespace" File="Services\Model\Command\ServerCommand.cs" Offset="151-174" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.Model.Command'" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\ServerCommand.cs" Offset="485-488" Line="13" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\ServerCommand.cs" Offset="715-718" Line="17" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\ServerCommand.cs" Offset="759-762" Line="19" Message="Property can be made init-only" />
+      <Issue TypeId="RedundantDefaultMemberInitializer" File="Services\Model\Command\ServerCommand.cs" Offset="766-773" Line="19" Message="Initializing property by default value is redundant" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\ServerCommand.cs" Offset="820-823" Line="21" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\ServerCommand.cs" Offset="868-871" Line="22" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\ServerCommand.cs" Offset="1194-1197" Line="30" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\ServerCommand.cs" Offset="1467-1470" Line="35" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\ServerCommand.cs" Offset="1737-1740" Line="40" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\ServerCommand.cs" Offset="1781-1784" Line="42" Message="Property can be made init-only" />
+      <Issue TypeId="RedundantDefaultMemberInitializer" File="Services\Model\Command\ServerCommand.cs" Offset="1788-1795" Line="42" Message="Initializing property by default value is redundant" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\ServerCommand.cs" Offset="1930-1933" Line="45" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\ServerCommand.cs" Offset="2064-2067" Line="48" Message="Property can be made init-only" />
+      <Issue TypeId="CheckNamespace" File="Services\Model\Command\TagCommand.cs" Offset="151-174" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.Model.Command'" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\TagCommand.cs" Offset="593-596" Line="14" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\TagCommand.cs" Offset="907-910" Line="21" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\TagCommand.cs" Offset="1229-1232" Line="28" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\TagCommand.cs" Offset="1555-1558" Line="35" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\TagCommand.cs" Offset="1824-1827" Line="40" Message="Property can be made init-only" />
+      <Issue TypeId="CheckNamespace" File="Services\Model\Command\User.cs" Offset="189-212" Line="7" Message="Namespace does not correspond to file location, must be: 'Services.Model.Command'" />
+      <Issue TypeId="UnusedType.Global" File="Services\Model\Command\User.cs" Offset="228-240" Line="9" Message="Class 'GrantRequest' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\User.cs" Offset="270-279" Line="11" Message="Property 'GrantType' is never used" />
+      <Issue TypeId="UnusedMember.Global" File="Services\Model\Command\User.cs" Offset="386-398" Line="14" Message="Property 'GrantDetails' is never used" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Model\Command\User.cs" Offset="438-454" Line="17" Message="Name 'IGrantConnection' does not match rule 'Types and namespaces'. Suggested name is 'GrantConnection'." />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\User.cs" Offset="820-823" Line="22" Message="Property can be made init-only" />
+      <Issue TypeId="UnusedMemberInSuper.Global" File="Services\Model\Command\User.cs" Offset="852-860" Line="23" Message="Only overrides of method 'Validate' are used" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\User.cs" Offset="1250-1253" Line="31" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\User.cs" Offset="1475-1478" Line="39" Message="Property can be made init-only" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\User.cs" Offset="1736-1740" Line="49" Message="Auto-property accessor 'FirstName.get' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\User.cs" Offset="1864-1868" Line="51" Message="Auto-property accessor 'LastName.get' is never used" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\User.cs" Offset="2239-2242" Line="55" Message="Property can be made init-only" />
+      <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Model\Command\User.cs" Offset="2565-2568" Line="59" Message="Property can be made init-only" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\User.cs" Offset="2644-2648" Line="64" Message="Auto-property accessor 'AccessToken.get' is never used" />
+      <Issue TypeId="UnusedAutoPropertyAccessor.Global" File="Services\Model\Command\User.cs" Offset="2698-2702" Line="65" Message="Auto-property accessor 'RefreshToken.get' is never used" />
+      <Issue TypeId="CheckNamespace" File="Services\Service\ApplicationDeployedOnServerService.cs" Offset="176-184" Line="11" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
+      <Issue TypeId="ConvertToPrimaryConstructor" File="Services\Service\ApplicationDeployedOnServerService.cs" Offset="437-471" Line="18" Message="Convert into primary constructor" />
+      <Issue TypeId="CheckNamespace" File="Services\Service\ApplicationService.cs" Offset="247-255" Line="15" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
+      <Issue TypeId="ConvertToPrimaryConstructor" File="Services\Service\ApplicationService.cs" Offset="452-470" Line="22" Message="Convert into primary constructor" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\ApplicationService.cs" Offset="494-515" Line="22" Message="Name 'ApplicationRepository' does not match rule 'Parameters'. Suggested name is 'applicationRepository'." />
+      <Issue TypeId="CheckNamespace" File="Services\Service\AuthService.cs" Offset="141-149" Line="14" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
+      <Issue TypeId="ConvertToPrimaryConstructor" File="Services\Service\AuthService.cs" Offset="435-446" Line="22" Message="Convert into primary constructor" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\AuthService.cs" Offset="1884-1895" Line="54" Message="Name 'AccessToken' does not match rule 'Local variables'. Suggested name is 'accessToken'." />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\AuthService.cs" Offset="1963-1975" Line="55" Message="Name 'RefreshToken' does not match rule 'Local variables'. Suggested name is 'refreshToken'." />
+      <Issue TypeId="RedundantCatchClause" File="Services\Service\AuthService.cs" Offset="2484-2552" Line="62" Message="Catch clause is redundant" />
+      <Issue TypeId="ConstantConditionalAccessQualifier" File="Services\Service\AuthService.cs" Offset="2997-2998" Line="75" Message="Conditional access qualifier expression is known to be not null" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\AuthService.cs" Offset="3180-3191" Line="79" Message="Name 'AccessToken' does not match rule 'Local variables'. Suggested name is 'accessToken'." />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\AuthService.cs" Offset="3259-3271" Line="80" Message="Name 'RefreshToken' does not match rule 'Local variables'. Suggested name is 'refreshToken'." />
+      <Issue TypeId="RedundantCatchClause" File="Services\Service\AuthService.cs" Offset="3780-3867" Line="87" Message="Catch clause is redundant" />
+      <Issue TypeId="RedundantNameQualifier" File="Services\Service\AuthService.cs" Offset="3787-3794" Line="87" Message="Qualifier is redundant" />
+      <Issue TypeId="CheckNamespace" File="Services\Service\CustomerHaveLicenceToApplicationService.cs" Offset="163-171" Line="11" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
+      <Issue TypeId="ConvertToPrimaryConstructor" File="Services\Service\CustomerHaveLicenceToApplicationService.cs" Offset="441-480" Line="18" Message="Convert into primary constructor" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\CustomerHaveLicenceToApplicationService.cs" Offset="538-580" Line="19" Message="Name 'CustomerHaveLicenceToApplicationRepository' does not match rule 'Parameters'. Suggested name is 'customerHaveLicenceToApplicationRepository'." />
+      <Issue TypeId="CheckNamespace" File="Services\Service\CustomerService.cs" Offset="226-234" Line="14" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
+      <Issue TypeId="ConvertToPrimaryConstructor" File="Services\Service\CustomerService.cs" Offset="468-483" Line="23" Message="Convert into primary constructor" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\CustomerService.cs" Offset="1563-1577" Line="49" Message="Name 'CustomerEntity' does not match rule 'Local variables'. Suggested name is 'customerEntity'." />
+      <Issue TypeId="ReplaceWithSingleCallToCount" File="Services\Service\CustomerService.cs" Offset="2422-2733" Line="66" Message="Replace with single call to Count(..)" />
+      <Issue TypeId="ReplaceWithSingleCallToCount" File="Services\Service\CustomerService.cs" Offset="2771-3082" Line="71" Message="Replace with single call to Count(..)" />
+      <Issue TypeId="CheckNamespace" File="Services\Service\ErrorService.cs" Offset="226-234" Line="14" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
+      <Issue TypeId="ConvertToPrimaryConstructor" File="Services\Service\ErrorService.cs" Offset="455-467" Line="22" Message="Convert into primary constructor" />
       <Issue TypeId="CheckNamespace" File="Services\Service\MailerService.cs" Offset="95-103" Line="6" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
       <Issue TypeId="UnusedType.Global" File="Services\Service\MailerService.cs" Offset="130-136" Line="8" Message="Class 'Mailer' is never used" />
       <Issue TypeId="PropertyCanBeMadeInitOnly.Global" File="Services\Service\MailerService.cs" Offset="213-216" Line="10" Message="Property can be made init-only" />
@@ -718,42 +857,36 @@
       <Issue TypeId="ConvertToPrimaryConstructor" File="Services\Service\SecurityService.cs" Offset="603-618" Line="21" Message="Convert into primary constructor" />
       <Issue TypeId="ArrangeThisQualifier" Severity="SUGGESTION" File="Services\Service\SecurityService.cs" Offset="671-676" Line="23" Message="Qualifier 'this.' is redundant" />
       <Issue TypeId="ArrangeThisQualifier" Severity="SUGGESTION" File="Services\Service\SecurityService.cs" Offset="726-731" Line="24" Message="Qualifier 'this.' is redundant" />
-      <Issue TypeId="CheckNamespace" File="Services\Service\ServerService.cs" Offset="215-223" Line="13" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
-      <Issue TypeId="ConvertToPrimaryConstructor" File="Services\Service\ServerService.cs" Offset="401-415" Line="20" Message="Convert into primary constructor" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\ServerService.cs" Offset="434-450" Line="20" Message="Name 'ServerRepository' does not match rule 'Parameters'. Suggested name is 'serverRepository'." />
-      <Issue TypeId="CheckNamespace" File="Services\Service\TagService.cs" Offset="168-176" Line="11" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
-      <Issue TypeId="UnusedType.Global" File="Services\Service\TagService.cs" Offset="196-206" Line="13" Message="Class 'TagService' is never used" />
-      <Issue TypeId="ConvertToPrimaryConstructor" File="Services\Service\TagService.cs" Offset="339-349" Line="19" Message="Convert into primary constructor" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\TagService.cs" Offset="535-540" Line="25" Message="Name 'Query' does not match rule 'Parameters'. Suggested name is 'query'." />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\TagService.cs" Offset="706-709" Line="30" Message="Name 'Tag' does not match rule 'Parameters'. Suggested name is 'tag'." />
+      <Issue TypeId="CheckNamespace" File="Services\Service\ServerService.cs" Offset="219-227" Line="13" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
+      <Issue TypeId="ConvertToPrimaryConstructor" File="Services\Service\ServerService.cs" Offset="405-419" Line="20" Message="Convert into primary constructor" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\ServerService.cs" Offset="438-454" Line="20" Message="Name 'ServerRepository' does not match rule 'Parameters'. Suggested name is 'serverRepository'." />
+      <Issue TypeId="CheckNamespace" File="Services\Service\TagService.cs" Offset="172-180" Line="11" Message="Namespace does not correspond to file location, must be: 'Services.Service'" />
+      <Issue TypeId="UnusedType.Global" File="Services\Service\TagService.cs" Offset="200-210" Line="13" Message="Class 'TagService' is never used" />
+      <Issue TypeId="ConvertToPrimaryConstructor" File="Services\Service\TagService.cs" Offset="343-353" Line="19" Message="Convert into primary constructor" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\TagService.cs" Offset="539-544" Line="25" Message="Name 'Query' does not match rule 'Parameters'. Suggested name is 'query'." />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Services\Service\TagService.cs" Offset="710-713" Line="30" Message="Name 'Tag' does not match rule 'Parameters'. Suggested name is 'tag'." />
     </Project>
     <Project Name="Test">
       <Issue TypeId="CheckNamespace" File="Test\AutomapperTest\ApplicationAutoMapTest.cs" Offset="10-14" Line="1" Message="Namespace does not correspond to file location, must be: 'Gestion_Erreur_Back_C_.AutomapperTest'" />
-      <Issue TypeId="PrivateFieldCanBeConvertedToLocalVariable" File="Test\AutomapperTest\ApplicationAutoMapTest.cs" Offset="298-316" Line="17" Message="The field is always assigned before being used and can be converted into a local variable" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Test\AutomapperTest\ApplicationAutoMapTest.cs" Offset="675-699" Line="29" Message="Name 'CreateApplicationRequest' does not match rule 'Local variables'. Suggested name is 'createApplicationRequest'." />
-      <Issue TypeId="NotAccessedOutParameterVariable" File="Test\AutomapperTest\ApplicationAutoMapTest.cs" Offset="858-865" Line="34" Message="Local variable 'x' is only used to discard 'out' parameter value" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Test\AutomapperTest\ApplicationAutoMapTest.cs" Offset="893-910" Line="36" Message="Name 'ApplicationEntity' does not match rule 'Local variables'. Suggested name is 'applicationEntity'." />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Test\AutomapperTest\ApplicationAutoMapTest.cs" Offset="1178-1202" Line="45" Message="Name 'CreateApplicationRequest' does not match rule 'Local variables'. Suggested name is 'createApplicationRequest'." />
-      <Issue TypeId="NotAccessedOutParameterVariable" File="Test\AutomapperTest\ApplicationAutoMapTest.cs" Offset="1361-1372" Line="50" Message="Local variable 'y' is only used to discard 'out' parameter value" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Test\AutomapperTest\ApplicationAutoMapTest.cs" Offset="1400-1417" Line="52" Message="Name 'ApplicationEntity' does not match rule 'Local variables'. Suggested name is 'applicationEntity'." />
-      <Issue TypeId="SpecifyACultureInStringConversionExplicitly" File="Test\AutomapperTest\ApplicationAutoMapTest.cs" Offset="1562-1570" Line="54" Message="Specify string culture explicitly" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Test\AutomapperTest\ApplicationAutoMapTest.cs" Offset="1696-1720" Line="61" Message="Name 'CreateApplicationRequest' does not match rule 'Local variables'. Suggested name is 'createApplicationRequest'." />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Test\AutomapperTest\ApplicationAutoMapTest.cs" Offset="2125-2149" Line="74" Message="Name 'UpdateApplicationRequest' does not match rule 'Local variables'. Suggested name is 'updateApplicationRequest'." />
+      <Issue TypeId="RedundantUsingDirective" File="Test\AutomapperTest\ApplicationAutoMapTest.cs" Offset="73-108" Line="7" Message="Using directive is not required by the code and can be safely removed" />
+      <Issue TypeId="RedundantUsingDirective" File="Test\AutomapperTest\ApplicationAutoMapTest.cs" Offset="109-142" Line="8" Message="Using directive is not required by the code and can be safely removed" />
+      <Issue TypeId="RedundantUsingDirective" File="Test\AutomapperTest\ApplicationAutoMapTest.cs" Offset="145-157" Line="11" Message="Using directive is not required by the code and can be safely removed" />
+      <Issue TypeId="UnusedType.Global" File="Test\AutomapperTest\ApplicationAutoMapTest.cs" Offset="172-194" Line="13" Message="Class 'ApplicationAutoMapTest' is never used" />
+      <Issue TypeId="NotAccessedField.Local" File="Test\AutomapperTest\ApplicationAutoMapTest.cs" Offset="226-233" Line="15" Message="Field '_mapper' is assigned but its value is never used" />
+      <Issue TypeId="PrivateFieldCanBeConvertedToLocalVariable" File="Test\AutomapperTest\ApplicationAutoMapTest.cs" Offset="271-289" Line="16" Message="The field is always assigned before being used and can be converted into a local variable" />
       <Issue TypeId="CheckNamespace" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="10-14" Line="1" Message="Namespace does not correspond to file location, must be: 'Gestion_Erreur_Back_C_.AutomapperTest'" />
-      <Issue TypeId="PrivateFieldCanBeConvertedToLocalVariable" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="296-314" Line="17" Message="The field is always assigned before being used and can be converted into a local variable" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="668-689" Line="29" Message="Name 'CreateCustomerRequest' does not match rule 'Local variables'. Suggested name is 'createCustomerRequest'." />
-      <Issue TypeId="NotAccessedOutParameterVariable" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="878-885" Line="35" Message="Local variable 'x' is only used to discard 'out' parameter value" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="913-927" Line="37" Message="Name 'CustomerEntity' does not match rule 'Local variables'. Suggested name is 'customerEntity'." />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="1186-1207" Line="46" Message="Name 'CreateCustomerRequest' does not match rule 'Local variables'. Suggested name is 'createCustomerRequest'." />
-      <Issue TypeId="NotAccessedOutParameterVariable" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="1396-1407" Line="52" Message="Local variable 'y' is only used to discard 'out' parameter value" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="1435-1449" Line="54" Message="Name 'CustomerEntity' does not match rule 'Local variables'. Suggested name is 'customerEntity'." />
-      <Issue TypeId="SpecifyACultureInStringConversionExplicitly" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="1585-1593" Line="56" Message="Specify string culture explicitly" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="1727-1748" Line="63" Message="Name 'CreateCustomerRequest' does not match rule 'Local variables'. Suggested name is 'createCustomerRequest'." />
+      <Issue TypeId="RedundantUsingDirective" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="73-108" Line="7" Message="Using directive is not required by the code and can be safely removed" />
+      <Issue TypeId="RedundantUsingDirective" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="109-142" Line="8" Message="Using directive is not required by the code and can be safely removed" />
+      <Issue TypeId="RedundantUsingDirective" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="145-157" Line="11" Message="Using directive is not required by the code and can be safely removed" />
+      <Issue TypeId="UnusedType.Global" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="172-192" Line="13" Message="Class 'CustommerAutoMapTest' is never used" />
+      <Issue TypeId="NotAccessedField.Local" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="224-231" Line="15" Message="Field '_mapper' is assigned but its value is never used" />
+      <Issue TypeId="PrivateFieldCanBeConvertedToLocalVariable" File="Test\AutomapperTest\CustomerAutomapTest.cs" Offset="269-287" Line="16" Message="The field is always assigned before being used and can be converted into a local variable" />
       <Issue TypeId="CheckNamespace" File="Test\AutomapperTest\UserSignTest.cs" Offset="10-14" Line="1" Message="Namespace does not correspond to file location, must be: 'Gestion_Erreur_Back_C_.AutomapperTest'" />
-      <Issue TypeId="PrivateFieldCanBeConvertedToLocalVariable" File="Test\AutomapperTest\UserSignTest.cs" Offset="255-273" Line="16" Message="The field is always assigned before being used and can be converted into a local variable" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Test\AutomapperTest\UserSignTest.cs" Offset="621-631" Line="29" Message="Name 'UserSignUp' does not match rule 'Local variables'. Suggested name is 'userSignUp'." />
-      <Issue TypeId="NotAccessedOutParameterVariable" File="Test\AutomapperTest\UserSignTest.cs" Offset="840-847" Line="37" Message="Local variable 'x' is only used to discard 'out' parameter value" />
-      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Test\AutomapperTest\UserSignTest.cs" Offset="876-893" Line="40" Message="Name 'ApplicationEntity' does not match rule 'Local variables'. Suggested name is 'applicationEntity'." />
+      <Issue TypeId="RedundantUsingDirective" File="Test\AutomapperTest\UserSignTest.cs" Offset="103-130" Line="9" Message="Using directive is not required by the code and can be safely removed" />
+      <Issue TypeId="PrivateFieldCanBeConvertedToLocalVariable" File="Test\AutomapperTest\UserSignTest.cs" Offset="286-304" Line="17" Message="The field is always assigned before being used and can be converted into a local variable" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Test\AutomapperTest\UserSignTest.cs" Offset="652-662" Line="30" Message="Name 'UserSignUp' does not match rule 'Local variables'. Suggested name is 'userSignUp'." />
+      <Issue TypeId="NotAccessedOutParameterVariable" File="Test\AutomapperTest\UserSignTest.cs" Offset="878-885" Line="38" Message="Local variable 'x' is only used to discard 'out' parameter value" />
+      <Issue TypeId="InconsistentNaming" Severity="SUGGESTION" File="Test\AutomapperTest\UserSignTest.cs" Offset="914-931" Line="41" Message="Name 'ApplicationEntity' does not match rule 'Local variables'. Suggested name is 'applicationEntity'." />
       <Issue TypeId="CheckNamespace" File="Test\functionTest\LeapYearsTest.cs" Offset="10-14" Line="1" Message="Namespace does not correspond to file location, must be: 'Gestion_Erreur_Back_C_.functionTest'" />
     </Project>
   </Issues>
