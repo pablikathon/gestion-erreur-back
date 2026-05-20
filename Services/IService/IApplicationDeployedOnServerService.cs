@@ -1,4 +1,4 @@
-using Persist.Entities.JoiningTable;
+using Domain.DTO.Applications;
 
 using Services.Models.Command;
 using Services.Models.Common;
@@ -6,10 +6,10 @@ namespace Services
 {
     public interface IApplicationDeployedOnServerService
     {
-        PaginationResponse<ApplicationDeployedOnServerEntity> GetApplicationsDeployed(
+        PaginationResponse<ApplicationDeployed> GetApplicationsDeployed(
             GenericQueryParameter queryParameters);
 
-        Task<ApplicationDeployedOnServerEntity> DeployedApplicationOnServer(
+        Task<ApplicationDeployed> DeployedApplicationOnServer(
             CreateApplicationDeployedCommand createApplication);
 
         Task<Boolean> UpdateDeployedApplicationDeployed(UpdateApplicationDeployedCommand updateApplicationDeployed);

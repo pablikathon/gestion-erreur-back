@@ -10,7 +10,9 @@ public class Step
     public Step(string title, Guid featureId)
     {
         if (string.IsNullOrWhiteSpace(title))
-            throw new DomainException("Step title required");
+        {
+            throw new Exception("Step title required");
+        }
 
         Id = Guid.NewGuid();
         Title = title;

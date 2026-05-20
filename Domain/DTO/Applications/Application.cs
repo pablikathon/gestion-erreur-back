@@ -4,7 +4,7 @@ using Domain.Features;
 
 public class Application
 {
-    private readonly List<Feature> _features = new();
+    private readonly List<Feature> _features = [];
 
     public Guid Id { get; private set; }
     public string Name { get; private set; }
@@ -14,7 +14,9 @@ public class Application
     public Application(string name)
     {
         if (string.IsNullOrWhiteSpace(name))
-            throw new DomainException("Application name is required");
+        {
+            throw new Exception("Application name is required");
+        }
 
         Id = Guid.NewGuid();
         Name = name;
@@ -29,11 +31,7 @@ public class Application
 
     public void RemoveFeature(Guid featureId)
     {
-        var feature = _features.FirstOrDefault(f => f.Id == featureId);
-
-        if (feature is null)
-            throw new DomainException("Feature not found");
-
+        var feature = _features.FirstOrDefault(f => f.Id == featureId) ?? throw new Exception("Feature not found");
         _features.Remove(feature);
     }
 }

@@ -3,11 +3,9 @@ namespace Services
 {
     public interface IAuthService
     {
-        public Task<bool> SignUp(UserSignUpCommand user);
-        public Task<TokenCommand> UserSignInWithPassword(UserSignInWithPasswordCommand user);
-        public Task<TokenCommand> UserSignInWithRefreshToken(UserSignInWithRefreshTokenCommand user);
-
-
+        Task<bool> SignUp(UserSignUpCommand user);
+        Task<TokenCommand> UserSignInWithPassword(UserSignInWithPasswordCommand user);
+        Task<TokenCommand> UserSignInWithRefreshToken(UserSignInWithRefreshTokenCommand user);
     }
 }
 
